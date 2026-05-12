@@ -1,0 +1,24 @@
+{
+    "@odata.context": "/redfish/v1/$metadata#JsonSchemaFile.JsonSchemaFile",
+    "@odata.id": "/redfish/v1/JsonSchemas/PumpCollection",
+    "@odata.type": "#JsonSchemaFile.v1_0_2.JsonSchemaFile",
+    "Id": "PumpCollection",
+    "Description": "PumpCollection Schema File Location",
+    "Name": "PumpCollection Schema File",
+    "Languages": [
+        "en"
+    ],
+    "Schema": "#PumpCollection.PumpCollection",
+    "Location": [
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/SchemaStore/en/PumpCollection.json",
+            "PublicationUri": "http://redfish.dmtf.org/schemas/v1/PumpCollection.json"
+        },
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/Schemas/PumpCollection.json",
+            "PublicationUri": "http://redfish.dmtf.org/schemas/v1/PumpCollection.json"
+        }
+    ]
+}

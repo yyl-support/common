@@ -1,0 +1,22 @@
+{
+    "@odata.context": "/redfish/v1/$metadata#JsonSchemaFile.JsonSchemaFile",
+    "@odata.id": "/redfish/v1/JsonSchemas/HwBackupBatteryUnit.v1_0_0",
+    "@odata.type": "#JsonSchemaFile.v1_0_2.JsonSchemaFile",
+    "Id": "HwBackupBatteryUnit.v1_0_0",
+    "Description": "HwBackupBatteryUnit Schema File Location",
+    "Name": "HwBackupBatteryUnit Schema File",
+    "Languages": [
+        "en"
+    ],
+    "Schema": "#HwBackupBatteryUnit.v1_0_0.HwBackupBatteryUnit",
+    "Location": [
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/SchemaStore/en/HwBackupBatteryUnit.v1_0_0.json"
+        },
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/Schemas/HwBackupBatteryUnit.v1_0_0.json"
+        }
+    ]
+}

@@ -1,0 +1,19 @@
+{
+    "@odata.context": "/redfish/v1/$metadata#JsonSchemaFile.JsonSchemaFile",
+    "@odata.id": "/redfish/v1/JsonSchemas/IOStatistics.v1_0_4",
+    "@odata.type": "#JsonSchemaFile.v1_0_2.JsonSchemaFile",
+    "Id": "IOStatistics.v1_0_4",
+    "Description": "IOStatistics Schema File Location",
+    "Name": "IOStatistics Schema File",
+    "Languages": [
+        "en"
+    ],
+    "Schema": "#IOStatistics.v1_0_4.IOStatistics",
+    "Location": [
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/Schemas/IOStatistics.v1_0_4.json",
+            "PublicationUri": "http://redfish.dmtf.org/schemas/swordfish/v1/IOStatistics.v1_0_4.json"
+        }
+    ]
+}

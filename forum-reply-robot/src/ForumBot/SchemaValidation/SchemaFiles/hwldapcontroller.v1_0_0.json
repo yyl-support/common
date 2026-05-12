@@ -1,0 +1,22 @@
+{
+    "@odata.context": "/redfish/v1/$metadata#JsonSchemaFile.JsonSchemaFile",
+    "@odata.id": "/redfish/v1/JsonSchemas/HwLdapController.v1_0_0",
+    "@odata.type": "#JsonSchemaFile.v1_0_2.JsonSchemaFile",
+    "Id": "HwLdapController.v1_0_0",
+    "Description": "HwLdapController Schema File Location",
+    "Name": "HwLdapController Schema File",
+    "Languages": [
+        "en"
+    ],
+    "Schema": "#HwLdapController.v1_0_0.HwLdapController",
+    "Location": [
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/SchemaStore/en/HwLdapController.v1_0_0.json"
+        },
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/Schemas/HwLdapController.v1_0_0.json"
+        }
+    ]
+}

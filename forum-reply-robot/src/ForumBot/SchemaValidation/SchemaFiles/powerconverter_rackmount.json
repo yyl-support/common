@@ -1,0 +1,22 @@
+{
+    "@odata.context": "/redfish/v1/$metadata#JsonSchemaFile.JsonSchemaFile",
+    "@odata.id": "/redfish/v1/JsonSchemas/PowerConverter",
+    "@odata.type": "#JsonSchemaFile.v1_0_2.JsonSchemaFile",
+    "Id": "PowerConverter",
+    "Description": "PowerConverter Schema File Location",
+    "Name": "PowerConverter Schema File",
+    "Languages": [
+        "en"
+    ],
+    "Schema": "#PowerConverter.PowerConverter",
+    "Location": [
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/SchemaStore/en/PowerConverter.json"
+        },
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/Schemas/PowerConverter.json"
+        }
+    ]
+}

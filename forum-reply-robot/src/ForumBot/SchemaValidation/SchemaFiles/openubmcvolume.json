@@ -1,0 +1,22 @@
+{
+    "@odata.context": "/redfish/v1/$metadata#JsonSchemaFile.JsonSchemaFile",
+    "@odata.id": "/redfish/v1/JsonSchemas/openUBMCVolume",
+    "@odata.type": "#JsonSchemaFile.v1_0_2.JsonSchemaFile",
+    "Id": "openUBMCVolume",
+    "Description": "openUBMCVolume Schema File Location",
+    "Name": "openUBMCVolume Schema File",
+    "Languages": [
+        "en"
+    ],
+    "Schema": "#openUBMCVolume.openUBMCVolume",
+    "Location": [
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/SchemaStore/en/openUBMCVolume.json"
+        },
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/Schemas/openUBMCVolume.json"
+        }
+    ]
+}

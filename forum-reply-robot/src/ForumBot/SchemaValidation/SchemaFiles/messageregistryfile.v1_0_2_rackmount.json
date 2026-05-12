@@ -1,0 +1,24 @@
+{
+    "@odata.context": "/redfish/v1/$metadata#JsonSchemaFile.JsonSchemaFile",
+    "@odata.id": "/redfish/v1/JsonSchemas/MessageRegistryFile.v1_0_2",
+    "@odata.type": "#JsonSchemaFile.v1_0_2.JsonSchemaFile",
+    "Id": "MessageRegistryFile.v1_0_2",
+    "Description": "MessageRegistryFile Schema File Location",
+    "Name": "MessageRegistryFile Schema File",
+    "Languages": [
+        "en"
+    ],
+    "Schema": "#MessageRegistryFile.v1_0_2.MessageRegistryFile",
+    "Location": [
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/SchemaStore/en/MessageRegistryFile.v1_0_2.json",
+            "PublicationUri": "http://redfish.dmtf.org/schemas/v1/MessageRegistryFile.v1_0_2.json"
+        },
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/Schemas/MessageRegistryFile.v1_0_2.json",
+            "PublicationUri": "http://redfish.dmtf.org/schemas/v1/MessageRegistryFile.v1_0_2.json"
+        }
+    ]
+}

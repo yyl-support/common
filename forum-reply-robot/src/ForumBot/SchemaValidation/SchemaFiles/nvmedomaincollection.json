@@ -1,0 +1,19 @@
+{
+    "@odata.context": "/redfish/v1/$metadata#JsonSchemaFile.JsonSchemaFile",
+    "@odata.id": "/redfish/v1/JsonSchemas/NVMeDomainCollection",
+    "@odata.type": "#JsonSchemaFile.v1_0_2.JsonSchemaFile",
+    "Id": "NVMeDomainCollection",
+    "Description": "NVMeDomainCollection Schema File Location",
+    "Name": "NVMeDomainCollection Schema File",
+    "Languages": [
+        "en"
+    ],
+    "Schema": "#NVMeDomainCollection.NVMeDomainCollection",
+    "Location": [
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/Schemas/NVMeDomainCollection.json",
+            "PublicationUri": "http://redfish.dmtf.org/schemas/swordfish/v1/NVMeDomainCollection.json"
+        }
+    ]
+}

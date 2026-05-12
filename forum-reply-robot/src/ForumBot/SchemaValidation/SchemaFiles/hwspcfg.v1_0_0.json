@@ -1,0 +1,22 @@
+{
+    "@odata.context": "/redfish/v1/$metadata#JsonSchemaFile.JsonSchemaFile",
+    "@odata.id": "/redfish/v1/JsonSchemas/HwSPCfg.v1_0_0",
+    "@odata.type": "#JsonSchemaFile.v1_0_2.JsonSchemaFile",
+    "Id": "HwSPCfg.v1_0_0",
+    "Description": "HwSPCfg Schema File Location",
+    "Name": "HwSPCfg Schema File",
+    "Languages": [
+        "en"
+    ],
+    "Schema": "#HwSPCfg.v1_0_0.HwSPCfg",
+    "Location": [
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/SchemaStore/en/HwSPCfg.v1_0_0.json"
+        },
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/Schemas/HwSPCfg.v1_0_0.json"
+        }
+    ]
+}

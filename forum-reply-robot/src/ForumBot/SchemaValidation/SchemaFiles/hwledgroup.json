@@ -1,0 +1,22 @@
+{
+    "@odata.context": "/redfish/v1/$metadata#JsonSchemaFile.JsonSchemaFile",
+    "@odata.id": "/redfish/v1/JsonSchemas/HwLedGroup",
+    "@odata.type": "#JsonSchemaFile.v1_0_2.JsonSchemaFile",
+    "Id": "HwLedGroup",
+    "Description": "HwLedGroup Schema File Location",
+    "Name": "HwLedGroup Schema File",
+    "Languages": [
+        "en"
+    ],
+    "Schema": "#HwLedGroup.HwLedGroup",
+    "Location": [
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/SchemaStore/en/HwLedGroup.json"
+        },
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/Schemas/HwLedGroup.json"
+        }
+    ]
+}

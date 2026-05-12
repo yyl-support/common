@@ -1,0 +1,22 @@
+{
+    "@odata.context": "/redfish/v1/$metadata#JsonSchemaFile.JsonSchemaFile",
+    "@odata.id": "/redfish/v1/JsonSchemas/HwPowerHistoryData",
+    "@odata.type": "#JsonSchemaFile.v1_0_2.JsonSchemaFile",
+    "Id": "HwPowerHistoryData",
+    "Description": "HwPowerHistoryData Schema File Location",
+    "Name": "HwPowerHistoryData Schema File",
+    "Languages": [
+        "en"
+    ],
+    "Schema": "#HwPowerHistoryData.HwPowerHistoryData",
+    "Location": [
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/SchemaStore/en/HwPowerHistoryData.json"
+        },
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/Schemas/HwPowerHistoryData.json"
+        }
+    ]
+}

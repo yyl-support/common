@@ -1,0 +1,22 @@
+{
+    "@odata.context": "/redfish/v1/$metadata#JsonSchemaFile.JsonSchemaFile",
+    "@odata.id": "/redfish/v1/JsonSchemas/openUBMCDiceCert",
+    "@odata.type": "#JsonSchemaFile.v1_0_2.JsonSchemaFile",
+    "Id": "openUBMCDiceCert",
+    "Description": "openUBMCDiceCert Schema File Location",
+    "Name": "openUBMCDiceCert Schema File",
+    "Languages": [
+        "en"
+    ],
+    "Schema": "#openUBMCDiceCert.openUBMCDiceCert",
+    "Location": [
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/SchemaStore/en/openUBMCDiceCert.json"
+        },
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/Schemas/openUBMCDiceCert.json"
+        }
+    ]
+}

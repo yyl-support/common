@@ -1,0 +1,24 @@
+{
+    "@odata.context": "/redfish/v1/$metadata#JsonSchemaFile.JsonSchemaFile",
+    "@odata.id": "/redfish/v1/JsonSchemas/LeakDetection.v1_0_0",
+    "@odata.type": "#JsonSchemaFile.v1_0_2.JsonSchemaFile",
+    "Id": "LeakDetection.v1_0_0",
+    "Description": "LeakDetection Schema File Location",
+    "Name": "LeakDetection Schema File",
+    "Languages": [
+        "en"
+    ],
+    "Schema": "#LeakDetection.v1_0_0.LeakDetection",
+    "Location": [
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/SchemaStore/en/LeakDetection.v1_0_0.json",
+            "PublicationUri": "http://redfish.dmtf.org/schemas/v1/LeakDetection.v1_0_0.json"
+        },
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/Schemas/LeakDetection.v1_0_0.json",
+            "PublicationUri": "http://redfish.dmtf.org/schemas/v1/LeakDetection.v1_0_0.json"
+        }
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "@odata.context": "/redfish/v1/$metadata#JsonSchemaFile.JsonSchemaFile",
+    "@odata.id": "/redfish/v1/JsonSchemas/EndpointCollection",
+    "@odata.type": "#JsonSchemaFile.v1_0_2.JsonSchemaFile",
+    "Id": "EndpointCollection",
+    "Description": "EndpointCollection Schema File Location",
+    "Name": "EndpointCollection Schema File",
+    "Languages": [
+        "en"
+    ],
+    "Schema": "#EndpointCollection.EndpointCollection",
+    "Location": [
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/SchemaStore/en/EndpointCollection.json",
+            "PublicationUri": "http://redfish.dmtf.org/schemas/v1/EndpointCollection.json"
+        },
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/Schemas/EndpointCollection.json",
+            "PublicationUri": "http://redfish.dmtf.org/schemas/v1/EndpointCollection.json"
+        }
+    ]
+}

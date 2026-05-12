@@ -1,0 +1,24 @@
+{
+    "@odata.context": "/redfish/v1/$metadata#JsonSchemaFile.JsonSchemaFile",
+    "@odata.id": "/redfish/v1/JsonSchemas/TrustedComponent",
+    "@odata.type": "#JsonSchemaFile.v1_0_2.JsonSchemaFile",
+    "Id": "TrustedComponent",
+    "Description": "TrustedComponent Schema File Location",
+    "Name": "TrustedComponent Schema File",
+    "Languages": [
+        "en"
+    ],
+    "Schema": "#TrustedComponent.TrustedComponent",
+    "Location": [
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/SchemaStore/en/TrustedComponent.json",
+            "PublicationUri": "http://redfish.dmtf.org/schemas/v1/TrustedComponent.json"
+        },
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/Schemas/TrustedComponent.json",
+            "PublicationUri": "http://redfish.dmtf.org/schemas/v1/TrustedComponent.json"
+        }
+    ]
+}

@@ -1,0 +1,19 @@
+{
+    "@odata.context": "/redfish/v1/$metadata#JsonSchemaFile.JsonSchemaFile",
+    "@odata.id": "/redfish/v1/JsonSchemas/ResolutionStep.v1_0_1",
+    "@odata.type": "#JsonSchemaFile.v1_0_2.JsonSchemaFile",
+    "Id": "ResolutionStep.v1_0_1",
+    "Description": "ResolutionStep Schema File Location",
+    "Name": "ResolutionStep Schema File",
+    "Languages": [
+        "en"
+    ],
+    "Schema": "#ResolutionStep.v1_0_1.ResolutionStep",
+    "Location": [
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/Schemas/ResolutionStep.v1_0_1.json",
+            "PublicationUri": "http://redfish.dmtf.org/schemas/v1/ResolutionStep.v1_0_1.json"
+        }
+    ]
+}

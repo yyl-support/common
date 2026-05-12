@@ -1,0 +1,24 @@
+{
+    "@odata.context": "/redfish/v1/$metadata#JsonSchemaFile.JsonSchemaFile",
+    "@odata.id": "/redfish/v1/JsonSchemas/TelemetryService",
+    "@odata.type": "#JsonSchemaFile.v1_0_2.JsonSchemaFile",
+    "Id": "TelemetryService",
+    "Description": "TelemetryService Schema File Location",
+    "Name": "TelemetryService Schema File",
+    "Languages": [
+        "en"
+    ],
+    "Schema": "#TelemetryService.TelemetryService",
+    "Location": [
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/SchemaStore/en/TelemetryService.json",
+            "PublicationUri": "http://redfish.dmtf.org/schemas/v1/TelemetryService.json"
+        },
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/Schemas/TelemetryService.json",
+            "PublicationUri": "http://redfish.dmtf.org/schemas/v1/TelemetryService.json"
+        }
+    ]
+}

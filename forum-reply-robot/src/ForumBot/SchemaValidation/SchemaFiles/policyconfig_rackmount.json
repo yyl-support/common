@@ -1,0 +1,22 @@
+{
+    "@odata.context": "/redfish/v1/$metadata#JsonSchemaFile.JsonSchemaFile",
+    "@odata.id": "/redfish/v1/JsonSchemas/PolicyConfig",
+    "@odata.type": "#JsonSchemaFile.v1_0_2.JsonSchemaFile",
+    "Id": "PolicyConfig",
+    "Description": "PolicyConfig Schema File Location",
+    "Name": "PolicyConfig Schema File",
+    "Languages": [
+        "en"
+    ],
+    "Schema": "#PolicyConfig.PolicyConfig",
+    "Location": [
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/SchemaStore/en/PolicyConfig.json"
+        },
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/Schemas/PolicyConfig.json"
+        }
+    ]
+}

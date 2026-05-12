@@ -1,0 +1,22 @@
+{
+    "@odata.context": "/redfish/v1/$metadata#JsonSchemaFile.JsonSchemaFile",
+    "@odata.id": "/redfish/v1/JsonSchemas/openUBMCResource.v1_0_0",
+    "@odata.type": "#JsonSchemaFile.v1_0_2.JsonSchemaFile",
+    "Id": "openUBMCResource.v1_0_0",
+    "Description": "openUBMCResource Schema File Location",
+    "Name": "openUBMCResource Schema File",
+    "Languages": [
+        "en"
+    ],
+    "Schema": "#openUBMCResource.v1_0_0.openUBMCResource",
+    "Location": [
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/SchemaStore/en/openUBMCResource.v1_0_0.json"
+        },
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/Schemas/openUBMCResource.v1_0_0.json"
+        }
+    ]
+}

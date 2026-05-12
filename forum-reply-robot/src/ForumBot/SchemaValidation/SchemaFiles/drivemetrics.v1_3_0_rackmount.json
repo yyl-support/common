@@ -1,0 +1,24 @@
+{
+    "@odata.context": "/redfish/v1/$metadata#JsonSchemaFile.JsonSchemaFile",
+    "@odata.id": "/redfish/v1/JsonSchemas/DriveMetrics.v1_3_0",
+    "@odata.type": "#JsonSchemaFile.v1_0_2.JsonSchemaFile",
+    "Id": "DriveMetrics.v1_3_0",
+    "Description": "DriveMetrics Schema File Location",
+    "Name": "DriveMetrics Schema File",
+    "Languages": [
+        "en"
+    ],
+    "Schema": "#DriveMetrics.v1_3_0.DriveMetrics",
+    "Location": [
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/SchemaStore/en/DriveMetrics.v1_3_0.json",
+            "PublicationUri": "http://redfish.dmtf.org/schemas/v1/DriveMetrics.v1_3_0.json"
+        },
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/Schemas/DriveMetrics.v1_3_0.json",
+            "PublicationUri": "http://redfish.dmtf.org/schemas/v1/DriveMetrics.v1_3_0.json"
+        }
+    ]
+}

@@ -1,0 +1,100 @@
+{
+  "topic_id": 29523,
+  "search_keyword": "请介绍一下欧拉社区",
+  "search_timestamp": "20260508_181122",
+  "total_results": 10,
+  "displayed_results": 10,
+  "results": [
+    {
+      "path": "zh/blog/20230118-liufushou/liufushou",
+      "score": 1.26,
+      "recallType": "G",
+      "textContent": "Jan 18, 2023 ... 我们很荣幸邀请到获得“欧拉之星”个人奖的刘福寿同学，分享他在社区的工作与成长，为我们介绍如何更深入地参加到社区贡献当中。 请简单的介绍一下自己​.",
+      "title": "专访|openEuler社区刘福寿",
+      "type": "blog",
+      "lang": "zh"
+    },
+    {
+      "path": "zh/blog/20230118-xiasenlin/xiasenlin",
+      "score": 1.186945025404881,
+      "recallType": "G",
+      "textContent": "Jan 18, 2023 ... 我们很荣幸邀请到获得“欧拉之星”个人奖的夏森林老师，分享他在社区的工作与成长，为我们介绍如何更深入地参加到社区贡献当中。 请简单的介绍一下自己​.",
+      "title": "专访|openEuler社区夏森林",
+      "type": "blog",
+      "lang": "zh"
+    },
+    {
+      "path": "https://www.openeuler.org/zh/",
+      "score": 0.6000000000000001,
+      "recallType": "G",
+      "textContent": "openEuler是一个开源、免费的Linux 发行版平台，通过开放的形式与全球的开发者共同构建一个开放、多元和架构包容的软件生态体系。openEuler是一个创新的平台， ...",
+      "title": "openEuler | 开源社区官网",
+      "type": "other",
+      "lang": "zh"
+    },
+    {
+      "path": "zh/blog/myeuler/2020-5-13-openEuler-Travel",
+      "score": 0.5550013561324308,
+      "recallType": "G",
+      "textContent": "May 12, 2020 ... 虽然这很大程度是我们码农的现状，但是我还是建议大家认真阅读一下协议，了解一下权益范围并没有坏处。 我们是开源的​. openEuler社区原则上只接受开源协议 ...",
+      "title": "openEuler社区参与之旅",
+      "type": "blog",
+      "lang": "zh"
+    },
+    {
+      "path": "https://www.openeuler.org/zh/other/brand/",
+      "score": 0.55,
+      "recallType": "G",
+      "textContent": "开放原子开源欧拉（“OpenAtom openEuler”，简称“开源欧拉”或“openEuler”）是由开放原子开源基金会孵化的开源操作系统项目，面向数字基础设施四大核心场景（服务器、云计算、 ...",
+      "title": "openEuler 品牌介绍| 其他信息",
+      "type": "other",
+      "lang": "zh"
+    },
+    {
+      "path": "zh/blog/03-DeepSeek2/2",
+      "score": 0.45,
+      "recallType": "G",
+      "textContent": "Feb 13, 2025 ... ... 请介绍一下开源操作系统openEuler\"}] }'. 问答效果展示：. { \"id ... 听起来这个名字和欧拉有关,所以我猜它可能和科学计算相关。根据我的了解,开源 ...",
+      "title": "DeepSeek专栏2：vLLM 部署指南（鲲鹏+NVIDIA） ",
+      "type": "blog",
+      "lang": "zh"
+    },
+    {
+      "path": "zh/blog/woqidaideshi/2020-05-25-raspberrypi-userguide",
+      "score": 0.4,
+      "recallType": "G",
+      "textContent": "May 25, 2020 ... 下面我们以Windows 环境为例，介绍如何将镜像刷写到SD 卡。 格式化SD 卡​. 请按照以下步骤格式化SD 卡：. 下载并安装格式化SD 卡工具，以下 ...",
+      "title": "openEuler 跑到树莓派上",
+      "type": "blog",
+      "lang": "zh"
+    },
+    {
+      "path": "https://www.openeuler.org/zh/community/contribution/detail.html",
+      "score": 0.35,
+      "recallType": "G",
+      "textContent": "阅读这篇完整指南，快速了解参与openEuler社区贡献全流程。我们将介绍关于社区贡献的完整流程，包括签署CLA、项目体验、提交issue、提交pr、代码贡献、活动申请、开源 ...",
+      "title": "贡献攻略- openEuler社区",
+      "type": "other",
+      "lang": "zh"
+    },
+    {
+      "path": "https://build.openeuler.org/",
+      "score": 0.3456,
+      "recallType": "E",
+      "secondaryTitle": "",
+      "textContent": "",
+      "title": "社区OBS",
+      "lang": "zh",
+      "type": "service"
+    },
+    {
+      "path": "zh/blog/2022-11-25-cla/CLA%E7%AD%BE%E7%BD%B2%E6%B5%81%E7%A8%8B",
+      "score": 0.3,
+      "recallType": "G",
+      "textContent": "Nov 24, 2022 ... 2.3 公司邮箱会收到一封带有PDF 附件的邮件，PDF 的内容包含了之前2.2 步骤签署的CLA 内容，请打印PDF 文件并加盖公司公章。 images. 企业收到CLA文件签名 ...",
+      "title": "企业签署CLA ，正式加入openEuler 社区的流程",
+      "type": "blog",
+      "lang": "zh"
+    }
+  ]
+}

@@ -1,0 +1,1627 @@
+id,title,user_question,best_answer,tags,replies,created_at,llm_answer,summary_question
+29437,【待评审】新增定制化项支持VNC最大会话数定制,"背景
+当前VNC支持最大会话数固定为5，且不可修改，不符合部分厂商规格要求。需要新增定制化项，支持装备定制阶段修改VNC最大会话数
+评审点1：新增配置导入导出项
+新增配置导入导出项：VNC最大会话个数
+项目
+值
+导入导出项
+Session
+导入导出子项
+VNCSessionMaxCount
+含义说明
+最大支持几个VNC会话
+取值类型
+integer
+导入默认设置
+5
+属性类型
+ImportAndExport
+备注
+新增导入导出项
+评审点2： 新增定制化项
+新增定制化项：新增定制化项BMCSet_VNCMaxConcurrentSessions，支持VNC最大会话数定制
+详细描述
+项目
+值
+定制化项
+VNC最大会话个数
+定制化接口名称
+BMCSet_VNCMaxConcurrentSessions
+取值类型
+integer
+默认值
+5
+取值范围
+BMCSet_VNCMaxConcurrentSessions>= 1 and BMCSet_VNCMaxConcurrentSessions<= 5
+处理逻辑
+if(BMCSet_VNCMaxConcurrentSessions== 空)         设置 VNC最大会话数 为默认值 else        设置 VNC最大会话数 为 BMCSet_VNCMaxConcurrentSessions的值
+说明
+允许的VNC最大会话个数
+评审结论
+同意新增装备定制化项BMCSet_VNCMaxConcurrentSessions，支持定制最大VNC会话个数
+遗留问题
+和其他类型会话个数定制化项的命名需要归一
+BMCSet_VNCMaxConcurrentSessions定制的值，不允许小于BMCSet_VNCReadOnlySessionStartIndex定制的值
+是否准备好AI预审
+是
+来源帖子: 【待评审】新增定制化项支持VNC最大会话数定制",,,[],2026-04-22T07:30:28.244Z,,
+29435,【待评审】新增资源协作接口用于承载硬盘和电源颗粒厂商和型号,"背景
+某客户需要北向redfish接口获取电源芯片厂商、电源芯片型号、硬盘控制器厂商、硬盘控制器型号、硬盘NAND颗粒厂商、硬盘NAND颗粒型号，当前无相应资源协作接口属性进行承载，需要新增硬盘及电源的资源协作接口用于承载颗粒厂商和型号
+关联ISSUE
+暂无
+整体方案
+新增资源协作接口属性，BMC启动时获取电源芯片厂商和电源芯片型号，将获取数据刷新到资源协作接口上，供北向查询使用；
+新增资源协作接口属性，获取硬盘控制器厂商、硬盘控制器型号、硬盘NAND颗粒厂商和硬盘NAND颗粒型号，将数据刷新到资源协作接口上，供北向查询使用。
+评审点
+变更资源协作接口 bmc.kepler.Systems.PowerMgmt.OnePower，新增电源芯片厂商和电源芯片型号属性；
+变更资源协作接口 bmc.kepler.Systems.Storage.Drive，新增硬盘控制器厂商、硬盘控制器型号、硬盘NAND颗粒厂商和硬盘NAND颗粒型号属性。
+详细描述
+评审点1：变更资源协作接口 bmc.kepler.Systems.PowerMgmt.OnePower
+变更描述：接口承载了电源的基本信息，新增属性同属于该信息的一部分
+接口链接：bmc.kepler.Systems.PowerMgmt.OnePower
+变更类型
+属性名称
+签名
+只读
+变化通知
+属性描述
+访问权限
+属性来源
+持久化类型
+变更影响
+新增
+ChipManufacturer
+s
+True
+false
+电源芯片厂商
+Read: ReadOnly
+带外获取
+不持久化
+无影响
+新增
+ChipModel
+s
+True
+false
+电源芯片型号
+Read: ReadOnly
+带外获取
+不持久化
+无影响
+评审点2：变更资源协作接口 bmc.kepler.Systems.Storage.Drive
+变更描述：接口承载了硬盘的基本信息，新增属性同属于该信息的一部分
+接口链接：bmc.kepler.Systems.Storage.Drive
+变更类型
+属性名称
+签名
+只读
+变化通知
+属性描述
+访问权限
+属性来源
+持久化类型
+变更影响
+新增
+ControllerManufacturer
+s
+True
+false
+硬盘控制器厂商
+Read: ReadOnly
+带外获取
+不持久化
+无影响
+新增
+ControllerModel
+s
+True
+false
+硬盘控制器型号
+Read: ReadOnly
+带外获取
+不持久化
+无影响
+新增
+NandFlashManufacturer
+s
+True
+false
+硬盘NAND颗粒厂商
+Read: ReadOnly
+带外获取
+不持久化
+无影响
+新增
+NandFlashModel
+s
+True
+false
+硬盘NAND颗粒型号
+Read: ReadOnly
+带外获取
+不持久化
+无影响
+评审结论
+评审点1：通过
+1.同意在资源协作接口bmc.kepler.Systems.PowerMgmt.OnePower新增属性ChipManufacturer，签名为s，不持久化，不发送变更通知事件
+2.同意在资源协作接口bmc.kepler.Systems.PowerMgmt.OnePower新增属性ChipModel，签名为s，不持久化，不发送变更通知事件
+评审点2：通过
+1.同意在资源协作接口bmc.kepler.Systems.Storage.Drive新增属性ControllerManufacturer，签名为s，不持久化，不发送变更通知事件
+2.同意在资源协作接口bmc.kepler.Systems.Storage.Drive新增属性ControllerModel，签名为s，不持久化，不发送变更通知事件
+3.同意在资源协作接口bmc.kepler.Systems.Storage.Drive新增属性NandFlashManufacturer，签名为s，不持久化，不发送变更通知事件
+4.同意在资源协作接口bmc.kepler.Systems.Storage.Drive新增属性NandFlashModel，签名为s，不持久化，不发送变更通知事件
+遗留问题
+（可选）列出评审会议现场无法直接给出明确结论的事务，会后确认清楚之后要在此处录入明确的结论，如不涉及，则可以写无或删除此部分。参考格式如下：（提交议题时删除此引导说明）
+1、需要确认XXX
+结论：
+是否准备好AI预审
+是
+来源帖子: 【待评审】新增资源协作接口用于承载硬盘和电源颗粒厂商和型号",,,[],2026-04-22T06:30:18.673Z,,
+29434,【待评审】支持RAID卡动态配置最大启动盘数量,"背景
+自研1880 RAID卡YX1断供，需要紧急适配YX4颗粒的1880 RAID；同时RAID FW固件版本由1.x更新至2.x，固件升级带来的影响就是支持新的特性，即支持对启动盘；启动盘规格变更，1.x版本支持1个启动盘配置，2.x版本支持5个启动盘配置。
+关联ISSUE
+https://gitcode.com/openUBMC/storage/issues/295
+整体方案
+在资源协作接口bmc.kepler.Systems.Storage.Controller下新增SupportedBootDeviceCount属性表示当前raid卡固件版本支持的最大启动盘数量
+方案一
+维持资源协作接口bmc.kepler.Systems.Storage.Controller下的SetBootDevices方法不变，北向接口多次调用SetBootDevices方法
+方案二
+变更资源协作接口bmc.kepler.Systems.Storage.Controller下的SetBootDevices方法，改为支持传入可变数组
+方案三
+变更资源协作接口bmc.kepler.Systems.Storage.Controller下的SetBootDevices方法，入参改为5个
+评审点
+1、资源协作接口bmc.kepler.Systems.Storage.Controller下新增SupportedBootDeviceCount属性
+2、变更资源协作接口bmc.kepler.Systems.Storage.Controller下SetBootDevices方法
+详细描述
+变更资源协作接口bmc.kepler.Systems.Storage.Controller
+变更描述 ：接口承载了RAID卡的相关功能，新增属性属于RAID卡功能的一部分
+评审点1：变更属性
+变更类型
+属性名称
+签名
+只读
+变化通知
+属性描述
+|
+访问权限
+属性来源
+持久化类型
+变更影响
+新增
+SupportedBootDeviceCount
+y
+True
+false
+表示RAID卡支持的启动盘数量
+Read: ReadOnly
+不持久化
+无影响
+评审点2：变更方法
+方案一：方法不变更，北向多次调用
+方案二：入参改为可变数组
+变更类型
+方法名称
+请求签名
+请求参数描述
+响应签名
+响应参数描述
+方法描述
+|
+访问权限
+变更影响
+变更
+SetBootDevices
+as
+Param1: 逻辑盘或物理硬盘，用于设置该盘为启动盘
+批量设置启动盘
+UserMgmt
+变更方法导致原有接口的调用方式失效
+方案三：入参固定为五个对象
+变更类型
+方法名称
+请求签名
+请求参数描述
+响应签名
+响应参数描述
+方法描述
+|
+访问权限
+变更影响
+变更
+SetBootDevices
+sssss
+Param1: 逻辑盘或物理硬盘，用于设置该盘为启动盘
+批量设置启动盘
+UserMgmt
+变更方法可以兼容原有方法
+是否准备好AI预审
+是
+评审结论
+遗留问题
+是否准备好AI预审
+是
+来源帖子: 【待评审】支持RAID卡动态配置最大启动盘数量",,,[],2026-04-22T06:30:16.493Z,,
+29433,【待评审】新增定制化项支持多网口网络配置信息,"背景
+1.IPV6的使用越来越广泛，很多客户都要求出厂定制IPV6的静态地址，目前BMC不支持。只支持IPV4的静态定制。
+2.目前只有单网口的网络配置定制化项，缺少多网口的定制化项。
+评审点
+增加定制化项，在出厂配置时按照诉求进行定制，默认或者空定制化时不进行处理。
+BMCSet_EthGroup{i}Ports
+BMCSet_EthGroup{i}NetMode
+BMCSet_EthGroup{i}Ipv4DHCPMode
+BMCSet_EthGroup{i}Ipv4Addr
+BMCSet_EthGroup{i}Ipv4Gateway
+BMCSet_EthGroup{i}Ipv6DHCPMode
+BMCSet_EthGroup{i}Ipv6Addr
+BMCSet_EthGroup{i}Ipv6Gateway
+BMCSet_EthGroup${i}IPVersion
+详细描述
+评审点：新增网络配置定制化项
+定制化项名称
+定制化项
+取值类型
+取值说明
+默认值
+EthGroup${i}关联网口
+BMCSet_EthGroup${i}Ports
+string
+eth0~eth3中的0~4个进行组合，用逗号分隔例如：“”, “eth0”, “eth2,eth3”
+“”
+EthGroup${i}对外网口模式
+BMCSet_EthGroup${i}NetMode
+string
+“fixed”: 固定模式“auto”: 自适应模式
+“auto”
+EthGroup${i}IPv4是否开启DHCP
+BMCSet_EthGroup${i}Ipv4DHCPMode
+string
+“on”: IPv4地址获取模式为DHCP“off”: IPv4地址获取模式为Static
+“on”
+EthGroup${i}IPv4静态IP地址
+BMCSet_EthGroup${i}Ipv4Addr
+string
+IPv4地址，含掩码例如：“192.168.2.100/24”
+“”
+EthGroup${i}IPv4网关
+BMCSet_EthGroup${i}Ipv4Gateway
+string
+IPv4地址例如：“192.168.2.1”
+“”
+EthGroup${i}IPv6是否开启DHCP
+BMCSet_EthGroup${i}Ipv6DHCPMode
+string
+“on”: IPv6地址获取模式为DHCP“off”: IPv6地址获取模式为Static
+“on”
+EthGroup${i}IPv6静态IP地址
+BMCSet_EthGroup${i}Ipv6Addr
+string
+IPv6地址，含前缀例如：“fec::80/64”
+“”
+EthGroup${i}IPv6网关
+BMCSet_EthGroup${i}Ipv6Gateway
+string
+IPv6地址例如：“fec::1/64”
+“”
+EthGroup${i}IP协议版本
+BMCSet_EthGroup${i}IPVersion
+string
+“IPv4AndIPv6”, “IPv4”, “IPv6”
+“IPv4AndIPv6”
+处理逻辑：
+if (BMCSet_EthGroup${i}Ports为空)
+    网口组i不生效
+else
+    if (BMCSet_EthGroup${i}NetMode为空)
+        网口组i的对外网口模式设置为自适应模式
+    else
+        根据BMCSet_EthGroup${i}NetMode的值设置网口组i的对外网口模式
+if (BMCSet_EthGroup${i}IPVersion为空)
+    网口组i的IP协议版本为IPv4AndIPv6
+else
+    根据BMCSet_EthGroup${i}IPVersion的值设置网口组i的IP协议版本
+if (BMCSet_EthGroup${i}NetMode == ""fixed"")
+    网口组i的指定管理网口设置为BMCSet_EthGroup${i}Ports中的第1个
+if (BMCSet_EthGroup${i}Ipv4DHCPMode为空)
+    网口组i的IPv4开启DHCP
+else
+    根据BMCSet_EthGroup${i}Ipv4DHCPMode的值设置网口组i的IPv4是否开启DHCP
+if (BMCSet_EthGroup${i}Ipv4DHCPMode == ""off"")
+    if (BMCSet_EthGroup${i}Ipv4Addr为空)
+        无动作
+    else
+        根据BMCSet_EthGroup${i}Ipv4Addr的值设置网口组i的IPv4静态IP地址和掩码
+    if (BMCSet_EthGroup${i}Ipv4Gateway为空)
+        无动作
+    else
+        根据BMCSet_EthGroup${i}Ipv4Gateway的值设置网口组i的IPv4网关
+if (BMCSet_EthGroup${i}Ipv6DHCPMode为空)
+    网口组i的IPv6开启DHCP
+else
+    根据BMCSet_EthGroup${i}Ipv6DHCPMode的值设置网口组i的IPv6是否开启DHCP
+if (BMCSet_EthGroup${i}Ipv6DHCPMode == ""off"")
+    if (BMCSet_EthGroup${i}Ipv6Addr为空)
+        无动作
+    else
+        根据BMCSet_EthGroup${i}Ipv6Addr的值设置网口组i的IPv6静态IP地址和前缀
+    if (BMCSet_EthGroup${i}Ipv6Gateway为空)
+        无动作
+    else
+        根据BMCSet_EthGroup${i}Ipv6Gateway的值设置网口组i的IPv6网关
+评审结论
+遗留问题
+是否准备好AI预审
+是
+来源帖子: 【待评审】新增定制化项支持多网口网络配置信息",,,[],2026-04-22T06:00:11.865Z,,
+29432,【待评审】新增资源协作接口属性，支持EthGroup显示BFD检测结果,"背景
+某机型需要内网的EthGroup支持配置是否使能BFD检测能力，并支持BFD检测结果上树；
+评审点
+新增资源协作接口属性，支持EthGroup显示BFD检测结果
+详细描述
+评审点1：新增资源协作接口属性BFDStatus
+资源协作接口bmc.kepler.Managers.EthernetInterfaces.EthGroup下新增属性BFDStatus，用以标识BFD检测结果
+资源path：/bmc/kepler/Managers/:ManagerId/EthernetInterfaces/EthGroup/${Id}
+资源interface：bmc.kepler.Managers.EthernetInterfaces.EthGroup
+变化类型： 新增资源协作接口属性
+新增属性：
+属性名称
+签名
+只读
+变化通知
+属性描述
+取值范围
+访问权限
+属性来源
+持久化类型
+易变属性
+BFDStatus
+y
+true
+true
+属性描述：BFD检测结果
+0:不连通  1：连通  255：默认
+R：ReadOnly
+内部BFD检测
+无需持久化
+false
+评审结论
+遗留问题
+是否准备好AI预审
+是
+来源帖子: 【待评审】新增资源协作接口属性，支持EthGroup显示BFD检测结果",,,[],2026-04-22T06:00:10.322Z,,
+29431,【待评审】拓展ipmi及cli接口支持BIOS兼容性配置导入,"背景
+针对现有流程中厂商定制频繁（涉及DIMM、DRAM、NVMe、TPM、OS、Flash、SATA等，多为字符串修改且不影响功能）但需经华为BIOS重新发版导致的周期长、成本高痛点，客户诉求BMC侧新增BIOS兼容性配置文件导入与传递接口。该功能旨在让客户直接上传定制化配置，绕过冗长的BIOS版本迭代流程，从而缩短兼容性验证周期，降低研发与交付成本，快速响应市场需求。
+关联ISSUE
+暂无
+整体方案
+扩展ipmi接口命令字用于与BIOS交互传递配置文件内容。
+新增Cli接口用于BIOS配置文件的导入、保存。
+评审点
+扩展IPMI 接口，用于传递 BIOS 兼容性配置文件。
+详细描述
+评审点1： IPMI 新增File Selector类型，30h表示获取BIOS兼容性配置文件
+命令名称： Read File From BMC
+命令说明： BIOS从BMC读取批量配置数据（BT超长帧）。
+命令权限： ReadOnly
+是否锁定之后可以访问： 是
+是否有敏感数据： 否
+命令样式：
+● 请求：ipmitool raw 0x30 0x92 0xdb 0x07 0x00 0x0a 0x00 < file_selector > < operation > < offset > < lens >
+● 响应： 
+命令请求参数：
+字节顺序
+域取值说明
+NetFn
+30h
+Cmd
+92h
+1:3
+Manufacturer ID，LB Byte first。长度固定 3 个字节，例如，某厂家ID时 2011，对应十六进制为0x0007DB，则字节序为第1个字节为 DBh，第二个字节为 07h，第三个字节为 00h。
+4
+SubCmd，固定为 0Ah
+5
+BIOS ID：预留给多host场景，单host场景固定填0
+6
+File Selector
+00h-Display.ini
+01h-Options.ini
+2Ah-silkconfig.json
+2Bh-new_secureboot.json
+2Fh-电源信息查询，PsuInfo.json
+30h-bios配置文件,biosconfig.json
+other-Reserved
+备注：File Selector分配表参见表14-8的文件编码。
+7
+Operation：
+00h Read Prepare
+01h Read Data
+03h Read Finish
+(8:11)
+Offset to Read，LSB First
+数据段相对于File开始位置的偏移。
+说明：本字段可选，仅当Operation为Read Data时需要提供本字段。
+(12)
+Read Length
+说明：本字段可选，仅当Operation为Read Data时需要提供本字段。
+命令响应参数：
+字节顺序
+域取值说明
+1
+Completion Code
+00h Command Completed Normally
+80h Operation In Progress
+当Prepare数据好没准备好时需要返回该错误码。
+此时发起端应该再次发起Prepare操作，直到返回00h完成码为止。
+D5h Invalid Status
+2:4
+Manufacturer ID，LB Byte first。长度固定 3 个字节，例如，某厂家ID时 2011，对应十六进制为0x0007DB，则字节序为第1个字节为 DBh，第二个字节为 07h，第三个字节为 00h。
+5
+7:1-Reserved
+1 - No More Data Flag
+00h Still have data
+01h No More Data
+6
+当Operation为Read Data时：File data最后1个字节为本段数据5:N-1的累加和。当Operation为Read Finish时：只有1个字节，返回本文件的累加和。约束条件为：总的IPMI命令长度不能超过254字节，也就是n不大于247（不包含checksum校验）
+命令示例：
+样例1：读取BIOS配置文件内容
+1、Read Prepare
+● 请求：ipmitool raw 0x30 0x92 0xdb 0x07 0x00 0x0a 0x00 0x30 0x00
+● 响应：db 07 00 00 07(data len) 00 00 00
+2、Read Data
+● 请求：ipmitool raw 0x30 0x92 0xdb 0x07 0x00 0x0a 0x00 0x30 0x01 0x00 0x00 0x00 0x00 0x07
+● 响应：db 07 00 00
+3、Read Finish
+● 请求：ipmitool raw 0x30 0x92 0xdb 0x07 0x00 0x0a 0x00 0x30 0x03
+● 响应：db 07 00 00
+评审点2：新增 -t maintenance系统命令dataitem类别
+使用说明：
+Usage：iBMC:/->ipmcset -t maintenance
+-d 
+biosconfig      Importing BIOS configuration file
+命令格式:
+iBMC:/->ipmcset -t maintenance -d biosconfig -v
+Usage: ipmcset -t maintenance -d biosconfig -v 
+Filepath    e.g.:/tmp/biosconfig.json
+回显内容：
+成功回显：
+iBMC:/->ipmcset -t maintenance -d biosconfig -v /tmp/ customconfig.json
+Importing configuration successfully.
+Reset OS for the BIOS config to take effect.
+失败回显：
+iBMC:/->ipmcset -t maintenance -d biosconfig -v /tmp/ customconfig.json
+Failed to importing the configuration.
+评审结论
+评审点1：通过
+同意IPMI 新增File Selector类型，30h表示获取BIOS兼容性配置文件
+评审点2：通过
+同意 新增 -t maintenance系统命令dataitem类别
+遗留问题
+（可选）列出评审会议现场无法直接给出明确结论的事务，会后确认清楚之后要在此处录入明确的结论，如不涉及，则可以写无或删除此部分。参考格式如下：（提交议题时删除此引导说明）
+1、需要确认XXX
+结论：
+是否准备好AI预审
+是
+来源帖子: 【待评审】拓展ipmi及cli接口支持BIOS兼容性配置导入",,,[],2026-04-22T05:30:05.789Z,,
+29429,【待评审】支持Fan相关资源适配,"背景
+（必选）从最终用户视角阐述当前有什么问题，包含问题的场景、影响点，以及当前系统的差距。（提交议题时删除此引导说明）
+支持Fan相关资源适配
+关联ISSUE
+（可选）此议题关联的代码仓的issue链接。（提交议题时删除此引导说明）
+整体方案
+（可选）简要描述此议题关联的整体方案，包括但不限于逻辑架构、组件依赖关系、交互上下文。（提交议题时删除此引导说明）
+评审点
+（必选）一句话概括描述待评审的内容。（提交议题时删除此引导说明）
+详细描述
+（必选）详细描述接口设计，多种备选设计时需要以表格的方式对比优缺点，包括但不限于可扩展性、可裁剪性、可维护性、性能等维度， 具体格式参考下面的场景。（提交议题时删除此引导说明）
+场景1：新增/变更redfish接口（URI，属性名称/类型/取值范围，Action名称/参数，权限，Message） >> 点击此处获取 Redfish 接口评审模板
+场景2：新增/变更webrest接口（URI，属性名称/类型/取值范围，Action名称/参数，权限，Message）
+场景3：新增/变更IPMI命令（命令字，请求/响应参数，权限，响应码） >> 点击此处获取 IPMI 接口评审模板
+场景4：新增/变更CLI命令（命令字，参数名称/类型/取值范围，权限，回显格式/内容）
+场景5：新增/变更SNMP接口（MIB OID名称/类型/取值范围，权限，响应码）
+场景6：新增/变更资源协作接口（path，interface，property，method，signal，错误消息） >> 点击此处获取资源协作接口评审模板
+场景7：新增/变更出厂定制化项、配置导入导出项（名称/类型/取值范围，默认处理）
+评审结论
+（必选）针对决策点，详细描述最终结论，不能是简单的同意或不同意，通过或不通过。（提交议题时删除此引导说明）
+正面示例：
+同意redfish接口/redfish/v1/XXXXX的GET操作响应体增加如下属性
+(详细描述属性名称、属性取值类型、取值范围、约束等)
+或
+不同意新增资源协作接口XXXXX
+或
+不同意资源协作接口XXX新增XX属性/方法
+反面示例：
+通过，同意新增接口
+遗留问题
+（可选）列出评审会议现场无法直接给出明确结论的事务，会后确认清楚之后要在此处录入明确的结论，如不涉及，则可以写无或删除此部分。参考格式如下：（提交议题时删除此引导说明）
+1、需要确认XXX
+结论：
+是否准备好AI预审
+是
+来源帖子: 【待评审】支持Fan相关资源适配",,,[],2026-04-22T05:30:02.580Z,,
+29428,【待评审】新增 MultipartUri 后缀定制化项和配置项,"背景
+前置评审
+
+【已评审】UpdateService 资源新增 MultipartHttp 方式 Interface评审
+背景
+客户的运维场景中使用 Redfish UpdateService 资源进行固件升级，固件升级时需要支持使用 MultipartHttpPushUri 属性明确升级的方法
+MultipartHttpPushUri 从 UpdateService 1.6.0 版本引入，在 Redfish 固件更新中相较于早期的 HttpPushUri 更清晰，行为更明确；从 openUBMC 生态角度来讲也建…
+本次增评
+当前 openUBMC 在处理带有 multipart/form-data 类型的 http 请求时，均需要通过手写的 Controller 进行处理（如果是定制的 URI 则需要单独定制 app 进行实现）
+当前 Redfish MultipartHttpPushUri 在实际使用过程中存在定制的场景，上次评审使用资源协作接口可写的属性进行定制，由于此种方式依赖定制 app 的设置，会有启动时序依赖；同时 Redfish Controller 中 URI 是启动之后不可动态更改的（路由机制），因此上述处理会存在定制失效的风险。
+关联ISSUE
+（可选）此议题关联的代码仓的issue链接。（提交议题时删除此引导说明）
+整体方案
+（可选）简要描述此议题关联的整体方案，包括但不限于逻辑架构、组件依赖关系、交互上下文。（提交议题时删除此引导说明）
+评审点
+（必选）一句话概括描述待评审的内容。（提交议题时删除此引导说明）
+详细描述
+（必选）详细描述接口设计，多种备选设计时需要以表格的方式对比优缺点，包括但不限于可扩展性、可裁剪性、可维护性、性能等维度， 具体格式参考下面的场景。（提交议题时删除此引导说明）
+场景1：新增/变更redfish接口（URI，属性名称/类型/取值范围，Action名称/参数，权限，Message） >> 点击此处获取 Redfish 接口评审模板
+场景2：新增/变更webrest接口（URI，属性名称/类型/取值范围，Action名称/参数，权限，Message）
+场景3：新增/变更IPMI命令（命令字，请求/响应参数，权限，响应码） >> 点击此处获取 IPMI 接口评审模板
+场景4：新增/变更CLI命令（命令字，参数名称/类型/取值范围，权限，回显格式/内容）
+场景5：新增/变更SNMP接口（MIB OID名称/类型/取值范围，权限，响应码）
+场景6：新增/变更资源协作接口（path，interface，property，method，signal，错误消息） >> 点击此处获取资源协作接口评审模板
+场景7：新增/变更出厂定制化项、配置导入导出项（名称/类型/取值范围，默认处理）
+评审结论
+（必选）针对决策点，详细描述最终结论，不能是简单的同意或不同意，通过或不通过。（提交议题时删除此引导说明）
+正面示例：
+同意redfish接口/redfish/v1/XXXXX的GET操作响应体增加如下属性
+(详细描述属性名称、属性取值类型、取值范围、约束等)
+或
+不同意新增资源协作接口XXXXX
+或
+不同意资源协作接口XXX新增XX属性/方法
+反面示例：
+通过，同意新增接口
+遗留问题
+（可选）列出评审会议现场无法直接给出明确结论的事务，会后确认清楚之后要在此处录入明确的结论，如不涉及，则可以写无或删除此部分。参考格式如下：（提交议题时删除此引导说明）
+1、需要确认XXX
+结论：
+是否准备好AI预审
+是
+来源帖子: 【待评审】新增 MultipartUri 后缀定制化项和配置项",,,[],2026-04-22T04:59:55.945Z,,
+29427,【待评审】新增资源协作接口属性，支持查询及配置内存故障预测规则,"背景
+为支持内存故障预测规则可配置，需要提供资源协作接口供查询及配置内存故障预测规则，配置内容包括时间阈值及次数阈值。
+关联ISSUE
+暂无issue
+整体方案
+新增资源树协作接口及接口下属性，承载内存故障预测规则名称、时间阈值及次数阈值。
+评审点
+新增资源树协作接口：bmc.kepler.Managers.FDMConfig.Memory
+接口下新增属性：CellFault、RowFault
+详细描述
+1. 新增资源协作接口及接口下属性
+path：/bmc/kepler/Managers/{ManagerId}/FDMConfig
+interface： bmc.kepler.Managers.FDMConfig.Memory（新增）
+变化类型：新增接口及接口下属性
+应用场景：查询及配置内存故障预测规则
+新增属性
+属性名称
+签名
+只读
+变化通知
+属性描述
+访问权限
+属性来源
+持久化类型
+易变属性
+CellFault
+a(suq)
+False
+true
+Cell故障各规则的规则名称、时间阈值（单位秒）、次数阈值默认值为[{“PolicyType”: “RepeatedCEInSameAddress”, “TimeThreshold”: 2592000, “CountThreshold”: 2}]TimeThreshold取值范围（0,2592000]；CountThreshold取值范围[2,9]
+Read: ReadOnlyWrite: DiagnoseMgmt
+软件
+掉电持久化
+false
+RowFault
+a(suq)
+False
+true
+Row故障各规则的规则名称、时间阈值（单位秒）、次数阈值默认值为[{“PolicyType”: “CENumberInSameRow”, “TimeThreshold”: 86400, “CountThreshold”: 2}, {“PolicyType”: “MultiBurst”, “TimeThreshold”: 1, “CountThreshold”: 2}]TimeThreshold取值范围（0,2592000]；CountThreshold取值范围[2,9]
+Read: ReadOnlyWrite: DiagnoseMgmt
+软件
+掉电持久化
+false
+评审结论
+遗留问题
+是否准备好AI预审
+是
+来源帖子: 【待评审】新增资源协作接口属性，支持查询及配置内存故障预测规则",,,[],2026-04-22T04:59:54.400Z,,
+29425,【待评审】资源协作接口NetworkPortMetrics新增属性,"背景
+根据标准Redfish接口要求需要新增RXBytes、TXBytes、RXErrors属性，需要再资源协作接口中新增RXBytes、TXBytes、RXErrors属性
+关联ISSUE
+无
+整体方案
+在资源协作接口对应的NetworkPort下Metrics接口中新增RXBytes、TXBytes、RXErrors属性
+评审点
+在资源协作接口对应的NetworkPort下Metrics接口中新增RXBytes、TXBytes、RXErrors属性
+详细描述
+评审点1：新增资源协作接口属性RXBytes、TXBytes、RXErrors
+资源协作接口：bmc.kepler.Systems.NetworkPort.Metrics下新增属性RXBytes、TXBytes、RXErrors
+资源path:/bmc/kepler/Systems/:SystemID/NetworkAdapters/:ID/Ports/[图片: 图像内容分析失败]
+资源interface：bmc.kepler.Systems.NetworkPort.Metrics
+新增属性
+属性名称
+签名
+只读
+变化通知
+属性描述
+访问权限
+属性来源
+持久化类型
+易变属性
+RXBytes
+t
+true
+false
+属性描述：端口收到的字节数
+R：ReadOnly
+各固件下游组件启动时注册
+无需持久化
+false
+TXBytes
+t
+true
+false
+属性描述：端口发送的字节数
+R：ReadOnly
+各固件下游组件启动时注册
+无需持久化
+false
+RXErrors
+t
+true
+false
+属性描述：端口收到的错包字节数
+R：ReadOnly
+各固件下游组件启动时注册
+无需持久化
+false
+评审结论
+遗留问题
+是否准备好AI预审
+是
+来源帖子: 【待评审】资源协作接口NetworkPortMetrics新增属性",,方案评审,[],2026-04-22T04:59:51.281Z,,
+29416,【待评审】整改network_adapter组件类型定义不合理的属性,"背景
+现状：当前network_adapter组件存在部分属性类型为bool，属性默认值只能为false或者true；
+问题场景：如果实际不支持获取相关属性或获取失败时显示为默认值，但实际值可能与默认值不一致，导致信息显示不准确；
+涉及属性：
+接口
+属性
+属性说明
+bmc.kepler.Systems.NetworkPort
+AutoConnectOnBoot
+开机是否自动启用网络连接
+bmc.kepler.Systems.NetworkPort.VLAN
+AutoConnectOnBoot
+开机是否自动启用网络连接
+bmc.kepler.Systems.OpticalModule
+RxLossState
+光模块接收端信号是否丢失
+bmc.kepler.Systems.OpticalModule
+TxLossState
+光模块发送端信号是否丢失
+bmc.kepler.Systems.OpticalModule
+TxFaultState
+光模块发送端是否故障
+bmc.kepler.Systems.OpticalModule
+TypeMatch
+光模块类型是否匹配
+bmc.kepler.Systems.OpticalModule
+SpeedMatch
+光模块速率是否匹配
+关联ISSUE
+[图片: 图像内容分析失败]
+  <a href=""https://gitcode.com/openUBMC/network_adapter/issues/294"" target=""_blank"" rel=""noopener nofollow ugc"">gitcode.com</a>
+[图片: 图像内容分析失败]
+AtomGit | GitCode - 全球开发者的开源社区,开源代码托管平台
+AtomGit | GitCode是面向全球开发者的开源社区,包括原创博客,开源代码托管,代码协作,项目管理等。与开发者社区互动,提升您的研发效率和质量。
+整体方案
+修改属性类型为U8（0-false ，1-true，255-默认值）如果正常获取到则根据实际情况赋值，如果未获取到则用255表示获取失败；
+评审点
+上述相关属性类型从bool变更为U8
+详细描述
+变更类型
+属性名称
+签名
+只读
+变化通知
+属性描述
+访问权限
+属性来源
+持久化类型
+变更影响
+变更
+AutoConnectOnBoot
+变更前：b变更后：y
+只读
+变化通知
+开机是否自动启用网络连接，0-否，1-是，255- 默认值
+ReadOnly
+NA
+NA
+需要对应修改北向接口的逻辑，涉及redfish接口
+变更
+RxLossState
+变更前：b变更后：y
+只读
+变化通知
+光模块接收端信号是否丢失，0-否，1-是，255- 默认值
+ReadOnly
+NA
+NA
+需要对应修改北向接口的逻辑，涉及redfish和web接口
+变更
+TxLossState
+变更前：b变更后：y
+只读
+变化通知
+光模块发送端信号是否丢失，0-否，1-是，255- 默认值
+ReadOnly
+NA
+NA
+NA
+变更
+TxFaultState
+变更前：b变更后：y
+只读
+变化通知
+光模块发送端是否故障，0-否，1-是，255- 默认值
+ReadOnly
+NA
+NA
+需要对应修改北向接口的逻辑，涉及redfish和web接口
+变更
+TypeMatch
+变更前：b变更后：y
+只读
+变化通知
+光模块类型是否匹配，0-否，1-是，255- 默认值
+ReadOnly
+NA
+NA
+NA
+变更
+SpeedMatch
+变更前：b变更后：y
+只读
+变化通知
+光模块速率是否匹配，0-否，1-是，255- 默认值
+ReadOnly
+NA
+NA
+NA
+是否准备好AI预审
+评审结论
+遗留问题
+是否准备好AI预审
+是
+来源帖子: 【待评审】整改network_adapter组件类型定义不合理的属性",,,[],2026-04-22T03:59:32.259Z,,
+29415,【待评审】支持部分安全定制化能力可通过导入导出配置,"背景
+BMC的客户配置恢复操作步骤多，方式不统一，繁琐且容易遗漏，需要支持现网场景BMC更换后的配置一键恢复能力。补齐部分仅装备定制化可配置的能力，提供配置导入导出能力。
+关联ISSUE
+[需求]: 补充安全能力客户定制化配置
+整体方案
+新增配置导入导出项，补全原有部分定制能力
+评审点
+1、新增配置导入导出项支持导入/导出用户首次登陆策略
+2、新增配置导入导出项支持导入/导出密码复杂度锁
+详细描述
+1、新增配置导入导出项支持导入/导出用户首次登陆策略
+配置项名称
+配置项类别
+配置项
+归属组件
+取值类型
+取值说明
+默认值
+导入导出类型
+说明
+用户首次登陆策略
+User
+FirstLoginPolicy
+account
+U8
+1：提示修改密码2：强制修改密码
+2
+ImportAndExport
+提示修改密码：用户未修改密码首次登陆时，仅提示进行修改密码，可跳过强制修改密码：用户未修改密码首次登陆时，强制要求修改密码，并使用初始密码二次认证
+配置项详情：
+{
+    ""ConfigData"": {
+        ""type"": ""object"",
+        ""properties"": {
+            ""User"": {
+                ""type"": ""array"",
+                ""items"": {
+                    ""type"": ""object"",
+                    ""properties"": {
+                        ""Id"": {
+                            ""type"": ""number"",
+                            ""AttributeType"": ""ImportAndExport""
+                        },
+                        ""UserName"": {
+                            ""type"": ""string"",
+                            ""AttributeType"": ""ImportAndExport"",
+                            ""maxLength"": 16,
+                            ""minLength"": 0
+                        },
+                        ""FirstLoginPolicy"": {
+                            ""type"": ""integer"",
+                            ""AttributeType"": ""ImportAndExport"",
+                            ""enum"": [1, 2]
+                        },
+                        ......(其它用户配置)
+                    },
+                    ""required"": [
+                        ""Id"",
+                        ""UserName""
+                    ]
+                }
+            }
+        }
+    }
+}
+2、新增配置导入导出项支持导入/导出密码复杂度锁
+装备定制密码复杂度使能时存在三种场景：
+① 关闭
+② 开启
+③ 永久开启，不可逆
+当设置①、②时，密码复杂度锁不会被设置，默认为false，代表密码复杂度使能后续可修改；
+当设置③时，密码复杂度使能被设为true，且密码复杂度锁被设为true，后续再次设置密码复杂度会被拦截。
+配置项名称
+配置项类别
+配置项
+归属组件
+取值类型
+取值说明
+默认值
+导入导出类型
+说明
+密码复杂度锁
+PasswdSetting
+PasswordComplexityLock
+account
+bool
+true：密码复杂度不可被设置false：密码复杂度可被设置
+false
+ImportAndExport
+仅允许由false设置为true，当前已经为true的场景下不可设置为false若PasswdSetting.PasswordComplexityLock设置为true，PasswdSetting.EnableStrongPassword不可设置为false
+配置项详情：
+{
+    ""ConfigData"": {
+        ""type"": ""object"",
+        ""properties"": {
+            ""PasswdSetting"": {
+                ""type"": ""object"",
+                ""properties"": {
+                    ""EnableStrongPassword"": {
+                        ""type"": ""boolean"",
+                        ""AttributeType"": ""ImportAndExport""
+                    },
+                    ""PasswordComplexityLock"": {
+                        ""type"": ""boolean"",
+                        ""AttributeType"": ""ImportAndExport""
+                    },
+                    ......(其它配置)
+                }
+            }
+        }
+    }
+}
+评审结论
+遗留问题
+是否准备好AI预审
+是
+来源帖子: 【待评审】支持部分安全定制化能力可通过导入导出配置",,,[],2026-04-22T03:59:30.773Z,,
+29400,【待评审】Redfish/web-rest接口新增参数和资源协作接口支持一键导入/导出BMC配置包5,"{
+  ""content"": ""## Background\n\nWhen BMC hardware failures occur and require replacement parts, the customer configuration of the BMC needs to be restored after the replacement. Currently, the process of restoring the BMC customer configuration is cumbersome, lacks standardization, and is prone to omissions due to multiple operation steps. Therefore, support for one-click export/import of all customer configurations is needed to reduce manual steps and improve efficiency and accuracy.\n\n## Related ISSUE\n\n## Overall Solution\n\nNew parameters and resource assistance interface methods are added to redfish and web-rest interfaces to support exporting all BMC configurations as a zip package and also support one-click import of the zip package.\n\n## Review Points\n\n1.  Add an optional parameter `ConfigurationType` to the ImportConfiguration interface in Redfish to indicate the import configuration type.\n2.  Add an optional parameter `ConfigurationType` to the ExportConfiguration interface in Redfish to indicate the export configuration type.\n3.  Add an optional parameter `ConfigurationType` to the configuration import interface in web-rest to indicate the import configuration type.\n4.  Add an optional parameter `ConfigurationType` to the configuration export interface in web-rest to indicate the export configuration type.\n5.  Add resource collaboration interface methods `ImportConfigurationBundle` to the Configurations object.\n6.  Add resource collaboration interface methods `ExportConfigurationBundle` to the Configurations object.\n\n## Detailed Description\n\n### Review Point 1: Add an optional parameter `ConfigurationType` to the Redfish ImportConfiguration interface to indicate the import configuration type\n\n**Resource URI**: `/redfish/v1/Managers/{manager_id}/Actions/Oem/openUBMC/ImportConfiguration`\n**Resource Version**: `manager.v1_22_0`\n**Operation Type**: `POST`\n**Change Points**: Add an optional parameter `ConfigurationType` to indicate the import configuration type.\n**Input Parameters**:\n\n| **Parameter Name** | **Type** | **Required** | **Example/Value Constraints** | **Description** |\n|:---|:---|:---|:---|:---|\n| ConfigurationType | string | No | Enumerated values: `JSON`/`Bundle`, default value is `JSON` | `JSON` indicates importing a configuration file, `Bundle` indicates importing a configuration package |\n\n**ActionInfo**: `/redfish/v1/Managers/{manager_id}/ImportConfigurationActionInfo`\n\n```json\n{\n    \""@odata.context\"": \""/redfish/v1/$metadata#ActionInfo.ActionInfo\"",\n    \""@odata.id\"": \""/redfish/v1/Managers/1/ImportConfigurationActionInfo\"",\n    \""@odata.type\"": \""#ActionInfo.v1_0_1.ActionInfo\"",\n    \""Id\"": \""ImportConfigurationActionInfo\"",\n    \""Name\"": \""Import Configuration Action Info\"",\n    \""Parameters\"": [\n        {\n            \""Name\"": \""Type\"",\n            \""Required\"": true,\n            \""DataType\"": \""String\"",\n            \""AllowableValues\"": [\n                \""URI\""\n            ]\n        },\n        {\n            \""Name\"": \""Content\"",\n            \""Required\"": true,\n            \""DataType\"": \""String\""\n        },\n        {\n            \""Name\"": \""ConfigurationType\"",\n            \""Required\"": false,\n            \""DataType\"": \""String\"",\n            \""AllowableValues\"": [\n                \""JSON\"",\n                \""Bundle\""\n            ]\n        }\n    ],\n    \""Oem\"": {}\n}\n\n\n\n\n```\n\n**Schema Definition**:\n\n```json\n{\n    \""definition\"": {\n        \""ImportConfiguration\"": {\n            \""patternProperties\"": {\n                \""^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\\\.[a-zA-Z_][a-zA-Z0-9_.]+$\"": {\n                    \""type\"": [\n                        \""array\"",\n                        \""boolean\"",\n                        \""number\"",\n                        \""null\"",\n                        \""object\"",\n                        \""string\""\n                    ],\n                    \""description\"": \""This property shall specify a valid odata or Redfish property.\""\n                }\n            },\n            \""type\"": \""object\"",\n            \""additionalProperties\"": false,\n            \""properties\"": {\n                \""title\"": {\n                    \""type\"": \""string\"",\n                    \""description\"": \""Friendly action name\""\n                },\n                \""target\"": {\n                    \""type\"": \""string\"",\n                    \""format\"": \""uri\"",\n                    \""description\"": \""Link to invoke action\""\n                },\n                \""@Redfish.ActionInfo\"": {\n                    \""description\"": \""The term can be applied to an action to action to specific a URI to an ActionInfo resource that describes the parameters supported by this instance of the action.\"",\n                    \""type\"": \""string\"",\n                    \""format\"": \""uri-reference\"",\n                    \""readonly\"": true\n                }\n            },\n            \""parameters\"": {\n                \""Type\"": {\n                    \""type\"": \""string\"",\n                    \""requiredParameter\"": true,\n                    \""enum\"": [\n                        \""URI\""\n                    ],\n                    \""description\"": \""Method of importing the configuration file.\""\n                },\n                \""Content\"": {\n                    \""type\"": \""string\"",\n                    \""requiredParameter\"": true,\n                    \""description\"": \""Configuration file import path.\""\n                },\n                \""ConfigurationType\"": {\n                    \""type\"": \""string\"",\n                    \""requiredParameter\"": true,\n                    \""enum\"": [\n                        \""JSON\"",\n                        \""Bundle\""\n                    ],\n                    \""description\"": \""Configuration type.\""\n                }\n            },\n            \""description\"": \""Action of importing BMC and BIOS information.\"",\n            \""longDescription\"": \""Action of importing BMC and BIOS information to the BMC's tmp directory or a specified remote file server.\""\n        }\n    }\n}\n\n\n\n\n```\n\n### Review Point 2: Add an optional parameter `ConfigurationType` to the Redfish ExportConfiguration interface to indicate the export configuration type\n\n**Resource URI**: `/redfish/v1/Managers/{manager_id}/Actions/Oem/openUBMC/ExportConfiguration`\n**Resource Version**: `manager.v1_22_0`\n**Operation Type**: `POST`\n**Change Points**: Add an optional parameter `ConfigurationType` to indicate the export configuration type.\n**New Parameters**:\n\n| **Parameter Name** | **Type** | **Required** | **Example/Value Constraints** | **Description** |\n|:---|:---|:---|:---|:---|\n| ConfigurationType | string | No | Enumerated values: `JSON`/`Bundle`, default value is `JSON` | `JSON` indicates exporting a configuration file, `Bundle` indicates exporting a configuration package |\n\n**ActionInfo**: `/redfish/v1/Managers/{manager_id}/ExportConfigurationActionInfo`\n\n```json\n{\n    \""@odata.context\"": \""/redfish/v1/$metadata#ActionInfo.ActionInfo\"",\n    \""@odata.id\"": \""/redfish/v1/Managers/1/ExportConfigurationActionInfo\"",\n    \""@odata.type\"": \""#ActionInfo.v1_0_1.ActionInfo\"",\n    \""Id\"": \""ExportConfigurationActionInfo\"",\n    \""Name\"": \""Export Configuration Action Info\"",\n    \""Parameters\"": [\n        {\n            \""Name\"": \""Type\"",\n            \""Required\"": true,\n            \""DataType\"": \""String\"",\n            \""AllowableValues\"": [\n                \""URI\""\n            ]\n        },\n        {\n            \""Name\"": \""Content\"",\n            \""Required\"": true,\n            \""DataType\"": \""String\""\n        },\n        {\n            \""Name\"": \""ConfigurationType\"",\n            \""Required\"": false,\n            \""DataType\"": \""String\"",\n            \""AllowableValues\"": [\n                \""JSON\"",\n                \""Bundle\""\n            ]\n        }\n    ],\n    \""Oem\"": {}\n}\n\n\n\n\n```\n""
+}
+Schema定义：
+{
+    ""definition"": {
+        ""ExportConfiguration"": {
+            ""patternProperties"": {
+                ""^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\\\.[a-zA-Z_][a-zA-Z0-9_.]+$"": {
+                    ""type"": [
+                        ""array"",
+                        ""boolean"",
+                        ""number"",
+                        ""null"",
+                        ""object"",
+                        ""string""
+                    ],
+                    ""description"": ""此属性应指定有效的odata或Redfish属性。""
+                }
+            },
+            ""type"": ""object"",
+            ""additionalProperties"": false,
+            ""properties"": {
+                ""title"": {
+                    ""type"": ""string"",
+                    ""description"": ""友好操作名称""
+                },
+                ""target"": {
+                    ""type"": ""string"",
+                    ""format"": ""uri"",
+                    ""description"": ""调用操作的链接""
+                },
+                ""@Redfish.ActionInfo"": {
+                    ""description"": ""可将此术语应用于操作，以指定指向描述此操作实例支持的参数的ActionInfo资源的URI。"",
+                    ""type"": ""string"",
+                    ""format"": ""uri-reference"",
+                    ""readonly"": true
+                }
+            },
+            ""parameters"": {
+                ""Type"": {
+                    ""type"": ""string"",
+                    ""requiredParameter"": true,
+                    ""enum"": [
+                        ""URI""
+                    ],
+                    ""description"": ""配置文件导出方法。""
+                },
+                ""Content"": {
+                    ""type"": ""string"",
+                    ""requiredParameter"": true,
+                    ""description"": ""配置文件导出路径。""
+                },
+                ""ConfigurationType"": {
+                    ""type"": ""string"",
+                    ""requiredParameter"": true,
+                    ""enum"": [
+                        ""JSON"",
+                        ""Bundle""
+                    ],
+                    ""description"": ""配置类型。""
+                }
+            },
+            ""description"": ""导入BMC和BIOS信息的操作。"",
+            ""longDescription"": ""从tmp目录或指定的远程文件服务器导入BMC和BIOS信息的操作。""
+        }
+    }
+}
+评审点3：web-rest配置导入接口增加可选入参ConfigurationType表示导入配置类型
+接口URI：/UI/Rest/BMCSettings/Configuration/ImportConfig
+操作类型：POST
+变更点：新增可选入参ConfigurationType表示导入配置类型
+新增参数：
+参数名
+类型
+必填
+示例/取值约束
+描述
+ConfigurationType
+string
+否
+枚举值：JSON/Bundle，默认值为JSON
+JSON表示导入配置文件，Bundle表示导入配置包
+评审点4：web-rest配置导出接口增加可选入参ConfigurationType表示导出配置类型
+接口URI：/UI/Rest/BMCSettings/Configuration/ImportConfig
+操作类型：POST
+变更点：新增可选入参ConfigurationType表示导出配置类型
+新增参数：
+参数名
+类型
+必填
+示例/取值约束
+描述
+ConfigurationType
+string
+否
+枚举值：JSON/Bundle，默认值为JSON
+JSON表示导出配置文件，Bundle表示导出配置包
+评审点5: Configurations对象新增资源协作接口方法ImportConfigurationBundle
+资源Path: /bmc/kepler/Managers/:ManagerId/Configurations
+资源Interface: bmc.kepler.Managers.Configurations
+变化类型：新增方法
+方法名称
+请求签名
+请求参数描述
+响应签名
+响应参数描述
+方法描述
+访问权限
+ImportConfigurationBundle
+s
+BundleURI: 导入BMC配置包路径
+u
+任务ID
+导入BMC配置包
+BasicSetting、UserMgmt
+评审点6: Configurations对象新增资源协作接口方法ExportConfigurationBundle
+资源Path: /bmc/kepler/Managers/:ManagerId/Configurations
+资源Interface: bmc.kepler.Managers.Configurations
+变化类型：新增方法
+方法名称
+请求签名
+请求参数描述
+响应签名
+响应参数描述
+方法描述
+访问权限
+ExportConfigurationBundle
+s
+BundleURI: 导出BMC配置包路径
+u
+任务ID
+导出BMC配置包
+BasicSetting、UserMgmt
+评审结论
+遗留问题
+是否准备好AI预审
+是",,,"[""<p>预审答案内容由AI生成，仅供参考：</p>\n<h1><a name=\""p-35973-redfishweb-restbmc5-1\"" class=\""anchor\"" href=\""#p-35973-redfishweb-restbmc5-1\"" aria-label=\""标题链接\""></a>帖子评审结论：【待评审】Redfish/web-rest接口新增参数和资源协作接口支持一键导入/导出BMC配置包5</h1>\n<p><strong>帖子相关性</strong>：与 Redfish 相关（帖子内容包含 ‘redfish’ 关键字）</p>\n<ul>\n<li>总评审点数：2</li>\n<li>Redfish 相关评审点：2</li>\n<li>非 Redfish 评审点：0</li>\n</ul>\n<hr>\n<h2><a name=\""p-35973-h-02-2\"" class=\""anchor\"" href=\""#p-35973-h-02-2\"" aria-label=\""标题链接\""></a>总体结果：不通过（0/2 个评审点通过）</h2>\n<h3><a name=\""p-35973-h-1redfishimportconfigurationconfigurationtype-3\"" class=\""anchor\"" href=\""#p-35973-h-1redfishimportconfigurationconfigurationtype-3\"" aria-label=\""标题链接\""></a>评审点 1：Redfish配置导入接口ImportConfiguration增加可选入参ConfigurationType表示导入配置类型</h3>\n<p><strong>结果：不通过</strong></p>\n<ul>\n<li>URI 示例生成：通过</li>\n<li>Schema 验证：不通过（2 项失败，3 项警告）\n<ul>\n<li>[Required Property Error] Required Property Error: Property ‘Id’ is mandatory, but not present in the payload.</li>\n<li>[Required Property Error] Required Property Error: Property ‘Name’ is mandatory, but not present in the payload.</li>\n</ul>\n</li>\n<li>规则合规性检查：不通过（1/15 项失败）\n<ul>\n<li><strong>静态验证失败项</strong>：\n<ul>\n<li>[Schema] 模型静态检查：Required Property Error: Required Property Error: Property ‘Id’ is mandatory, but not present in the payload.\n<ul>\n<li>建议：请修复 Schema 验证错误，或在文档里补充对应属性描述</li>\n</ul>\n</li>\n<li>[Schema] 模型静态检查：Required Property Error: Required Property Error: Property ‘Name’ is mandatory, but not present in the payload.\n<ul>\n<li>建议：请修复 Schema 验证错误，或在文档里补充对应属性描述</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h3><a name=\""p-35973-h-2redfishexportconfigurationconfigurationtype-4\"" class=\""anchor\"" href=\""#p-35973-h-2redfishexportconfigurationconfigurationtype-4\"" aria-label=\""标题链接\""></a>评审点 2：Redfish配置导出接口ExportConfiguration增加可选入参ConfigurationType表示导出配置类型</h3>\n<p><strong>结果：不通过</strong></p>\n<ul>\n<li>URI 示例生成：通过</li>\n<li>Schema 验证：不通过（2 项失败，3 项警告）\n<ul>\n<li>[Required Property Error] Required Property Error: Property ‘Id’ is mandatory, but not present in the payload.</li>\n<li>[Required Property Error] Required Property Error: Property ‘Name’ is mandatory, but not present in the payload.</li>\n</ul>\n</li>\n<li>规则合规性检查：不通过（1/15 项失败）\n<ul>\n<li><strong>静态验证失败项</strong>：\n<ul>\n<li>[Schema] 模型静态检查：Required Property Error: Required Property Error: Property ‘Id’ is mandatory, but not present in the payload.\n<ul>\n<li>建议：请修复 Schema 验证错误，或在文档里补充对应属性描述</li>\n</ul>\n</li>\n<li>[Schema] 模型静态检查：Required Property Error: Required Property Error: Property ‘Name’ is mandatory, but not present in the payload.\n<ul>\n<li>建议：请修复 Schema 验证错误，或在文档里补充对应属性描述</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>""]",2026-04-20T09:18:18.269Z,,
+29401,【待评审】新增Redfish标准错误引擎标识IPv6地址冲突,"背景
+设置IPv6地址，存在BMC 操作日志显示设置成功，但实际协议栈生效时因为检测到地址冲突导致新IPv6地址未在协议栈生效的情况，需要在设置IPv6地址前进行冲突检测。
+关联ISSUE
+[需求]: 新增标准消息PropertyValueExternalConflict用于IPv6地址检测冲突后显示 - openUBMC/mdb_interface - AtomGit | GitCode
+整体方案
+新增标准错误引擎标识IP地址冲突
+评审点
+新增标准错误引擎标识IP地址冲突
+详细描述
+错误引擎描述如下：
+    ""PropertyValueExternalConflict"": {
+        ""Description"": ""Indicates that the requested write of a property value could not be completed due to the current state or configuration of the resource. This can include configuration conflicts with other resources or parameters that are not exposed by this interface."",
+        ""Message"": ""The property %1 with the requested value of %2 could not be written because the value is not available due to a configuration conflict."",
+        ""Severity"": ""Warning"",
+        ""NumberOfArgs"": 2,
+        ""ParamTypes"": [
+          ""string"",
+          ""string""
+        ],
+        ""Resolution"": ""None"",
+        ""HttpStatusCode"": 400,
+        ""IpmiCompletionCode"": ""0xD5"",
+        ""SnmpStatusCode"": 5,
+        ""TraceDepth"": 0
+    }
+评审结论
+是否准备好AI预审
+是",,,[],2026-04-20T09:19:02.189Z,,
+29398,【待评审】新增资源协作接口承载安全特性能力2,"背景
+BMC支持部分安全特性，特性能力标志需要下沉供多个组件依赖判断使用。
+关联ISSUE
+[需求]: 新增资源协作接口承载安全特性全局属性
+整体方案
+采用框架提供全局属性能力承载安全特性属性，一个组件负责管理和设置，其它依赖组件仅使用
+评审点
+新增资源协作接口用于承载安全特性相关全局属性
+详细描述
+1、新增资源协作接口 bmc.kepler.Global.SecurityEnhance.TrustedComputing
+接口描述：承载可信计算相关全局属性
+属性名称
+签名
+只读
+变化通知
+属性描述
+访问权限
+属性来源
+持久化类型
+易变属性
+Supported
+b
+true
+false
+表示是否支持基础可信计算能力，基于CSR配置属性。默认值：false。
+Read：ReadOnly
+CSR
+掉电持久化
+false
+Enabled
+b
+false
+true
+表示基础可信计算能力使能，仅当Supported为true时可使能。默认值：false。使能后Web可见《可信计算》页面，可以查看安全启动信息（若支持）等信息。
+Read：ReadOnlyWrite：UserMgmt
+CSR
+掉电持久化
+false
+评审结论
+遗留问题
+是否准备好AI预审
+是",,,[],2026-04-20T09:04:23.669Z,,
+29377,【待评审】资源协作接口新增RAID卡固件并行升级最大数量属性,"背景
+当前多RAID卡场景固件升级采用串行升级，需要支持并行固件升级降低耗时。
+关联ISSUE
+暂无
+整体方案
+1.新增资源协作接口属性用于配置并行升级最大数量
+2.对匹配成功且PCIe独立的同型号RAID卡启动并行的带外升级
+评审点
+变更资源协作接口 bmc.kepler.Systems.Storage.StorageConfig，新增并行升级最大数量属性
+详细描述
+评审点1：变更资源协作接口 bmc.kepler.Systems.Storage.StorageConfig
+接口描述：接口承载了存储相关的配置信息，新增属性同属于该信息的一部分
+接口链接：bmc.kepler.Systems.Storage.StorageConfig
+变更属性
+变更类型
+属性名称
+签名
+只读
+变化通知
+属性描述
+访问权限
+属性来源
+持久化类型
+变更影响
+新增
+MaxParallelUpgradeCount
+y
+True
+false
+RAID卡固件并行升级最大数量
+Read: ReadOnly
+CSR
+不持久化
+无影响
+评审结论
+遗留问题
+是否准备好AI预审
+是",,,[],2026-04-16T03:26:11.657Z,,
+29372,【待评审】Redfish/web-rest接口新增参数和资源协作接口支持一键导入/导出BMC配置包3,"{
+  ""content"": ""## Background\n\nWhen BMC hardware fails and requires replacement parts, after the replacement, it is necessary to restore the BMC customer configuration. The current BMC customer configuration restoration operation involves many steps, lacks standardization, is cumbersome, and prone to omissions. Therefore, support is needed for one-click export/import of all customer configurations to reduce manual steps and improve efficiency and accuracy.\n\n## Related ISSUE\n\n## Overall Solution\n\nNew parameters and resource assistance interface methods are added to redfish and web-rest interfaces to support exporting all BMC configurations as a zip package, and also support one-click import of the zip package.\n\n## Review Points\n\n1. Add an optional parameter `ConfigurationType` to the ImportConfiguration interface in redfish to indicate the import configuration type\n\n2. Add an optional parameter `ConfigurationType` to the ExportConfiguration interface in redfish to indicate the export configuration type\n\n3. Add an optional parameter `ConfigurationType` to the configuration import interface in web-rest to indicate the import configuration type\n\n4. Add an optional parameter `ConfigurationType` to the configuration export interface in web-rest to indicate the export configuration type\n\n5. Add resource collaboration interface methods `ImportConfigurationBundle` to the Configurations object\n\n6. Add resource collaboration interface methods `ExportConfigurationBundle` to the Configurations object\n\n## Detailed Description\n\n### Review Point 1: Add an optional parameter `ConfigurationType` to the ImportConfiguration interface in redfish to indicate the import configuration type\n\n**Resource URI**: /redfish/v1/Managers/{manager_id}/Actions/Oem/openUBMC/ImportConfiguration\n**Resource Version**: manager.v1_22_0\n**Operation Type**: POST\n**Change Point**: Add an optional parameter `ConfigurationType` to represent the import configuration type\n**Input Parameters**:\n\n| **Parameter Name** | **Type** | **Required** | **Example/Value Constraints** | **Description** |\n|:---|:---|:---|:---|:---|\n| ConfigurationType | string | No | Enumerated values: JSON/Bundle, default value is JSON | JSON indicates importing a configuration file, Bundle indicates importing a configuration package |\n\n**ActionInfo**: `/redfish/v1/Managers/{manager_id}/ImportConfigurationActionInfo`\n\n```\n{\n    \""@odata.context\"": \""/redfish/v1/$metadata#ActionInfo.ActionInfo\"",\n    \""@odata.id\"": \""/redfish/v1/Managers/1/ImportConfigurationActionInfo\"",\n    \""@odata.type\"": \""#ActionInfo.v1_0_1.ActionInfo\"",\n    \""Id\"": \""ImportConfigurationActionInfo\"",\n    \""Name\"": \""Import Configuration Action Info\"",\n    \""Parameters\"": [\n        {\n            \""Name\"": \""Type\"",\n            \""Required\"": true,\n            \""DataType\"": \""String\"",\n            \""AllowableValues\"": [\n                \""URI\""\n            ]\n        },\n        {\n            \""Name\"": \""Content\"",\n            \""Required\"": true,\n            \""DataType\"": \""String\""\n        },\n        {\n            \""Name\"": \""ConfigurationType\"",\n            \""Required\"": false,\n            \""DataType\"": \""String\"",\n            \""AllowableValues\"": [\n                \""JSON\"",\n                \""Bundle\""\n            ]\n        }\n    ],\n    \""Oem\"": {}\n}\n\n```\n\n**Schema Definition**:\n\n```\n{\n    \""definition\"": {\n        \""ImportConfiguration\"": {\n            \""patternProperties\"": {\n                \""^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\\\.[a-zA-Z_][a-zA-Z0-9_.]+$\"": {\n                    \""type\"": [\n                        \""array\"",\n                        \""boolean\"",\n                        \""number\"",\n                        \""null\"",\n                        \""object\"",\n                        \""string\""\n                    ],\n                    \""description\"": \""This property shall specify a valid odata or Redfish property.\""\n                }\n            },\n            \""type\"": \""object\"",\n            \""additionalProperties\"": false,\n            \""properties\"": {\n                \""title\"": {\n                    \""type\"": \""string\"",\n                    \""description\"": \""Friendly action name\""\n                },\n                \""target\"": {\n                    \""type\"": \""string\"",\n                    \""format\"": \""uri\"",\n                    \""description\"": \""Link to invoke action\""\n                },\n                \""@Redfish.ActionInfo\"": {\n                    \""description\"": \""The term can be applied to an action to action to specific a URI to an ActionInfo resource that describes the parameters supported by this instance of the action.\"",\n                    \""type\"": \""string\"",\n                    \""format\"": \""uri-reference\"",\n                    \""readonly\"": true\n                }\n            },\n            \""parameters\"": {\n                \""Type\"": {\n                    \""type\"": \""string\"",\n                    \""requiredParameter\"": true,\n                    \""enum\"": [\n                        \""URI\""\n                    ],\n                    \""description\"": \""Method of importing the configuration file.\""\n                },\n                \""Content\"": {\n                    \""type\"": \""string\"",\n                    \""requiredParameter\"": true,\n                    \""description\"": \""Configuration file import path.\""\n                },\n                \""ConfigurationType\"": {\n                    \""type\"": \""string\"",\n                    \""requiredParameter\"": true,\n                    \""enum\"": [\n                        \""JSON\"",\n                        \""Bundle\""\n                    ],\n                    \""description\"": \""Configuration type.\""\n                }\n            },\n            \""description\"": \""Action of importing BMC and BIOS information.\"",\n            \""longDescription\"": \""Action of importing BMC and BIOS information to the BMC's tmp directory or a specified remote file server.\""\n        }\n    }\n}\n\n```\n\n### Review Point 2: Add an optional parameter `ConfigurationType` to the ExportConfiguration interface in redfish to indicate the export configuration type\n\n**Resource URI**: /redfish/v1/Managers/{manager_id}/Actions/Oem/openUBMC/ExportConfiguration\n**Resource Version**: manager.v1_22_0\n**Operation Type**: POST\n**Change Point**: Add an optional parameter `ConfigurationType` to represent the export configuration type\n**New Parameters**:\n\n| **Parameter Name** | **Type** | **Required** | **Example/Value Constraints** | **Description** |\n|:---|:---|:---|:---|:---|\n| ConfigurationType | string | No | Enumerated values: JSON/Bundle, default value is JSON | JSON indicates exporting a configuration file, Bundle indicates exporting a configuration package |\n\n**ActionInfo**: `/redfish/v1/Managers/{manager_id}/ExportConfigurationActionInfo`\n\n```\n{\n    \""@odata.context\"": \""/redfish/v1/$metadata#ActionInfo.ActionInfo\"",\n    \""@odata.id\"": \""/redfish/v1/Managers/1/ExportConfigurationActionInfo\"",\n    \""@odata.type\"": \""#ActionInfo.v1_0_1.ActionInfo\"",\n    \""Id\"": \""ExportConfigurationActionInfo\"",\n    \""Name\"": \""Export Configuration Action Info\"",\n    \""Parameters\"": [\n        {\n            \""Name\"": \""Type\"",\n            \""Required\"": true,\n            \""DataType\"": \""String\"",\n            \""AllowableValues\"": [\n                \""URI\""\n            ]\n        },\n        {\n            \""Name\"": \""Content\"",\n            \""Required\"": true,\n            \""DataType\"": \""String\""\n        },\n        {\n            \""Name\"": \""ConfigurationType\"",\n            \""Required\"": false,\n            \""DataType\"": \""String\"",\n            \""AllowableValues\"": [\n                \""JSON\"",\n                \""Bundle\""\n            ]\n        }\n    ],\n    \""Oem\"": {}\n}\n\n""
+}
+Schema定义：
+{
+    ""definition"": {
+        ""ExportConfiguration"": {
+            ""patternProperties"": {
+                ""^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\\\.[a-zA-Z_][a-zA-Z0-9_.]+$"": {
+                    ""type"": [
+                        ""array"",
+                        ""boolean"",
+                        ""number"",
+                        ""null"",
+                        ""object"",
+                        ""string""
+                    ],
+                    ""description"": ""此属性应指定有效的odata或Redfish属性。""
+                }
+            },
+            ""type"": ""object"",
+            ""additionalProperties"": false,
+            ""properties"": {
+                ""title"": {
+                    ""type"": ""string"",
+                    ""description"": ""友好操作名称""
+                },
+                ""target"": {
+                    ""type"": ""string"",
+                    ""format"": ""uri"",
+                    ""description"": ""调用操作的链接""
+                },
+                ""@Redfish.ActionInfo"": {
+                    ""description"": ""可将此术语应用于操作，以指定指向描述此操作实例支持的参数的ActionInfo资源URI。"",
+                    ""type"": ""string"",
+                    ""format"": ""uri-reference"",
+                    ""readonly"": true
+                }
+            },
+            ""parameters"": {
+                ""Type"": {
+                    ""type"": ""string"",
+                    ""requiredParameter"": true,
+                    ""enum"": [
+                        ""URI""
+                    ],
+                    ""description"": ""配置文件导出方法。""
+                },
+                ""Content"": {
+                    ""type"": ""string"",
+                    ""requiredParameter"": true,
+                    ""description"": ""配置文件导出路径。""
+                },
+                ""ConfigurationType"": {
+                    ""type"": ""string"",
+                    ""requiredParameter"": true,
+                    ""enum"": [
+                        ""JSON"",
+                        ""Bundle""
+                    ],
+                    ""description"": ""配置类型。""
+                }
+            },
+            ""description"": ""导入BMC和BIOS信息的操作。"",
+            ""longDescription"": ""从tmp目录或指定的远程文件服务器导入BMC和BIOS信息的操作。""
+        }
+    }
+}
+评审点3：web-rest配置导入接口增加可选入参ConfigurationType表示导入配置类型
+接口URI：/UI/Rest/BMCSettings/Configuration/ImportConfig
+操作类型：POST
+变更点：新增可选入参ConfigurationType表示导入配置类型
+新增参数：
+参数名
+类型
+必填
+示例/取值约束
+描述
+ConfigurationType
+string
+否
+枚举值：JSON/Bundle，默认值为JSON
+JSON表示导入配置文件，Bundle表示导入配置包
+评审点4：web-rest配置导出接口增加可选入参ConfigurationType表示导出配置类型
+接口URI：/UI/Rest/BMCSettings/Configuration/ImportConfig
+操作类型：POST
+变更点：新增可选入参ConfigurationType表示导出配置类型
+新增参数：
+参数名
+类型
+必填
+示例/取值约束
+描述
+ConfigurationType
+string
+否
+枚举值：JSON/Bundle，默认值为JSON
+JSON表示导出配置文件，Bundle表示导出配置包
+评审点5: Configurations对象新增资源协作接口方法ImportConfigurationBundle
+资源Path: /bmc/kepler/Managers/:ManagerId/Configurations
+资源Interface: bmc.kepler.Managers.Configurations
+变化类型：新增方法
+方法名称
+请求签名
+请求参数描述
+响应签名
+响应参数描述
+方法描述
+访问权限
+ImportConfigurationBundle
+s
+BundleURI: 导入BMC配置包路径
+u
+任务ID
+导入BMC配置包
+BasicSetting、UserMgmt
+评审点6: Configurations对象新增资源协作接口方法ExportConfigurationBundle
+资源Path: /bmc/kepler/Managers/:ManagerId/Configurations
+资源Interface: bmc.kepler.Managers.Configurations
+变化类型：新增方法
+方法名称
+请求签名
+请求参数描述
+响应签名
+响应参数描述
+方法描述
+访问权限
+ExportConfigurationBundle
+s
+BundleURI: 导出BMC配置包路径
+u
+任务ID
+导出BMC配置包
+BasicSetting、UserMgmt
+评审结论
+遗留问题
+是否准备好AI预审
+是",,,"[""<p>预审答案内容由AI生成，仅供参考：</p>\n<h1><a name=\""p-35927-redfishweb-restbmc3-1\"" class=\""anchor\"" href=\""#p-35927-redfishweb-restbmc3-1\"" aria-label=\""标题链接\""></a>帖子评审结论：【待评审】Redfish/web-rest接口新增参数和资源协作接口支持一键导入/导出BMC配置包3</h1>\n<p><strong>帖子相关性</strong>：与 Redfish 相关（帖子内容包含 ‘redfish’ 关键字）</p>\n<ul>\n<li>总评审点数：2</li>\n<li>Redfish 相关评审点：2</li>\n<li>非 Redfish 评审点：0</li>\n</ul>\n<hr>\n<h2><a name=\""p-35927-h-02-2\"" class=\""anchor\"" href=\""#p-35927-h-02-2\"" aria-label=\""标题链接\""></a>总体结果：不通过（0/2 个评审点通过）</h2>\n<h3><a name=\""p-35927-h-1redfishimportconfigurationconfigurationtype-3\"" class=\""anchor\"" href=\""#p-35927-h-1redfishimportconfigurationconfigurationtype-3\"" aria-label=\""标题链接\""></a>评审点 1：Redfish配置导入接口ImportConfiguration增加可选入参ConfigurationType表示导入配置类型</h3>\n<p><strong>结果：不通过</strong></p>\n<ul>\n<li>URI 示例生成：通过</li>\n<li>Schema 验证：不通过（2 项失败，2 项警告）\n<ul>\n<li>[Required Property Error] Required Property Error: Property ‘Id’ is mandatory, but not present in the payload.</li>\n<li>[Required Property Error] Required Property Error: Property ‘Name’ is mandatory, but not present in the payload.</li>\n</ul>\n</li>\n<li>规则合规性检查：不通过（1/15 项失败）\n<ul>\n<li><strong>静态验证失败项</strong>：\n<ul>\n<li>[Schema] 模型静态检查：Required Property Error: Required Property Error: Property ‘Id’ is mandatory, but not present in the payload.\n<ul>\n<li>建议：请修复 Schema 验证错误</li>\n</ul>\n</li>\n<li>[Schema] 模型静态检查：Required Property Error: Required Property Error: Property ‘Name’ is mandatory, but not present in the payload.\n<ul>\n<li>建议：请修复 Schema 验证错误</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h3><a name=\""p-35927-h-2redfishexportconfigurationconfigurationtype-4\"" class=\""anchor\"" href=\""#p-35927-h-2redfishexportconfigurationconfigurationtype-4\"" aria-label=\""标题链接\""></a>评审点 2：Redfish配置导出接口ExportConfiguration增加可选入参ConfigurationType表示导出配置类型</h3>\n<p><strong>结果：不通过</strong></p>\n<ul>\n<li>URI 示例生成：通过</li>\n<li>Schema 验证：不通过（2 项失败，2 项警告）\n<ul>\n<li>[Required Property Error] Required Property Error: Property ‘Id’ is mandatory, but not present in the payload.</li>\n<li>[Required Property Error] Required Property Error: Property ‘Name’ is mandatory, but not present in the payload.</li>\n</ul>\n</li>\n<li>规则合规性检查：不通过（1/15 项失败）\n<ul>\n<li><strong>静态验证失败项</strong>：\n<ul>\n<li>[Schema] 模型静态检查：Required Property Error: Required Property Error: Property ‘Id’ is mandatory, but not present in the payload.\n<ul>\n<li>建议：请修复 Schema 验证错误</li>\n</ul>\n</li>\n<li>[Schema] 模型静态检查：Required Property Error: Required Property Error: Property ‘Name’ is mandatory, but not present in the payload.\n<ul>\n<li>建议：请修复 Schema 验证错误</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>""]",2026-04-16T02:28:53.313Z,,
+29362,【待评审】支持Redfish接口查询待生效固件的描述信息,"背景
+目前Redfish接口UpdateService支持查询待生效固件的描述信息包括待生效固件的固件类型、版本号、对应设备等，但是无法查询待生效固件的生效方式等，导致生效时只能依据经验来触发生效。
+关联ISSUE
+暂无ISSUE
+整体方案
+现网运维场景下，在设备的固件升级后，查询待生效固件的描述信息
+评审点
+Redfish 接口UpdateService OEM属性FirmwareToTakeEffect增加待生效固件的描述信息:
+ActiveStatus：生效状态
+ActivationControl：生效动作
+详细描述
+资源URI: /redfish/v1/UpdateService
+资源版本：#UpdateService.v1_17_0.UpdateService
+操作类型：GET
+操作权限：ReadOnly
+变更类型：响应中新增OEM属性
+请求参数：无
+响应参数：
+{
+    …
+    ""Oem"": {
+        ""Huawei"": {
+                    …
+              ""FirmwareToTakeEffect"": [
+                          {
+                              ""FirmwareType"": “BMC"",
+                              ""RelatedFirmwareItems"": [
+                                  {
+                                      ""@odata.id"": ""/redfish/v1/UpdateService/FirmwareInventory/ActiveBMC""
+                                  }
+                              ],
+                              ""StagedVersion"": “5.12.00.02"",
+                              “StagedTime”: “2026-03-27T17:13:20”,
+                              “ActiveStatus”: “Pending” ,
+                              “ActivationControl”: [“ResetBMC”]
+                          }
+              ],
+    …
+        }
+    }
+}
+Schema定义：
+""FirmwareToTakeEffect"": {
+            ""type"": ""object"",
+            ""properties"": {
+                ...
+                ""ActiveStatus"": {
+                    ""type"": ""string"",
+                    ""readonly"": true,
+                    ""description"": ""Active status of the firmware to take effect."",
+                    ""longDescription"": ""Active status of the firmware to take effect.""
+                },
+                ""ActivationControl"": {
+                    ""type"": ""array"",
+                    ""readonly"": true,
+                    ""description"": ""Active control of the firmware to take effect."",
+                    ""longDescription"": ""Active control of the firmware to take effect.""
+                },
+            },
+            ""additionalProperties"": false
+        },
+属性名
+类型
+示例/取值约束
+readonly
+易变属性
+实现PATCH
+操作权限
+描述
+ActiveStatus
+字符串
+Exception、Pending、Running、Completed
+true
+否
+否
+ReadOnly
+生效状态
+ActivationControl
+数组
+ResetBMC、PowerOff、PowerOn、ResetTargetDevice
+true
+否
+否
+ReadOnly
+生效动作
+评审结论
+是否准备好AI预审
+是
+遗留问题
+是",,,[],2026-04-15T11:13:57.288Z,,
+29358,【待评审】新增资源协作接口承载安全特性能力 2,"背景
+BMC支持部分安全特性，特性能力标志需要下沉供多个组件依赖判断使用。
+关联ISSUE
+[需求]: 新增资源协作接口承载安全特性全局属性
+整体方案
+采用框架提供全局属性能力承载安全特性属性，一个组件负责管理和设置，其它依赖组件仅使用
+评审点
+新增资源协作接口用于承载安全特性相关全局属性
+详细描述
+1、新增资源协作接口 bmc.kepler.Global.SecurityEnhance.TrustedComputing
+接口描述：承载可信计算相关全局属性
+属性名称
+签名
+只读
+变化通知
+属性描述
+访问权限
+属性来源
+持久化类型
+易变属性
+Supported
+b
+true
+false
+表示是否支持基础可信计算能力，基于CSR配置属性。默认值：false。
+Read：ReadOnly
+CSR
+掉电持久化
+false
+Enabled
+b
+false
+true
+表示基础可信计算能力使能，仅当Supported为true时可使能。默认值：false。使能后Web可见《可信计算》页面，可以查看安全启动信息（若支持）等信息。
+Read：ReadOnlyWrite：UserMgmt
+CSR
+掉电持久化
+false
+评审结论
+遗留问题
+是否准备好AI预审
+是",,,[],2026-04-15T10:12:48.678Z,,
+29502,【待评审】支持NPU 故障以及统计原子能力,"背景
+实现RAS事件可灵活配置、扩展和能力对外开放；满足IPMI、Redfish RAS相关规范；支持原始数据查询，支撑伙伴/客户实现自规划差异化特性。
+关联ISSUE
+支持NPU CE/UCE故障原子能力和Cache UCE统计原子能力
+评审点
+评审点1：资源协作接口属性CurrentPeriodCacheUncorrectableECCErrorCount、LifeTimeCacheUncorrectableECCErrorCount、CorrectableECC、UncorrectableECC
+资源协作接口bmc.kepler.Systems.FDMDomain.NPURAS下新增属性
+CurrentPeriodCacheUncorrectableECCErrorCount：NPU启动周期内Cache UCE统计计数
+LifeTimeCacheUncorrectableECCErrorCount：NPU生命周期内Cache UCE统计计数
+CorrectableECC：NPU CE故障原子能力
+UncorrectableECC：NPU UCE故障原子能力
+详细描述
+资源path：/bmc/kepler/Systems/:SystemId/FDMDomain/NPURAS/:Id
+资源interface：bmc.kepler.Systems.FDMDomain.NPURAS
+变化类型： 新增资源协作接口属性
+新增属性：
+属性名称
+签名
+只读
+变化通知
+属性描述
+取值范围
+访问权限
+属性来源
+持久化类型
+易变属性
+CurrentPeriodCacheUncorrectableECCErrorCount
+u
+true
+true
+统计NPU Cache模块运行周期内发生的不可纠正错误次数，取值范围：0~0xFFFFFFFF。系统上下电/系统复位/NPU复位，统计次数清零。
+0~0xFFFFFFFF
+R：ReadOnly
+错误上报
+复位持久化
+true
+LifeTimeCacheUncorrectableECCErrorCount
+u
+true
+true
+统计NPU Cache模块生命周期内发生的不可纠正错误次数，取值范围：0~0xFFFFFFFF。更换NPU部件时，统计次数清零。
+0~0xFFFFFFFF
+R：ReadOnly
+错误上报
+掉电持久化
+true
+CorrectableECC
+y
+true
+true
+NPU发生可纠正错误，取值：0-未发生，1-发生，初始为0。系统上下电/系统复位/NPU复位，恢复为0。
+0:未发生1:发生初始为0
+R：ReadOnly
+错误上报
+复位持久化
+true
+UncorrectableECC
+y
+true
+true
+NPU发生不可纠正错误，取值：0-未发生，1-发生，初始为0。系统上下电/系统复位/NPU复位，恢复为0。
+0:未发生1:发生初始为0
+R：ReadOnly
+错误上报
+复位持久化
+true
+是否准备好AI预审
+是
+评审结论
+遗留问题",,,[],2026-05-07T07:48:07.571Z,,
+29501,【待评审】支持通过本板硬件信号获取远程单板的主备状态材料评审,"背景
+当前主备倒换时，通过 RPC 获取对板的主备状态和健康状态。当板间通讯异常时，RPC 调用失败，导致主备倒换无法执行。硬件已支持通过本板寄存器直接获取对板的主备和健康状态信号，为了提升主备倒换可靠性，需新增远程单板主备状态获取方式。
+关联ISSUE
+[需求]: 支持通过本板硬件信号获取远程单板的主备状态 - openUBMC/active_standby_mgmt - AtomGit | GitCode
+详细描述
+评审点
+变更描述：在active_standby_mgmt组件的配置类ActiveStandbyRemote中新增CSR配置属性，用于区别rpc调用和通过本板获取对板主备和健康状态。
+变更属性
+变更类型
+属性名称
+签名
+只读
+变化通知
+属性描述
+访问权限
+属性来源
+持久化类型
+变更影响
+新增
+RemoteStatusSource
+y
+True
+true
+远程单板主备状态获取方式：0-RPC调用（默认），1-硬件信号
+Read: ReadOnly
+CSR配置
+无需持久化
+无影响，新增属性，默认值为0，保持原有RPC调用行为；配置为1时切换为硬件信号获取方式
+复用
+ActiveRead
+y
+True
+true
+远程单板主备状态（硬件信号）：0-备用，1-主用，2-线路故障
+Read: ReadOnly
+硬件信号
+无需持久化
+无影响，新增只读属性，通过硬件寄存器直接读取
+复用
+HealthStatus
+y
+True
+true
+远程单板健康状态（硬件信号）：0-不健康，1-健康，2-线路故障
+Read: ReadOnly
+硬件信号
+无需持久化
+无影响，新增只读属性，通过硬件寄存器直接读取
+评审结论
+遗留问题
+是否准备好AI预审
+是",,,[],2026-05-07T07:47:16.819Z,,
+29516,【待评审】支持NPU 故障以及统计原子能力 2,"背景
+实现RAS事件可灵活配置、扩展和能力对外开放；满足IPMI、Redfish RAS相关规范；支持原始数据查询，支撑伙伴/客户实现自规划差异化特性。
+关联ISSUE
+支持NPU CE/UCE故障原子能力和Cache UCE统计原子能力
+评审点
+评审点1：资源协作接口属性CurrentPeriodCacheUncorrectableECCErrorCount、LifeTimeCacheUncorrectableECCErrorCount、CorrectableECC、UncorrectableECC
+资源协作接口bmc.kepler.Systems.FDMDomain.NPURAS下新增属性
+CurrentPeriodCacheUncorrectableECCErrorCount：NPU启动周期内Cache UCE统计计数
+LifeTimeCacheUncorrectableECCErrorCount：NPU生命周期内Cache UCE统计计数
+CorrectableECC：NPU CE故障原子能力
+UncorrectableECC：NPU UCE故障原子能力
+详细描述
+资源path：/bmc/kepler/Systems/:SystemId/FDMDomain/NPURAS/:Id
+资源interface：bmc.kepler.Systems.FDMDomain.NPURAS
+变化类型： 新增资源协作接口属性
+新增属性：
+属性名称
+签名
+只读
+变化通知
+属性描述
+取值范围
+访问权限
+属性来源
+持久化类型
+易变属性
+CurrentPeriodCacheUncorrectableECCErrorCount
+u
+true
+true
+统计NPU Cache模块运行周期内发生的不可纠正错误次数，取值范围：0~0xFFFFFFFF。系统上下电/系统复位/NPU复位，统计次数清零。
+0~0xFFFFFFFF
+R：ReadOnly
+错误上报
+复位持久化
+true
+LifeTimeCacheUncorrectableECCErrorCount
+u
+true
+true
+统计NPU Cache模块生命周期内发生的不可纠正错误次数，取值范围：0~0xFFFFFFFF。更换NPU部件时，统计次数清零。
+0~0xFFFFFFFF
+R：ReadOnly
+错误上报
+掉电持久化
+true
+CorrectableECC
+y
+true
+true
+NPU发生可纠正错误，取值：0-未发生，1-发生，初始为0。系统上下电/系统复位/NPU复位，恢复为0。
+0:未发生1:发生初始为0
+R：ReadOnly
+错误上报
+复位持久化
+true
+UncorrectableECC
+y
+true
+true
+NPU发生不可纠正错误，取值：0-未发生，1-发生，初始为0。系统上下电/系统复位/NPU复位，恢复为0。
+0:未发生1:发生初始为0
+R：ReadOnly
+错误上报
+复位持久化
+true
+是否准备好AI预审
+是
+评审结论
+遗留问题",,,[],2026-05-07T12:20:33.455Z,,

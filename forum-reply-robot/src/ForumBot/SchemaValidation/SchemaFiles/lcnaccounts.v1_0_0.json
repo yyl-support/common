@@ -1,0 +1,22 @@
+{
+    "@odata.context": "/redfish/v1/$metadata#JsonSchemaFile.JsonSchemaFile",
+    "@odata.id": "/redfish/v1/JsonSchemas/LCNAccounts.v1_0_0",
+    "@odata.type": "#JsonSchemaFile.v1_0_2.JsonSchemaFile",
+    "Id": "LCNAccounts.v1_0_0",
+    "Description": "LCNAccounts Schema File Location",
+    "Name": "LCNAccounts Schema File",
+    "Languages": [
+        "en"
+    ],
+    "Schema": "#LCNAccounts.v1_0_0.LCNAccounts",
+    "Location": [
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/SchemaStore/en/LCNAccounts.v1_0_0.json"
+        },
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/Schemas/LCNAccounts.v1_0_0.json"
+        }
+    ]
+}

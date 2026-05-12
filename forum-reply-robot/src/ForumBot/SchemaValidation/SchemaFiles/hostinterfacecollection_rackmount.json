@@ -1,0 +1,19 @@
+{
+    "@odata.context": "/redfish/v1/$metadata#JsonSchemaFile.JsonSchemaFile",
+    "@odata.id": "/redfish/v1/JsonSchemas/HostInterfaceCollection",
+    "@odata.type": "#JsonSchemaFile.v1_0_2.JsonSchemaFile",
+    "Id": "HostInterfaceCollection",
+    "Description": "HostInterfaceCollection Schema File Location",
+    "Name": "HostInterfaceCollection Schema File",
+    "Languages": [
+        "en"
+    ],
+    "Schema": "#HostInterfaceCollection.HostInterfaceCollection",
+    "Location": [
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/Schemas/HostInterfaceCollection.json",
+            "PublicationUri": "http://redfish.dmtf.org/schemas/v1/HostInterfaceCollection.json"
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "@odata.context": "/redfish/v1/$metadata#JsonSchemaFile.JsonSchemaFile",
+    "@odata.id": "/redfish/v1/JsonSchemas/SubCard.v1_0_0",
+    "@odata.type": "#JsonSchemaFile.v1_0_2.JsonSchemaFile",
+    "Id": "SubCard.v1_0_0",
+    "Description": "SubCard Schema File Location",
+    "Name": "SubCard Schema File",
+    "Languages": [
+        "en"
+    ],
+    "Schema": "#SubCard.v1_0_0.SubCard",
+    "Location": [
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/SchemaStore/en/SubCard.v1_0_0.json"
+        },
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/Schemas/SubCard.v1_0_0.json"
+        }
+    ]
+}

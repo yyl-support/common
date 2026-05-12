@@ -1,0 +1,22 @@
+{
+    "@odata.context": "/redfish/v1/$metadata#JsonSchemaFile.JsonSchemaFile",
+    "@odata.id": "/redfish/v1/JsonSchemas/openUBMCPCIeDevice.v1_0_0",
+    "@odata.type": "#JsonSchemaFile.v1_0_2.JsonSchemaFile",
+    "Id": "openUBMCPCIeDevice.v1_0_0",
+    "Description": "openUBMCPCIeDevice Schema File Location",
+    "Name": "openUBMCPCIeDevice Schema File",
+    "Languages": [
+        "en"
+    ],
+    "Schema": "#openUBMCPCIeDevice.v1_0_0.openUBMCPCIeDevice",
+    "Location": [
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/SchemaStore/en/openUBMCPCIeDevice.v1_0_0.json"
+        },
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/Schemas/openUBMCPCIeDevice.v1_0_0.json"
+        }
+    ]
+}

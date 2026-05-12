@@ -1,0 +1,24 @@
+{
+    "@odata.context": "/redfish/v1/$metadata#JsonSchemaFile.JsonSchemaFile",
+    "@odata.id": "/redfish/v1/JsonSchemas/Settings.v1_0_2",
+    "@odata.type": "#JsonSchemaFile.v1_0_2.JsonSchemaFile",
+    "Id": "Settings.v1_0_2",
+    "Description": "Settings Schema File Location",
+    "Name": "Settings Schema File",
+    "Languages": [
+        "en"
+    ],
+    "Schema": "#Settings.v1_0_2.Settings",
+    "Location": [
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/SchemaStore/en/Settings.v1_0_2.json",
+            "PublicationUri": "http://redfish.dmtf.org/schemas/v1/Settings.v1_0_2.json"
+        },
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/Schemas/Settings.v1_0_2.json",
+            "PublicationUri": "http://redfish.dmtf.org/schemas/v1/Settings.v1_0_2.json"
+        }
+    ]
+}

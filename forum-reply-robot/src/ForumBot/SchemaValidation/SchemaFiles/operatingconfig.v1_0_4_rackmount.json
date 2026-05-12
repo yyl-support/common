@@ -1,0 +1,19 @@
+{
+    "@odata.context": "/redfish/v1/$metadata#JsonSchemaFile.JsonSchemaFile",
+    "@odata.id": "/redfish/v1/JsonSchemas/OperatingConfig.v1_0_4",
+    "@odata.type": "#JsonSchemaFile.v1_0_2.JsonSchemaFile",
+    "Id": "OperatingConfig.v1_0_4",
+    "Description": "OperatingConfig Schema File Location",
+    "Name": "OperatingConfig Schema File",
+    "Languages": [
+        "en"
+    ],
+    "Schema": "#OperatingConfig.v1_0_4.OperatingConfig",
+    "Location": [
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/Schemas/OperatingConfig.v1_0_4.json",
+            "PublicationUri": "http://redfish.dmtf.org/schemas/v1/OperatingConfig.v1_0_4.json"
+        }
+    ]
+}

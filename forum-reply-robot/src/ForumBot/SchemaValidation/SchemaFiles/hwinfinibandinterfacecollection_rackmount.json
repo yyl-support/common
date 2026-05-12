@@ -1,0 +1,22 @@
+{
+    "@odata.context": "/redfish/v1/$metadata#JsonSchemaFile.JsonSchemaFile",
+    "@odata.id": "/redfish/v1/JsonSchemas/HwInfiniBandInterfaceCollection",
+    "@odata.type": "#JsonSchemaFile.v1_0_2.JsonSchemaFile",
+    "Id": "HwInfiniBandInterfaceCollection",
+    "Description": "HwInfiniBandInterfaceCollection Schema File Location",
+    "Name": "HwInfiniBandInterfaceCollection Schema File",
+    "Languages": [
+        "en"
+    ],
+    "Schema": "#HwInfiniBandInterfaceCollection.HwInfiniBandInterfaceCollection",
+    "Location": [
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/SchemaStore/en/HwInfiniBandInterfaceCollection.json"
+        },
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/Schemas/HwInfiniBandInterfaceCollection.json"
+        }
+    ]
+}

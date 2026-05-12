@@ -1,0 +1,24 @@
+{
+    "@odata.context": "/redfish/v1/$metadata#JsonSchemaFile.JsonSchemaFile",
+    "@odata.id": "/redfish/v1/JsonSchemas/UpdateService.v1_0_0",
+    "@odata.type": "#JsonSchemaFile.v1_0_2.JsonSchemaFile",
+    "Id": "UpdateService.v1_0_0",
+    "Description": "UpdateService Schema File Location",
+    "Name": "UpdateService Schema File",
+    "Languages": [
+        "en"
+    ],
+    "Schema": "#UpdateService.v1_0_0.UpdateService",
+    "Location": [
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/SchemaStore/en/UpdateService.v1_0_0.json",
+            "PublicationUri": "http://redfish.dmtf.org/schemas/v1/UpdateService.v1_0_0.json"
+        },
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/Schemas/UpdateService.v1_0_0.json",
+            "PublicationUri": "http://redfish.dmtf.org/schemas/v1/UpdateService.v1_0_0.json"
+        }
+    ]
+}

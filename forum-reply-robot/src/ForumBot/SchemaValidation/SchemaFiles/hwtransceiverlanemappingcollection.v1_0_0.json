@@ -1,0 +1,22 @@
+{
+    "@odata.context": "/redfish/v1/$metadata#JsonSchemaFile.JsonSchemaFile",
+    "@odata.id": "/redfish/v1/JsonSchemas/HwTransceiverLaneMappingCollection.v1_0_0",
+    "@odata.type": "#JsonSchemaFile.v1_0_2.JsonSchemaFile",
+    "Id": "HwTransceiverLaneMappingCollection.v1_0_0",
+    "Description": "HwTransceiverLaneMappingCollection Schema File Location",
+    "Name": "HwTransceiverLaneMappingCollection Schema File",
+    "Languages": [
+        "en"
+    ],
+    "Schema": "#HwTransceiverLaneMappingCollection.v1_0_0.HwTransceiverLaneMappingCollection",
+    "Location": [
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/SchemaStore/en/HwTransceiverLaneMappingCollection.v1_0_0.json"
+        },
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/Schemas/HwTransceiverLaneMappingCollection.v1_0_0.json"
+        }
+    ]
+}

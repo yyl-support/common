@@ -1,0 +1,19 @@
+{
+    "@odata.context": "/redfish/v1/$metadata#JsonSchemaFile.JsonSchemaFile",
+    "@odata.id": "/redfish/v1/JsonSchemas/VCATEntryCollection",
+    "@odata.type": "#JsonSchemaFile.v1_0_2.JsonSchemaFile",
+    "Id": "VCATEntryCollection",
+    "Description": "VCATEntryCollection Schema File Location",
+    "Name": "VCATEntryCollection Schema File",
+    "Languages": [
+        "en"
+    ],
+    "Schema": "#VCATEntryCollection.VCATEntryCollection",
+    "Location": [
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/Schemas/VCATEntryCollection.json",
+            "PublicationUri": "http://redfish.dmtf.org/schemas/v1/VCATEntryCollection.json"
+        }
+    ]
+}

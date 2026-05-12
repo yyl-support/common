@@ -1,0 +1,22 @@
+{
+    "@odata.context": "/redfish/v1/$metadata#JsonSchemaFile.JsonSchemaFile",
+    "@odata.id": "/redfish/v1/JsonSchemas/HwSPDiagnose",
+    "@odata.type": "#JsonSchemaFile.v1_0_2.JsonSchemaFile",
+    "Id": "HwSPDiagnose",
+    "Description": "HwSPDiagnose Schema File Location",
+    "Name": "HwSPDiagnose Schema File",
+    "Languages": [
+        "en"
+    ],
+    "Schema": "#HwSPDiagnose.HwSPDiagnose",
+    "Location": [
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/SchemaStore/en/HwSPDiagnose.json"
+        },
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/Schemas/HwSPDiagnose.json"
+        }
+    ]
+}

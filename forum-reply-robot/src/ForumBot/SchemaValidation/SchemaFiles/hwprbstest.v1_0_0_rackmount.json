@@ -1,0 +1,22 @@
+{
+    "@odata.context": "/redfish/v1/$metadata#JsonSchemaFile.JsonSchemaFile",
+    "@odata.id": "/redfish/v1/JsonSchemas/HwPRBSTest.v1_0_0",
+    "@odata.type": "#JsonSchemaFile.v1_0_2.JsonSchemaFile",
+    "Id": "HwPRBSTest.v1_0_0",
+    "Description": "HwPRBSTest Schema File Location",
+    "Name": "HwPRBSTest Schema File",
+    "Languages": [
+        "en"
+    ],
+    "Schema": "#HwPRBSTest.v1_0_0.HwPRBSTest",
+    "Location": [
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/SchemaStore/en/HwPRBSTest.v1_0_0.json"
+        },
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/Schemas/HwPRBSTest.v1_0_0.json"
+        }
+    ]
+}

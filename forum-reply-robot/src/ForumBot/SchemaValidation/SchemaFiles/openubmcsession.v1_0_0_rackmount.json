@@ -1,0 +1,22 @@
+{
+    "@odata.context": "/redfish/v1/$metadata#JsonSchemaFile.JsonSchemaFile",
+    "@odata.id": "/redfish/v1/JsonSchemas/openUBMCSession.v1_0_0",
+    "@odata.type": "#JsonSchemaFile.v1_0_2.JsonSchemaFile",
+    "Id": "openUBMCSession.v1_0_0",
+    "Description": "openUBMCSession Schema File Location",
+    "Name": "openUBMCSession Schema File",
+    "Languages": [
+        "en"
+    ],
+    "Schema": "#openUBMCSession.v1_0_0.openUBMCSession",
+    "Location": [
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/SchemaStore/en/openUBMCSession.v1_0_0.json"
+        },
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/Schemas/openUBMCSession.v1_0_0.json"
+        }
+    ]
+}

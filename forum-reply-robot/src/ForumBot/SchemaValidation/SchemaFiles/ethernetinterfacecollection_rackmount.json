@@ -1,0 +1,24 @@
+{
+    "@odata.context": "/redfish/v1/$metadata#JsonSchemaFile.JsonSchemaFile",
+    "@odata.id": "/redfish/v1/JsonSchemas/EthernetInterfaceCollection",
+    "@odata.type": "#JsonSchemaFile.v1_0_2.JsonSchemaFile",
+    "Id": "EthernetInterfaceCollection",
+    "Description": "EthernetInterfaceCollection Schema File Location",
+    "Name": "EthernetInterfaceCollection Schema File",
+    "Languages": [
+        "en"
+    ],
+    "Schema": "#EthernetInterfaceCollection.EthernetInterfaceCollection",
+    "Location": [
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/SchemaStore/en/EthernetInterfaceCollection.json",
+            "PublicationUri": "http://redfish.dmtf.org/schemas/v1/EthernetInterfaceCollection.json"
+        },
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/Schemas/EthernetInterfaceCollection.json",
+            "PublicationUri": "http://redfish.dmtf.org/schemas/v1/EthernetInterfaceCollection.json"
+        }
+    ]
+}

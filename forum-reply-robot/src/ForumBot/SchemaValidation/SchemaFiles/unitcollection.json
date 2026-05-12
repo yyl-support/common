@@ -1,0 +1,22 @@
+{
+    "@odata.context": "/redfish/v1/$metadata#JsonSchemaFile.JsonSchemaFile",
+    "@odata.id": "/redfish/v1/JsonSchemas/UnitCollection",
+    "@odata.type": "#JsonSchemaFile.v1_0_2.JsonSchemaFile",
+    "Id": "UnitCollection",
+    "Description": "UnitCollection Schema File Location",
+    "Name": "UnitCollection Schema File",
+    "Languages": [
+        "en"
+    ],
+    "Schema": "#UnitCollection.UnitCollection",
+    "Location": [
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/SchemaStore/en/UnitCollection.json"
+        },
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/Schemas/UnitCollection.json"
+        }
+    ]
+}

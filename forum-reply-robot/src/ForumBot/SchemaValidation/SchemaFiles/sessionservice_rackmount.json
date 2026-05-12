@@ -1,0 +1,24 @@
+{
+    "@odata.context": "/redfish/v1/$metadata#JsonSchemaFile.JsonSchemaFile",
+    "@odata.id": "/redfish/v1/JsonSchemas/SessionService",
+    "@odata.type": "#JsonSchemaFile.v1_0_2.JsonSchemaFile",
+    "Id": "SessionService",
+    "Description": "SessionService Schema File Location",
+    "Name": "SessionService Schema File",
+    "Languages": [
+        "en"
+    ],
+    "Schema": "#SessionService.SessionService",
+    "Location": [
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/SchemaStore/en/SessionService.json",
+            "PublicationUri": "http://redfish.dmtf.org/schemas/v1/SessionService.json"
+        },
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/Schemas/SessionService.json",
+            "PublicationUri": "http://redfish.dmtf.org/schemas/v1/SessionService.json"
+        }
+    ]
+}

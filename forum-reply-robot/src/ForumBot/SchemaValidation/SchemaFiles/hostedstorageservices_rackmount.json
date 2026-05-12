@@ -1,0 +1,19 @@
+{
+    "@odata.context": "/redfish/v1/$metadata#JsonSchemaFile.JsonSchemaFile",
+    "@odata.id": "/redfish/v1/JsonSchemas/HostedStorageServices",
+    "@odata.type": "#JsonSchemaFile.v1_0_2.JsonSchemaFile",
+    "Id": "HostedStorageServices",
+    "Description": "HostedStorageServices Schema File Location",
+    "Name": "HostedStorageServices Schema File",
+    "Languages": [
+        "en"
+    ],
+    "Schema": "#HostedStorageServices.HostedStorageServices",
+    "Location": [
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/Schemas/HostedStorageServices.json",
+            "PublicationUri": "http://redfish.dmtf.org/schemas/swordfish/v1/HostedStorageServices.json"
+        }
+    ]
+}

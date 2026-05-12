@@ -1,0 +1,19 @@
+{
+    "@odata.context": "/redfish/v1/$metadata#JsonSchemaFile.JsonSchemaFile",
+    "@odata.id": "/redfish/v1/JsonSchemas/KeyService.v1_0_1",
+    "@odata.type": "#JsonSchemaFile.v1_0_2.JsonSchemaFile",
+    "Id": "KeyService.v1_0_1",
+    "Description": "KeyService Schema File Location",
+    "Name": "KeyService Schema File",
+    "Languages": [
+        "en"
+    ],
+    "Schema": "#KeyService.v1_0_1.KeyService",
+    "Location": [
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/Schemas/KeyService.v1_0_1.json",
+            "PublicationUri": "http://redfish.dmtf.org/schemas/v1/KeyService.v1_0_1.json"
+        }
+    ]
+}

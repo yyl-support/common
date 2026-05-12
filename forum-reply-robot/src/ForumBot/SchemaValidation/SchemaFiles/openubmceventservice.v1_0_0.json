@@ -1,0 +1,22 @@
+{
+    "@odata.context": "/redfish/v1/$metadata#JsonSchemaFile.JsonSchemaFile",
+    "@odata.id": "/redfish/v1/JsonSchemas/openUBMCEventService.v1_0_0",
+    "@odata.type": "#JsonSchemaFile.v1_0_2.JsonSchemaFile",
+    "Id": "openUBMCEventService.v1_0_0",
+    "Description": "openUBMCEventService Schema File Location",
+    "Name": "openUBMCEventService Schema File",
+    "Languages": [
+        "en"
+    ],
+    "Schema": "#openUBMCEventService.v1_0_0.openUBMCEventService",
+    "Location": [
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/SchemaStore/en/openUBMCEventService.v1_0_0.json"
+        },
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/Schemas/openUBMCEventService.v1_0_0.json"
+        }
+    ]
+}

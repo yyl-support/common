@@ -1,0 +1,24 @@
+{
+    "@odata.context": "/redfish/v1/$metadata#JsonSchemaFile.JsonSchemaFile",
+    "@odata.id": "/redfish/v1/JsonSchemas/SwitchCollection",
+    "@odata.type": "#JsonSchemaFile.v1_0_2.JsonSchemaFile",
+    "Id": "SwitchCollection",
+    "Description": "SwitchCollection Schema File Location",
+    "Name": "SwitchCollection Schema File",
+    "Languages": [
+        "en"
+    ],
+    "Schema": "#SwitchCollection.SwitchCollection",
+    "Location": [
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/SchemaStore/en/SwitchCollection.json",
+            "PublicationUri": "http://redfish.dmtf.org/schemas/v1/SwitchCollection.json"
+        },
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/Schemas/SwitchCollection.json",
+            "PublicationUri": "http://redfish.dmtf.org/schemas/v1/SwitchCollection.json"
+        }
+    ]
+}

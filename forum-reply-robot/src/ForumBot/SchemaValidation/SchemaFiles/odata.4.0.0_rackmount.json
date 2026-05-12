@@ -1,0 +1,24 @@
+{
+    "@odata.context": "/redfish/v1/$metadata#JsonSchemaFile.JsonSchemaFile",
+    "@odata.id": "/redfish/v1/JsonSchemas/odata.4.0.0",
+    "@odata.type": "#JsonSchemaFile.v1_0_2.JsonSchemaFile",
+    "Id": "odata.4.0.0",
+    "Description": "odata.4.0.0 Schema File Location",
+    "Name": "odata.4.0.0 Schema File",
+    "Languages": [
+        "en"
+    ],
+    "Schema": "#odata.4.0.0.odata.4.0.0",
+    "Location": [
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/SchemaStore/en/odata.4.0.0.json",
+            "PublicationUri": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json"
+        },
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/Schemas/odata.4.0.0.json",
+            "PublicationUri": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json"
+        }
+    ]
+}

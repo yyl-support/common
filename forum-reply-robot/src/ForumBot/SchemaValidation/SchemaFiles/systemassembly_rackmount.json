@@ -1,0 +1,22 @@
+{
+    "@odata.context": "/redfish/v1/$metadata#JsonSchemaFile.JsonSchemaFile",
+    "@odata.id": "/redfish/v1/JsonSchemas/SystemAssembly",
+    "@odata.type": "#JsonSchemaFile.v1_0_2.JsonSchemaFile",
+    "Id": "SystemAssembly",
+    "Description": "SystemAssembly Schema File Location",
+    "Name": "SystemAssembly Schema File",
+    "Languages": [
+        "en"
+    ],
+    "Schema": "#SystemAssembly.SystemAssembly",
+    "Location": [
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/SchemaStore/en/SystemAssembly.json"
+        },
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/Schemas/SystemAssembly.json"
+        }
+    ]
+}

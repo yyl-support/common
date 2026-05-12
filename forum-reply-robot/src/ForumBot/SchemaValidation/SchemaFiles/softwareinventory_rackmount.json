@@ -1,0 +1,24 @@
+{
+    "@odata.context": "/redfish/v1/$metadata#JsonSchemaFile.JsonSchemaFile",
+    "@odata.id": "/redfish/v1/JsonSchemas/SoftwareInventory",
+    "@odata.type": "#JsonSchemaFile.v1_0_2.JsonSchemaFile",
+    "Id": "SoftwareInventory",
+    "Description": "SoftwareInventory Schema File Location",
+    "Name": "SoftwareInventory Schema File",
+    "Languages": [
+        "en"
+    ],
+    "Schema": "#SoftwareInventory.SoftwareInventory",
+    "Location": [
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/SchemaStore/en/SoftwareInventory.json",
+            "PublicationUri": "http://redfish.dmtf.org/schemas/v1/SoftwareInventory.json"
+        },
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/Schemas/SoftwareInventory.json",
+            "PublicationUri": "http://redfish.dmtf.org/schemas/v1/SoftwareInventory.json"
+        }
+    ]
+}

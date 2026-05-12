@@ -1,0 +1,22 @@
+{
+    "@odata.context": "/redfish/v1/$metadata#JsonSchemaFile.JsonSchemaFile",
+    "@odata.id": "/redfish/v1/JsonSchemas/openUBMCNetworkAdapter.v1_0_0",
+    "@odata.type": "#JsonSchemaFile.v1_0_2.JsonSchemaFile",
+    "Id": "openUBMCNetworkAdapter.v1_0_0",
+    "Description": "openUBMCNetworkAdapter Schema File Location",
+    "Name": "openUBMCNetworkAdapter Schema File",
+    "Languages": [
+        "en"
+    ],
+    "Schema": "#openUBMCNetworkAdapter.v1_0_0.openUBMCNetworkAdapter",
+    "Location": [
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/SchemaStore/en/openUBMCNetworkAdapter.v1_0_0.json"
+        },
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/Schemas/openUBMCNetworkAdapter.v1_0_0.json"
+        }
+    ]
+}

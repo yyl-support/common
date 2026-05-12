@@ -1,0 +1,22 @@
+{
+    "@odata.context": "/redfish/v1/$metadata#JsonSchemaFile.JsonSchemaFile",
+    "@odata.id": "/redfish/v1/JsonSchemas/HwSPDriveErase",
+    "@odata.type": "#JsonSchemaFile.v1_0_2.JsonSchemaFile",
+    "Id": "HwSPDriveErase",
+    "Description": "HwSPDriveErase Schema File Location",
+    "Name": "HwSPDriveErase Schema File",
+    "Languages": [
+        "en"
+    ],
+    "Schema": "#HwSPDriveErase.HwSPDriveErase",
+    "Location": [
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/SchemaStore/en/HwSPDriveErase.json"
+        },
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/Schemas/HwSPDriveErase.json"
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "@odata.context": "/redfish/v1/$metadata#JsonSchemaFile.JsonSchemaFile",
+    "@odata.id": "/redfish/v1/JsonSchemas/openUBMCDrive.v1_0_0",
+    "@odata.type": "#JsonSchemaFile.v1_0_2.JsonSchemaFile",
+    "Id": "openUBMCDrive.v1_0_0",
+    "Description": "openUBMCDrive Schema File Location",
+    "Name": "openUBMCDrive Schema File",
+    "Languages": [
+        "en"
+    ],
+    "Schema": "#openUBMCDrive.v1_0_0.openUBMCDrive",
+    "Location": [
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/SchemaStore/en/openUBMCDrive.v1_0_0.json"
+        },
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/Schemas/openUBMCDrive.v1_0_0.json"
+        }
+    ]
+}

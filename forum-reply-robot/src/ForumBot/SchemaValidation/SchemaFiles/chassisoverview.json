@@ -1,0 +1,22 @@
+{
+    "@odata.context": "/redfish/v1/$metadata#JsonSchemaFile.JsonSchemaFile",
+    "@odata.id": "/redfish/v1/JsonSchemas/ChassisOverview",
+    "@odata.type": "#JsonSchemaFile.v1_0_2.JsonSchemaFile",
+    "Id": "ChassisOverview",
+    "Description": "ChassisOverview Schema File Location",
+    "Name": "ChassisOverview Schema File",
+    "Languages": [
+        "en"
+    ],
+    "Schema": "#ChassisOverview.ChassisOverview",
+    "Location": [
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/SchemaStore/en/ChassisOverview.json"
+        },
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/Schemas/ChassisOverview.json"
+        }
+    ]
+}

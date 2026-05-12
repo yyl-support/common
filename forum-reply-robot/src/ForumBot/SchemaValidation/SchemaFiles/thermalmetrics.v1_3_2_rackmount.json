@@ -1,0 +1,24 @@
+{
+    "@odata.context": "/redfish/v1/$metadata#JsonSchemaFile.JsonSchemaFile",
+    "@odata.id": "/redfish/v1/JsonSchemas/ThermalMetrics.v1_3_2",
+    "@odata.type": "#JsonSchemaFile.v1_0_2.JsonSchemaFile",
+    "Id": "ThermalMetrics.v1_3_2",
+    "Description": "ThermalMetrics Schema File Location",
+    "Name": "ThermalMetrics Schema File",
+    "Languages": [
+        "en"
+    ],
+    "Schema": "#ThermalMetrics.v1_3_2.ThermalMetrics",
+    "Location": [
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/SchemaStore/en/ThermalMetrics.v1_3_2.json",
+            "PublicationUri": "http://redfish.dmtf.org/schemas/v1/ThermalMetrics.v1_3_2.json"
+        },
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/Schemas/ThermalMetrics.v1_3_2.json",
+            "PublicationUri": "http://redfish.dmtf.org/schemas/v1/ThermalMetrics.v1_3_2.json"
+        }
+    ]
+}

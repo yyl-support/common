@@ -1,0 +1,22 @@
+{
+    "@odata.context": "/redfish/v1/$metadata#JsonSchemaFile.JsonSchemaFile",
+    "@odata.id": "/redfish/v1/JsonSchemas/HwOpticalModule",
+    "@odata.type": "#JsonSchemaFile.v1_0_2.JsonSchemaFile",
+    "Id": "HwOpticalModule",
+    "Description": "HwOpticalModule Schema File Location",
+    "Name": "HwOpticalModule Schema File",
+    "Languages": [
+        "en"
+    ],
+    "Schema": "#HwOpticalModule.HwOpticalModule",
+    "Location": [
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/SchemaStore/en/HwOpticalModule.json"
+        },
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/Schemas/HwOpticalModule.json"
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "@odata.context": "/redfish/v1/$metadata#JsonSchemaFile.JsonSchemaFile",
+    "@odata.id": "/redfish/v1/JsonSchemas/openUBMCProcessor.v1_0_0",
+    "@odata.type": "#JsonSchemaFile.v1_0_2.JsonSchemaFile",
+    "Id": "openUBMCProcessor.v1_0_0",
+    "Description": "openUBMCProcessor Schema File Location",
+    "Name": "openUBMCProcessor Schema File",
+    "Languages": [
+        "en"
+    ],
+    "Schema": "#openUBMCProcessor.v1_0_0.openUBMCProcessor",
+    "Location": [
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/SchemaStore/en/openUBMCProcessor.v1_0_0.json"
+        },
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/Schemas/openUBMCProcessor.v1_0_0.json"
+        }
+    ]
+}

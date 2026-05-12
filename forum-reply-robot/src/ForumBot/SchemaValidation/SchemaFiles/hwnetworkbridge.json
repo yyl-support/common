@@ -1,0 +1,22 @@
+{
+    "@odata.context": "/redfish/v1/$metadata#JsonSchemaFile.JsonSchemaFile",
+    "@odata.id": "/redfish/v1/JsonSchemas/HwNetworkBridge",
+    "@odata.type": "#JsonSchemaFile.v1_0_2.JsonSchemaFile",
+    "Id": "HwNetworkBridge",
+    "Description": "HwNetworkBridge Schema File Location",
+    "Name": "HwNetworkBridge Schema File",
+    "Languages": [
+        "en"
+    ],
+    "Schema": "#HwNetworkBridge.HwNetworkBridge",
+    "Location": [
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/SchemaStore/en/HwNetworkBridge.json"
+        },
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/Schemas/HwNetworkBridge.json"
+        }
+    ]
+}

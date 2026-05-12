@@ -1,0 +1,22 @@
+{
+    "@odata.context": "/redfish/v1/$metadata#JsonSchemaFile.JsonSchemaFile",
+    "@odata.id": "/redfish/v1/JsonSchemas/openUBMCManagerNetworkProtocol.v1_0_0",
+    "@odata.type": "#JsonSchemaFile.v1_0_2.JsonSchemaFile",
+    "Id": "openUBMCManagerNetworkProtocol.v1_0_0",
+    "Description": "openUBMCManagerNetworkProtocol Schema File Location",
+    "Name": "openUBMCManagerNetworkProtocol Schema File",
+    "Languages": [
+        "en"
+    ],
+    "Schema": "#openUBMCManagerNetworkProtocol.v1_0_0.openUBMCManagerNetworkProtocol",
+    "Location": [
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/SchemaStore/en/openUBMCManagerNetworkProtocol.v1_0_0.json"
+        },
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/Schemas/openUBMCManagerNetworkProtocol.v1_0_0.json"
+        }
+    ]
+}

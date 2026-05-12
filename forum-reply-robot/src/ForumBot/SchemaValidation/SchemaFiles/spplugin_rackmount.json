@@ -1,0 +1,22 @@
+{
+    "@odata.context": "/redfish/v1/$metadata#JsonSchemaFile.JsonSchemaFile",
+    "@odata.id": "/redfish/v1/JsonSchemas/SPPlugin",
+    "@odata.type": "#JsonSchemaFile.v1_0_2.JsonSchemaFile",
+    "Id": "SPPlugin",
+    "Description": "SPPlugin Schema File Location",
+    "Name": "SPPlugin Schema File",
+    "Languages": [
+        "en"
+    ],
+    "Schema": "#SPPlugin.SPPlugin",
+    "Location": [
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/SchemaStore/en/SPPlugin.json"
+        },
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/Schemas/SPPlugin.json"
+        }
+    ]
+}

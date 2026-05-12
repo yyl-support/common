@@ -1,0 +1,22 @@
+{
+    "@odata.context": "/redfish/v1/$metadata#JsonSchemaFile.JsonSchemaFile",
+    "@odata.id": "/redfish/v1/JsonSchemas/openUBMCAssetService",
+    "@odata.type": "#JsonSchemaFile.v1_0_2.JsonSchemaFile",
+    "Id": "openUBMCAssetService",
+    "Description": "openUBMCAssetService Schema File Location",
+    "Name": "openUBMCAssetService Schema File",
+    "Languages": [
+        "en"
+    ],
+    "Schema": "#openUBMCAssetService.openUBMCAssetService",
+    "Location": [
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/SchemaStore/en/openUBMCAssetService.json"
+        },
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/Schemas/openUBMCAssetService.json"
+        }
+    ]
+}

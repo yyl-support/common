@@ -1,0 +1,19 @@
+{
+    "@odata.context": "/redfish/v1/$metadata#JsonSchemaFile.JsonSchemaFile",
+    "@odata.id": "/redfish/v1/JsonSchemas/CoolingUnit",
+    "@odata.type": "#JsonSchemaFile.v1_0_2.JsonSchemaFile",
+    "Id": "CoolingUnit",
+    "Description": "CoolingUnit Schema File Location",
+    "Name": "CoolingUnit Schema File",
+    "Languages": [
+        "en"
+    ],
+    "Schema": "#CoolingUnit.CoolingUnit",
+    "Location": [
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/Schemas/CoolingUnit.json",
+            "PublicationUri": "http://redfish.dmtf.org/schemas/v1/CoolingUnit.json"
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "@odata.context": "/redfish/v1/$metadata#JsonSchemaFile.JsonSchemaFile",
+    "@odata.id": "/redfish/v1/JsonSchemas/HwKerberosService",
+    "@odata.type": "#JsonSchemaFile.v1_0_2.JsonSchemaFile",
+    "Id": "HwKerberosService",
+    "Description": "HwKerberosService Schema File Location",
+    "Name": "HwKerberosService Schema File",
+    "Languages": [
+        "en"
+    ],
+    "Schema": "#HwKerberosService.HwKerberosService",
+    "Location": [
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/SchemaStore/en/HwKerberosService.json"
+        },
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/Schemas/HwKerberosService.json"
+        }
+    ]
+}

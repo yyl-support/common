@@ -1,0 +1,22 @@
+{
+    "@odata.context": "/redfish/v1/$metadata#JsonSchemaFile.JsonSchemaFile",
+    "@odata.id": "/redfish/v1/JsonSchemas/openUBMCAccountService",
+    "@odata.type": "#JsonSchemaFile.v1_0_2.JsonSchemaFile",
+    "Id": "openUBMCAccountService",
+    "Description": "openUBMCAccountService Schema File Location",
+    "Name": "openUBMCAccountService Schema File",
+    "Languages": [
+        "en"
+    ],
+    "Schema": "#openUBMCAccountService.openUBMCAccountService",
+    "Location": [
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/SchemaStore/en/openUBMCAccountService.json"
+        },
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/Schemas/openUBMCAccountService.json"
+        }
+    ]
+}

@@ -1,0 +1,19 @@
+{
+    "@odata.context": "/redfish/v1/$metadata#JsonSchemaFile.JsonSchemaFile",
+    "@odata.id": "/redfish/v1/JsonSchemas/Capacity.v1_2_2",
+    "@odata.type": "#JsonSchemaFile.v1_0_2.JsonSchemaFile",
+    "Id": "Capacity.v1_2_2",
+    "Description": "Capacity Schema File Location",
+    "Name": "Capacity Schema File",
+    "Languages": [
+        "en"
+    ],
+    "Schema": "#Capacity.v1_2_2.Capacity",
+    "Location": [
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/Schemas/Capacity.v1_2_2.json",
+            "PublicationUri": "http://redfish.dmtf.org/schemas/swordfish/v1/Capacity.v1_2_2.json"
+        }
+    ]
+}

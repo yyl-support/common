@@ -1,0 +1,22 @@
+{
+    "@odata.context": "/redfish/v1/$metadata#JsonSchemaFile.JsonSchemaFile",
+    "@odata.id": "/redfish/v1/JsonSchemas/PerformanceCollection.v1_0_0",
+    "@odata.type": "#JsonSchemaFile.v1_0_2.JsonSchemaFile",
+    "Id": "PerformanceCollection.v1_0_0",
+    "Description": "PerformanceCollection Schema File Location",
+    "Name": "PerformanceCollection Schema File",
+    "Languages": [
+        "en"
+    ],
+    "Schema": "#PerformanceCollection.v1_0_0.PerformanceCollection",
+    "Location": [
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/SchemaStore/en/PerformanceCollection.v1_0_0.json"
+        },
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/Schemas/PerformanceCollection.v1_0_0.json"
+        }
+    ]
+}

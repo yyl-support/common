@@ -1,0 +1,22 @@
+{
+    "@odata.context": "/redfish/v1/$metadata#JsonSchemaFile.JsonSchemaFile",
+    "@odata.id": "/redfish/v1/JsonSchemas/HwWorkRecord.v1_0_0",
+    "@odata.type": "#JsonSchemaFile.v1_0_2.JsonSchemaFile",
+    "Id": "HwWorkRecord.v1_0_0",
+    "Description": "HwWorkRecord Schema File Location",
+    "Name": "HwWorkRecord Schema File",
+    "Languages": [
+        "en"
+    ],
+    "Schema": "#HwWorkRecord.v1_0_0.HwWorkRecord",
+    "Location": [
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/SchemaStore/en/HwWorkRecord.v1_0_0.json"
+        },
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/Schemas/HwWorkRecord.v1_0_0.json"
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "@odata.context": "/redfish/v1/$metadata#JsonSchemaFile.JsonSchemaFile",
+    "@odata.id": "/redfish/v1/JsonSchemas/openUBMCJob.v1_0_0",
+    "@odata.type": "#JsonSchemaFile.v1_0_2.JsonSchemaFile",
+    "Id": "openUBMCJob.v1_0_0",
+    "Description": "openUBMCJob Schema File Location",
+    "Name": "openUBMCJob Schema File",
+    "Languages": [
+        "en"
+    ],
+    "Schema": "#openUBMCJob.v1_0_0.openUBMCJob",
+    "Location": [
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/SchemaStore/en/openUBMCJob.v1_0_0.json"
+        },
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/Schemas/openUBMCJob.v1_0_0.json"
+        }
+    ]
+}

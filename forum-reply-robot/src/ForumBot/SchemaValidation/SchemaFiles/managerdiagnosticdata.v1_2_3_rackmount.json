@@ -1,0 +1,19 @@
+{
+    "@odata.context": "/redfish/v1/$metadata#JsonSchemaFile.JsonSchemaFile",
+    "@odata.id": "/redfish/v1/JsonSchemas/ManagerDiagnosticData.v1_2_3",
+    "@odata.type": "#JsonSchemaFile.v1_0_2.JsonSchemaFile",
+    "Id": "ManagerDiagnosticData.v1_2_3",
+    "Description": "ManagerDiagnosticData Schema File Location",
+    "Name": "ManagerDiagnosticData Schema File",
+    "Languages": [
+        "en"
+    ],
+    "Schema": "#ManagerDiagnosticData.v1_2_3.ManagerDiagnosticData",
+    "Location": [
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/Schemas/ManagerDiagnosticData.v1_2_3.json",
+            "PublicationUri": "http://redfish.dmtf.org/schemas/v1/ManagerDiagnosticData.v1_2_3.json"
+        }
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "@odata.context": "/redfish/v1/$metadata#JsonSchemaFile.JsonSchemaFile",
+    "@odata.id": "/redfish/v1/JsonSchemas/Schedule.v1_2_5",
+    "@odata.type": "#JsonSchemaFile.v1_0_2.JsonSchemaFile",
+    "Id": "Schedule.v1_2_5",
+    "Description": "Schedule Schema File Location",
+    "Name": "Schedule Schema File",
+    "Languages": [
+        "en"
+    ],
+    "Schema": "#Schedule.v1_2_5.Schedule",
+    "Location": [
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/SchemaStore/en/Schedule.v1_2_5.json",
+            "PublicationUri": "http://redfish.dmtf.org/schemas/v1/Schedule.v1_2_5.json"
+        },
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/Schemas/Schedule.v1_2_5.json",
+            "PublicationUri": "http://redfish.dmtf.org/schemas/v1/Schedule.v1_2_5.json"
+        }
+    ]
+}

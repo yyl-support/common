@@ -1,0 +1,24 @@
+{
+    "@odata.context": "/redfish/v1/$metadata#JsonSchemaFile.JsonSchemaFile",
+    "@odata.id": "/redfish/v1/JsonSchemas/ThermalEquipment.v1_2_0",
+    "@odata.type": "#JsonSchemaFile.v1_0_2.JsonSchemaFile",
+    "Id": "ThermalEquipment.v1_2_0",
+    "Description": "ThermalEquipment Schema File Location",
+    "Name": "ThermalEquipment Schema File",
+    "Languages": [
+        "en"
+    ],
+    "Schema": "#ThermalEquipment.v1_2_0.ThermalEquipment",
+    "Location": [
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/SchemaStore/en/ThermalEquipment.v1_2_0.json",
+            "PublicationUri": "http://redfish.dmtf.org/schemas/v1/ThermalEquipment.v1_2_0.json"
+        },
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/Schemas/ThermalEquipment.v1_2_0.json",
+            "PublicationUri": "http://redfish.dmtf.org/schemas/v1/ThermalEquipment.v1_2_0.json"
+        }
+    ]
+}

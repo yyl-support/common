@@ -1,0 +1,973 @@
+id,title,user_question,best_answer,tags,replies,created_at,llm_answer,summary_question
+29410,-q构建QEMU包，构建成功却没有生成.cpio.gz,"问题标题
+-q构建QEMU包，构建成功却没有生成.cpio.gz
+问题描述
+命令： bmcgo build -t target_personal -b TaiShan200_2280v2 -q
+/home/openubmc/manifest/temp/build_TaiShan200_2280v2_debug_dev/temp_interface_config/CUCC/redfish/config.json
+sudo find /home/openubmc/manifest/temp/build_TaiShan200_2280v2_debug_dev/temp_interface_config/CUCC/redfish -type d | sudo xargs -P 0 -i. chmod 550 .
+sudo find /home/openubmc/manifest/temp/build_TaiShan200_2280v2_debug_dev/temp_interface_config/CUCC/redfish -type f | sudo xargs -P 0 -i. chmod 440 .
+sudo find /home/openubmc/manifest/temp/build_TaiShan200_2280v2_debug_dev/temp_interface_config/CUCC/redfish -type d | sudo xargs -P 0 -i. chown 0:0 .
+sudo find /home/openubmc/manifest/temp/build_TaiShan200_2280v2_debug_dev/temp_interface_config/CUCC/redfish -type f | sudo xargs -P 0 -i. chown 0:0 .
+不能从 yaml 文件中获取到键值 base/vendor, 没有相关配置
+不能从 yaml 文件中获取到键值 base/vendor, 没有相关配置
+不能从 yaml 文件中获取到键值 base/vendor, 没有相关配置
+生成全量接口配置完成
+任务 work.create_interface_config 完成
+任务 personal 执行成功
+但是output/packet/inner目录下无对应的cpio.gz镜像文件
+root@DESKTOP-VNTN220:/home/openubmc/manifest# ll output/packet/inner/
+total 20
+drwxr-xr-x 5 root root 4096 Apr 21 15:22 ./
+drwxr-xr-x 3 root root 4096 Apr 21 14:45 ../
+drwxr-xr-x 2 root root 4096 Apr 21 15:22 None/
+drwxr-xr-x 2 root root 4096 Apr 21 15:20 debug/
+drwxr-xr-x 13 root root 4096 Apr 21 15:23 interface_config/
+root@DESKTOP-VNTN220:/home/openubmc/manifest#
+操作系统
+Ubuntu 24.04
+软件版本
+OpenUBMC2512
+硬件配置
+cpu磁盘
+重现步骤
+第一步
+第二步
+第三步
+期望结果
+构建成功有生成.cpio.gz
+实际结果
+构建成功却没有生成.cpio.gz
+我已确认以上信息尽量填写完整，并已搜索过类似问题
+on",,提问求助,"[""<p>答案内容由AI生成，仅供参考：<br>\n根据提供的知识库信息，针对“执行构建命令提示成功，但 <code>output/packet/inner/</code> 目录下未生成 <code>.cpio.gz</code> 仿真包”的问题，可结合以下要点进行排查与解决：</p>\n<h3><a name=\""h-1\"" class=\""anchor\"" href=\""#h-1\"" aria-label=\""标题链接\""></a><img src=\""/images/emoji/apple/magnifying_glass_tilted_left.png?v=15\"" title=\"":magnifying_glass_tilted_left:\"" class=\""emoji\"" alt=\"":magnifying_glass_tilted_left:\"" loading=\""lazy\"" width=\""20\"" height=\""20\""> 核心原因分析</h3>\n<ol>\n<li>\n<p><strong>构建命令与工具链差异</strong><br>\n知识库中明确指出，OpenUBMC 构建 QEMU 仿真镜像包的标准命令为：</p>\n<pre data-code-wrap=\""bash\""><code class=\""lang-bash\"">bingo build -sc qemu\n</code></pre>\n<p>您使用的 <code>bmcgo build -t target_personal -b TaiShan200_2280v2 -q</code> 可能属于旧版命令或特定分支指令。在 2512 版本中，若未正确调用 QEMU 专属构建流程，可能导致接口配置任务完成，但实际打包步骤被跳过。</p>\n</li>\n<li>\n<p><strong>Manifest 配置键值缺失</strong><br>\n日志提示 <code>不能从 yaml 文件中获取到键值 base/vendor, 没有相关配置</code>。虽然部分基础字段缺失不一定会阻断主流程，但若当前板级配置（<code>TaiShan200_2280v2</code>）在 Manifest 中未完整定义 QEMU 仿真所需的打包参数、版本映射或输出规则，打包脚本可能无法正确生成目标文件，从而导致目录中出现 <code>None/</code> 等异常占位文件夹。</p>\n</li>\n<li>\n<p><strong>子任务静默失败或日志未覆盖</strong><br>\n终端仅显示 <code>任务 personal 执行成功</code>，但 QEMU 镜像的生成通常由独立的子任务负责（如 <code>work.task_build_qemu_rootfs</code> 或打包脚本）。若该子任务在后台因依赖拉取失败、权限校验或配置解析异常而退出，主任务仍可能显示成功。</p>\n</li>\n</ol>\n<hr>\n<h3><a name=\""h-2\"" class=\""anchor\"" href=\""#h-2\"" aria-label=\""标题链接\""></a><img src=\""/images/emoji/apple/hammer_and_wrench.png?v=15\"" title=\"":hammer_and_wrench:\"" class=\""emoji\"" alt=\"":hammer_and_wrench:\"" loading=\""lazy\"" width=\""20\"" height=\""20\""> 解决步骤与排查建议</h3>\n<h4><a name=\""h-1-qemu-3\"" class=\""anchor\"" href=\""#h-1-qemu-3\"" aria-label=\""标题链接\""></a>1. 使用标准命令独立构建 QEMU 包</h4>\n<p>建议在 Manifest 根目录下执行官方推荐的专用命令，确保触发完整的 QEMU 打包流程：</p>\n<pre data-code-wrap=\""bash\""><code class=\""lang-bash\"">cd /home/openubmc/manifest\nbingo build -sc qemu\n</code></pre>\n<p><img src=\""/images/emoji/apple/white_check_mark.png?v=15\"" title=\"":white_check_mark:\"" class=\""emoji\"" alt=\"":white_check_mark:\"" loading=\""lazy\"" width=\""20\"" height=\""20\""> 成功标志：在 <code>manifest/output/packet/inner/</code> 目录下生成 <code>openUBMC_qemu.cpio.gz</code> 或 <code>openUBMC_版本号_qemu.cpio.gz</code> 文件。</p>\n<h4><a name=\""h-2-4\"" class=\""anchor\"" href=\""#h-2-4\"" aria-label=\""标题链接\""></a>2. 检查完整构建日志定位具体失败点</h4>\n<p>标准命令执行后，请查看详细日志以确认 QEMU 打包任务的真实状态：</p>\n<pre data-code-wrap=\""bash\""><code class=\""lang-bash\"">cat /home/openubmc/manifest/temp/log/task.log | grep -iE \""qemu|cpio|task_build|error\""\n</code></pre>\n<ul>\n<li>若日志提示组件下载失败或需要输入账号密码，请先执行 <code>conan search help -r openubmc_dev</code> 完成认证，再重新构建。</li>\n<li>知识库强调：<strong>“仿真镜像包当前需要使用 root 用户构建”</strong>。您已使用 root 权限，符合要求，但仍需确保构建过程中无交互式阻塞。</li>\n</ul>\n<h4><a name=\""h-3-5\"" class=\""anchor\"" href=\""#h-3-5\"" aria-label=\""标题链接\""></a>3. 清理缓存并验证默认配置</h4>\n<p>若当前板级配置存在兼容性问题，可尝试清理临时文件后使用默认配置验证：</p>\n<pre data-code-wrap=\""bash\""><code class=\""lang-bash\"">rm -rf /home/openubmc/manifest/temp\nrm -rf /home/openubmc/manifest/output\nbingo build -sc qemu\n</code></pre>\n<p>若默认配置可正常生成 <code>.cpio.gz</code>，则说明 <code>TaiShan200_2280v2</code> 的 YAML 配置中缺少 QEMU 仿真所需的必要字段（如 <code>base/vendor</code>、<code>qemu</code> 相关节点等），需参照官方 Manifest 模板补充。</p>\n<h4><a name=\""h-4-6\"" class=\""anchor\"" href=\""#h-4-6\"" aria-label=\""标题链接\""></a>4. 确认输出路径与命名规则</h4>\n<ul>\n<li>QEMU 包默认输出路径为：<code>manifest/output/packet/inner/</code></li>\n<li>文件命名通常包含版本号，例如：<code>openUBMC_25.12.00.01_qemu.cpio.gz</code></li>\n<li>请检查该目录下是否因版本解析失败将文件错误输出至 <code>None/</code> 子目录中。</li>\n</ul>\n<hr>\n<h3><a name=\""h-7\"" class=\""anchor\"" href=\""#h-7\"" aria-label=\""标题链接\""></a><img src=\""/images/emoji/apple/pushpin.png?v=15\"" title=\"":pushpin:\"" class=\""emoji\"" alt=\"":pushpin:\"" loading=\""lazy\"" width=\""20\"" height=\""20\""> 补充说明</h3>\n<ul>\n<li>QEMU 仿真包（<code>.cpio.gz</code>）与硬件升级包（<code>.hpm</code>）的构建流程相互独立，需分别执行 <code>bingo build</code> 与 <code>bingo build -sc qemu</code>。</li>\n<li>当前 QEMU 环境主要用于开发与功能验证，<strong>暂不支持通过 HPM 包进行固件升级</strong>，需直接替换 <code>cpio</code> 包并重启仿真环境生效。</li>\n</ul>\n<p>建议优先切换至 <code>bingo build -sc qemu</code> 命令进行构建，并结合 <code>temp/log/task.log</code> 定位具体阻断环节。如仍无法生成，请提供该日志中关于 <code>qemu</code> 或 <code>cpio</code> 的详细报错片段以便进一步分析。</p>""]",2026-04-21T08:26:35.125Z,,
+29384,OpenUBMC升级失败,"问题标题
+问题描述 OpenUBMC升级失败日志如下
+问题描述
+OpenUBMC升级失败日志如下
+1970-01-01 03:15:05.301937 [:00000014] om: LAUNCH snlua account/service/main
+1970-01-01 03:15:05.500461 framework SUBSCRIBE NOTICE: harbor.lua(421): dbus service [bmc.kepler.remote_console] online, → :1.90
+1970-01-01 03:15:06.105051 [:00000015] om: LAUNCH snlua vnc_proxy/service/main
+1970-01-01 03:15:07.820535 framework SUBSCRIBE NOTICE: harbor.lua(421): dbus service [bmc.kepler.event_policy] online, → :1.94
+1970-01-01 03:15:08.198479 framework SUBSCRIBE NOTICE: harbor.lua(421): dbus service [bmc.kepler.product_mgmt] online, → :1.96
+1970-01-01 03:15:11.164190 persistence NOTICE: persistence_db_intf.lua(331): finish persist save for table: t_fw_inventory_objs, persist_type: protect_temporary, op_type: insert, data_size: 1464, key: Id:Bios
+1970-01-01 03:15:12.063972 persistence NOTICE: persistence_db_intf.lua(331): finish persist save for table: t_fw_inventory_objs, persist_type: protect_temporary, op_type: insert, data_size: 1427, key: Id:TeeOS
+1970-01-01 03:15:12.106799 persistence NOTICE: persistence_db_intf.lua(331): finish persist save for table: t_fw_inventory_objs, persist_type: protect_temporary, op_type: insert, data_size: 1420, key: Id:Cca
+1970-01-01 03:15:13.530405 [:00000016] om: LAUNCH snlua remote_console/service/console_agent
+1970-01-01 03:15:14.327449 persistence NOTICE: persistence_db_intf.lua(331): finish persist save for table: t_fw_inventory_objs, persist_type: protect_temporary, op_type: insert, data_size: 1471, key: Id:SR_EXU_0101
+1970-01-01 03:15:14.443983 persistence NOTICE: persistence_db_intf.lua(331): finish persist save for table: t_fw_inventory_objs, persist_type: protect_temporary, op_type: insert, data_size: 1458, key: Id:SR_PSR_01010A
+1970-01-01 03:15:15.095530 persistence NOTICE: persistence_db_intf.lua(331): finish persist save for table: t_fw_inventory_objs, persist_type: protect_temporary, op_type: insert, data_size: 1473, key: Id:SR_BCU_010101
+1970-01-01 03:15:17.258870 [:00000002] interface: LAUNCH snlua bootstrap
+1970-01-01 03:15:17.250507 maca ERROR: init.lua(184): [dcmid]StartupCheck failed, error: org.freedesktop.DBus.Error.ServiceUnknown: The name bmc.kepler.dcmid was not provided by any .service files, check count: 1
+1970-01-01 03:15:17.394437 maca ERROR: init.lua(184): [ddns]StartupCheck failed, error: org.freedesktop.DBus.Error.UnknownObject: Unknown object path /bmc/kepler/ddns/MicroComponent, check count: 1
+1970-01-01 03:15:17.500549 [:00000003] interface: LAUNCH snlua launcher
+1970-01-01 03:15:17.550777 soctrl NOTICE: base_scene0.lua(119): connect_compound_keyboard_mouse_device : usb_id=0, fn_cnt=2, fn_list:0x1 0x142 fn_id:0 1
+1970-01-01 03:15:17.585577 [:00000004] interface: LAUNCH snlua cdummy
+1970-01-01 03:15:17.694558 [:00000005] interface: LAUNCH harbor 0 4
+1970-01-01 03:15:17.710688 [:00000006] interface: LAUNCH snlua datacenterd
+1970-01-01 03:15:17.767537 [:00000017] om: LAUNCH snlua remote_console/service/vmm_agent
+1970-01-01 03:15:17.850566 [:00000007] interface: LAUNCH snlua service_mgr
+1970-01-01 03:15:17.954523 [:00000008] interface: LAUNCH snlua hica/subsys/interface/service/main
+1970-01-01 03:15:18.040947 [:00000009] interface: LAUNCH snlua sd_bus
+1970-01-01 03:15:18.502639 [:00000018] om: LAUNCH snlua remote_console/service/vmm_core
+1970-01-01 03:15:19.067054 [:0000000a] interface: LAUNCH snlua harbor
+1970-01-01 03:15:19.306333 [:00000002] interface: KILL self
+1970-01-01 03:15:19.307524 [:0000000b] interface: LAUNCH snlua hica/subsys/interface/service/redfish
+1970-01-01 03:15:19.308766 [:0000000c] interface: LAUNCH snlua hica/subsys/interface/service/web_backend
+1970-01-01 03:15:19.315979 [:0000000d] interface: LAUNCH snlua dcmid/service/main
+1970-01-01 03:15:19.449169 [:00000019] om: LAUNCH snlua remote_console/service/vmm_client
+1970-01-01 03:15:19.512212 [:0000000e] interface: LAUNCH snlua redfish/service/portal_agent
+1970-01-01 03:15:19.514546 [:0000000f] interface: LAUNCH snlua web_backend/service/portal_agent
+1970-01-01 03:15:19.971932 maca ERROR: init.lua(184): [redfish]StartupCheck failed, error: org.freedesktop.DBus.Error.ServiceUnknown: The name bmc.kepler.redfish was not provided by any .service files, check count: 1
+1970-01-01 03:15:20.543967 [:0000001a] om: LAUNCH snlua remote_console/service/videoplay_agent
+1970-01-01 03:15:21.272486 maca ERROR: init.lua(184): [web_backend]StartupCheck failed, error: org.freedesktop.DBus.Error.UnknownObject: Unknown object path /bmc/kepler/web_backend/MicroComponent, check count: 1
+1970-01-01 03:15:21.896582 persistence NOTICE: persistence_db_intf.lua(331): finish persist save for table: t_fw_inventory_objs, persist_type: protect_temporary, op_type: insert, data_size: 1539, key: Id:BCU_CPLD_010101
+1970-01-01 03:15:22.075740 persistence NOTICE: persistence_permanent_intf.lua(166): persist permanent save successfully, tname:t_account_backup, length:224
+1970-01-01 03:15:22.699701 [:00000010] interface: LAUNCH snlua route_mapper/worker_service/main
+1970-01-01 03:15:23.146071 [:00000012] interface: LAUNCH snlua route_mapper/worker_service/main
+1970-01-01 03:15:36.372468 maca NOTICE: init.lua(235): check startup status completely, total components count: 50, normal count: 50
+1970-01-01 03:15:36.469074 maca NOTICE: init.lua(56): notify security core that bmc has successfully started, uptime: 108s
+1970-01-01 03:15:36.536240 maca NOTICE: scm3.lua(33): notify m3 book ok
+1970-01-01 03:15:36.537244 maca NOTICE: scm3.lua(44): Secure Bootloader/FW boot from active partition
+1970-01-01 03:15:36.537612 maca NOTICE: scm3.lua(44): BMC Uboot boot from active partition
+1970-01-01 03:15:36.537925 maca NOTICE: scm3.lua(44): BMC Rootfs boot from active partition
+1970-01-01 03:15:36.538264 maca NOTICE: scm3.lua(68): booted from secure mode successfully
+1970-01-01 03:16:05.853628 hwproxy NOTICE: init.lua(138): [pcie_device_plugins] ctor
+1970-01-01 03:16:57.236766 persistence NOTICE: persistence_db_intf.lua(331): finish persist save for table: t_fw_inventory_objs, persist_type: protect_temporary, op_type: insert, data_size: 1540, key: Id:EXU_CPLD_0101
+1970-01-01 03:19:12.380652 [:00000035] framework: LAUNCH snlua debug_console 127.0.0.1 40010
+1970-01-01 03:19:12.483624 [:00000035] framework: Start debug console at 127.0.0.1:40010
+1970-01-01 03:19:12.878171 key_mgmt NOTICE: start_profiling.lua(199): profiling finished, start time:1970-01-01 00:00:23, duration:5 min, sent signals:0, received signals:0, sent rpcs:4, received rpcs:31
+1970-01-01 03:19:12.979482 persistence NOTICE: start_profiling.lua(199): profiling finished, start time:1970-01-01 00:00:23, duration:5 min, sent signals:5, received signals:0, sent rpcs:0, received rpcs:316
+1970-01-01 03:19:12.999980 maca NOTICE: start_profiling.lua(199): profiling finished, start time:1970-01-01 00:00:23, duration:5 min, sent signals:3, received signals:488, sent rpcs:81, received rpcs:1019
+1970-01-01 03:19:13.102842 soctrl NOTICE: start_profiling.lua(199): profiling finished, start time:1970-01-01 00:00:24, duration:5 min, sent signals:0, received signals:14, sent rpcs:5, received rpcs:26
+1970-01-01 03:19:13.185000 hwdiscovery NOTICE: start_profiling.lua(199): profiling finished, start time:1970-01-01 00:00:24, duration:5 min, sent signals:14, received signals:50, sent rpcs:8, received rpcs:137
+1970-01-01 03:19:13.204635 hwproxy NOTICE: start_profiling.lua(199): profiling finished, start time:1970-01-01 00:00:24, duration:5 min, sent signals:32, received signals:42, sent rpcs:14, received rpcs:1693
+1970-01-01 03:19:42.314185 [:0000000f] security: LAUNCH snlua debug_console 127.0.0.1 40021
+1970-01-01 03:19:42.360990 [:0000000f] security: Start debug console at 127.0.0.1:40021
+1970-01-01 03:19:42.605059 [:0000000e] ras: LAUNCH snlua debug_console 127.0.0.1 40033
+1970-01-01 03:19:42.644767 [:0000000e] ras: Start debug console at 127.0.0.1:40033
+1970-01-01 03:19:42.686825 [:0000000f] alarm: LAUNCH snlua debug_console 127.0.0.1 40023
+1970-01-01 03:19:42.735650 [:0000000f] alarm: Start debug console at 127.0.0.1:40023
+1970-01-01 03:19:49.859908 [:0000000d] energy: LAUNCH snlua debug_console 127.0.0.1 40032
+1970-01-01 03:19:49.904573 [:0000000d] energy: Start debug console at 127.0.0.1:40032
+1970-01-01 03:19:50.483562 [:00000015] hardware: LAUNCH snlua debug_console 127.0.0.1 40030
+1970-01-01 03:19:50.526226 [:00000015] hardware: Start debug console at 127.0.0.1:40030
+1970-01-01 03:19:52.897563 [:0000000f] om_priv: LAUNCH snlua debug_console 127.0.0.1 40031
+1970-01-01 03:19:52.940625 [:0000000f] om_priv: Start debug console at 127.0.0.1:40031
+1970-01-01 03:20:02.341780 [:0000001a] bmc_core: LAUNCH snlua debug_console 127.0.0.1 40020
+1970-01-01 03:20:02.391722 [:0000001a] bmc_core: Start debug console at 127.0.0.1:40020
+1970-01-01 03:20:03.782686 [:0000001b] om: LAUNCH snlua debug_console 127.0.0.1 40035
+1970-01-01 03:20:03.833253 [:0000001b] om: Start debug console at 127.0.0.1:40035
+1970-01-01 03:20:19.344180 [:00000013] interface: LAUNCH snlua debug_console 127.0.0.1 40040
+1970-01-01 03:20:19.412651 [:00000013] interface: Start debug console at 127.0.0.1:40040
+1970-01-01 03:20:28.207409 maca NOTICE: base.lua(395): monitor component ddns added, service: bmc.kepler.ddns [repeated 13 times in 20s from 1970-01-01 03:15:02.640307 to 1970-01-01 03:15:22.298063][flush]
+新编译的固件升级后，回退到之前的版本。感觉像是有组件没有启动，帮忙分析下。
+操作系统
+Ubuntu 24.04
+软件版本
+OpenUBMC2512
+硬件配置
+cpu磁盘
+重现步骤
+[第一步]
+[第二步]
+[第三步]
+期望结果
+[您希望实现什么]
+实际结果
+[实际发生了什么，包含错误信息]
+尝试过的解决方案
+[列出您已经尝试过的解决方案及结果]
+分析结论 / 日志补充
+详细总结您对此问题的分析结论
+我已确认以上信息尽量填写完整，并已搜索过类似问题
+on",,提问求助,"[""<p>答案内容由AI生成，仅供参考：</p>\n<h3><a name=\""p-35949-h-1\"" class=\""anchor\"" href=\""#p-35949-h-1\"" aria-label=\""标题链接\""></a><img src=\""https://discourse.test.osinfra.cn/images/emoji/apple/memo.png?v=15\"" title=\"":memo:\"" class=\""emoji\"" alt=\"":memo:\"" loading=\""lazy\"" width=\""20\"" height=\""20\""> 总结</h3>\n<p>本次升级失败并非硬件故障，而是 <strong>OpenUBMC 升级保护机制的正常触发</strong>。新编译固件中的部分组件未能通过 <code>maca</code> 的启动检查，系统为防止异常状态持续而自动回退至旧版本。请优先通过 <code>清根</code> 排除配置冲突，并结合 <code>framework.log</code> 定位具体未启动的组件，修正构建配置或依赖后即可顺利升级。</p>\n<details>\n<summary>\n点击此处查看详细分析解答</summary>\n<p>根据提供的上下文信息，针对您在 <strong>Ubuntu 24.04</strong> 环境下升级 <strong>OpenUBMC2512</strong> 新编译固件后发生自动回退的问题，分析与排查建议如下：</p>\n<h3><a name=\""p-35949-h-2\"" class=\""anchor\"" href=\""#p-35949-h-2\"" aria-label=\""标题链接\""></a><img src=\""https://discourse.test.osinfra.cn/images/emoji/apple/magnifying_glass_tilted_left.png?v=15\"" title=\"":magnifying_glass_tilted_left:\"" class=\""emoji\"" alt=\"":magnifying_glass_tilted_left:\"" loading=\""lazy\"" width=\""20\"" height=\""20\""> 日志关键信息解读</h3>\n<p>从您提供的日志中，可以清晰看到多处 <code>maca</code> 组件的报错：</p>\n<pre data-code-wrap=\""log\""><code class=\""lang-log\"">maca ERROR: init.lua(184): [dcmid]StartupCheck failed, error: org.freedesktop.DBus.Error.ServiceUnknown: The name bmc.kepler.dcmid was not provided by any .service files, check count: 1\nmaca ERROR: init.lua(184): [ddns]StartupCheck failed, error: org.freedesktop.DBus.Error.UnknownObject: Unknown object path /bmc/kepler/ddns/MicroComponent, check count: 1\nmaca ERROR: init.lua(184): [redfish]StartupCheck failed, error: org.freedesktop.DBus.Error.ServiceUnknown: ...\nmaca ERROR: init.lua(184): [web_backend]StartupCheck failed, error: org.freedesktop.DBus.Error.UnknownObject: ...\n</code></pre>\n<p>这些日志表明：新固件启动过程中，<code>dcmid</code>、<code>ddns</code>、<code>redfish</code>、<code>web_backend</code> 等核心组件未能成功注册或响应 D-Bus 服务调用，导致 <code>maca</code>（组件监控与管理框架）的启动检查（<code>StartupCheck</code>）失败。</p>\n<h3><a name=\""p-35949-h-3\"" class=\""anchor\"" href=\""#p-35949-h-3\"" aria-label=\""标题链接\""></a><img src=\""https://discourse.test.osinfra.cn/images/emoji/apple/chart_decreasing.png?v=15\"" title=\"":chart_decreasing:\"" class=\""emoji\"" alt=\"":chart_decreasing:\"" loading=\""lazy\"" width=\""20\"" height=\""20\""> 升级回退的根本原因</h3>\n<p>在 OpenUBMC 的升级机制中，<strong>组件启动检查失败是触发系统自动回退（切分区）的直接原因</strong>。根据社区排查指导：</p>\n<blockquote>\n<p><em>“查看 framework.log，看是否有组件启动异常，<strong>连续两次启动检查失败会触发切分区</strong>。关键日志：<code>xxx StartCheckup failed</code>”</em></p>\n</blockquote>\n<p>当新固件加载后，若关键组件因配置不兼容、依赖缺失或文件不完整等原因无法通过健康检查，系统为保障运行稳定性，会自动执行回滚操作，恢复至升级前的旧版本固件。这正是您观察到“回退到之前的版本”且“感觉像是有组件没有启动”的根本原因。</p>\n<h3><a name=\""p-35949-h-4\"" class=\""anchor\"" href=\""#p-35949-h-4\"" aria-label=\""标题链接\""></a><img src=\""https://discourse.test.osinfra.cn/images/emoji/apple/hammer_and_wrench.png?v=15\"" title=\"":hammer_and_wrench:\"" class=\""emoji\"" alt=\"":hammer_and_wrench:\"" loading=\""lazy\"" width=\""20\"" height=\""20\""> 排查与解决建议</h3>\n<p>结合 OpenUBMC 社区提供的标准排查流程，建议按以下步骤定位并解决问题：</p>\n<ol>\n<li>\n<p><strong>检查组件启动详细日志</strong></p>\n<ul>\n<li>查看 <code>/var/log/framework.log</code>，重点搜索 <code>StartCheckup failed</code> 或 <code>StartupCheck failed</code> 相关日志。确认具体是哪个组件连续失败触发了分区切换。</li>\n<li>若日志显示 <code>check count</code> 持续递增，说明该组件始终未正常拉起。</li>\n</ul>\n</li>\n<li>\n<p><strong>尝试“清根”操作（推荐）</strong></p>\n<ul>\n<li>如果您是从<strong>非社区定制包升级至社区包</strong>，或新旧版本配置差异较大，残留的旧配置可能导致新组件初始化失败。</li>\n<li>建议在升级前或回退后执行**清根（清除配置/恢复出厂）**操作，消除配置冲突后再重新刷入新编译的固件。</li>\n</ul>\n</li>\n<li>\n<p><strong>排查底层与内核异常</strong></p>\n<ul>\n<li>通过 BMC 串口（Serial Console）查看启动早期的内核日志，确认是否存在硬件驱动加载失败、文件系统挂载错误或内存分配异常等底层问题，这些也会间接导致上层组件无法启动。</li>\n</ul>\n</li>\n<li>\n<p><strong>验证固件包完整性</strong></p>\n<ul>\n<li>确认新编译的 <code>rootfs</code> 或 <code>.hpm</code> 包构建过程是否完整，是否存在依赖库缺失、签名校验失败或版本不匹配的情况。社区经验表明，部分源码 commit 更新后若未同步调整配置文件，极易引发此类启动检查拦截。</li>\n</ul>\n</li>\n</ol>\n<h3><a name=\""p-35949-h-5\"" class=\""anchor\"" href=\""#p-35949-h-5\"" aria-label=\""标题链接\""></a><img src=\""https://discourse.test.osinfra.cn/images/emoji/apple/memo.png?v=15\"" title=\"":memo:\"" class=\""emoji\"" alt=\"":memo:\"" loading=\""lazy\"" width=\""20\"" height=\""20\""> 总结</h3>\n<p>本次升级失败并非硬件故障，而是 <strong>OpenUBMC 升级保护机制的正常触发</strong>。新编译固件中的部分组件未能通过 <code>maca</code> 的启动检查，系统为防止异常状态持续而自动回退至旧版本。请优先通过 <code>清根</code> 排除配置冲突，并结合 <code>framework.log</code> 定位具体未启动的组件，修正构建配置或依赖后即可顺利升级。</p>\n</details>""]",2026-04-17T03:02:54.172Z,,
+29363,NVME配置问题：NVMe list is empty.,"问题标题
+NVME配置问题：NVMe list is empty.
+问题描述
+版本：2509
+当前配置NVME，按照SEU→14140224_VPD_0.sr→14140224_PROTOCOL_0.sr流程加载，SEU参考的Huawei/TianChi/SEU/14100665_00000001030302044496.sr
+配置好后，丝印正常
+Handle 0x0016, DMI type 9, 24 bytes
+System Slot Information
+Designation: DISK46
+Type: x2 PCI Express x2
+Current Usage: In Use
+Length: Other
+ID: 46
+Characteristics: None
+Bus Address: 0000:05:00.0
+Handle 0x0017, DMI type 9, 24 bytes
+System Slot Information
+Designation: DISK45
+Type: x2 PCI Express x2
+Current Usage: In Use
+Length: Other
+ID: 45
+Characteristics: None
+Bus Address: 0000:06:00.0
+bmc下可以看到nvme的SerialNumber 等信息，当前nvme支持nvme-mi协议
+NAME TYPE SIGNATURE RESULT/VALUE FLAGS
+bmc.kepler.sms interface - - -
+._40odata_2Econtext property v s ""/redfish/v1/$metadata#Systems/Member… -
+._40odata_2Eid property v s ""/bmc/kepler/Systems/1/Sms/1/Computer… -
+._40odata_2Etype property v s “#Storage.v1_0_0.OemPCIE_SSD” -
+bmc.kepler.sms.redfish interface - - -
+.CapableSpeedGbs property v s “null” -
+.CapacityBytes property v x 240057409536 -
+.Description property v s “null” -
+.DeviceID property v s “0x5024” -
+.DeviceLocation property v s “null” -
+.DeviceName property v s “null” -
+.DeviceSilkScreen property v s “null” -
+.FirmwareVersion property v s “EIEK51.3” -
+.Id property v s “0000:00:13.0_0000:06:00.0” -
+.Manufacturer property v s “null” -
+.MediaType property v s “null” -
+.Model property v s “KINGSTON SEDC2000BYM8240G” -
+.Name property v s “nvme1” -
+.NegotiatedSpeedGbs property v s “null” -
+.Protocol property v s “null” -
+.SerialNumber property v s “50026B728395F71E” -
+.Status property v s “healthy” -
+.SubsystemDeviceID property v s “0x5024” -
+.SubsystemVendorID property v s “0x2646” -
+.VendorID property v s “0x2646” -
+._40odata_2Econtext property v s ""/redfish/v1/$metadata#Systems/Member… -
+._40odata_2Eid property v s ""/bmc/kepler/Systems/1/Sms/1/Computer… -
+._40odata_2Etype property v s “#Storage.v1_0_0.OemPCIE_SSD” -
+bmc.kepler.sms.redfish.BDFNumber interface - - -
+.BDF property v s “0000:06:00.0” -
+.RootBDF property v s “0000:00:13.0” -
+查询disk45：mdbctl lsprop Drive_1_010102
+bmc.kepler.Inventory.Hardware
+AssetName=“Disk45”
+AssetTag=“N/A”
+AssetType=“Disk”
+FirmwareVersion=“N/A”
+ManufactureDate=“N/A”
+Manufacturer=“N/A”
+Model=“N/A”
+PCBVersion=“N/A”
+PartNumber=“N/A”
+SerialNumber=“”
+Slot=“45”
+UUID=“”
+bmc.kepler.Object.Properties
+ClassName=“Drive”
+ObjectIdentifier=[1,“1”,“1”,“010102”]
+ObjectName=“Drive_1_010102”
+TraceSamplingRate=0
+bmc.kepler.Systems.Storage.Drive
+BlockSizeBytes=65535
+BootPriority=255
+CapableSpeedGbs=255
+CapacityMiB=4294967295
+ContainerPhysicalContext=“Front”
+DeviceName=“N/A”
+EnclosureId=65535
+FaultLed=0
+FirmwareStatus=255
+HotspareType=255
+Id=45
+LocateLed=0
+Location=“HDD Plane”
+LocationIndicatorState=0
+Manufacturer=“N/A”
+ManufacturerId=0
+MediaErrorCount=4294967295
+MediaType=255
+Model=“N/A”
+Name=“Disk45”
+NegotiatedSpeedGbs=255
+NodeId=“HDDPlaneDisk45”
+OtherErrorCount=4294967295
+PCIeLinkSpeed=0
+PatrolState=0
+PowerOnHours=4294967295
+PowerState=255
+PredictedFailCount=4294967295
+PredictedMediaLifeLeftPercent=100
+Presence=1
+Protocol=5
+RebuildProgress=255
+RebuildState=0
+RefControllerId=255
+RefDiskArrayId=65535
+RefVolumeList=
+ResourceId=0
+Revision=“N/A”
+RotationSpeedRPM=65535
+SASAddress1=“N/A”
+SASAddress2=“N/A”
+SerialNumber=“”
+SlotNumber=255
+TemperatureCelsius=0
+bmc.kepler.Systems.Storage.Drive.AddrInfo
+PortId=0
+RootBDF=“N/A”
+SlotId=0
+SocketId=0
+Type=“N/A”
+bmc.kepler.Systems.Storage.Drive.DriveStatus
+CapacityError=false
+Failure=false
+FirmwareStatusError=false
+Health=0
+InAFailedArray=0
+Missing=0
+PredictiveFailure=0
+bmc.kepler.Systems.Storage.Drive.DriveSubHealth
+EstimatedRemainingLifespan=4294967295
+EstimatedRemainingLifespanInsufficient=0
+IODeteriorationHealthCode=0
+SLCSpareBlockPercentage=255
+TLCSpareBlockPercentage=255
+bmc.kepler.Systems.Storage.Drive.NVMe
+LifeUsedPercentage=255
+bmc.kepler.Systems.Storage.Drive.NVMe.SMART
+AvailableSpare=255
+CriticalWarning=255
+Status=255
+UsedPercentage=255
+bmc.kepler.Systems.Storage.Drive.SAS.SMART
+BlocksReceivedFromInitiator=4294967295
+BlocksSentToInitiator=4294967295
+ElementsInGrownDefectList=4294967295
+ElementsInPrimaryDefectList=4294967295
+LastPrefailEventSeqNum=4294967295
+ManufacturedInWeekOfYear=“N/A”
+StripTemperatureCelsius=4294967295
+UntilNextInterSMARTTestMinutes=4294967295
+Private
+ActivationLed=0
+CommandTimeoutTimes=0
+FaultReg=0
+HddBackplaneStartSlot=44
+LinkFault=false
+LocateReg=0
+PassThrough=255
+PhysicalLocation=“HDD Plane”
+RelativeSlot=1
+SetFaultLed=0
+SetLocateLed=0
+其中bmc.kepler.Systems.Storage.Drive.AddrInfo中portid/bdf全是N/A
+web端没有详细数据，iBMA运行正常
+Weixin Image_20260415175302_256_10
+Weixin Image_20260415175302_256_10
+2250×704 120 KB
+app.log一直报错：NVMe list is empty
+Weixin Image_20260415175427_257_10
+Weixin Image_20260415175427_257_10
+1338×170 80.5 KB
+Q：NVME的信息传递流程是什么，当前情况应该从什么方向排查
+操作系统
+ubuntu
+软件版本
+openubmc2509
+硬件配置
+cpu磁盘
+重现步骤
+12334567890
+期望结果
+正常启动12
+实际结果
+报错了怎么办应该怎么处理
+尝试过的解决方案
+啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊
+我已确认以上信息尽量填写完整，并已搜索过类似问题
+on",,提问求助,"[""<pre data-code-wrap=\""json\""><code class=\""lang-json\"">{\n  \""content\"": \""答案内容由AI生成，仅供参考：\\n\\nlBxk5CnCNlCQX0zV  \\n（以下为模型对问题的响应内容）\\n\\n---\\n\\n### 问题分析：`NVMe list is empty`，NVMe设备BMC可识别但系统中未正确加载  \\n你描述的场景是典型的 **NVMe设备在BMC中能识别，但在系统侧（如OS或管理服务）无法枚举或显示** 的问题。我们来系统性地分析 `NVMe list is empty` 的根本原因及排查方向。\\n\\n---\\n\\n## 🔍 一、NVMe信息传递流程（关键路径）\\n\\nNVMe设备的信息从硬件到用户界面的完整传递链路如下：\\n\\n### 1. **硬件层**\\n- NVMe SSD 插入 PCIe Slot（如 `0000:06:00.0`）\\n- 通过 PCIe Bus 连接到 Root Complex（CPU/Chipset）\\n- 支持 NVMe-MI（Management Interface）协议，可通过带外（OOB）方式管理（BMC 使用）\\n\\n### 2. **BMC 层（带外管理）**\\n- BMC 通过 **IPMI/Redfish/sensor poller** 与 NVMe 设备通信\\n- 利用 **NVMe-MI over SMBus/I2C 或 PCIe AER** 获取 Device Info、SMART、寿命等\\n- 存储于 BMC 的 Inventory DB（如 `mdbctl` 显示的数据）\\n- 提供给 Redfish API（如 `/redfish/v1/Systems/.../Storage`）\\n\\n\\u003e ✅ 当前状态：BMC 能看到 SerialNumber、Model、FirmwareVersion → **NVMe-MI 正常，物理存在**\\n\\n### 3. **Host OS 层（Ubuntu）**\\n- 内核需启用 `CONFIG_BLK_DEV_NVME` 模块\\n- PCIe 枚举 → 内核检测到设备 → 创建 `/dev/nvme*` 节点\\n- 用户空间工具（`nvme list`, `lsblk`, `lspci`）可查看\\n\\n\\u003e ❌ 当前状态：`app.log` 报 `NVMe list is empty` → **OS 层未识别或未正确加载设备**\\n\\n### 4. **应用层（iBMA / 自定义工具）**\\n- 调用 `libnvme`、`ioctl` 或解析 `/sys/class/nvme/` 获取信息\\n- 若底层未识别，这些工具结果为空 → 报错 \\\""NVMe list is empty\\\""\\n\\n---\\n\\n## ❓ 问题定性：为什么 BMC 能看到而 OS 看不到？\\n\\n| 项目 | BMC 是否可见 | Host OS 是否可见 | 说明 |\\n|------|---------------|------------------|------|\\n| PCIe 枚举 | 是（DMI/SMBIOS已识别） | ❓需验证 | `lspci` 应能看到设备 |\\n| 设备链接 | 是（Bus Address 正确） | ❓ | 可能 PCIe Link 未激活 |\\n| NVMe 驱动加载 | N/A | ❌可能未加载 | 内核模块问题 |\\n| ACPI/固件配置 | 部分正确 | ❌不完整 | SEU/VPD/Protocol SR 加载可能不完整 |\\n| Slot 映射一致性 | 不一致 | 不一致 | DMI Slot ID vs 实际 PCIe topology |\\n\\n---\\n\\n## ✅ 排查方向（从底向上）\\n\\n### 🔧 Step 1: 检查 Host OS 是否识别 PCIe 设备\\n\\n在 **Ubuntu 系统中执行**：\\n```bash\\n# 查看 PCIe 是否枚举到设备\\nlspci | grep -i nvme\\n\\n# 示例输出期望：\\n# 06:00.0 Non-Volatile memory controller: ...\\n```\\n\\n\\u003e 如果没有输出 → **PCIe 枚举失败**\\n\\n#### 进一步检查：\\n```bash\\ndmesg | grep -i nvmedmesg | grep -i \\\""06:00.0\\\""dmesg | grep -i \\\""PCIe Bus error\\\""\\n```\\n\\n常见错误：\\n- `Device not present`\\n- `AER: Corrected error`\\n- `bar 0: can't reserve [mem ...]`\\n- `nvme nvme0: Device not ready; Aborting...`\\n\\n👉 若无设备出现 → 检查 BIOS/ACPI 配置、Reset PCIe Link、电源问题\\n\\n---\\n\\n### 🔧 Step 2: 检查内核配置 \\u0026 NVMe 驱动\\n\\n```bash\\n# 检查是否加载 nvme 驱动\\nlsmod | grep nvme\\n\\n# 检查配置\\nzcat /proc/config.gz | grep CONFIG_BLK_DEV_NVME\\n# 或\\ngrep CONFIG_BLK_DEV_NVME /boot/config-$(uname -r)\\n```\\n\\n应返回：\\n```\\nCONFIG_BLK_DEV_NVME=m/y\\n```\\n\\n👉 若未启用 → 需重新编译内核或加载模块\\n\\n---\\n\\n### 🔧 Step 3: 分析 ACPI / SMBIOS / VPD 配置是否正确\\n\\n你提到使用了：\\n```\\nSEU → 14140224_VPD_0.sr → 14140224_PROTOCOL_0.sr\\n```\\n并参考 Huawei/TianChi 的 SR 文件。\\n\\n⚠️ **风险点：**\\n- SEU/VPD 中若未正确定义 PCIe topology 或 `NVMeController` 设备路径\\n- OS 枚举时无法识别为可启动/可管理的 NVMe 控制器\\n- 即使 BMC 能访问（NVMe-MI），Host 仍无法 Enumerate\\n\\n#### 建议操作：\\n1. 使用 `acpidump` + `iasl` 解析 DSDT，查找是否有对应设备定义：\\n```asl\\nDevice (NVME0)\\n{\\n    Name (_HID, \\\""NVNM0000\\\"")  // 标准 HID 表示 NVMe 控制器\\n    Name (_UID, 0)\\n    Method (_CRS, 0, NotSerialized)\\n    {\\n        // 应包含 MMIO 资源（Bar0, Bar2）\\n    }\\n}\\n```\\n\\n2. 检查 SR 文件中的 `PCIE_DEVICE_TYPE` 是否设为 `NVMe` 而非 `Unknown` 或 `Other`\\n\\n3. 确保 VPD 中 `Board Product Name` / `Part Number` 匹配实际设备（防止被策略屏蔽）\\n\\n---\\n\\n### 🔧 Step 4: 检查 `bmc.kepler.Systems.Storage.Drive.AddrInfo` 中数据缺失\\n\\n你指出：\\n```\\nRootBDF = \\\""N/A\\\""\\nPortId = 0\\nSlotId = 0\\n```\\n\\n这说明 **BMC 内部地址映射未建立完整关联**。\\n\\n虽然 BMC 可通过 NVMe-MI 读取信息，但缺少 BDF（Bus:Device:Function）关联会导致：\\n- OS Side 无法通过 Slot ID 找到对应 PCIe 设备\\n- Redfish Storage Collection 可能无法正确暴露\\n- 第三方工具无法交叉定位\\n\\n✅ 解决方案：\\n- 检查 `SLOT_TO_BDF_MAPPING` 是否在 BMC 启动阶段正确注册\\n- 查看日志是否有 `fail to bind NVMe controller to slot` 类似记录\\n- 确认 `14140224_PROTOCOL_0.sr` 中是否含正确的 `PCIE_TOPOLOGY_MAP`\\n\\n---\\n\\n### 🔧 Step 5: 检查 `app.log` 中 \\\""NVMe list is empty\\\"" 的来源\\n\\n该日志大概率来自某个 C/C++ 应用调用 `nvme_enumerate()` 或读取 `/dev/nvme*` 失败。\\n\\n#### 加强日志：\\n```c\\n// 示例逻辑\\nstruct nvme_root *root = nvme_create_root(stderr, LOG_INFO);\\nstruct nvme_host *host = nvme_scan_root(root, NULL);\\nstruct nvme_ctrl *ctrl;\\n\\nif (!host || !nvme_first_host(root)) {\\n    fprintf(stderr, \\\""NVMe list is empty\\\\n\\\"");\\n}\\n```\\n\\n👉 所以只要没有扫描到 `/sys/class/nvme/nvme*` 目录，就会报这个错。\\n\\n#### 建议：\\n- 运行 `sudo nvme list`，是否为空？\\n- 检查 `/sys/class/nvme/` 是否有子目录？\\n\\n```bash\\nls /sys/class/nvme/\\n```\\n\\n若为空 → 说明内核根本没加载控制器\\n\\n---\\n\\n### 🔧 Step 6: 其他可能原因汇总\\n\\n| 原因 | 检查方法 | 解决方案 |\\n|------|----------|-----------|\\n| PCIe Link Width/Speed 不匹配 | `lspci -vv -s 06:00.0` | 检查 Link Training，协商为 x2 Gen3？ |\\n| PCIe ASPM 休眠导致 Link Down | `dmesg` 中 `L1 Entry failed` | 添加内核参数 `pcie_aspm=off` |\\n| 多实例冲突（多个 nvme core） | `dmesg \\\\| grep -i duplicate` | 清理旧驱动，`rmmod nvme` 后重插 |\\n| BIOS/FW 配置错误 | 查 BIOS Setup → NVMe Enable | 确认 NVMe Controller Enable |\\n| 固件版本兼容性 | Kingston SEDC2000BYM... | 升级 SSD 固件 |\\n\\n---\\n\\n## ✅ 推荐操作清单\\n\\n| 步骤 | 操作 | 目标验证 |\\n|------|------|----------|\\n| 1 | `lspci \\\\| grep -i nvme` | 是否看到设备 |\\n| 2 | `dmesg \\\\| grep -i nvme` | 有无报错或驱动加载 |\\n| 3 | `lsmod \\\\| grep nvme` | 驱动是否加载 |\\n| 4 | `cat /sys/class/nvme/nvme*/serial` | 是否存在设备文件 |\\n| 5 | `sudo nvme list` | 是否列出设备 |\\n| 6 | 检查 SEU/VPD/PROTOCOL SR 加载日志 | 是否成功注入 |\\n| 7 | 使用 `acpidump` 分析 DSDT | 是否有 `NVNM0000` 设备 |\\n| 8 | 更新 SSD 固件（EIEK51.3 可能有 bug） | 官网获取最新 |\\n| 9 | BMC 中检查 `slot-to-bdf` mapping 表 | 是否缺失映射 |\\n\\n---\\n\\n## 💡 补充建议\\n\\n1. **尝试热插拔测试**：拔插 NVMe 设备，观察 dmesg 是否有动态事件\\n2. **更换 Slot 测试**：换到另一个已知工作的 PCIe Slot 排除物理问题\\n3. **最小系统测试**：移除其他 PCIe 卡，排除资源冲突\\n4. **抓取完整 boot log**：从内核启动开始记录 `dmesg -H --follow`，观察 PCIe 枚举全过程\\n\\n---\\n\\n## 📞 总结回答 Q：当前排查方向？\\n\\n\\u003e **应该从 Host OS 是否识别 PCIe 设备入手，逐层排查驱动、ACPI 配置、SR 文件注入、BDF 映射是否完整。**\\n\\n### 当前最可能的原因（按优先级排序）：\\n1. ❗ **SEU/VPD SR 配置不完整**，导致 ACPI 未正确声明 NVMe 控制器（OS 枚举失败）\\n2. ❗ **RootBDF 为空**，导致 BMC 无法将 Inventory 与 Host 设备关联\\n3. ❗ **`app.log` 来源程序依赖 `/dev/nvme*`，而该节点未创建（驱动未加载/PCIe未枚举）**\\n\\n---\\n\\n✅ **建议下一步动作：**\\n\\n```bash\\n# 在 Ubuntu 上运行：\\nlspci -vnn | grep -A10 -B10 \\\""06:00.0\\\""\\ndmesg | grep -i \\\""nvme\\\\|06:00\\\\|PCIe\\\""\\nls /sys/bus/pci/devices/0000:06:00.0/\\ncat /sys/bus/pci/devices/0000:06:00.0/vendor\\ncat /sys/bus/pci/devices/0000:06:00.0/device\\n```\\n\\n将输出提供给硬件团队，确认是否被识别为合法 PCI 设备。\\n\\n同时，请确认：\\n- 加载的 SEU `.sr` 文件中是否包含正确 `NVMeController` 描述\\n- `14140224_PROTOCOL_0.sr` 中是否配置了 `DeviceType=Nvme`\\n\\n---\\n\\n如果你能提供以下信息，可进一步定位：\\n1. `lspci -vvv -s 06:00.0` 输出\\n2. `dmesg` 启动阶段相关日志片段\\n3. 使用的完整 SEU/VPD/PROTOCOL SR 文件清单及来源\\n4. 主板型号、BIOS 版本\\n\\n我可以继续帮你深入分析 ACPI 或 SR 文件内容。\\n\\n--- \\n\\nlBxk5CnCNlCQX0zV\"",\n  \""target_locale\"": \""zh_CN\""\n}\n</code></pre>"", ""<p>答案内容由AI生成，仅供参考：</p>\n<p>（按要求返回空内容）</p>\n<details>\n<summary>\n点击此处查看详细分析解答</summary>\n<p>根据您提供的日志现象与上下文资料，以下是NVMe信息传递流程的梳理及针对<code>NVMe list is empty</code>与属性缺失问题的排查方向。</p>\n<h3><a name=\""nvme-1\"" class=\""anchor\"" href=\""#nvme-1\"" aria-label=\""标题链接\""></a><img src=\""/images/emoji/apple/satellite_antenna.png?v=15\"" title=\"":satellite_antenna:\"" class=\""emoji\"" alt=\"":satellite_antenna:\"" loading=\""lazy\"" width=\""20\"" height=\""20\""> NVMe信息传递与上树流程</h3>\n<p>在openUBMC架构中，NVMe盘的信息从硬件到系统设备树的完整链路如下：</p>\n<ol>\n<li><strong>硬件在位与VPD读取</strong>：NVMe对象配置在VPD仓库中，由硬盘背板通过<code>Connector</code>加载对应的CSR。<code>Connector</code>的在位状态由槽位在位寄存器和类型寄存器共同判定。</li>\n<li><strong>协议识别与固件通信</strong>：BMC通过读取VPD数据识别底层管理协议（如<code>NVMe-MI</code>或<code>SSD Form Factor</code>）。协议识别成功后，NVMe管理服务（如<code>NvmeBmcDevNvmeNvmemi</code>）会通过MCTP/PCIe通道向硬盘固件请求产品数据（<code>ProductInfo</code>）、状态（<code>Status</code>）、SMART指标及拓扑地址。</li>\n<li><strong>对象建链与属性同步</strong>：NVMe对象通过<code>Slot</code>与抽象的<code>Drive</code>对象建立关联。NVMe管理服务在本地完成属性获取、更新后，将数据推送给<code>Drive</code>对象。</li>\n<li><strong>数据上树与暴露</strong>：由<code>Drive</code>对象统一将整合后的信息注册至系统数据树（<code>bmc.kepler.Systems.Storage.Drive</code>），最终供Web界面、Redfish接口及iBMA调用展示。</li>\n</ol>\n<hr>\n<h3><a name=\""h-2\"" class=\""anchor\"" href=\""#h-2\"" aria-label=\""标题链接\""></a><img src=\""/images/emoji/apple/magnifying_glass_tilted_left.png?v=15\"" title=\"":magnifying_glass_tilted_left:\"" class=\""emoji\"" alt=\"":magnifying_glass_tilted_left:\"" loading=\""lazy\"" width=\""20\"" height=\""20\""> 当前问题核心排查方向</h3>\n<p>结合<code>app.log</code>报错<code>NVMe list is empty</code>、<code>Drive</code>属性大量为<code>N/A</code>或<code>255</code>（无效/默认值），以及<code>AddrInfo</code>中<code>RootBDF</code>缺失但<code>SMS/Redfish</code>能读到部分基础信息的情况，建议按以下优先级排查：</p>\n<h4><a name=\""h-1-vpd-3\"" class=\""anchor\"" href=\""#h-1-vpd-3\"" aria-label=\""标题链接\""></a>1. VPD数据访问与协议识别（最可能导致列表为空）</h4>\n<ul>\n<li><strong>机制说明</strong>：文档明确指出，<strong>NVMe盘是根据VPD的数据进行协议解析的。若VPD无数据、数据不符合协议规范或VPD无法访问，则无法识别协议</strong>，直接导致NVMe列表为空。</li>\n<li><strong>排查建议</strong>：\n<ul>\n<li>确认VPD芯片引用（<code>VPDChip</code>）是否可正常访问。</li>\n<li>核对VPD中写入的协议标识是否与当前盘实际支持的<code>NVMe-MI</code>协议一致（参考<code>NVME_VPD_PROTOCOL_SSD_FORM_FACTOR</code>或<code>bmc.dev.NVMe.Management</code>中的<code>NvmeProtocol</code>属性）。</li>\n</ul>\n</li>\n</ul>\n<h4><a name=\""h-2-pcie-bdfcsraddrinfona-4\"" class=\""anchor\"" href=\""#h-2-pcie-bdfcsraddrinfona-4\"" aria-label=\""标题链接\""></a>2. PCIe BDF拓扑映射与CSR配置（导致AddrInfo为N/A）</h4>\n<ul>\n<li><strong>机制说明</strong>：<code>bmc.kepler.Systems.Storage.Drive.AddrInfo</code>中的<code>RootBDF</code>、<code>PortId</code>来源于PCIe拓扑枚举。若CSR中未正确配置PCIe地址对象，或槽位映射断裂，<code>Drive</code>对象将无法获取物理地址信息。</li>\n<li><strong>排查建议</strong>：\n<ul>\n<li>检查CSR配置中<code>pcieaddrinfo_nvme</code>对象的BDF设置是否与DMI丝印打印的<code>Bus Address: 0000:05:00.0 / 0000:06:00.0</code>严格对应。</li>\n<li>确认<code>Connector</code>是否通过<code>Slot</code>正确绑定到了<code>Drive</code>对象，避免拓扑信息在同步过程中丢失。</li>\n</ul>\n</li>\n</ul>\n<h4><a name=\""h-3-nvme-mi-mctp-5\"" class=\""anchor\"" href=\""#h-3-nvme-mi-mctp-5\"" aria-label=\""标题链接\""></a>3. NVMe-MI / MCTP通信链路完整性</h4>\n<ul>\n<li><strong>机制说明</strong>：支持NVMe-MI的设备通常依赖MCTP进行带外管理通信。若MCTP路由未创建或Endpoint未成功注册，BMC无法拉取完整的固件属性。</li>\n<li><strong>排查建议</strong>：\n<ul>\n<li>使用<code>mctpd</code>相关接口确认该NVMe盘的物理地址（phyaddr）是否已存在于BMC的路由表中。</li>\n<li>检查<code>Transport</code>对象是否已正确注册，且硬件是否响应了IMU的discovery报文。若路由缺失，通信链路中断将直接导致属性拉取失败。</li>\n</ul>\n</li>\n</ul>\n<h4><a name=\""h-4-6\"" class=\""anchor\"" href=\""#h-4-6\"" aria-label=\""标题链接\""></a>4. 固件兼容性与属性适配</h4>\n<ul>\n<li><strong>机制说明</strong>：部分属性（如<code>CapacityMiB</code>、<code>MediaType</code>、SMART扩展字段）在不同协议中支持度不同。若硬盘固件写入的数据不全、协议版本与openUBMC 2509不兼容，或厂商使用了未适配的OEM属性，会导致字段返回<code>255</code>或<code>N/A</code>。</li>\n<li><strong>排查建议</strong>：\n<ul>\n<li>确认该Kingston硬盘固件的NVMe-MI版本是否在BMC兼容矩阵内。</li>\n<li>若存在厂商自定义SMART或管理属性，需评估是否需要启用<code>bmc.dev.NVMe.VendorSpecificSmart</code>或<code>HwDefinedSmart</code>接口进行代码适配。</li>\n</ul>\n</li>\n</ul>\n<hr>\n<h3><a name=\""h-7\"" class=\""anchor\"" href=\""#h-7\"" aria-label=\""标题链接\""></a><img src=\""/images/emoji/apple/hammer_and_wrench.png?v=15\"" title=\"":hammer_and_wrench:\"" class=\""emoji\"" alt=\"":hammer_and_wrench:\"" loading=\""lazy\"" width=\""20\"" height=\""20\""> 处理建议与下一步操作</h3>\n<ol>\n<li><strong>优先打通底层通信</strong>：验证VPD读取状态与MCTP路由表。确保<code>NvmeBmcDevNvmeNvmemi</code>管理接口能与硬盘成功握手，这是消除<code>NVMe list is empty</code>的前提。</li>\n<li><strong>修正CSR拓扑配置</strong>：校准<code>pcieaddrinfo_nvme</code>中的BDF与槽位映射关系，使<code>Drive</code>对象能正确填充<code>AddrInfo</code>。</li>\n<li><strong>抓取协议交互日志</strong>：通过<code>NvmeBmcDevNvmeLogCollection</code>或storage组件日志，追踪协议握手、数据请求与响应过程，精确定位数据断点。</li>\n<li><strong>厂商固件对齐</strong>：若协议识别与链路均正常但属性仍为空，建议联系硬盘厂商确认固件VPD数据写入规范，或检查openUBMC 2509是否需针对该型号加载特定的OEM适配补丁。</li>\n</ol>\n<blockquote>\n<p>注：以上排查路径均基于openUBMC存储管理架构与NVMe驱动规范。若配置流程（SEU→VPD→PROTOCOL）已正确执行，问题通常收敛于<strong>VPD协议标识不匹配</strong>、<strong>CSR BDF映射缺失</strong>或<strong>MCTP/NVMe-MI路由未建立</strong>三个核心环节。</p>\n</blockquote>\n</details>""]",2026-04-15T11:20:02.421Z,,
+29410,-q构建QEMU包，构建成功却没有生成.cpio.gz,,,提问求助,[],2026-04-21T08:26:35.125Z,,
+29384,OpenUBMC升级失败,,,提问求助,[],2026-04-17T03:02:54.172Z,,
+29363,NVME配置问题：NVMe list is empty.,,,提问求助,[],2026-04-15T11:20:02.421Z,,
+29497,测试本地部署,"问题标题
+测试本地部署测试本地部署
+问题描述
+测试本地部署测试本地部署测试本地部署测试本地部署
+操作系统
+测试本地部署
+软件版本
+测试本地部署
+硬件配置
+测试本地部署
+重现步骤
+测试本地部署测试本地部署测试本地部署测试本地部署
+期望结果
+测试本地部署测试本地部署测试本地部署测试本地部署
+实际结果
+测试本地部署测试本地部署测试本地部署测试本地部署
+尝试过的解决方案
+测试本地部署测试本地部署测试本地部署
+我已确认以上信息尽量填写完整，并已搜索过类似问题
+on",,提问求助,[],2026-05-07T07:07:35.666Z,,
+29497,测试本地部署,,,提问求助,[],2026-05-07T07:07:35.666Z,,
+29498,openEuler社区是什么,"问题标题
+openEuler社区是什么
+问题描述
+openEuler社区是什么
+操作系统
+openEuler社区是什么
+软件版本
+openEuler社区是什么
+硬件配置
+openEuler社区是什么
+重现步骤
+openEuler社区是什么
+期望结果
+openEuler社区是什么openEuler社区是什么
+实际结果
+openEuler社区是什么openEuler社区是什么openEuler社区是什么
+尝试过的解决方案
+openEuler社区是什么openEuler社区是什么openEuler社区是什么
+我已确认以上信息尽量填写完整，并已搜索过类似问题
+on",,qa-提问求助,[],2026-05-07T07:24:57.738Z,,
+29498,openEuler社区是什么,,,qa-提问求助,[],2026-05-07T07:24:57.738Z,,
+29504,我是一个新人，我在欧拉社区应该注意什么？,"问题标题
+我是一个新人，我在欧拉社区应该注意什么？
+问题描述
+我是一个新人，我在欧拉社区应该注意什么？
+操作系统
+windows
+软件版本
+暂无
+硬件配置
+我是一个新人，我在欧拉社区应该注意什么？
+重现步骤
+我是一个新人，我在欧拉社区应该注意什么？
+期望结果
+告诉我社区基本准则
+实际结果
+我是一个新人，我在欧拉社区应该注意什么？
+我已确认以上信息尽量填写完整，并已搜索过类似问题
+on",,提问求助,[],2026-05-07T08:29:09.297Z,,
+29504,我是一个新人，我在欧拉社区应该注意什么？,,,提问求助,[],2026-05-07T08:29:09.297Z,,
+29509,我是一个新人，我在欧拉社区应该注意什么？,"问题标题
+我是一个新人，我在欧拉社区应该注意什么？
+问题描述
+我是一个新人，我在欧拉社区应该注意什么？
+操作系统
+windows
+软件版本
+暂无
+硬件配置
+我是一个新人，我在欧拉社区应该注意什么？
+重现步骤
+我是一个新人，我在欧拉社区应该注意什么？
+期望结果
+我是一个新人，我在欧拉社区应该注意什么？
+实际结果
+我是一个新人，我在欧拉社区应该注意什么？
+我已确认以上信息尽量填写完整，并已搜索过类似问题
+on",,qa-提问求助,[],2026-05-07T09:06:57.855Z,,
+29509,我是一个新人，我在欧拉社区应该注意什么？,,,qa-提问求助,[],2026-05-07T09:06:57.855Z,,
+29510,我是一个新人，我在欧拉社区应该注意什么？,"问题标题
+我是一个新人，我在欧拉社区应该注意什么？
+问题描述
+我是一个新人，我在欧拉社区应该注意什么？
+操作系统
+windows
+软件版本
+我是一个新人，我在欧拉社区应该注意什么？
+硬件配置
+我是一个新人，我在欧拉社区应该注意什么？
+重现步骤
+我是一个新人，我在欧拉社区应该注意什么？
+期望结果
+我是一个新人，我在欧拉社区应该注意什么？
+实际结果
+我是一个新人，我在欧拉社区应该注意什么？
+我已确认以上信息尽量填写完整，并已搜索过类似问题
+on",,提问求助,[],2026-05-07T09:33:39.942Z,,
+29510,我是一个新人，我在欧拉社区应该注意什么？,,,提问求助,[],2026-05-07T09:33:39.942Z,,
+29511,openEuler社区是什么,"问题标题
+openEuler社区是什么，可以介绍一下吗
+问题描述
+openEuler社区是什么，可以介绍一下吗
+操作系统
+暂无
+软件版本
+暂无
+硬件配置
+CPU，硬盘
+重现步骤
+openEuler社区是什么，可以介绍一下吗
+期望结果
+openEuler社区是什么，可以介绍一下吗
+实际结果
+openEuler社区是什么，可以介绍一下吗
+我已确认以上信息尽量填写完整，并已搜索过类似问题
+on",,提问求助,[],2026-05-07T09:45:25.083Z,,
+29511,openEuler社区是什么,,,提问求助,[],2026-05-07T09:45:25.083Z,,
+29511,openEuler社区是什么,"问题标题
+openEuler社区是什么，可以介绍一下吗
+问题描述
+openEuler社区是什么，可以介绍一下吗
+操作系统
+暂无
+软件版本
+暂无
+硬件配置
+CPU，硬盘
+重现步骤
+openEuler社区是什么，可以介绍一下吗
+期望结果
+openEuler社区是什么，可以介绍一下吗
+实际结果
+openEuler社区是什么，可以介绍一下吗
+我已确认以上信息尽量填写完整，并已搜索过类似问题
+on",,提问求助,[],2026-05-07T09:45:25.083Z,,
+29511,openEuler社区是什么,,,提问求助,[],2026-05-07T09:45:25.083Z,,
+29512,问题描述 OpenUBMC升级失败,"问题标题
+问题描述 OpenUBMC升级失败
+问题描述
+问题描述 OpenUBMC升级失败，可能出现的问题是什么
+操作系统
+windows
+软件版本
+暂无
+硬件配置
+CPU，硬盘
+重现步骤
+问题描述 OpenUBMC升级失败，可能出现的问题是什么
+期望结果
+问题描述 OpenUBMC升级失败，可能出现的问题是什么
+实际结果
+问题描述 OpenUBMC升级失败，可能出现的问题是什么
+我已确认以上信息尽量填写完整，并已搜索过类似问题
+on",,提问求助,[],2026-05-07T09:55:19.223Z,,
+29512,问题描述 OpenUBMC升级失败,,,提问求助,[],2026-05-07T09:55:19.223Z,,
+29513,问题描述 OpenUBMC升级失败？,"问题标题
+问题描述 OpenUBMC升级失败
+问题描述
+问题描述 OpenUBMC升级失败
+操作系统
+windows
+软件版本
+暂无
+硬件配置
+CPU，硬盘
+重现步骤
+问题描述 OpenUBMC升级失败
+期望结果
+问题描述 OpenUBMC升级失败的top3
+实际结果
+问题描述 OpenUBMC升级失败
+我已确认以上信息尽量填写完整，并已搜索过类似问题
+on",,提问求助,[],2026-05-07T10:05:37.214Z,,
+29513,问题描述 OpenUBMC升级失败？,,,提问求助,[],2026-05-07T10:05:37.214Z,,
+29513,问题描述 OpenUBMC升级失败？,"问题标题
+问题描述 OpenUBMC升级失败
+问题描述
+问题描述 OpenUBMC升级失败
+操作系统
+windows
+软件版本
+暂无
+硬件配置
+CPU，硬盘
+重现步骤
+问题描述 OpenUBMC升级失败
+期望结果
+问题描述 OpenUBMC升级失败的top3
+实际结果
+问题描述 OpenUBMC升级失败
+我已确认以上信息尽量填写完整，并已搜索过类似问题
+on",,提问求助,[],2026-05-07T10:05:37.214Z,,
+29513,问题描述 OpenUBMC升级失败？,,,提问求助,[],2026-05-07T10:05:37.214Z,,
+29520,问题描述 OpenUBMC升级失败,"问题标题
+问题描述 OpenUBMC升级失败？
+问题描述
+问题描述 OpenUBMC升级失败？
+操作系统
+暂无
+软件版本
+暂无
+硬件配置
+问题描述 OpenUBMC升级失败？
+重现步骤
+问题描述 OpenUBMC升级失败？
+期望结果
+问题描述 OpenUBMC升级失败？
+实际结果
+问题描述 OpenUBMC升级失败？
+分析结论 / 日志补充
+问题描述 OpenUBMC升级失败？
+我已确认以上信息尽量填写完整，并已搜索过类似问题
+on",,提问求助,[],2026-05-08T07:15:35.502Z,,
+29520,问题描述 OpenUBMC升级失败,,,提问求助,[],2026-05-08T07:15:35.502Z,,
+29521,请介绍以下欧拉社区,"问题标题
+请介绍以下欧拉社区
+问题描述
+请介绍以下欧拉社区
+操作系统
+暂无
+软件版本
+暂无
+硬件配置
+请介绍以下欧拉社区
+重现步骤
+请介绍以下欧拉社区请介绍以下欧拉社区
+期望结果
+请介绍以下欧拉社区请介绍以下欧拉社区
+实际结果
+请介绍以下欧拉社区请介绍以下欧拉社区
+我已确认以上信息尽量填写完整，并已搜索过类似问题
+on",,提问求助,[],2026-05-08T07:29:23.621Z,,
+29521,请介绍以下欧拉社区,,,提问求助,[],2026-05-08T07:29:23.621Z,,
+29521,请介绍以下欧拉社区,"问题标题
+请介绍以下欧拉社区
+问题描述
+请介绍以下欧拉社区
+操作系统
+暂无
+软件版本
+暂无
+硬件配置
+请介绍以下欧拉社区
+重现步骤
+请介绍以下欧拉社区请介绍以下欧拉社区
+期望结果
+请介绍以下欧拉社区请介绍以下欧拉社区
+实际结果
+请介绍以下欧拉社区请介绍以下欧拉社区
+我已确认以上信息尽量填写完整，并已搜索过类似问题
+on",,提问求助,[],2026-05-08T07:29:23.621Z,,
+29521,请介绍以下欧拉社区,,,提问求助,[],2026-05-08T07:29:23.621Z,,
+29522,请介绍以下欧拉社区1,"问题标题
+请介绍以下欧拉社区
+问题描述
+请介绍以下欧拉社区
+操作系统
+请介绍以下欧拉社区
+软件版本
+请介绍以下欧拉社区
+硬件配置
+请介绍以下欧拉社区
+重现步骤
+请介绍以下欧拉社区
+期望结果
+请介绍以下欧拉社区请介绍以下欧拉社区
+实际结果
+请介绍以下欧拉社区请介绍以下欧拉社区
+我已确认以上信息尽量填写完整，并已搜索过类似问题
+on",,提问求助,[],2026-05-08T09:58:09.190Z,,
+29522,请介绍以下欧拉社区1,,,提问求助,[],2026-05-08T09:58:09.190Z,,
+29523,请介绍一下欧拉社区,"问题标题
+请介绍一下欧拉社区
+问题描述
+请介绍一下欧拉社区
+操作系统
+请介绍一下欧拉社区
+软件版本
+请介绍一下欧拉社区
+硬件配置
+请介绍一下欧拉社区
+重现步骤
+请介绍一下欧拉社区请介绍一下欧拉社区
+期望结果
+请介绍一下欧拉社区请介绍一下欧拉社区
+实际结果
+请介绍一下欧拉社区请介绍一下欧拉社区
+我已确认以上信息尽量填写完整，并已搜索过类似问题
+on",,提问求助,[],2026-05-08T10:09:03.555Z,,
+29523,请介绍一下欧拉社区,,,提问求助,[],2026-05-08T10:09:03.555Z,,
+29527,请再介绍一下欧拉社区,"问题标题
+请再介绍一下欧拉社区
+问题描述
+请再介绍一下欧拉社区
+操作系统
+windows
+软件版本
+暂无
+硬件配置
+CPU，硬盘
+重现步骤
+请再介绍一下欧拉社区请再介绍一下欧拉社区
+期望结果
+请再介绍一下欧拉社区请再介绍一下欧拉社区
+实际结果
+请再介绍一下欧拉社区请再介绍一下欧拉社区
+我已确认以上信息尽量填写完整，并已搜索过类似问题
+on",,提问求助,"[""<p>答案内容由AI生成，仅供参考：<br>\n<img src=\""https://discourse.test.osinfra.cn/images/emoji/apple/white_check_mark.png?v=15\"" title=\"":white_check_mark:\"" class=\""emoji\"" alt=\"":white_check_mark:\"" loading=\""lazy\"" width=\""20\"" height=\""20\""> <strong>总结</strong>：<br>\nopenEuler社区不仅是一个开源操作系统项目，更是一个集技术创新、产业协同、开发者成长于一体的生态系统。它正成为中国基础软件自主创新的核心力量，并积极走向国际化。</p>\n<details>\n<summary>\n点击此处查看详细分析解答</summary>\n<h1><a name=\""p-36171-h-1\"" class=\""anchor\"" href=\""#p-36171-h-1\"" aria-label=\""标题链接\""></a>欧拉社区介绍</h1>\n<p><strong>openEuler社区</strong>是一个全球化的开源操作系统社区，致力于打造一个开放、多元、架构包容的软件生态体系。该社区由<strong>开放原子开源基金会</strong>（OpenAtom Foundation）孵化和运营，最初由华为技术有限公司发起，现已成为中国乃至全球信息技术创新的重要力量。</p>\n<h2><a name=\""p-36171-h-2\"" class=\""anchor\"" href=\""#p-36171-h-2\"" aria-label=\""标题链接\""></a>一、社区定位与目标</h2>\n<p>openEuler社区专注于构建面向数字基础设施的操作系统平台，广泛支持以下核心应用场景：</p>\n<ul>\n<li><strong>服务器</strong></li>\n<li><strong>云计算</strong></li>\n<li><strong>边缘计算</strong></li>\n<li><strong>嵌入式系统</strong></li>\n</ul>\n<p>其目标是为产业提供一个<strong>稳定、安全、高性能</strong>的基础软件平台，推动国产化信息技术（信创）生态的发展，尤其是在政府、金融、能源、交通、通信等关键行业广泛应用。</p>\n<h2><a name=\""p-36171-h-3\"" class=\""anchor\"" href=\""#p-36171-h-3\"" aria-label=\""标题链接\""></a>二、技术特点与生态支持</h2>\n<h3><a name=\""p-36171-h-1-4\"" class=\""anchor\"" href=\""#p-36171-h-1-4\"" aria-label=\""标题链接\""></a>1. 跨架构兼容性</h3>\n<p>openEuler支持多种处理器架构，包括：</p>\n<ul>\n<li>x86_64</li>\n<li>aarch64（ARM64）</li>\n<li>RISC-V</li>\n<li>LoongArch64</li>\n<li>Kunpeng（鲲鹏）</li>\n<li>Phytium（飞腾）</li>\n</ul>\n<p>这种多架构支持能力使其能够适应多样化的硬件环境。</p>\n<h3><a name=\""p-36171-h-2-lts-5\"" class=\""anchor\"" href=\""#p-36171-h-2-lts-5\"" aria-label=\""标题链接\""></a>2. 长期支持版本（LTS）</h3>\n<p>社区定期发布长期支持版本，如：</p>\n<ul>\n<li>openEuler 20.03-LTS 系列</li>\n<li>openEuler 22.03-LTS 系列（SP1~SP4）</li>\n<li>openEuler 24.03-LTS 系列（SP1~SP3）</li>\n</ul>\n<p>这些版本被广泛用于企业级生产环境，具备高可靠性与安全性。</p>\n<h3><a name=\""p-36171-h-3-6\"" class=\""anchor\"" href=\""#p-36171-h-3-6\"" aria-label=\""标题链接\""></a>3. 工具链与开发支持</h3>\n<ul>\n<li><strong>EUR</strong>（openEuler Unified Repository）：统一软件仓库，用于构建和发布RPM包。</li>\n<li><strong>x2openEuler</strong>：迁移工具，支持从CentOS、RHEL等系统平滑迁移到openEuler。</li>\n<li><strong>ImageTailor</strong>：自定义ISO镜像生成工具。</li>\n<li><strong>EulerLauncher</strong>：跨平台虚拟化管理工具，支持在Windows、macOS、Linux上部署openEuler虚拟机或容器。</li>\n</ul>\n<h3><a name=\""p-36171-h-4-7\"" class=\""anchor\"" href=\""#p-36171-h-4-7\"" aria-label=\""标题链接\""></a>4. 社区协作机制</h3>\n<p>社区采用<strong>SIG</strong>（Special Interest Group，特别兴趣小组）模式组织开发工作，涵盖：</p>\n<ul>\n<li>内核（Kernel）</li>\n<li>虚拟化（Virt）</li>\n<li>安全（Security）</li>\n<li>DPU</li>\n<li>RISC-V</li>\n<li>iSulad容器运行时等</li>\n</ul>\n<p>开发者可通过参与SIG贡献代码、文档或测试。</p>\n<h2><a name=\""p-36171-h-8\"" class=\""anchor\"" href=\""#p-36171-h-8\"" aria-label=\""标题链接\""></a>三、社区平台与互动渠道</h2>\n<h3><a name=\""p-36171-h-1-9\"" class=\""anchor\"" href=\""#p-36171-h-1-9\"" aria-label=\""标题链接\""></a>1. 官方网站</h3>\n<p><a href=\""https://www.openeuler.org\"">https://www.openeuler.org</a> 或 <a href=\""https://www.openeuler.openatom.cn\"">https://www.openeuler.openatom.cn</a><br>\n提供：</p>\n<ul>\n<li>ISO镜像下载</li>\n<li>文档中心</li>\n<li>兼容性清单</li>\n<li>安全公告</li>\n<li>用户登录与管理（支持手机号绑定）</li>\n</ul>\n<h3><a name=\""p-36171-h-2-10\"" class=\""anchor\"" href=\""#p-36171-h-2-10\"" aria-label=\""标题链接\""></a>2. 社区论坛</h3>\n<p><a href=\""https://forum.openeuler.org\"">https://forum.openeuler.org</a><br>\n是一个基于Discourse的开源技术交流平台，用户可以：</p>\n<ul>\n<li>提问求助</li>\n<li>分享经验</li>\n<li>参与讨论迁移、安装、运维等问题</li>\n<li>提交建议（如支持微信扫码登录、中英翻译等）</li>\n</ul>\n<p>论坛设有多个分类，如“迁移”、“硬件支持”、“运维”、“安装部署”等，便于精准交流。</p>\n<h3><a name=\""p-36171-h-3-11\"" class=\""anchor\"" href=\""#p-36171-h-3-11\"" aria-label=\""标题链接\""></a>3. 微信公众号</h3>\n<p>openEuler设有官方<strong>微信公众号</strong>（WeChat Public Account），用于向用户推送：</p>\n<ul>\n<li>社区活动通知</li>\n<li>新版本发布信息</li>\n<li>技术文章与直播预告</li>\n<li>用户互动引导（如扫码关注后可进行论坛登录）</li>\n</ul>\n<h3><a name=\""p-36171-h-4-12\"" class=\""anchor\"" href=\""#p-36171-h-4-12\"" aria-label=\""标题链接\""></a>4. 开发者体验区</h3>\n<p>在各类技术展览中设有“<strong>Developer Experience Area</strong>”（开发者体验区），展示：</p>\n<ul>\n<li><strong>Euler Smart Q&amp;A Robot</strong>（智能问答机器人）：可回答关于编译、内核版本、参与贡献等问题</li>\n<li>实际部署案例与可视化界面演示</li>\n</ul>\n<h2><a name=\""p-36171-h-13\"" class=\""anchor\"" href=\""#p-36171-h-13\"" aria-label=\""标题链接\""></a>四、社区治理与贡献</h2>\n<p>openEuler社区采用透明、开放的治理模式，鼓励全球开发者参与贡献。主要流程包括：</p>\n<ul>\n<li>签署CLA（贡献者许可协议）</li>\n<li>提交Issue与PR（Pull Request）</li>\n<li>参与SIG会议</li>\n<li>获得Committer或Maintainer权限</li>\n</ul>\n<p>社区设有<strong>技术委员会</strong>（TC）负责重大决策，如内核版本选型（如openEuler 23.03采用Linux 6.1内核）。</p>\n<h2><a name=\""p-36171-h-14\"" class=\""anchor\"" href=\""#p-36171-h-14\"" aria-label=\""标题链接\""></a>五、典型应用场景</h2>\n<ul>\n<li>替代CentOS/RHEL用于企业服务器部署</li>\n<li>构建云原生操作系统（如KubeOS）</li>\n<li>边缘AI计算平台</li>\n<li>国产化替代方案（信创工程）</li>\n<li>教育与科研项目</li>\n</ul>\n<h2><a name=\""p-36171-h-15\"" class=\""anchor\"" href=\""#p-36171-h-15\"" aria-label=\""标题链接\""></a>六、社区活跃度与影响力</h2>\n<p>截至2023年初：</p>\n<ul>\n<li>社区用户超100万</li>\n<li>超过765家企业加入</li>\n<li>累计产生5万多Issue、9万多个PR</li>\n<li>在DistroWatch等国际平台获得广泛关注</li>\n</ul>\n<p>社区持续通过<strong>Techday直播、Meetup、线上课程</strong>等形式吸引全球开发者参与。</p>\n<hr>\n<p><img src=\""https://discourse.test.osinfra.cn/images/emoji/apple/white_check_mark.png?v=15\"" title=\"":white_check_mark:\"" class=\""emoji\"" alt=\"":white_check_mark:\"" loading=\""lazy\"" width=\""20\"" height=\""20\""> <strong>总结</strong>：<br>\nopenEuler社区不仅是一个开源操作系统项目，更是一个集技术创新、产业协同、开发者成长于一体的生态系统。它正成为中国基础软件自主创新的核心力量，并积极走向国际化。</p>\n</details>""]",2026-05-09T09:36:57.263Z,,
+29529,请最后介绍一下欧拉社区,"问题标题
+请最后介绍一下欧拉社区
+问题描述
+请最后介绍一下欧拉社区
+操作系统
+请最后介绍一下欧拉社区
+软件版本
+请最后介绍一下欧拉社区
+硬件配置
+请最后介绍一下欧拉社区
+重现步骤
+请最后介绍一下欧拉社区请最后介绍一下欧拉社区
+期望结果
+请最后介绍一下欧拉社区请最后介绍一下欧拉社区
+实际结果
+请最后介绍一下欧拉社区请最后介绍一下欧拉社区
+我已确认以上信息尽量填写完整，并已搜索过类似问题
+on",,qa-提问求助,[],2026-05-09T10:23:45.555Z,,
+29536,NVME配置问题：NVMe list is empty,"问题标题
+NVME配置问题：NVMe list is empty.
+问题描述
+版本：2509
+当前配置NVME，按照SEU→14140224_VPD_0.sr→14140224_PROTOCOL_0.sr流程加载，SEU参考的Huawei/TianChi/SEU/14100665_00000001030302044496.sr
+配置好后，丝印正常
+Handle 0x0016, DMI type 9, 24 bytes
+System Slot Information
+Designation: DISK46
+Type: x2 PCI Express x2
+Current Usage: In Use
+Length: Other
+ID: 46
+Characteristics: None
+Bus Address: 0000:05:00.0
+Handle 0x0017, DMI type 9, 24 bytes
+System Slot Information
+Designation: DISK45
+Type: x2 PCI Express x2
+Current Usage: In Use
+Length: Other
+ID: 45
+Characteristics: None
+Bus Address: 0000:06:00.0
+bmc下可以看到nvme的SerialNumber 等信息，当前nvme支持nvme-mi协议
+NAME TYPE SIGNATURE RESULT/VALUE FLAGS
+bmc.kepler.sms interface - - -
+._40odata_2Econtext property v s ""/redfish/v1/$metadata#Systems/Member… -
+._40odata_2Eid property v s ""/bmc/kepler/Systems/1/Sms/1/Computer… -
+._40odata_2Etype property v s “#Storage.v1_0_0.OemPCIE_SSD” -
+bmc.kepler.sms.redfish interface - - -
+.CapableSpeedGbs property v s “null” -
+.CapacityBytes property v x 240057409536 -
+.Description property v s “null” -
+.DeviceID property v s “0x5024” -
+.DeviceLocation property v s “null” -
+.DeviceName property v s “null” -
+.DeviceSilkScreen property v s “null” -
+.FirmwareVersion property v s “EIEK51.3” -
+.Id property v s “0000:00:13.0_0000:06:00.0” -
+.Manufacturer property v s “null” -
+.MediaType property v s “null” -
+.Model property v s “KINGSTON SEDC2000BYM8240G” -
+.Name property v s “nvme1” -
+.NegotiatedSpeedGbs property v s “null” -
+.Protocol property v s “null” -
+.SerialNumber property v s “50026B728395F71E” -
+.Status property v s “healthy” -
+.SubsystemDeviceID property v s “0x5024” -
+.SubsystemVendorID property v s “0x2646” -
+.VendorID property v s “0x2646” -
+._40odata_2Econtext property v s ""/redfish/v1/$metadata#Systems/Member… -
+._40odata_2Eid property v s ""/bmc/kepler/Systems/1/Sms/1/Computer… -
+._40odata_2Etype property v s “#Storage.v1_0_0.OemPCIE_SSD” -
+bmc.kepler.sms.redfish.BDFNumber interface - - -
+.BDF property v s “0000:06:00.0” -
+.RootBDF property v s “0000:00:13.0” -
+查询disk45：mdbctl lsprop Drive_1_010102
+bmc.kepler.Inventory.Hardware
+AssetName=“Disk45”
+AssetTag=“N/A”
+AssetType=“Disk”
+FirmwareVersion=“N/A”
+ManufactureDate=“N/A”
+Manufacturer=“N/A”
+Model=“N/A”
+PCBVersion=“N/A”
+PartNumber=“N/A”
+SerialNumber=“”
+Slot=“45”
+UUID=“”
+bmc.kepler.Object.Properties
+ClassName=“Drive”
+ObjectIdentifier=[1,“1”,“1”,“010102”]
+ObjectName=“Drive_1_010102”
+TraceSamplingRate=0
+bmc.kepler.Systems.Storage.Drive
+BlockSizeBytes=65535
+BootPriority=255
+CapableSpeedGbs=255
+CapacityMiB=4294967295
+ContainerPhysicalContext=“Front”
+DeviceName=“N/A”
+EnclosureId=65535
+FaultLed=0
+FirmwareStatus=255
+HotspareType=255
+Id=45
+LocateLed=0
+Location=“HDD Plane”
+LocationIndicatorState=0
+Manufacturer=“N/A”
+ManufacturerId=0
+MediaErrorCount=4294967295
+MediaType=255
+Model=“N/A”
+Name=“Disk45”
+NegotiatedSpeedGbs=255
+NodeId=“HDDPlaneDisk45”
+OtherErrorCount=4294967295
+PCIeLinkSpeed=0
+PatrolState=0
+PowerOnHours=4294967295
+PowerState=255
+PredictedFailCount=4294967295
+PredictedMediaLifeLeftPercent=100
+Presence=1
+Protocol=5
+RebuildProgress=255
+RebuildState=0
+RefControllerId=255
+RefDiskArrayId=65535
+RefVolumeList=
+ResourceId=0
+Revision=“N/A”
+RotationSpeedRPM=65535
+SASAddress1=“N/A”
+SASAddress2=“N/A”
+SerialNumber=“”
+SlotNumber=255
+TemperatureCelsius=0
+bmc.kepler.Systems.Storage.Drive.AddrInfo
+PortId=0
+RootBDF=“N/A”
+SlotId=0
+SocketId=0
+Type=“N/A”
+bmc.kepler.Systems.Storage.Drive.DriveStatus
+CapacityError=false
+Failure=false
+FirmwareStatusError=false
+Health=0
+InAFailedArray=0
+Missing=0
+PredictiveFailure=0
+bmc.kepler.Systems.Storage.Drive.DriveSubHealth
+EstimatedRemainingLifespan=4294967295
+EstimatedRemainingLifespanInsufficient=0
+IODeteriorationHealthCode=0
+SLCSpareBlockPercentage=255
+TLCSpareBlockPercentage=255
+bmc.kepler.Systems.Storage.Drive.NVMe
+LifeUsedPercentage=255
+bmc.kepler.Systems.Storage.Drive.NVMe.SMART
+AvailableSpare=255
+CriticalWarning=255
+Status=255
+UsedPercentage=255
+bmc.kepler.Systems.Storage.Drive.SAS.SMART
+BlocksReceivedFromInitiator=4294967295
+BlocksSentToInitiator=4294967295
+ElementsInGrownDefectList=4294967295
+ElementsInPrimaryDefectList=4294967295
+LastPrefailEventSeqNum=4294967295
+ManufacturedInWeekOfYear=“N/A”
+StripTemperatureCelsius=4294967295
+UntilNextInterSMARTTestMinutes=4294967295
+Private
+ActivationLed=0
+CommandTimeoutTimes=0
+FaultReg=0
+HddBackplaneStartSlot=44
+LinkFault=false
+LocateReg=0
+PassThrough=255
+PhysicalLocation=“HDD Plane”
+RelativeSlot=1
+SetFaultLed=0
+SetLocateLed=0
+其中bmc.kepler.Systems.Storage.Drive.AddrInfo中portid/bdf全是N/A
+web端没有详细数据，iBMA运行正常
+Weixin Image_20260415175302_256_10
+Weixin Image_20260415175302_256_10
+2250×704 120 KB
+app.log一直报错：NVMe list is empty
+Weixin Image_20260415175427_257_10
+Weixin Image_20260415175427_257_10
+1338×170 80.5 KB
+Q：NVME的信息传递流程是什么，当前情况应该从什么方向排查
+操作系统
+ubuntu
+软件版本
+openubmc2509
+硬件配置
+暂无暂无暂无
+重现步骤
+NVME配置问题：NVMe list is empty.
+期望结果
+NVME配置问题：NVMe list is empty.
+实际结果
+NVME配置问题：NVMe list is empty.
+我已确认以上信息尽量填写完整，并已搜索过类似问题
+on",,提问求助,[],2026-05-11T08:14:06.334Z,,
+29537,如何正确安装欧拉镜像包,"问题标题
+如何正确安装欧拉镜像包
+问题描述
+如何正确安装欧拉镜像包如何正确安装欧拉镜像包
+操作系统
+ubuntu
+软件版本
+openubmc2509
+硬件配置
+如何正确安装欧拉镜像包如何正确安装欧拉镜像包
+重现步骤
+如何正确安装欧拉镜像包
+期望结果
+如何正确安装欧拉镜像包如何正确安装欧拉镜像包
+实际结果
+如何正确安装欧拉镜像包如何正确安装欧拉镜像包
+我已确认以上信息尽量填写完整，并已搜索过类似问题
+on",,提问求助,[],2026-05-11T08:16:10.100Z,,
+29539,MiniSas接口及其下硬盘如何适配?,"问题标题
+MiniSas接口及其下硬盘如何适配
+问题描述
+载板上有个CPU2直出MiniSas接口，插了两块HDD硬盘，按照直通硬盘SATA的配法，配PcieAddrInfo_Sas。RootBDF从OS下查到配了，SocketID按照CPU2配为1，配了PcieAddrInfo_SAS_1 – PcieAddrInfo_SAS_10，分别SlotID和PortID 0-9，但是两个硬盘的SilkScreen始终为空，没有信息，请问MiniSAS接口应该怎么适配？
+操作系统
+KY10
+软件版本
+OpenUBMC2509
+硬件配置
+920模组
+重现步骤
+cat /data/opt/bmc/conf/bios/silkconfig.json 有丝印，同时也试过将ControllerType改为3，情况一样
+""DiskSilk"": [{         ""ControlId"": 1,         ""SlotId"": 9,         ""RootBDF"": ""0000:b4:04.0"",         ""PhyId"": 9,         ""SocketId"": 1 }, {         ""ControlId"": 1,         ""SlotId"": 0,         ""RootBDF"": ""0000:b4:04.0"",         ""PhyId"": 0,         ""SocketId"": 1 }, {         ""ControlId"": 1,         ""SlotId"": 1,         ""RootBDF"": ""0000:b4:04.0"",         ""PhyId"": 1,         ""SocketId"": 1 }, {         ""ControlId"": 1,         ""SlotId"": 2,         ""RootBDF"": ""0000:b4:04.0"",         ""PhyId"": 2,         ""SocketId"": 1 }, {         ""ControlId"": 1,         ""SlotId"": 3,         ""RootBDF"": ""0000:b4:04.0"",         ""PhyId"": 3,         ""SocketId"": 1 }, {         ""ControlId"": 1,         ""SlotId"": 4,         ""RootBDF"": ""0000:b4:04.0"",         ""PhyId"": 4,         ""SocketId"": 1 }, {         ""ControlId"": 1,         ""SlotId"": 5,         ""RootBDF"": ""0000:b4:04.0"",         ""PhyId"": 5,         ""SocketId"": 1 }, {         ""ControlId"": 1,         ""SlotId"": 6,         ""RootBDF"": ""0000:b4:04.0"",         ""PhyId"": 6,         ""SocketId"": 1 }, {         ""ControlId"": 1,         ""SlotId"": 7,         ""RootBDF"": ""0000:b4:04.0"",         ""PhyId"": 7,         ""SocketId"": 1 }, {         ""ControlId"": 1,         ""SlotId"": 8,         ""RootBDF"": ""0000:b4:04.0"",         ""PhyId"": 8,         ""SocketId"": 1 }]
+ls -al /sys/block
+[图片: 图像内容分析失败]
+查看硬盘SilkScreen，硬盘信息有传过来，SilkScreen为空
+期望结果
+适配MiniSAS，硬盘有信息
+实际结果
+按照直通硬盘方法配PcieAddrInfo，实际上硬盘SilkScreen为空
+尝试过的解决方案
+配置0-9多个PcieAddrInfo，交叉硬盘槽位，实际结果还是这样。在代码里赋值SilkScreen后，web上就显示硬盘信息了
+我已确认以上信息尽量填写完整，并已搜索过类似问题
+on",,提问求助,[],2026-05-11T08:29:22.081Z,,
+29541,白牌包定制指南，编译未生成wbd/wbd_output.zip?,"问题标题
+白牌包定制指南，编译未生成wbd/wbd_output.zip?
+问题描述
+编译也有下载定制文件的过程，最终编译出来还是rootfs_openUBMC.hpm，manifest/output/packet/wbd/wbd_output.zip没有这个包，编译过程也没有报错
+[图片: 图像内容分析失败]
+bingo publish -z WBD -b openUBMC -bt release -r openubmc_dev
+bingo publish -z WBD -b openUBMC -bt release
+这两条都试过，结果一样
+操作系统
+暂无
+软件版本
+暂无
+硬件配置
+暂无暂无暂无
+重现步骤
+编译也有下载定制文件的过程，最终编译出来还是rootfs_openUBMC.hpm，manifest/output/packet/wbd/wbd_output.zip没有这个包，编译过程也没有报错
+[图片: 图像内容分析失败]
+bingo publish -z WBD -b openUBMC -bt release -r openubmc_dev
+bingo publish -z WBD -b openUBMC -bt release
+这两条都试过，结果一样
+期望结果
+白牌包定制指南，编译未生成wbd/wbd_output.zip?
+实际结果
+白牌包定制指南，编译未生成wbd/wbd_output.zip?
+我已确认以上信息尽量填写完整，并已搜索过类似问题
+on",,提问求助,[],2026-05-11T08:38:26.124Z,,
+29538,从25.12回退到到25.06后，ssh无法登录?,"问题标题
+从25.12回退到到25.06后，ssh无法登录
+问题描述
+起因是为了解决别的问题，编译出了25.12的hpm包，通过网页的固件升级将25.06升级成了25.12，升级成功重启后，bmc一直报call trace的错，并一直重启，网络也ping不通，于是在串口通过ipmcset -d rollback命令回退到了25.06的版本，此时ssh就无法登录了，输入密码后，一直报 SSH服务器拒绝了密码。请再试一次。 但是同样的用户名和密码，是可以登录网页的。
+操作系统
+ubuntu
+软件版本
+openubmc2509
+硬件配置
+从25.12回退到到25.06后，ssh无法登录
+重现步骤
+方案一：在系统上通过ipmitool user set password 2修改管理员密码
+结果：密码修改成功了，但还是只能登网页，不能登ssh
+方案二：在网页中的固件升级中又重新更新了一遍25.06
+结果：没作用
+方案三：在网页中的本地用户中新添加了一个用户并设置了密码
+结果：这个新用户也无法通过ssh登录
+方案四：在网页的端口服务中把ssh禁用再打开
+结果：没作用
+方案五：断电重启
+结果：没作用
+期望结果
+方案一：在系统上通过ipmitool user set password 2修改管理员密码
+结果：密码修改成功了，但还是只能登网页，不能登ssh
+方案二：在网页中的固件升级中又重新更新了一遍25.06
+结果：没作用
+方案三：在网页中的本地用户中新添加了一个用户并设置了密码
+结果：这个新用户也无法通过ssh登录
+方案四：在网页的端口服务中把ssh禁用再打开
+结果：没作用
+方案五：断电重启
+结果：没作用
+实际结果
+方案一：在系统上通过ipmitool user set password 2修改管理员密码
+结果：密码修改成功了，但还是只能登网页，不能登ssh
+方案二：在网页中的固件升级中又重新更新了一遍25.06
+结果：没作用
+方案三：在网页中的本地用户中新添加了一个用户并设置了密码
+结果：这个新用户也无法通过ssh登录
+方案四：在网页的端口服务中把ssh禁用再打开
+结果：没作用
+方案五：断电重启
+结果：没作用
+我已确认以上信息尽量填写完整，并已搜索过类似问题
+on",,提问求助,[],2026-05-11T08:23:17.514Z,,

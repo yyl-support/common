@@ -1,0 +1,24 @@
+{
+    "@odata.context": "/redfish/v1/$metadata#JsonSchemaFile.JsonSchemaFile",
+    "@odata.id": "/redfish/v1/JsonSchemas/MetricReportDefinition",
+    "@odata.type": "#JsonSchemaFile.v1_0_2.JsonSchemaFile",
+    "Id": "MetricReportDefinition",
+    "Description": "MetricReportDefinition Schema File Location",
+    "Name": "MetricReportDefinition Schema File",
+    "Languages": [
+        "en"
+    ],
+    "Schema": "#MetricReportDefinition.MetricReportDefinition",
+    "Location": [
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/SchemaStore/en/MetricReportDefinition.json",
+            "PublicationUri": "http://redfish.dmtf.org/schemas/v1/MetricReportDefinition.json"
+        },
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/Schemas/MetricReportDefinition.json",
+            "PublicationUri": "http://redfish.dmtf.org/schemas/v1/MetricReportDefinition.json"
+        }
+    ]
+}

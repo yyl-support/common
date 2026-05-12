@@ -1,0 +1,775 @@
+2026-05-09 18:17:52,470 - main - INFO - Robot应用启动
+2026-05-09 18:17:52,476 - main - INFO - SchemaFiles 目录检查通过，包含 7901 个文件/目录
+2026-05-09 18:17:52,489 - main - INFO - 目录检查完成
+2026-05-09 18:17:52,489 - main - INFO - 开始初始化LightRAG数据...
+2026-05-09 18:17:52,564 - AskRobotPOC - INFO - 开始初始化LightRAG数据
+2026-05-09 18:17:52,918 - AskRobotPOC - INFO - LightRAG不为空，不进行初始化
+2026-05-09 18:17:52,919 - main - INFO - LightRAG数据初始化成功
+2026-05-09 18:17:52,920 - main - INFO - 开始初始化服务...
+2026-05-09 18:17:53,103 - AskRobotPOC - INFO - 数据库表创建成功
+2026-05-09 18:17:53,106 - AskRobotPOC - INFO - ForumMonitor 初始化完成
+2026-05-09 18:17:53,107 - AskRobotPOC - INFO - 开始监控新帖子，检查间隔: 60秒
+2026-05-09 18:17:53,107 - main - INFO - 服务初始化成功
+2026-05-09 18:17:53,108 - main - INFO - 启动LightRAG更新定时器
+2026-05-09 18:17:53,108 - AskRobotPOC - INFO - 
+[2026-05-09 18:17:53] 正在检查新帖子...
+2026-05-09 18:17:53,119 - AskRobotPOC - INFO - 启动定时任务
+2026-05-09 18:17:53,119 - main - INFO - LightRAG更新定时器启动成功
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://192.168.0.119:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+2026-05-09 18:17:53,250 - AskRobotPOC - INFO - 从数据库加载了 16 个已存在的帖子
+2026-05-09 18:17:53,250 - AskRobotPOC - INFO - 已存在 16 个帖子
+2026-05-09 18:17:53,800 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:17:53,800 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29527, 标题: 请再介绍一下欧拉社区, 标签: 提问求助
+2026-05-09 18:17:53,801 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:17:53,802 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29523, 标题: 请介绍一下欧拉社区, 标签: 提问求助
+2026-05-09 18:17:53,802 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:17:53,803 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29522, 标题: 请介绍以下欧拉社区1, 标签: 提问求助
+2026-05-09 18:17:53,803 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:17:53,804 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29521, 标题: 请介绍以下欧拉社区, 标签: 提问求助
+2026-05-09 18:17:53,804 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:17:53,805 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29520, 标题: 问题描述 OpenUBMC升级失败, 标签: 提问求助
+2026-05-09 18:17:53,805 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:17:53,805 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29504, 标题: 我是一个新人，我在欧拉社区应该注意什么呢？, 标签: qa-提问求助,提问求助
+2026-05-09 18:17:53,806 - AskRobotPOC - INFO - 已获取第 0 页的 6 个符合条件的帖子。
+2026-05-09 18:17:54,359 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:17:54,360 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29410, 标题: -q构建QEMU包，构建成功却没有生成.cpio.gz, 标签: 提问求助
+2026-05-09 18:17:54,360 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:17:54,361 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29384, 标题: OpenUBMC升级失败, 标签: 提问求助
+2026-05-09 18:17:54,361 - AskRobotPOC - INFO - 已获取第 1 页的 0 个符合条件的帖子。
+2026-05-09 18:17:54,909 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:17:54,910 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29363, 标题: NVME配置问题：NVMe list is empty., 标签: 提问求助
+2026-05-09 18:17:54,910 - AskRobotPOC - INFO - 已获取第 2 页的 0 个符合条件的帖子。
+2026-05-09 18:17:54,911 - AskRobotPOC - INFO - 已达到最大页数 3，停止爬取。
+2026-05-09 18:17:54,912 - AskRobotPOC - INFO - 没有发现新帖子
+2026-05-09 18:17:54,912 - AskRobotPOC - INFO - [预审] 开始检查预审帖子...
+2026-05-09 18:17:55,062 - AskRobotPOC - INFO - 从 pre_audit_topics 表加载了 59 个已存在的预审帖子
+2026-05-09 18:17:55,725 - AskRobotPOC - INFO - 已获取第 0 页的 29 个符合条件的帖子。
+2026-05-09 18:17:56,353 - AskRobotPOC - INFO - 已获取第 1 页的 30 个符合条件的帖子。
+2026-05-09 18:17:56,991 - AskRobotPOC - INFO - 已获取第 2 页的 5 个符合条件的帖子。
+2026-05-09 18:17:56,991 - AskRobotPOC - INFO - 已达到最大页数 3，停止爬取。
+2026-05-09 18:17:56,992 - AskRobotPOC - INFO - [预审] 发现 4 个新的预审帖子
+2026-05-09 18:17:59,526 - AskRobotPOC - INFO - [预审] 预审帖子检查完成
+INFO:werkzeug:192.168.0.119 - - [09/May/2026 18:18:38] "GET /health HTTP/1.1" 200 -
+2026-05-09 18:18:59,528 - AskRobotPOC - INFO - 
+[2026-05-09 18:18:59] 正在检查新帖子...
+2026-05-09 18:18:59,672 - AskRobotPOC - INFO - 从数据库加载了 16 个已存在的帖子
+2026-05-09 18:18:59,673 - AskRobotPOC - INFO - 已存在 16 个帖子
+2026-05-09 18:19:00,338 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:19:00,339 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29527, 标题: 请再介绍一下欧拉社区, 标签: 提问求助
+2026-05-09 18:19:00,340 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:19:00,340 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29523, 标题: 请介绍一下欧拉社区, 标签: 提问求助
+2026-05-09 18:19:00,341 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:19:00,341 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29522, 标题: 请介绍以下欧拉社区1, 标签: 提问求助
+2026-05-09 18:19:00,342 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:19:00,343 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29521, 标题: 请介绍以下欧拉社区, 标签: 提问求助
+2026-05-09 18:19:00,343 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:19:00,344 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29520, 标题: 问题描述 OpenUBMC升级失败, 标签: 提问求助
+2026-05-09 18:19:00,345 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:19:00,345 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29504, 标题: 我是一个新人，我在欧拉社区应该注意什么呢？, 标签: qa-提问求助,提问求助
+2026-05-09 18:19:00,346 - AskRobotPOC - INFO - 已获取第 0 页的 6 个符合条件的帖子。
+2026-05-09 18:19:00,976 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:19:00,976 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29410, 标题: -q构建QEMU包，构建成功却没有生成.cpio.gz, 标签: 提问求助
+2026-05-09 18:19:00,977 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:19:00,977 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29384, 标题: OpenUBMC升级失败, 标签: 提问求助
+2026-05-09 18:19:00,978 - AskRobotPOC - INFO - 已获取第 1 页的 0 个符合条件的帖子。
+2026-05-09 18:19:01,607 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:19:01,608 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29363, 标题: NVME配置问题：NVMe list is empty., 标签: 提问求助
+2026-05-09 18:19:01,609 - AskRobotPOC - INFO - 已获取第 2 页的 0 个符合条件的帖子。
+2026-05-09 18:19:01,609 - AskRobotPOC - INFO - 已达到最大页数 3，停止爬取。
+2026-05-09 18:19:01,610 - AskRobotPOC - INFO - 没有发现新帖子
+2026-05-09 18:19:01,611 - AskRobotPOC - INFO - [预审] 开始检查预审帖子...
+2026-05-09 18:19:01,751 - AskRobotPOC - INFO - 从 pre_audit_topics 表加载了 59 个已存在的预审帖子
+2026-05-09 18:19:02,408 - AskRobotPOC - INFO - 已获取第 0 页的 29 个符合条件的帖子。
+2026-05-09 18:19:03,045 - AskRobotPOC - INFO - 已获取第 1 页的 30 个符合条件的帖子。
+2026-05-09 18:19:03,659 - AskRobotPOC - INFO - 已获取第 2 页的 5 个符合条件的帖子。
+2026-05-09 18:19:03,660 - AskRobotPOC - INFO - 已达到最大页数 3，停止爬取。
+2026-05-09 18:19:03,661 - AskRobotPOC - INFO - [预审] 发现 4 个新的预审帖子
+2026-05-09 18:19:06,211 - AskRobotPOC - INFO - [预审] 预审帖子检查完成
+2026-05-09 18:20:06,213 - AskRobotPOC - INFO - 
+[2026-05-09 18:20:06] 正在检查新帖子...
+2026-05-09 18:20:06,359 - AskRobotPOC - INFO - 从数据库加载了 16 个已存在的帖子
+2026-05-09 18:20:06,359 - AskRobotPOC - INFO - 已存在 16 个帖子
+2026-05-09 18:20:07,000 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:20:07,001 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29527, 标题: 请再介绍一下欧拉社区, 标签: 提问求助
+2026-05-09 18:20:07,001 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:20:07,001 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29523, 标题: 请介绍一下欧拉社区, 标签: 提问求助
+2026-05-09 18:20:07,003 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:20:07,003 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29522, 标题: 请介绍以下欧拉社区1, 标签: 提问求助
+2026-05-09 18:20:07,004 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:20:07,004 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29521, 标题: 请介绍以下欧拉社区, 标签: 提问求助
+2026-05-09 18:20:07,005 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:20:07,005 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29520, 标题: 问题描述 OpenUBMC升级失败, 标签: 提问求助
+2026-05-09 18:20:07,005 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:20:07,006 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29504, 标题: 我是一个新人，我在欧拉社区应该注意什么呢？, 标签: qa-提问求助,提问求助
+2026-05-09 18:20:07,006 - AskRobotPOC - INFO - 已获取第 0 页的 6 个符合条件的帖子。
+2026-05-09 18:20:07,640 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:20:07,640 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29410, 标题: -q构建QEMU包，构建成功却没有生成.cpio.gz, 标签: 提问求助
+2026-05-09 18:20:07,641 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:20:07,641 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29384, 标题: OpenUBMC升级失败, 标签: 提问求助
+2026-05-09 18:20:07,642 - AskRobotPOC - INFO - 已获取第 1 页的 0 个符合条件的帖子。
+2026-05-09 18:20:08,266 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:20:08,267 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29363, 标题: NVME配置问题：NVMe list is empty., 标签: 提问求助
+2026-05-09 18:20:08,267 - AskRobotPOC - INFO - 已获取第 2 页的 0 个符合条件的帖子。
+2026-05-09 18:20:08,267 - AskRobotPOC - INFO - 已达到最大页数 3，停止爬取。
+2026-05-09 18:20:08,268 - AskRobotPOC - INFO - 没有发现新帖子
+2026-05-09 18:20:08,269 - AskRobotPOC - INFO - [预审] 开始检查预审帖子...
+2026-05-09 18:20:08,422 - AskRobotPOC - INFO - 从 pre_audit_topics 表加载了 59 个已存在的预审帖子
+2026-05-09 18:20:08,968 - AskRobotPOC - INFO - 已获取第 0 页的 29 个符合条件的帖子。
+2026-05-09 18:20:09,526 - AskRobotPOC - INFO - 已获取第 1 页的 30 个符合条件的帖子。
+2026-05-09 18:20:10,089 - AskRobotPOC - INFO - 已获取第 2 页的 5 个符合条件的帖子。
+2026-05-09 18:20:10,089 - AskRobotPOC - INFO - 已达到最大页数 3，停止爬取。
+2026-05-09 18:20:10,090 - AskRobotPOC - INFO - [预审] 发现 4 个新的预审帖子
+2026-05-09 18:20:12,313 - AskRobotPOC - INFO - [预审] 预审帖子检查完成
+2026-05-09 18:21:12,315 - AskRobotPOC - INFO - 
+[2026-05-09 18:21:12] 正在检查新帖子...
+2026-05-09 18:21:12,473 - AskRobotPOC - INFO - 从数据库加载了 16 个已存在的帖子
+2026-05-09 18:21:12,474 - AskRobotPOC - INFO - 已存在 16 个帖子
+2026-05-09 18:21:13,033 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:21:13,033 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29527, 标题: 请再介绍一下欧拉社区, 标签: 提问求助
+2026-05-09 18:21:13,034 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:21:13,034 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29523, 标题: 请介绍一下欧拉社区, 标签: 提问求助
+2026-05-09 18:21:13,035 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:21:13,035 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29522, 标题: 请介绍以下欧拉社区1, 标签: 提问求助
+2026-05-09 18:21:13,036 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:21:13,037 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29521, 标题: 请介绍以下欧拉社区, 标签: 提问求助
+2026-05-09 18:21:13,037 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:21:13,038 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29520, 标题: 问题描述 OpenUBMC升级失败, 标签: 提问求助
+2026-05-09 18:21:13,038 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:21:13,038 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29504, 标题: 我是一个新人，我在欧拉社区应该注意什么呢？, 标签: qa-提问求助,提问求助
+2026-05-09 18:21:13,039 - AskRobotPOC - INFO - 已获取第 0 页的 6 个符合条件的帖子。
+2026-05-09 18:21:13,590 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:21:13,591 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29410, 标题: -q构建QEMU包，构建成功却没有生成.cpio.gz, 标签: 提问求助
+2026-05-09 18:21:13,591 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:21:13,592 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29384, 标题: OpenUBMC升级失败, 标签: 提问求助
+2026-05-09 18:21:13,592 - AskRobotPOC - INFO - 已获取第 1 页的 0 个符合条件的帖子。
+2026-05-09 18:21:14,152 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:21:14,152 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29363, 标题: NVME配置问题：NVMe list is empty., 标签: 提问求助
+2026-05-09 18:21:14,153 - AskRobotPOC - INFO - 已获取第 2 页的 0 个符合条件的帖子。
+2026-05-09 18:21:14,154 - AskRobotPOC - INFO - 已达到最大页数 3，停止爬取。
+2026-05-09 18:21:14,156 - AskRobotPOC - INFO - 没有发现新帖子
+2026-05-09 18:21:14,156 - AskRobotPOC - INFO - [预审] 开始检查预审帖子...
+2026-05-09 18:21:14,301 - AskRobotPOC - INFO - 从 pre_audit_topics 表加载了 59 个已存在的预审帖子
+2026-05-09 18:21:14,854 - AskRobotPOC - INFO - 已获取第 0 页的 29 个符合条件的帖子。
+2026-05-09 18:21:15,409 - AskRobotPOC - INFO - 已获取第 1 页的 30 个符合条件的帖子。
+2026-05-09 18:21:15,951 - AskRobotPOC - INFO - 已获取第 2 页的 5 个符合条件的帖子。
+2026-05-09 18:21:15,952 - AskRobotPOC - INFO - 已达到最大页数 3，停止爬取。
+2026-05-09 18:21:15,953 - AskRobotPOC - INFO - [预审] 发现 4 个新的预审帖子
+2026-05-09 18:21:18,253 - AskRobotPOC - INFO - [预审] 预审帖子检查完成
+2026-05-09 18:22:18,255 - AskRobotPOC - INFO - 
+[2026-05-09 18:22:18] 正在检查新帖子...
+2026-05-09 18:22:18,410 - AskRobotPOC - INFO - 从数据库加载了 16 个已存在的帖子
+2026-05-09 18:22:18,411 - AskRobotPOC - INFO - 已存在 16 个帖子
+2026-05-09 18:22:18,971 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:22:18,972 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29527, 标题: 请再介绍一下欧拉社区, 标签: 提问求助
+2026-05-09 18:22:18,973 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:22:18,973 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29523, 标题: 请介绍一下欧拉社区, 标签: 提问求助
+2026-05-09 18:22:18,974 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:22:18,974 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29522, 标题: 请介绍以下欧拉社区1, 标签: 提问求助
+2026-05-09 18:22:18,974 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:22:18,975 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29521, 标题: 请介绍以下欧拉社区, 标签: 提问求助
+2026-05-09 18:22:18,975 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:22:18,976 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29520, 标题: 问题描述 OpenUBMC升级失败, 标签: 提问求助
+2026-05-09 18:22:18,976 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:22:18,977 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29504, 标题: 我是一个新人，我在欧拉社区应该注意什么呢？, 标签: qa-提问求助,提问求助
+2026-05-09 18:22:18,977 - AskRobotPOC - INFO - 已获取第 0 页的 6 个符合条件的帖子。
+2026-05-09 18:22:19,519 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:22:19,520 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29410, 标题: -q构建QEMU包，构建成功却没有生成.cpio.gz, 标签: 提问求助
+2026-05-09 18:22:19,521 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:22:19,521 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29384, 标题: OpenUBMC升级失败, 标签: 提问求助
+2026-05-09 18:22:19,522 - AskRobotPOC - INFO - 已获取第 1 页的 0 个符合条件的帖子。
+2026-05-09 18:22:20,076 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:22:20,077 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29363, 标题: NVME配置问题：NVMe list is empty., 标签: 提问求助
+2026-05-09 18:22:20,078 - AskRobotPOC - INFO - 已获取第 2 页的 0 个符合条件的帖子。
+2026-05-09 18:22:20,078 - AskRobotPOC - INFO - 已达到最大页数 3，停止爬取。
+2026-05-09 18:22:20,079 - AskRobotPOC - INFO - 没有发现新帖子
+2026-05-09 18:22:20,079 - AskRobotPOC - INFO - [预审] 开始检查预审帖子...
+2026-05-09 18:22:20,228 - AskRobotPOC - INFO - 从 pre_audit_topics 表加载了 59 个已存在的预审帖子
+2026-05-09 18:22:20,863 - AskRobotPOC - INFO - 已获取第 0 页的 29 个符合条件的帖子。
+2026-05-09 18:22:21,481 - AskRobotPOC - INFO - 已获取第 1 页的 30 个符合条件的帖子。
+2026-05-09 18:22:22,110 - AskRobotPOC - INFO - 已获取第 2 页的 5 个符合条件的帖子。
+2026-05-09 18:22:22,111 - AskRobotPOC - INFO - 已达到最大页数 3，停止爬取。
+2026-05-09 18:22:22,112 - AskRobotPOC - INFO - [预审] 发现 4 个新的预审帖子
+2026-05-09 18:22:24,628 - AskRobotPOC - INFO - [预审] 预审帖子检查完成
+2026-05-09 18:23:24,631 - AskRobotPOC - INFO - 
+[2026-05-09 18:23:24] 正在检查新帖子...
+2026-05-09 18:23:24,779 - AskRobotPOC - INFO - 从数据库加载了 16 个已存在的帖子
+2026-05-09 18:23:24,780 - AskRobotPOC - INFO - 已存在 16 个帖子
+2026-05-09 18:23:25,399 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:23:25,400 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29527, 标题: 请再介绍一下欧拉社区, 标签: 提问求助
+2026-05-09 18:23:25,400 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:23:25,401 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29523, 标题: 请介绍一下欧拉社区, 标签: 提问求助
+2026-05-09 18:23:25,401 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:23:25,402 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29522, 标题: 请介绍以下欧拉社区1, 标签: 提问求助
+2026-05-09 18:23:25,402 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:23:25,403 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29521, 标题: 请介绍以下欧拉社区, 标签: 提问求助
+2026-05-09 18:23:25,403 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:23:25,403 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29520, 标题: 问题描述 OpenUBMC升级失败, 标签: 提问求助
+2026-05-09 18:23:25,404 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:23:25,405 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29504, 标题: 我是一个新人，我在欧拉社区应该注意什么呢？, 标签: qa-提问求助,提问求助
+2026-05-09 18:23:25,405 - AskRobotPOC - INFO - 已获取第 0 页的 6 个符合条件的帖子。
+2026-05-09 18:23:26,032 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:23:26,032 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29410, 标题: -q构建QEMU包，构建成功却没有生成.cpio.gz, 标签: 提问求助
+2026-05-09 18:23:26,033 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:23:26,034 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29384, 标题: OpenUBMC升级失败, 标签: 提问求助
+2026-05-09 18:23:26,034 - AskRobotPOC - INFO - 已获取第 1 页的 0 个符合条件的帖子。
+2026-05-09 18:23:26,659 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:23:26,660 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29363, 标题: NVME配置问题：NVMe list is empty., 标签: 提问求助
+2026-05-09 18:23:26,660 - AskRobotPOC - INFO - 已获取第 2 页的 0 个符合条件的帖子。
+2026-05-09 18:23:26,661 - AskRobotPOC - INFO - 已达到最大页数 3，停止爬取。
+2026-05-09 18:23:26,661 - AskRobotPOC - INFO - 没有发现新帖子
+2026-05-09 18:23:26,662 - AskRobotPOC - INFO - [预审] 开始检查预审帖子...
+2026-05-09 18:23:26,821 - AskRobotPOC - INFO - 从 pre_audit_topics 表加载了 59 个已存在的预审帖子
+2026-05-09 18:23:27,379 - AskRobotPOC - INFO - 已获取第 0 页的 29 个符合条件的帖子。
+2026-05-09 18:23:27,938 - AskRobotPOC - INFO - 已获取第 1 页的 30 个符合条件的帖子。
+2026-05-09 18:23:28,489 - AskRobotPOC - INFO - 已获取第 2 页的 5 个符合条件的帖子。
+2026-05-09 18:23:28,490 - AskRobotPOC - INFO - 已达到最大页数 3，停止爬取。
+2026-05-09 18:23:28,491 - AskRobotPOC - INFO - [预审] 发现 4 个新的预审帖子
+2026-05-09 18:23:30,735 - AskRobotPOC - INFO - [预审] 预审帖子检查完成
+2026-05-09 18:24:30,738 - AskRobotPOC - INFO - 
+[2026-05-09 18:24:30] 正在检查新帖子...
+2026-05-09 18:24:30,884 - AskRobotPOC - INFO - 从数据库加载了 16 个已存在的帖子
+2026-05-09 18:24:30,885 - AskRobotPOC - INFO - 已存在 16 个帖子
+2026-05-09 18:24:31,550 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:24:31,551 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29529, 标题: 请最后介绍一下欧拉社区, 标签: qa-提问求助
+2026-05-09 18:24:31,551 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:24:31,552 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29527, 标题: 请再介绍一下欧拉社区, 标签: 提问求助
+2026-05-09 18:24:31,552 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:24:31,552 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29523, 标题: 请介绍一下欧拉社区, 标签: 提问求助
+2026-05-09 18:24:31,553 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:24:31,553 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29522, 标题: 请介绍以下欧拉社区1, 标签: 提问求助
+2026-05-09 18:24:31,554 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:24:31,554 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29521, 标题: 请介绍以下欧拉社区, 标签: 提问求助
+2026-05-09 18:24:31,555 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:24:31,556 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29520, 标题: 问题描述 OpenUBMC升级失败, 标签: 提问求助
+2026-05-09 18:24:31,556 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:24:31,556 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29504, 标题: 我是一个新人，我在欧拉社区应该注意什么呢？, 标签: qa-提问求助,提问求助
+2026-05-09 18:24:31,557 - AskRobotPOC - INFO - 已获取第 0 页的 7 个符合条件的帖子。
+2026-05-09 18:24:32,198 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:24:32,198 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29410, 标题: -q构建QEMU包，构建成功却没有生成.cpio.gz, 标签: 提问求助
+2026-05-09 18:24:32,199 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:24:32,199 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29384, 标题: OpenUBMC升级失败, 标签: 提问求助
+2026-05-09 18:24:32,201 - AskRobotPOC - INFO - 已获取第 1 页的 0 个符合条件的帖子。
+2026-05-09 18:24:32,829 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:24:32,830 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29363, 标题: NVME配置问题：NVMe list is empty., 标签: 提问求助
+2026-05-09 18:24:32,830 - AskRobotPOC - INFO - 已获取第 2 页的 0 个符合条件的帖子。
+2026-05-09 18:24:32,831 - AskRobotPOC - INFO - 已达到最大页数 3，停止爬取。
+2026-05-09 18:24:32,832 - AskRobotPOC - INFO - 发现 1 个新帖子!
+2026-05-09 18:24:32,833 - AskRobotPOC - INFO - 正在获取帖子 29529 的详细信息...
+2026-05-09 18:24:33,479 - AskRobotPOC - INFO - 成功追加 1 条新数据到 data/forum_data/forum_topics_all20_5_normal.csv
+2026-05-09 18:24:33,635 - AskRobotPOC - INFO - 成功插入/更新 1 条数据到 forum_topics 表
+2026-05-09 18:24:33,636 - AskRobotPOC - INFO - 正在处理帖子 29529 (1/1)
+2026-05-09 18:24:35,622 - AskRobotPOC - INFO - 提示词注入检查结果: no
+2026-05-09 18:24:35,623 - AskRobotPOC - INFO - 已重置topic 29529 的token统计
+2026-05-09 18:24:35,623 - AskRobotPOC - INFO - Topic 29529 token使用量更新: prompt=384, completion=1, total=385
+2026-05-09 18:24:35,623 - AskRobotPOC - INFO - 正在为帖子 29529 生成摘要...
+2026-05-09 18:24:48,611 - AskRobotPOC - INFO - Topic 29529 token使用量更新: prompt=757, completion=1651, total=2408
+2026-05-09 18:24:48,612 - AskRobotPOC - INFO - 帖子 29529:摘要: 用户请求详细介绍欧拉社区的基本情况与发展现状
+2026-05-09 18:24:48,613 - AskRobotPOC - INFO - 正在为帖子 29529 搜索相关主题...
+2026-05-09 18:24:49,272 - AskRobotPOC - INFO - 帖子 29529 搜索到 10 个相关主题
+2026-05-09 18:24:49,422 - AskRobotPOC - INFO - 主题 29529 的搜索结果已保存到数据库
+2026-05-09 18:24:49,425 - AskRobotPOC - INFO - 主题 29529 的搜索结果已保存到 data/forum_data/search_results_topic_29529_20260509_182449.json
+2026-05-09 18:24:49,426 - AskRobotPOC - INFO - 正在为帖子 29529 检索相关文档...
+2026-05-09 18:24:49,426 - AskRobotPOC - INFO - 正在为帖子 29529 检索相关文档...
+2026-05-09 18:25:32,419 - AskRobotPOC - INFO - 帖子 29529 检索到相关文档
+2026-05-09 18:25:54,754 - AskRobotPOC - INFO - Topic 29529 token使用量更新: prompt=16464, completion=4258, total=20722
+2026-05-09 18:25:55,775 - AskRobotPOC - INFO - 答案相关性检查结果: 
+2026-05-09 18:25:55,776 - AskRobotPOC - INFO - Topic 29529 token使用量更新: prompt=32407, completion=4261, total=36668
+2026-05-09 18:25:57,377 - AskRobotPOC - INFO - 答案质量检查结果: yes
+2026-05-09 18:25:57,378 - AskRobotPOC - INFO - Topic 29529 token使用量更新: prompt=33585, completion=4262, total=37847
+2026-05-09 18:25:57,526 - AskRobotPOC - INFO - 主题 29529 的检索结果已保存到数据库
+2026-05-09 18:25:57,533 - AskRobotPOC - INFO - 检索结果已保存到 data/forum_data/retrieval_results_20260509_182557.json
+2026-05-09 18:25:57,533 - AskRobotPOC - INFO - 成功追加 1 条新数据到 data/forum_data/processed_forum_topics_normal.csv
+2026-05-09 18:25:57,682 - AskRobotPOC - INFO - 成功插入/更新 1 条数据到 processed_forum_topics 表
+2026-05-09 18:25:57,836 - AskRobotPOC - INFO - 主题 29529 的token使用量已保存到数据库
+2026-05-09 18:25:57,837 - AskRobotPOC - INFO - 帖子 29529 的答案与搜索结果不相关，跳过回复
+2026-05-09 18:25:57,838 - AskRobotPOC - INFO - [预审] 开始检查预审帖子...
+2026-05-09 18:25:57,996 - AskRobotPOC - INFO - 从 pre_audit_topics 表加载了 59 个已存在的预审帖子
+2026-05-09 18:25:58,625 - AskRobotPOC - INFO - 已获取第 0 页的 29 个符合条件的帖子。
+2026-05-09 18:25:59,251 - AskRobotPOC - INFO - 已获取第 1 页的 30 个符合条件的帖子。
+2026-05-09 18:25:59,883 - AskRobotPOC - INFO - 已获取第 2 页的 5 个符合条件的帖子。
+2026-05-09 18:25:59,884 - AskRobotPOC - INFO - 已达到最大页数 3，停止爬取。
+2026-05-09 18:25:59,885 - AskRobotPOC - INFO - [预审] 发现 4 个新的预审帖子
+2026-05-09 18:26:02,407 - AskRobotPOC - INFO - [预审] 预审帖子检查完成
+2026-05-09 18:27:02,409 - AskRobotPOC - INFO - 
+[2026-05-09 18:27:02] 正在检查新帖子...
+2026-05-09 18:27:02,549 - AskRobotPOC - INFO - 从数据库加载了 17 个已存在的帖子
+2026-05-09 18:27:02,549 - AskRobotPOC - INFO - 已存在 17 个帖子
+2026-05-09 18:27:03,181 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:27:03,181 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29529, 标题: 请最后介绍一下欧拉社区, 标签: qa-提问求助
+2026-05-09 18:27:03,182 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:27:03,183 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29527, 标题: 请再介绍一下欧拉社区, 标签: 提问求助
+2026-05-09 18:27:03,183 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:27:03,184 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29523, 标题: 请介绍一下欧拉社区, 标签: 提问求助
+2026-05-09 18:27:03,184 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:27:03,184 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29522, 标题: 请介绍以下欧拉社区1, 标签: 提问求助
+2026-05-09 18:27:03,185 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:27:03,185 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29521, 标题: 请介绍以下欧拉社区, 标签: 提问求助
+2026-05-09 18:27:03,186 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:27:03,186 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29520, 标题: 问题描述 OpenUBMC升级失败, 标签: 提问求助
+2026-05-09 18:27:03,187 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:27:03,187 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29504, 标题: 我是一个新人，我在欧拉社区应该注意什么呢？, 标签: qa-提问求助,提问求助
+2026-05-09 18:27:03,187 - AskRobotPOC - INFO - 已获取第 0 页的 7 个符合条件的帖子。
+2026-05-09 18:27:03,821 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:27:03,821 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29410, 标题: -q构建QEMU包，构建成功却没有生成.cpio.gz, 标签: 提问求助
+2026-05-09 18:27:03,822 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:27:03,822 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29384, 标题: OpenUBMC升级失败, 标签: 提问求助
+2026-05-09 18:27:03,823 - AskRobotPOC - INFO - 已获取第 1 页的 0 个符合条件的帖子。
+2026-05-09 18:27:04,441 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:27:04,442 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29363, 标题: NVME配置问题：NVMe list is empty., 标签: 提问求助
+2026-05-09 18:27:04,442 - AskRobotPOC - INFO - 已获取第 2 页的 0 个符合条件的帖子。
+2026-05-09 18:27:04,443 - AskRobotPOC - INFO - 已达到最大页数 3，停止爬取。
+2026-05-09 18:27:04,443 - AskRobotPOC - INFO - 没有发现新帖子
+2026-05-09 18:27:04,444 - AskRobotPOC - INFO - [预审] 开始检查预审帖子...
+2026-05-09 18:27:04,585 - AskRobotPOC - INFO - 从 pre_audit_topics 表加载了 59 个已存在的预审帖子
+2026-05-09 18:27:05,132 - AskRobotPOC - INFO - 已获取第 0 页的 29 个符合条件的帖子。
+2026-05-09 18:27:05,679 - AskRobotPOC - INFO - 已获取第 1 页的 30 个符合条件的帖子。
+2026-05-09 18:27:06,227 - AskRobotPOC - INFO - 已获取第 2 页的 5 个符合条件的帖子。
+2026-05-09 18:27:06,228 - AskRobotPOC - INFO - 已达到最大页数 3，停止爬取。
+2026-05-09 18:27:06,229 - AskRobotPOC - INFO - [预审] 发现 4 个新的预审帖子
+2026-05-09 18:27:08,548 - AskRobotPOC - INFO - [预审] 预审帖子检查完成
+2026-05-09 18:28:08,550 - AskRobotPOC - INFO - 
+[2026-05-09 18:28:08] 正在检查新帖子...
+2026-05-09 18:28:08,716 - AskRobotPOC - INFO - 从数据库加载了 17 个已存在的帖子
+2026-05-09 18:28:08,717 - AskRobotPOC - INFO - 已存在 17 个帖子
+2026-05-09 18:28:09,335 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:28:09,336 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29529, 标题: 请最后介绍一下欧拉社区, 标签: qa-提问求助
+2026-05-09 18:28:09,336 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:28:09,337 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29527, 标题: 请再介绍一下欧拉社区, 标签: 提问求助
+2026-05-09 18:28:09,337 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:28:09,338 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29523, 标题: 请介绍一下欧拉社区, 标签: 提问求助
+2026-05-09 18:28:09,339 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:28:09,339 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29522, 标题: 请介绍以下欧拉社区1, 标签: 提问求助
+2026-05-09 18:28:09,340 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:28:09,340 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29521, 标题: 请介绍以下欧拉社区, 标签: 提问求助
+2026-05-09 18:28:09,340 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:28:09,341 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29520, 标题: 问题描述 OpenUBMC升级失败, 标签: 提问求助
+2026-05-09 18:28:09,341 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:28:09,342 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29504, 标题: 我是一个新人，我在欧拉社区应该注意什么呢？, 标签: qa-提问求助,提问求助
+2026-05-09 18:28:09,342 - AskRobotPOC - INFO - 已获取第 0 页的 7 个符合条件的帖子。
+2026-05-09 18:28:09,961 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:28:09,962 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29410, 标题: -q构建QEMU包，构建成功却没有生成.cpio.gz, 标签: 提问求助
+2026-05-09 18:28:09,963 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:28:09,963 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29384, 标题: OpenUBMC升级失败, 标签: 提问求助
+2026-05-09 18:28:09,964 - AskRobotPOC - INFO - 已获取第 1 页的 0 个符合条件的帖子。
+2026-05-09 18:28:10,598 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:28:10,599 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29363, 标题: NVME配置问题：NVMe list is empty., 标签: 提问求助
+2026-05-09 18:28:10,600 - AskRobotPOC - INFO - 已获取第 2 页的 0 个符合条件的帖子。
+2026-05-09 18:28:10,600 - AskRobotPOC - INFO - 已达到最大页数 3，停止爬取。
+2026-05-09 18:28:10,601 - AskRobotPOC - INFO - 没有发现新帖子
+2026-05-09 18:28:10,602 - AskRobotPOC - INFO - [预审] 开始检查预审帖子...
+2026-05-09 18:28:10,780 - AskRobotPOC - INFO - 从 pre_audit_topics 表加载了 59 个已存在的预审帖子
+2026-05-09 18:28:11,408 - AskRobotPOC - INFO - 已获取第 0 页的 29 个符合条件的帖子。
+2026-05-09 18:28:12,023 - AskRobotPOC - INFO - 已获取第 1 页的 30 个符合条件的帖子。
+2026-05-09 18:28:12,658 - AskRobotPOC - INFO - 已获取第 2 页的 5 个符合条件的帖子。
+2026-05-09 18:28:12,659 - AskRobotPOC - INFO - 已达到最大页数 3，停止爬取。
+2026-05-09 18:28:12,660 - AskRobotPOC - INFO - [预审] 发现 4 个新的预审帖子
+2026-05-09 18:28:15,124 - AskRobotPOC - INFO - [预审] 预审帖子检查完成
+2026-05-09 18:29:15,129 - AskRobotPOC - INFO - 
+[2026-05-09 18:29:15] 正在检查新帖子...
+2026-05-09 18:29:15,272 - AskRobotPOC - INFO - 从数据库加载了 17 个已存在的帖子
+2026-05-09 18:29:15,272 - AskRobotPOC - INFO - 已存在 17 个帖子
+2026-05-09 18:29:15,820 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:29:15,821 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29529, 标题: 请最后介绍一下欧拉社区, 标签: qa-提问求助
+2026-05-09 18:29:15,822 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:29:15,822 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29527, 标题: 请再介绍一下欧拉社区, 标签: 提问求助
+2026-05-09 18:29:15,823 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:29:15,823 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29523, 标题: 请介绍一下欧拉社区, 标签: 提问求助
+2026-05-09 18:29:15,823 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:29:15,824 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29522, 标题: 请介绍以下欧拉社区1, 标签: 提问求助
+2026-05-09 18:29:15,824 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:29:15,825 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29521, 标题: 请介绍以下欧拉社区, 标签: 提问求助
+2026-05-09 18:29:15,826 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:29:15,826 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29520, 标题: 问题描述 OpenUBMC升级失败, 标签: 提问求助
+2026-05-09 18:29:15,827 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:29:15,827 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29504, 标题: 我是一个新人，我在欧拉社区应该注意什么呢？, 标签: qa-提问求助,提问求助
+2026-05-09 18:29:15,827 - AskRobotPOC - INFO - 已获取第 0 页的 7 个符合条件的帖子。
+2026-05-09 18:29:16,386 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:29:16,386 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29410, 标题: -q构建QEMU包，构建成功却没有生成.cpio.gz, 标签: 提问求助
+2026-05-09 18:29:16,387 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:29:16,387 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29384, 标题: OpenUBMC升级失败, 标签: 提问求助
+2026-05-09 18:29:16,388 - AskRobotPOC - INFO - 已获取第 1 页的 0 个符合条件的帖子。
+2026-05-09 18:29:16,937 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:29:16,938 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29363, 标题: NVME配置问题：NVMe list is empty., 标签: 提问求助
+2026-05-09 18:29:16,938 - AskRobotPOC - INFO - 已获取第 2 页的 0 个符合条件的帖子。
+2026-05-09 18:29:16,940 - AskRobotPOC - INFO - 已达到最大页数 3，停止爬取。
+2026-05-09 18:29:16,940 - AskRobotPOC - INFO - 没有发现新帖子
+2026-05-09 18:29:16,941 - AskRobotPOC - INFO - [预审] 开始检查预审帖子...
+2026-05-09 18:29:17,097 - AskRobotPOC - INFO - 从 pre_audit_topics 表加载了 59 个已存在的预审帖子
+2026-05-09 18:29:17,739 - AskRobotPOC - INFO - 已获取第 0 页的 29 个符合条件的帖子。
+2026-05-09 18:29:18,360 - AskRobotPOC - INFO - 已获取第 1 页的 30 个符合条件的帖子。
+2026-05-09 18:29:18,987 - AskRobotPOC - INFO - 已获取第 2 页的 5 个符合条件的帖子。
+2026-05-09 18:29:18,987 - AskRobotPOC - INFO - 已达到最大页数 3，停止爬取。
+2026-05-09 18:29:18,988 - AskRobotPOC - INFO - [预审] 发现 4 个新的预审帖子
+2026-05-09 18:29:21,595 - AskRobotPOC - INFO - [预审] 预审帖子检查完成
+2026-05-09 18:30:21,598 - AskRobotPOC - INFO - 
+[2026-05-09 18:30:21] 正在检查新帖子...
+2026-05-09 18:30:21,746 - AskRobotPOC - INFO - 从数据库加载了 17 个已存在的帖子
+2026-05-09 18:30:21,746 - AskRobotPOC - INFO - 已存在 17 个帖子
+2026-05-09 18:30:22,490 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:30:22,490 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29529, 标题: 请最后介绍一下欧拉社区, 标签: qa-提问求助
+2026-05-09 18:30:22,491 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:30:22,491 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29527, 标题: 请再介绍一下欧拉社区, 标签: 提问求助
+2026-05-09 18:30:22,491 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:30:22,492 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29523, 标题: 请介绍一下欧拉社区, 标签: 提问求助
+2026-05-09 18:30:22,492 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:30:22,492 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29522, 标题: 请介绍以下欧拉社区1, 标签: 提问求助
+2026-05-09 18:30:22,493 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:30:22,493 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29521, 标题: 请介绍以下欧拉社区, 标签: 提问求助
+2026-05-09 18:30:22,494 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:30:22,494 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29520, 标题: 问题描述 OpenUBMC升级失败, 标签: 提问求助
+2026-05-09 18:30:22,495 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:30:22,495 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29504, 标题: 我是一个新人，我在欧拉社区应该注意什么呢？, 标签: qa-提问求助,提问求助
+2026-05-09 18:30:22,496 - AskRobotPOC - INFO - 已获取第 0 页的 7 个符合条件的帖子。
+2026-05-09 18:30:23,125 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:30:23,125 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29410, 标题: -q构建QEMU包，构建成功却没有生成.cpio.gz, 标签: 提问求助
+2026-05-09 18:30:23,126 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:30:23,126 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29384, 标题: OpenUBMC升级失败, 标签: 提问求助
+2026-05-09 18:30:23,127 - AskRobotPOC - INFO - 已获取第 1 页的 0 个符合条件的帖子。
+2026-05-09 18:30:23,745 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:30:23,745 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29363, 标题: NVME配置问题：NVMe list is empty., 标签: 提问求助
+2026-05-09 18:30:23,746 - AskRobotPOC - INFO - 已获取第 2 页的 0 个符合条件的帖子。
+2026-05-09 18:30:23,746 - AskRobotPOC - INFO - 已达到最大页数 3，停止爬取。
+2026-05-09 18:30:23,747 - AskRobotPOC - INFO - 没有发现新帖子
+2026-05-09 18:30:23,748 - AskRobotPOC - INFO - [预审] 开始检查预审帖子...
+2026-05-09 18:30:23,899 - AskRobotPOC - INFO - 从 pre_audit_topics 表加载了 59 个已存在的预审帖子
+2026-05-09 18:30:24,542 - AskRobotPOC - INFO - 已获取第 0 页的 29 个符合条件的帖子。
+2026-05-09 18:30:25,176 - AskRobotPOC - INFO - 已获取第 1 页的 30 个符合条件的帖子。
+2026-05-09 18:30:25,793 - AskRobotPOC - INFO - 已获取第 2 页的 5 个符合条件的帖子。
+2026-05-09 18:30:25,794 - AskRobotPOC - INFO - 已达到最大页数 3，停止爬取。
+2026-05-09 18:30:25,795 - AskRobotPOC - INFO - [预审] 发现 4 个新的预审帖子
+2026-05-09 18:30:28,279 - AskRobotPOC - INFO - [预审] 预审帖子检查完成
+2026-05-09 18:31:28,281 - AskRobotPOC - INFO - 
+[2026-05-09 18:31:28] 正在检查新帖子...
+2026-05-09 18:31:28,443 - AskRobotPOC - INFO - 从数据库加载了 17 个已存在的帖子
+2026-05-09 18:31:28,444 - AskRobotPOC - INFO - 已存在 17 个帖子
+2026-05-09 18:31:29,064 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:31:29,066 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29529, 标题: 请最后介绍一下欧拉社区, 标签: qa-提问求助
+2026-05-09 18:31:29,066 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:31:29,066 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29527, 标题: 请再介绍一下欧拉社区, 标签: 提问求助
+2026-05-09 18:31:29,067 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:31:29,067 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29523, 标题: 请介绍一下欧拉社区, 标签: 提问求助
+2026-05-09 18:31:29,068 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:31:29,068 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29522, 标题: 请介绍以下欧拉社区1, 标签: 提问求助
+2026-05-09 18:31:29,068 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:31:29,069 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29521, 标题: 请介绍以下欧拉社区, 标签: 提问求助
+2026-05-09 18:31:29,070 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:31:29,070 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29520, 标题: 问题描述 OpenUBMC升级失败, 标签: 提问求助
+2026-05-09 18:31:29,071 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:31:29,071 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29504, 标题: 我是一个新人，我在欧拉社区应该注意什么呢？, 标签: qa-提问求助,提问求助
+2026-05-09 18:31:29,072 - AskRobotPOC - INFO - 已获取第 0 页的 7 个符合条件的帖子。
+2026-05-09 18:31:29,732 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:31:29,732 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29410, 标题: -q构建QEMU包，构建成功却没有生成.cpio.gz, 标签: 提问求助
+2026-05-09 18:31:29,733 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:31:29,733 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29384, 标题: OpenUBMC升级失败, 标签: 提问求助
+2026-05-09 18:31:29,734 - AskRobotPOC - INFO - 已获取第 1 页的 0 个符合条件的帖子。
+2026-05-09 18:31:30,354 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:31:30,354 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29363, 标题: NVME配置问题：NVMe list is empty., 标签: 提问求助
+2026-05-09 18:31:30,355 - AskRobotPOC - INFO - 已获取第 2 页的 0 个符合条件的帖子。
+2026-05-09 18:31:30,355 - AskRobotPOC - INFO - 已达到最大页数 3，停止爬取。
+2026-05-09 18:31:30,356 - AskRobotPOC - INFO - 没有发现新帖子
+2026-05-09 18:31:30,357 - AskRobotPOC - INFO - [预审] 开始检查预审帖子...
+2026-05-09 18:31:30,504 - AskRobotPOC - INFO - 从 pre_audit_topics 表加载了 59 个已存在的预审帖子
+2026-05-09 18:31:31,054 - AskRobotPOC - INFO - 已获取第 0 页的 29 个符合条件的帖子。
+2026-05-09 18:31:31,606 - AskRobotPOC - INFO - 已获取第 1 页的 30 个符合条件的帖子。
+2026-05-09 18:31:32,164 - AskRobotPOC - INFO - 已获取第 2 页的 5 个符合条件的帖子。
+2026-05-09 18:31:32,165 - AskRobotPOC - INFO - 已达到最大页数 3，停止爬取。
+2026-05-09 18:31:32,166 - AskRobotPOC - INFO - [预审] 发现 4 个新的预审帖子
+2026-05-09 18:31:34,583 - AskRobotPOC - INFO - [预审] 预审帖子检查完成
+2026-05-09 18:32:34,586 - AskRobotPOC - INFO - 
+[2026-05-09 18:32:34] 正在检查新帖子...
+2026-05-09 18:32:34,732 - AskRobotPOC - INFO - 从数据库加载了 17 个已存在的帖子
+2026-05-09 18:32:34,732 - AskRobotPOC - INFO - 已存在 17 个帖子
+2026-05-09 18:32:35,284 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:32:35,285 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29529, 标题: 请最后介绍一下欧拉社区, 标签: qa-提问求助
+2026-05-09 18:32:35,285 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:32:35,286 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29527, 标题: 请再介绍一下欧拉社区, 标签: 提问求助
+2026-05-09 18:32:35,286 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:32:35,286 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29523, 标题: 请介绍一下欧拉社区, 标签: 提问求助
+2026-05-09 18:32:35,286 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:32:35,287 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29522, 标题: 请介绍以下欧拉社区1, 标签: 提问求助
+2026-05-09 18:32:35,287 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:32:35,288 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29521, 标题: 请介绍以下欧拉社区, 标签: 提问求助
+2026-05-09 18:32:35,288 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:32:35,289 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29520, 标题: 问题描述 OpenUBMC升级失败, 标签: 提问求助
+2026-05-09 18:32:35,289 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:32:35,291 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29504, 标题: 我是一个新人，我在欧拉社区应该注意什么呢？, 标签: qa-提问求助,提问求助
+2026-05-09 18:32:35,291 - AskRobotPOC - INFO - 已获取第 0 页的 7 个符合条件的帖子。
+2026-05-09 18:32:35,841 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:32:35,841 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29410, 标题: -q构建QEMU包，构建成功却没有生成.cpio.gz, 标签: 提问求助
+2026-05-09 18:32:35,842 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:32:35,842 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29384, 标题: OpenUBMC升级失败, 标签: 提问求助
+2026-05-09 18:32:35,843 - AskRobotPOC - INFO - 已获取第 1 页的 0 个符合条件的帖子。
+2026-05-09 18:32:36,383 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:32:36,383 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29363, 标题: NVME配置问题：NVMe list is empty., 标签: 提问求助
+2026-05-09 18:32:36,385 - AskRobotPOC - INFO - 已获取第 2 页的 0 个符合条件的帖子。
+2026-05-09 18:32:36,385 - AskRobotPOC - INFO - 已达到最大页数 3，停止爬取。
+2026-05-09 18:32:36,386 - AskRobotPOC - INFO - 没有发现新帖子
+2026-05-09 18:32:36,387 - AskRobotPOC - INFO - [预审] 开始检查预审帖子...
+2026-05-09 18:32:36,536 - AskRobotPOC - INFO - 从 pre_audit_topics 表加载了 59 个已存在的预审帖子
+2026-05-09 18:32:37,094 - AskRobotPOC - INFO - 已获取第 0 页的 29 个符合条件的帖子。
+2026-05-09 18:32:37,635 - AskRobotPOC - INFO - 已获取第 1 页的 30 个符合条件的帖子。
+2026-05-09 18:32:38,188 - AskRobotPOC - INFO - 已获取第 2 页的 5 个符合条件的帖子。
+2026-05-09 18:32:38,188 - AskRobotPOC - INFO - 已达到最大页数 3，停止爬取。
+2026-05-09 18:32:38,189 - AskRobotPOC - INFO - [预审] 发现 4 个新的预审帖子
+2026-05-09 18:32:40,652 - AskRobotPOC - INFO - [预审] 预审帖子检查完成
+2026-05-09 18:33:40,655 - AskRobotPOC - INFO - 
+[2026-05-09 18:33:40] 正在检查新帖子...
+2026-05-09 18:33:40,801 - AskRobotPOC - INFO - 从数据库加载了 17 个已存在的帖子
+2026-05-09 18:33:40,802 - AskRobotPOC - INFO - 已存在 17 个帖子
+2026-05-09 18:33:41,361 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:33:41,361 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29529, 标题: 请最后介绍一下欧拉社区, 标签: qa-提问求助
+2026-05-09 18:33:41,362 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:33:41,362 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29527, 标题: 请再介绍一下欧拉社区, 标签: 提问求助
+2026-05-09 18:33:41,363 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:33:41,363 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29523, 标题: 请介绍一下欧拉社区, 标签: 提问求助
+2026-05-09 18:33:41,364 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:33:41,364 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29522, 标题: 请介绍以下欧拉社区1, 标签: 提问求助
+2026-05-09 18:33:41,365 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:33:41,365 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29521, 标题: 请介绍以下欧拉社区, 标签: 提问求助
+2026-05-09 18:33:41,365 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:33:41,366 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29520, 标题: 问题描述 OpenUBMC升级失败, 标签: 提问求助
+2026-05-09 18:33:41,367 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:33:41,367 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29504, 标题: 我是一个新人，我在欧拉社区应该注意什么呢？, 标签: qa-提问求助,提问求助
+2026-05-09 18:33:41,368 - AskRobotPOC - INFO - 已获取第 0 页的 7 个符合条件的帖子。
+2026-05-09 18:33:41,929 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:33:41,929 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29410, 标题: -q构建QEMU包，构建成功却没有生成.cpio.gz, 标签: 提问求助
+2026-05-09 18:33:41,930 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:33:41,930 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29384, 标题: OpenUBMC升级失败, 标签: 提问求助
+2026-05-09 18:33:41,931 - AskRobotPOC - INFO - 已获取第 1 页的 0 个符合条件的帖子。
+2026-05-09 18:33:42,488 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:33:42,489 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29363, 标题: NVME配置问题：NVMe list is empty., 标签: 提问求助
+2026-05-09 18:33:42,489 - AskRobotPOC - INFO - 已获取第 2 页的 0 个符合条件的帖子。
+2026-05-09 18:33:42,489 - AskRobotPOC - INFO - 已达到最大页数 3，停止爬取。
+2026-05-09 18:33:42,490 - AskRobotPOC - INFO - 没有发现新帖子
+2026-05-09 18:33:42,491 - AskRobotPOC - INFO - [预审] 开始检查预审帖子...
+2026-05-09 18:33:42,635 - AskRobotPOC - INFO - 从 pre_audit_topics 表加载了 59 个已存在的预审帖子
+2026-05-09 18:33:43,267 - AskRobotPOC - INFO - 已获取第 0 页的 29 个符合条件的帖子。
+2026-05-09 18:33:43,899 - AskRobotPOC - INFO - 已获取第 1 页的 30 个符合条件的帖子。
+2026-05-09 18:33:44,536 - AskRobotPOC - INFO - 已获取第 2 页的 5 个符合条件的帖子。
+2026-05-09 18:33:44,536 - AskRobotPOC - INFO - 已达到最大页数 3，停止爬取。
+2026-05-09 18:33:44,537 - AskRobotPOC - INFO - [预审] 发现 4 个新的预审帖子
+2026-05-09 18:33:46,920 - AskRobotPOC - INFO - [预审] 预审帖子检查完成
+2026-05-09 18:34:46,922 - AskRobotPOC - INFO - 
+[2026-05-09 18:34:46] 正在检查新帖子...
+2026-05-09 18:34:47,067 - AskRobotPOC - INFO - 从数据库加载了 17 个已存在的帖子
+2026-05-09 18:34:47,068 - AskRobotPOC - INFO - 已存在 17 个帖子
+2026-05-09 18:34:47,706 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:34:47,706 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29529, 标题: 请最后介绍一下欧拉社区, 标签: qa-提问求助
+2026-05-09 18:34:47,707 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:34:47,707 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29527, 标题: 请再介绍一下欧拉社区, 标签: 提问求助
+2026-05-09 18:34:47,708 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:34:47,708 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29523, 标题: 请介绍一下欧拉社区, 标签: 提问求助
+2026-05-09 18:34:47,709 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:34:47,709 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29522, 标题: 请介绍以下欧拉社区1, 标签: 提问求助
+2026-05-09 18:34:47,709 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:34:47,710 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29521, 标题: 请介绍以下欧拉社区, 标签: 提问求助
+2026-05-09 18:34:47,710 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:34:47,711 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29520, 标题: 问题描述 OpenUBMC升级失败, 标签: 提问求助
+2026-05-09 18:34:47,711 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:34:47,712 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29504, 标题: 我是一个新人，我在欧拉社区应该注意什么呢？, 标签: qa-提问求助,提问求助
+2026-05-09 18:34:47,712 - AskRobotPOC - INFO - 已获取第 0 页的 7 个符合条件的帖子。
+2026-05-09 18:34:48,331 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:34:48,332 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29410, 标题: -q构建QEMU包，构建成功却没有生成.cpio.gz, 标签: 提问求助
+2026-05-09 18:34:48,332 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:34:48,333 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29384, 标题: OpenUBMC升级失败, 标签: 提问求助
+2026-05-09 18:34:48,333 - AskRobotPOC - INFO - 已获取第 1 页的 0 个符合条件的帖子。
+2026-05-09 18:34:48,949 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:34:48,949 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29363, 标题: NVME配置问题：NVMe list is empty., 标签: 提问求助
+2026-05-09 18:34:48,950 - AskRobotPOC - INFO - 已获取第 2 页的 0 个符合条件的帖子。
+2026-05-09 18:34:48,950 - AskRobotPOC - INFO - 已达到最大页数 3，停止爬取。
+2026-05-09 18:34:48,951 - AskRobotPOC - INFO - 没有发现新帖子
+2026-05-09 18:34:48,951 - AskRobotPOC - INFO - [预审] 开始检查预审帖子...
+2026-05-09 18:34:49,115 - AskRobotPOC - INFO - 从 pre_audit_topics 表加载了 59 个已存在的预审帖子
+2026-05-09 18:34:49,662 - AskRobotPOC - INFO - 已获取第 0 页的 29 个符合条件的帖子。
+2026-05-09 18:34:50,219 - AskRobotPOC - INFO - 已获取第 1 页的 30 个符合条件的帖子。
+2026-05-09 18:34:50,784 - AskRobotPOC - INFO - 已获取第 2 页的 5 个符合条件的帖子。
+2026-05-09 18:34:50,784 - AskRobotPOC - INFO - 已达到最大页数 3，停止爬取。
+2026-05-09 18:34:50,786 - AskRobotPOC - INFO - [预审] 发现 4 个新的预审帖子
+2026-05-09 18:34:53,193 - AskRobotPOC - INFO - [预审] 预审帖子检查完成
+2026-05-09 18:35:53,195 - AskRobotPOC - INFO - 
+[2026-05-09 18:35:53] 正在检查新帖子...
+2026-05-09 18:35:53,347 - AskRobotPOC - INFO - 从数据库加载了 17 个已存在的帖子
+2026-05-09 18:35:53,347 - AskRobotPOC - INFO - 已存在 17 个帖子
+2026-05-09 18:35:53,935 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:35:53,936 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29529, 标题: 请最后介绍一下欧拉社区, 标签: qa-提问求助
+2026-05-09 18:35:53,936 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:35:53,937 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29527, 标题: 请再介绍一下欧拉社区, 标签: 提问求助
+2026-05-09 18:35:53,937 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:35:53,937 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29523, 标题: 请介绍一下欧拉社区, 标签: 提问求助
+2026-05-09 18:35:53,938 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:35:53,939 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29522, 标题: 请介绍以下欧拉社区1, 标签: 提问求助
+2026-05-09 18:35:53,939 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:35:53,940 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29521, 标题: 请介绍以下欧拉社区, 标签: 提问求助
+2026-05-09 18:35:53,940 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:35:53,940 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29520, 标题: 问题描述 OpenUBMC升级失败, 标签: 提问求助
+2026-05-09 18:35:53,941 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:35:53,941 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29504, 标题: 我是一个新人，我在欧拉社区应该注意什么呢？, 标签: qa-提问求助,提问求助
+2026-05-09 18:35:53,942 - AskRobotPOC - INFO - 已获取第 0 页的 7 个符合条件的帖子。
+2026-05-09 18:35:54,504 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:35:54,505 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29410, 标题: -q构建QEMU包，构建成功却没有生成.cpio.gz, 标签: 提问求助
+2026-05-09 18:35:54,505 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:35:54,506 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29384, 标题: OpenUBMC升级失败, 标签: 提问求助
+2026-05-09 18:35:54,506 - AskRobotPOC - INFO - 已获取第 1 页的 0 个符合条件的帖子。
+2026-05-09 18:35:55,055 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:35:55,055 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29363, 标题: NVME配置问题：NVMe list is empty., 标签: 提问求助
+2026-05-09 18:35:55,056 - AskRobotPOC - INFO - 已获取第 2 页的 0 个符合条件的帖子。
+2026-05-09 18:35:55,056 - AskRobotPOC - INFO - 已达到最大页数 3，停止爬取。
+2026-05-09 18:35:55,057 - AskRobotPOC - INFO - 没有发现新帖子
+2026-05-09 18:35:55,058 - AskRobotPOC - INFO - [预审] 开始检查预审帖子...
+2026-05-09 18:35:55,202 - AskRobotPOC - INFO - 从 pre_audit_topics 表加载了 59 个已存在的预审帖子
+2026-05-09 18:35:55,761 - AskRobotPOC - INFO - 已获取第 0 页的 29 个符合条件的帖子。
+2026-05-09 18:35:56,319 - AskRobotPOC - INFO - 已获取第 1 页的 30 个符合条件的帖子。
+2026-05-09 18:35:56,866 - AskRobotPOC - INFO - 已获取第 2 页的 5 个符合条件的帖子。
+2026-05-09 18:35:56,866 - AskRobotPOC - INFO - 已达到最大页数 3，停止爬取。
+2026-05-09 18:35:56,868 - AskRobotPOC - INFO - [预审] 发现 4 个新的预审帖子
+2026-05-09 18:35:59,322 - AskRobotPOC - INFO - [预审] 预审帖子检查完成
+2026-05-09 18:36:59,324 - AskRobotPOC - INFO - 
+[2026-05-09 18:36:59] 正在检查新帖子...
+2026-05-09 18:36:59,472 - AskRobotPOC - INFO - 从数据库加载了 17 个已存在的帖子
+2026-05-09 18:36:59,472 - AskRobotPOC - INFO - 已存在 17 个帖子
+2026-05-09 18:37:00,019 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:37:00,019 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29529, 标题: 请最后介绍一下欧拉社区, 标签: qa-提问求助
+2026-05-09 18:37:00,020 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:37:00,020 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29527, 标题: 请再介绍一下欧拉社区, 标签: 提问求助
+2026-05-09 18:37:00,021 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:37:00,021 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29523, 标题: 请介绍一下欧拉社区, 标签: 提问求助
+2026-05-09 18:37:00,022 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:37:00,022 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29522, 标题: 请介绍以下欧拉社区1, 标签: 提问求助
+2026-05-09 18:37:00,022 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:37:00,022 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29521, 标题: 请介绍以下欧拉社区, 标签: 提问求助
+2026-05-09 18:37:00,023 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:37:00,023 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29520, 标题: 问题描述 OpenUBMC升级失败, 标签: 提问求助
+2026-05-09 18:37:00,025 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:37:00,025 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29504, 标题: 我是一个新人，我在欧拉社区应该注意什么呢？, 标签: qa-提问求助,提问求助
+2026-05-09 18:37:00,026 - AskRobotPOC - INFO - 已获取第 0 页的 7 个符合条件的帖子。
+2026-05-09 18:37:00,583 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:37:00,584 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29410, 标题: -q构建QEMU包，构建成功却没有生成.cpio.gz, 标签: 提问求助
+2026-05-09 18:37:00,585 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:37:00,585 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29384, 标题: OpenUBMC升级失败, 标签: 提问求助
+2026-05-09 18:37:00,586 - AskRobotPOC - INFO - 已获取第 1 页的 0 个符合条件的帖子。
+2026-05-09 18:37:01,145 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:37:01,146 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29363, 标题: NVME配置问题：NVMe list is empty., 标签: 提问求助
+2026-05-09 18:37:01,146 - AskRobotPOC - INFO - 已获取第 2 页的 0 个符合条件的帖子。
+2026-05-09 18:37:01,147 - AskRobotPOC - INFO - 已达到最大页数 3，停止爬取。
+2026-05-09 18:37:01,148 - AskRobotPOC - INFO - 没有发现新帖子
+2026-05-09 18:37:01,148 - AskRobotPOC - INFO - [预审] 开始检查预审帖子...
+2026-05-09 18:37:01,295 - AskRobotPOC - INFO - 从 pre_audit_topics 表加载了 59 个已存在的预审帖子
+2026-05-09 18:37:01,953 - AskRobotPOC - INFO - 已获取第 0 页的 29 个符合条件的帖子。
+2026-05-09 18:37:02,587 - AskRobotPOC - INFO - 已获取第 1 页的 30 个符合条件的帖子。
+2026-05-09 18:37:03,209 - AskRobotPOC - INFO - 已获取第 2 页的 5 个符合条件的帖子。
+2026-05-09 18:37:03,210 - AskRobotPOC - INFO - 已达到最大页数 3，停止爬取。
+2026-05-09 18:37:03,211 - AskRobotPOC - INFO - [预审] 发现 4 个新的预审帖子
+2026-05-09 18:37:05,608 - AskRobotPOC - INFO - [预审] 预审帖子检查完成
+2026-05-09 18:38:05,611 - AskRobotPOC - INFO - 
+[2026-05-09 18:38:05] 正在检查新帖子...
+2026-05-09 18:38:05,756 - AskRobotPOC - INFO - 从数据库加载了 17 个已存在的帖子
+2026-05-09 18:38:05,756 - AskRobotPOC - INFO - 已存在 17 个帖子
+2026-05-09 18:38:06,305 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:38:06,305 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29529, 标题: 请最后介绍一下欧拉社区, 标签: qa-提问求助
+2026-05-09 18:38:06,306 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:38:06,306 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29527, 标题: 请再介绍一下欧拉社区, 标签: 提问求助
+2026-05-09 18:38:06,307 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:38:06,307 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29523, 标题: 请介绍一下欧拉社区, 标签: 提问求助
+2026-05-09 18:38:06,309 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:38:06,309 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29522, 标题: 请介绍以下欧拉社区1, 标签: 提问求助
+2026-05-09 18:38:06,309 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:38:06,310 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29521, 标题: 请介绍以下欧拉社区, 标签: 提问求助
+2026-05-09 18:38:06,310 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:38:06,311 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29520, 标题: 问题描述 OpenUBMC升级失败, 标签: 提问求助
+2026-05-09 18:38:06,311 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:38:06,312 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29504, 标题: 我是一个新人，我在欧拉社区应该注意什么呢？, 标签: qa-提问求助,提问求助
+2026-05-09 18:38:06,312 - AskRobotPOC - INFO - 已获取第 0 页的 7 个符合条件的帖子。
+2026-05-09 18:38:06,850 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:38:06,851 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29410, 标题: -q构建QEMU包，构建成功却没有生成.cpio.gz, 标签: 提问求助
+2026-05-09 18:38:06,851 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:38:06,852 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29384, 标题: OpenUBMC升级失败, 标签: 提问求助
+2026-05-09 18:38:06,852 - AskRobotPOC - INFO - 已获取第 1 页的 0 个符合条件的帖子。
+2026-05-09 18:38:07,392 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:38:07,393 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29363, 标题: NVME配置问题：NVMe list is empty., 标签: 提问求助
+2026-05-09 18:38:07,393 - AskRobotPOC - INFO - 已获取第 2 页的 0 个符合条件的帖子。
+2026-05-09 18:38:07,394 - AskRobotPOC - INFO - 已达到最大页数 3，停止爬取。
+2026-05-09 18:38:07,394 - AskRobotPOC - INFO - 没有发现新帖子
+2026-05-09 18:38:07,395 - AskRobotPOC - INFO - [预审] 开始检查预审帖子...
+2026-05-09 18:38:07,535 - AskRobotPOC - INFO - 从 pre_audit_topics 表加载了 59 个已存在的预审帖子
+2026-05-09 18:38:08,167 - AskRobotPOC - INFO - 已获取第 0 页的 29 个符合条件的帖子。
+2026-05-09 18:38:08,795 - AskRobotPOC - INFO - 已获取第 1 页的 30 个符合条件的帖子。
+2026-05-09 18:38:09,426 - AskRobotPOC - INFO - 已获取第 2 页的 5 个符合条件的帖子。
+2026-05-09 18:38:09,426 - AskRobotPOC - INFO - 已达到最大页数 3，停止爬取。
+2026-05-09 18:38:09,427 - AskRobotPOC - INFO - [预审] 发现 4 个新的预审帖子
+2026-05-09 18:38:11,985 - AskRobotPOC - INFO - [预审] 预审帖子检查完成
+2026-05-09 18:39:11,987 - AskRobotPOC - INFO - 
+[2026-05-09 18:39:11] 正在检查新帖子...
+2026-05-09 18:39:12,134 - AskRobotPOC - INFO - 从数据库加载了 17 个已存在的帖子
+2026-05-09 18:39:12,135 - AskRobotPOC - INFO - 已存在 17 个帖子
+2026-05-09 18:39:12,766 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:39:12,766 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29529, 标题: 请最后介绍一下欧拉社区, 标签: qa-提问求助
+2026-05-09 18:39:12,767 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:39:12,767 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29527, 标题: 请再介绍一下欧拉社区, 标签: 提问求助
+2026-05-09 18:39:12,768 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:39:12,768 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29523, 标题: 请介绍一下欧拉社区, 标签: 提问求助
+2026-05-09 18:39:12,769 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:39:12,770 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29522, 标题: 请介绍以下欧拉社区1, 标签: 提问求助
+2026-05-09 18:39:12,770 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:39:12,771 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29521, 标题: 请介绍以下欧拉社区, 标签: 提问求助
+2026-05-09 18:39:12,771 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:39:12,772 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29520, 标题: 问题描述 OpenUBMC升级失败, 标签: 提问求助
+2026-05-09 18:39:12,772 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:39:12,772 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29504, 标题: 我是一个新人，我在欧拉社区应该注意什么呢？, 标签: qa-提问求助,提问求助
+2026-05-09 18:39:12,773 - AskRobotPOC - INFO - 已获取第 0 页的 7 个符合条件的帖子。
+2026-05-09 18:39:13,398 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:39:13,398 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29410, 标题: -q构建QEMU包，构建成功却没有生成.cpio.gz, 标签: 提问求助
+2026-05-09 18:39:13,399 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:39:13,399 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29384, 标题: OpenUBMC升级失败, 标签: 提问求助
+2026-05-09 18:39:13,400 - AskRobotPOC - INFO - 已获取第 1 页的 0 个符合条件的帖子。
+2026-05-09 18:39:14,027 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:39:14,028 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29363, 标题: NVME配置问题：NVMe list is empty., 标签: 提问求助
+2026-05-09 18:39:14,028 - AskRobotPOC - INFO - 已获取第 2 页的 0 个符合条件的帖子。
+2026-05-09 18:39:14,029 - AskRobotPOC - INFO - 已达到最大页数 3，停止爬取。
+2026-05-09 18:39:14,030 - AskRobotPOC - INFO - 没有发现新帖子
+2026-05-09 18:39:14,031 - AskRobotPOC - INFO - [预审] 开始检查预审帖子...
+2026-05-09 18:39:14,176 - AskRobotPOC - INFO - 从 pre_audit_topics 表加载了 59 个已存在的预审帖子
+2026-05-09 18:39:14,812 - AskRobotPOC - INFO - 已获取第 0 页的 29 个符合条件的帖子。
+2026-05-09 18:39:15,433 - AskRobotPOC - INFO - 已获取第 1 页的 30 个符合条件的帖子。
+2026-05-09 18:39:16,048 - AskRobotPOC - INFO - 已获取第 2 页的 5 个符合条件的帖子。
+2026-05-09 18:39:16,048 - AskRobotPOC - INFO - 已达到最大页数 3，停止爬取。
+2026-05-09 18:39:16,049 - AskRobotPOC - INFO - [预审] 发现 4 个新的预审帖子
+2026-05-09 18:39:18,513 - AskRobotPOC - INFO - [预审] 预审帖子检查完成
+2026-05-09 18:40:18,515 - AskRobotPOC - INFO - 
+[2026-05-09 18:40:18] 正在检查新帖子...
+2026-05-09 18:40:18,661 - AskRobotPOC - INFO - 从数据库加载了 17 个已存在的帖子
+2026-05-09 18:40:18,662 - AskRobotPOC - INFO - 已存在 17 个帖子
+2026-05-09 18:40:19,277 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:40:19,278 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29529, 标题: 请最后介绍一下欧拉社区, 标签: qa-提问求助
+2026-05-09 18:40:19,279 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:40:19,279 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29527, 标题: 请再介绍一下欧拉社区, 标签: 提问求助
+2026-05-09 18:40:19,280 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:40:19,280 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29523, 标题: 请介绍一下欧拉社区, 标签: 提问求助
+2026-05-09 18:40:19,281 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:40:19,281 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29522, 标题: 请介绍以下欧拉社区1, 标签: 提问求助
+2026-05-09 18:40:19,282 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:40:19,282 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29521, 标题: 请介绍以下欧拉社区, 标签: 提问求助
+2026-05-09 18:40:19,282 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:40:19,283 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29520, 标题: 问题描述 OpenUBMC升级失败, 标签: 提问求助
+2026-05-09 18:40:19,283 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:40:19,284 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29504, 标题: 我是一个新人，我在欧拉社区应该注意什么呢？, 标签: qa-提问求助,提问求助
+2026-05-09 18:40:19,284 - AskRobotPOC - INFO - 已获取第 0 页的 7 个符合条件的帖子。
+2026-05-09 18:40:19,918 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:40:19,919 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29410, 标题: -q构建QEMU包，构建成功却没有生成.cpio.gz, 标签: 提问求助
+2026-05-09 18:40:19,919 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:40:19,919 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29384, 标题: OpenUBMC升级失败, 标签: 提问求助
+2026-05-09 18:40:19,920 - AskRobotPOC - INFO - 已获取第 1 页的 0 个符合条件的帖子。
+2026-05-09 18:40:20,559 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 检测到帖子包含标签 '提问求助'
+2026-05-09 18:40:20,559 - AskRobotPOC - INFO - [REQUIRED_TAG_MATCHED] 帖子ID: 29363, 标题: NVME配置问题：NVMe list is empty., 标签: 提问求助
+2026-05-09 18:40:20,559 - AskRobotPOC - INFO - 已获取第 2 页的 0 个符合条件的帖子。
+2026-05-09 18:40:20,559 - AskRobotPOC - INFO - 已达到最大页数 3，停止爬取。
+2026-05-09 18:40:20,559 - AskRobotPOC - INFO - 没有发现新帖子
+2026-05-09 18:40:20,559 - AskRobotPOC - INFO - [预审] 开始检查预审帖子...
+2026-05-09 18:40:20,755 - AskRobotPOC - INFO - 从 pre_audit_topics 表加载了 59 个已存在的预审帖子
+2026-05-09 18:40:21,317 - AskRobotPOC - INFO - 已获取第 0 页的 29 个符合条件的帖子。
+2026-05-09 18:40:21,866 - AskRobotPOC - INFO - 已获取第 1 页的 30 个符合条件的帖子。
+2026-05-09 18:40:22,425 - AskRobotPOC - INFO - 已获取第 2 页的 5 个符合条件的帖子。
+2026-05-09 18:40:22,427 - AskRobotPOC - INFO - 已达到最大页数 3，停止爬取。
+2026-05-09 18:40:22,427 - AskRobotPOC - INFO - [预审] 发现 4 个新的预审帖子
+2026-05-09 18:40:24,802 - AskRobotPOC - INFO - [预审] 预审帖子检查完成

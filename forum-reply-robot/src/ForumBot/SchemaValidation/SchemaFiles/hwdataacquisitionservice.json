@@ -1,0 +1,22 @@
+{
+    "@odata.context": "/redfish/v1/$metadata#JsonSchemaFile.JsonSchemaFile",
+    "@odata.id": "/redfish/v1/JsonSchemas/HwDataAcquisitionService",
+    "@odata.type": "#JsonSchemaFile.v1_0_2.JsonSchemaFile",
+    "Id": "HwDataAcquisitionService",
+    "Description": "HwDataAcquisitionService Schema File Location",
+    "Name": "HwDataAcquisitionService Schema File",
+    "Languages": [
+        "en"
+    ],
+    "Schema": "#HwDataAcquisitionService.HwDataAcquisitionService",
+    "Location": [
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/SchemaStore/en/HwDataAcquisitionService.json"
+        },
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/Schemas/HwDataAcquisitionService.json"
+        }
+    ]
+}

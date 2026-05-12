@@ -1,0 +1,24 @@
+{
+    "@odata.context": "/redfish/v1/$metadata#JsonSchemaFile.JsonSchemaFile",
+    "@odata.id": "/redfish/v1/JsonSchemas/NetworkAdapterMetrics",
+    "@odata.type": "#JsonSchemaFile.v1_0_2.JsonSchemaFile",
+    "Id": "NetworkAdapterMetrics",
+    "Description": "NetworkAdapterMetrics Schema File Location",
+    "Name": "NetworkAdapterMetrics Schema File",
+    "Languages": [
+        "en"
+    ],
+    "Schema": "#NetworkAdapterMetrics.NetworkAdapterMetrics",
+    "Location": [
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/SchemaStore/en/NetworkAdapterMetrics.json",
+            "PublicationUri": "http://redfish.dmtf.org/schemas/v1/NetworkAdapterMetrics.json"
+        },
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/Schemas/NetworkAdapterMetrics.json",
+            "PublicationUri": "http://redfish.dmtf.org/schemas/v1/NetworkAdapterMetrics.json"
+        }
+    ]
+}

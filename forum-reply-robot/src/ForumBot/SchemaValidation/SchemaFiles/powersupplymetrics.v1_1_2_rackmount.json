@@ -1,0 +1,24 @@
+{
+    "@odata.context": "/redfish/v1/$metadata#JsonSchemaFile.JsonSchemaFile",
+    "@odata.id": "/redfish/v1/JsonSchemas/PowerSupplyMetrics.v1_1_2",
+    "@odata.type": "#JsonSchemaFile.v1_0_2.JsonSchemaFile",
+    "Id": "PowerSupplyMetrics.v1_1_2",
+    "Description": "PowerSupplyMetrics Schema File Location",
+    "Name": "PowerSupplyMetrics Schema File",
+    "Languages": [
+        "en"
+    ],
+    "Schema": "#PowerSupplyMetrics.v1_1_2.PowerSupplyMetrics",
+    "Location": [
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/SchemaStore/en/PowerSupplyMetrics.v1_1_2.json",
+            "PublicationUri": "http://redfish.dmtf.org/schemas/v1/PowerSupplyMetrics.v1_1_2.json"
+        },
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/Schemas/PowerSupplyMetrics.v1_1_2.json",
+            "PublicationUri": "http://redfish.dmtf.org/schemas/v1/PowerSupplyMetrics.v1_1_2.json"
+        }
+    ]
+}

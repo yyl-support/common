@@ -1,0 +1,19 @@
+{
+    "@odata.context": "/redfish/v1/$metadata#JsonSchemaFile.JsonSchemaFile",
+    "@odata.id": "/redfish/v1/JsonSchemas/Cable",
+    "@odata.type": "#JsonSchemaFile.v1_0_2.JsonSchemaFile",
+    "Id": "Cable",
+    "Description": "Cable Schema File Location",
+    "Name": "Cable Schema File",
+    "Languages": [
+        "en"
+    ],
+    "Schema": "#Cable.Cable",
+    "Location": [
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/Schemas/Cable.json",
+            "PublicationUri": "http://redfish.dmtf.org/schemas/v1/Cable.json"
+        }
+    ]
+}

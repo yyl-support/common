@@ -1,0 +1,22 @@
+{
+    "@odata.context": "/redfish/v1/$metadata#JsonSchemaFile.JsonSchemaFile",
+    "@odata.id": "/redfish/v1/JsonSchemas/SystemOverview",
+    "@odata.type": "#JsonSchemaFile.v1_0_2.JsonSchemaFile",
+    "Id": "SystemOverview",
+    "Description": "SystemOverview Schema File Location",
+    "Name": "SystemOverview Schema File",
+    "Languages": [
+        "en"
+    ],
+    "Schema": "#SystemOverview.SystemOverview",
+    "Location": [
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/SchemaStore/en/SystemOverview.json"
+        },
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/Schemas/SystemOverview.json"
+        }
+    ]
+}

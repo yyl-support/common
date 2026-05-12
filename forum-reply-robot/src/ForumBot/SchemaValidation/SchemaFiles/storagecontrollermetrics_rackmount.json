@@ -1,0 +1,24 @@
+{
+    "@odata.context": "/redfish/v1/$metadata#JsonSchemaFile.JsonSchemaFile",
+    "@odata.id": "/redfish/v1/JsonSchemas/StorageControllerMetrics",
+    "@odata.type": "#JsonSchemaFile.v1_0_2.JsonSchemaFile",
+    "Id": "StorageControllerMetrics",
+    "Description": "StorageControllerMetrics Schema File Location",
+    "Name": "StorageControllerMetrics Schema File",
+    "Languages": [
+        "en"
+    ],
+    "Schema": "#StorageControllerMetrics.StorageControllerMetrics",
+    "Location": [
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/SchemaStore/en/StorageControllerMetrics.json",
+            "PublicationUri": "http://redfish.dmtf.org/schemas/v1/StorageControllerMetrics.json"
+        },
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/Schemas/StorageControllerMetrics.json",
+            "PublicationUri": "http://redfish.dmtf.org/schemas/v1/StorageControllerMetrics.json"
+        }
+    ]
+}

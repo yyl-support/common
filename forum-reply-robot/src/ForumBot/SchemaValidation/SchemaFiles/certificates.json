@@ -1,0 +1,22 @@
+{
+    "@odata.context": "/redfish/v1/$metadata#JsonSchemaFile.JsonSchemaFile",
+    "@odata.id": "/redfish/v1/JsonSchemas/Certificates",
+    "@odata.type": "#JsonSchemaFile.v1_0_2.JsonSchemaFile",
+    "Id": "Certificates",
+    "Description": "Certificates Schema File Location",
+    "Name": "Certificates Schema File",
+    "Languages": [
+        "en"
+    ],
+    "Schema": "#Certificates.Certificates",
+    "Location": [
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/SchemaStore/en/Certificates.json"
+        },
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/Schemas/Certificates.json"
+        }
+    ]
+}

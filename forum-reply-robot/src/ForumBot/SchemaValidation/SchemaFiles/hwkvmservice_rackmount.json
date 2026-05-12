@@ -1,0 +1,22 @@
+{
+    "@odata.context": "/redfish/v1/$metadata#JsonSchemaFile.JsonSchemaFile",
+    "@odata.id": "/redfish/v1/JsonSchemas/HwKvmService",
+    "@odata.type": "#JsonSchemaFile.v1_0_2.JsonSchemaFile",
+    "Id": "HwKvmService",
+    "Description": "HwKvmService Schema File Location",
+    "Name": "HwKvmService Schema File",
+    "Languages": [
+        "en"
+    ],
+    "Schema": "#HwKvmService.HwKvmService",
+    "Location": [
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/SchemaStore/en/HwKvmService.json"
+        },
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/Schemas/HwKvmService.json"
+        }
+    ]
+}

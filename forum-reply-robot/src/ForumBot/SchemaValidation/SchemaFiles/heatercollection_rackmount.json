@@ -1,0 +1,19 @@
+{
+    "@odata.context": "/redfish/v1/$metadata#JsonSchemaFile.JsonSchemaFile",
+    "@odata.id": "/redfish/v1/JsonSchemas/HeaterCollection",
+    "@odata.type": "#JsonSchemaFile.v1_0_2.JsonSchemaFile",
+    "Id": "HeaterCollection",
+    "Description": "HeaterCollection Schema File Location",
+    "Name": "HeaterCollection Schema File",
+    "Languages": [
+        "en"
+    ],
+    "Schema": "#HeaterCollection.HeaterCollection",
+    "Location": [
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/Schemas/HeaterCollection.json",
+            "PublicationUri": "http://redfish.dmtf.org/schemas/v1/HeaterCollection.json"
+        }
+    ]
+}

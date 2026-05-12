@@ -1,0 +1,19 @@
+{
+    "@odata.context": "/redfish/v1/$metadata#JsonSchemaFile.JsonSchemaFile",
+    "@odata.id": "/redfish/v1/JsonSchemas/OutboundConnectionCollection",
+    "@odata.type": "#JsonSchemaFile.v1_0_2.JsonSchemaFile",
+    "Id": "OutboundConnectionCollection",
+    "Description": "OutboundConnectionCollection Schema File Location",
+    "Name": "OutboundConnectionCollection Schema File",
+    "Languages": [
+        "en"
+    ],
+    "Schema": "#OutboundConnectionCollection.OutboundConnectionCollection",
+    "Location": [
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/Schemas/OutboundConnectionCollection.json",
+            "PublicationUri": "http://redfish.dmtf.org/schemas/v1/OutboundConnectionCollection.json"
+        }
+    ]
+}

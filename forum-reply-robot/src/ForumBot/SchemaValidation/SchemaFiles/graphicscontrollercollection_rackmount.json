@@ -1,0 +1,19 @@
+{
+    "@odata.context": "/redfish/v1/$metadata#JsonSchemaFile.JsonSchemaFile",
+    "@odata.id": "/redfish/v1/JsonSchemas/GraphicsControllerCollection",
+    "@odata.type": "#JsonSchemaFile.v1_0_2.JsonSchemaFile",
+    "Id": "GraphicsControllerCollection",
+    "Description": "GraphicsControllerCollection Schema File Location",
+    "Name": "GraphicsControllerCollection Schema File",
+    "Languages": [
+        "en"
+    ],
+    "Schema": "#GraphicsControllerCollection.GraphicsControllerCollection",
+    "Location": [
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/Schemas/GraphicsControllerCollection.json",
+            "PublicationUri": "http://redfish.dmtf.org/schemas/v1/GraphicsControllerCollection.json"
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "@odata.context": "/redfish/v1/$metadata#JsonSchemaFile.JsonSchemaFile",
+    "@odata.id": "/redfish/v1/JsonSchemas/openUBMCEventDestination.v1_0_0",
+    "@odata.type": "#JsonSchemaFile.v1_0_2.JsonSchemaFile",
+    "Id": "openUBMCEventDestination.v1_0_0",
+    "Description": "openUBMCEventDestination Schema File Location",
+    "Name": "openUBMCEventDestination Schema File",
+    "Languages": [
+        "en"
+    ],
+    "Schema": "#openUBMCEventDestination.v1_0_0.openUBMCEventDestination",
+    "Location": [
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/SchemaStore/en/openUBMCEventDestination.v1_0_0.json"
+        },
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/Schemas/openUBMCEventDestination.v1_0_0.json"
+        }
+    ]
+}

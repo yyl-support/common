@@ -1,0 +1,24 @@
+{
+    "@odata.context": "/redfish/v1/$metadata#JsonSchemaFile.JsonSchemaFile",
+    "@odata.id": "/redfish/v1/JsonSchemas/PCIeFunctionCollection",
+    "@odata.type": "#JsonSchemaFile.v1_0_2.JsonSchemaFile",
+    "Id": "PCIeFunctionCollection",
+    "Description": "PCIeFunctionCollection Schema File Location",
+    "Name": "PCIeFunctionCollection Schema File",
+    "Languages": [
+        "en"
+    ],
+    "Schema": "#PCIeFunctionCollection.PCIeFunctionCollection",
+    "Location": [
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/SchemaStore/en/PCIeFunctionCollection.json",
+            "PublicationUri": "http://redfish.dmtf.org/schemas/v1/PCIeFunctionCollection.json"
+        },
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/Schemas/PCIeFunctionCollection.json",
+            "PublicationUri": "http://redfish.dmtf.org/schemas/v1/PCIeFunctionCollection.json"
+        }
+    ]
+}

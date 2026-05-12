@@ -1,0 +1,19 @@
+{
+    "@odata.context": "/redfish/v1/$metadata#JsonSchemaFile.JsonSchemaFile",
+    "@odata.id": "/redfish/v1/JsonSchemas/KeyCollection",
+    "@odata.type": "#JsonSchemaFile.v1_0_2.JsonSchemaFile",
+    "Id": "KeyCollection",
+    "Description": "KeyCollection Schema File Location",
+    "Name": "KeyCollection Schema File",
+    "Languages": [
+        "en"
+    ],
+    "Schema": "#KeyCollection.KeyCollection",
+    "Location": [
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/Schemas/KeyCollection.json",
+            "PublicationUri": "http://redfish.dmtf.org/schemas/v1/KeyCollection.json"
+        }
+    ]
+}

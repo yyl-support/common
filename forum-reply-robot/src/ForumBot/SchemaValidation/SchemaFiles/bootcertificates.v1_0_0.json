@@ -1,0 +1,22 @@
+{
+    "@odata.context": "/redfish/v1/$metadata#JsonSchemaFile.JsonSchemaFile",
+    "@odata.id": "/redfish/v1/JsonSchemas/BootCertificates.v1_0_0",
+    "@odata.type": "#JsonSchemaFile.v1_0_2.JsonSchemaFile",
+    "Id": "BootCertificates.v1_0_0",
+    "Description": "BootCertificates Schema File Location",
+    "Name": "BootCertificates Schema File",
+    "Languages": [
+        "en"
+    ],
+    "Schema": "#BootCertificates.v1_0_0.BootCertificates",
+    "Location": [
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/SchemaStore/en/BootCertificates.v1_0_0.json"
+        },
+        {
+            "Language": "en",
+            "Uri": "/redfish/v1/Schemas/BootCertificates.v1_0_0.json"
+        }
+    ]
+}
