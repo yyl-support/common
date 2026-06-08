@@ -1,6 +1,0 @@
-ERROR:root:加载配置文件失败: [Errno 2] No such file or directory: 'config/config.yaml'
-2026-05-09 18:17:40,395 - main - INFO - Robot应用启动
-2026-05-09 18:17:40,402 - main - INFO - SchemaFiles 目录检查通过，包含 7901 个文件/目录
-ERROR:root:加载配置文件失败: [Errno 2] No such file or directory: 'config/config.yaml'
-2026-05-09 18:17:40,403 - main - ERROR - 配置文件 config/config.yaml 加载失败或内容不完整，应用退出
-2026-05-09 18:17:40,404 - main - ERROR - 请从 config.yaml.local-bak 或 config.yaml.startup-bak 恢复 config.yaml 后重试
