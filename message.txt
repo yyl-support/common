@@ -1,0 +1,20 @@
+
+
+{
+  "$schema": "http://wsr-kwe.his.huawei.com/36b6eb820464410c9c35242389b3e972/Pro/code-agent-admin/oc/config.json",
+  "disabled_providers": [],
+  "provider": {
+	"bailian": {
+      "name": "稀宇",
+      "npm": "@ai-sdk/anthropic",
+	  "options": {
+        "apiKey": "sk-api-jwHQiOtPP_4sOx5JasaJKmv18bMnpzRRWj_vBJZKqfprqe_3dDGrxJMjpEJF-46-IC3BLZP3XvJpZ7bY_rdYD3qrID0RoH6KPiHZushG9jE5eeDo4fH8o10",
+        "baseURL": "https://api.minimaxi.com/anthropic/v1"
+      },
+      "models": {
+        "MiniMax-M3": {
+          "name": "MiniMax-M3"
+        }
+      }
+    }
+}
