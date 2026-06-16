@@ -18,3 +18,226 @@
       }
     }
 }
+
+
+
+所属版本
+openUBMC25.06
+
+工作量
+需求来源
+###【需求背景】
+当前openUBMC已经搭建了RAG，但只用于社区论坛机器人。随着AI能力普及，社区开发者+鲲鹏伙伴对公开RAG的诉求较高，希望借助RAG替身Coding Agent对openUBMC的理解，更好地完成开发任务。
+
+###【需求价值】
+支持社区开发者复用社区RAG，提升文档、论坛历史数据的检索机制。
+支持知识上传，汇聚伙伴、国内BMC开发者的BMC知识、硬件知识，打造国内第一个服务器管理领域知识体系，并反哺内部用于洞察、 调研、行业分析。
+
+###【需求详情】
+1、开放RAG相关接口，支持用户通过https方式访问RAG系统（包括tokenize、检索，返回相关数据）
+2、建立完整的用户认证机制，只允许社区注册用户访问，同时可限流（未来可扩展成基于社区贡献提升并发和使用量）
+3、支持上传知识，更新社区RAG（接口仅开放在部分用户，例如华为maintainer，机器人等）
+
+RAG在接入账号时建议使用oidc方式：方式如下
+
+# 获取授权码 #
+**前提是在个人中心登录成功**
+## 请求接口 ##
+```
+https://omapi.osinfra.cn/oneid/oidc/authorize
+```
+
+## 请求方式 ##
+* GET
+
+## 请求参数 ##
+授权模式目前仅支持**授权码模式**
+
+| 参数名 | 位置 | 类型 | 必填 | 说明 |
+| :----| :----: | :----: | :----: | :---- |
+| client_id | query | String | 是 | 登录的app id |
+| redirect_uri | query | String | 是 | 登录回调地址 |
+| response_type | query | String | 是 | 授权模式。目前仅支持```code``` |
+| state | query | String | 否 | 一个随机字符串。默认由后端生成 |
+| scope | query | String | 是 | 需要请求的权限，多个使用**空格**隔开。<font color="red">必须包含</font> ```openid profile```。</br>```profile:```<font size=2>返回</font>```name,family_name,given_name,middle_name,nickname,username,preferred_username,profile,picture,website,gender,birthdate,zoneinfo,locale,updated_at```</br>```email:```<font size=2>返回</font>```email,email_verified```</br>```phone:```<font size=2>返回</font>```phone_number,phone_number_verified```</br>```address:```<font size=2>返回JOSNObject,包含</font>```formatted,street_address,locality,region,postal_code,country,province,city```</br>```offline_access:```<font size=2>返回</font>```refresh_token``` |
+  
+## 返回结果 ##
+通过回调地址{redirect_uri}将授权码传递给应用服务器，{redirect_uri}?code=abc&state=xyz
+
+示例：
+
+
+request:
+```
+https://omapi.osinfra.cn/oneid/oidc/authorize?client_id=xxxxxxxxxxx&redirect_uri=https://xxxxx.xx&scope=openid+profile+email+phone+username&access_type=offline&response_type=code
+```
+
+response:
+
+```
+{
+    "message": "redirect_uri not found in the app",
+    "status": 404
+}
+```
+
+# 授权码获取token #
+<font color="red">code仅能使用一次</font>
+## 请求接口 ##
+```
+https://omapi.osinfra.cn/oneid/oidc/token
+```
+
+## 请求方式 ##
+* POST
+
+## 请求参数 ##
+| 参数名 | 位置 | 类型 | 必填 | 说明 |
+| :----| :----: | :----: | :----: | :---- |
+| client_id | query | String | 是 | 授权的app id |
+| client_secret | query | String | 是 | 授权的app密码 |
+| redirect_uri | query | String | 是 | 授权的登录回调地址 |
+| grant_type | query | String | 是 | 授权类型，```authorization_code,refresh_token```。</br>```authorization_code:```<font size=2>获取token使用</font></br>```refresh_token:```<font size=2>刷新token使用</font> |
+| code | query | String | 是 | 授权码 |
+  
+## 返回结果 ##
+若在获取授权码时，scope中不包含offline_access，则不返回refresh_token
+
+示例：
+
+
+request:
+
+![输入图片说明](../image.png)
+
+
+response:
+```
+{
+    "access_token": "xxx",
+    "refresh_token": "xxx",
+    "scope": "openid profile email phone offline_access",
+    "token_type": "Bearer",
+    "expires_in": 120
+}
+
+{
+    "message": "code invalid or expired",
+    "status": 400
+}
+```
+
+# 刷新access_token #
+当access_token过期后（有效期为半小时），你可以通过refresh_token方式重新获取access_token。</br>
+<font color="red">注：使用refresh_token后，返回新的access_token和新的refresh_token。原来的refresh_token失效，但过期时间不变。</font>
+
+## 请求接口 ##
+```
+https://omapi.osinfra.cn/oneid/oidc/token
+```
+
+## 请求方式 ##
+* POST
+
+## 请求参数 ##
+
+| 参数名 | 位置 | 类型 | 必填 | 说明 |
+| :----| :----: | :----: | :----: | :---- |
+| grant_type | query | String | 是 | 授权类型，```authorization_code,refresh_token,password```。</br>```authorization_code:```<font size=2>获取token使用</font></br>```refresh_token:```<font size=2>刷新token使用</font>```password:```<font size=2>密码使用</font> |
+| refresh_token | query | String | 否 | refresh_token，仅能使用一次 |
+| redirect_uri | query | String | 否 | 回调地址 |
+| account | query | String | 否 | 账号 |
+| password | query | String | 否 | 密码 |
+| scope | query | String | 否 |  |
+
+## 请求示例 ##
+密码模式：
+```
+curl --location --request POST 'localhost:9999/oneid/oidc/token?grant_type=password&redirect_uri=http%3A%2F%2Flocalhost%3A8080&account=xxx&password=xxx&scope=openid%20profile%20offline_access%20id_token&client_id=xxx&client_secret=xxx'
+```
+
+## 返回结果 ##
+若在获取授权码时，scope中不包含offline_access，则不返回refresh_token
+
+示例：
+```
+{
+    "access_token": "xxx",
+    "refresh_token": "xxx",
+    "scope": "openid profile email phone offline_access",
+    "expires_in": 120
+}
+
+{
+    "message": "token invalid or expired",
+    "status": 400
+}
+```
+
+# 获取用户信息 #
+应用通过access_token访问Open API使用用户数据。
+
+## 请求接口 ##
+```
+https://omapi.osinfra.cn/oneid/oidc/user
+```
+
+## 请求方式 ##
+* GET
+
+## 请求参数 ##
+
+| 参数名 | 位置 | 类型 | 必填 | 说明 |
+| :----| :----: | :----: | :----: | :---- |
+| Authorization | header | String | 是 | 有效期为半小时，过期后可使用refresh_token生成新的 |
+  
+## 返回结果 ##
+返回字段由获取授权码时```scope```参数决定
+
+示例：
+```
+{
+    "msg": "OK",
+    "code": 200,
+    "data": {
+        "sub": "139",
+        "website": null,
+        "zoneinfo": null,
+        "birthdate": null,
+        "email_verified": true,
+        "address": {
+            "street_address": null,
+            "country": null,
+            "province": null,
+            "city": null,
+            "formatted": null,
+            "locality": null,
+            "region": null,
+            "postal_code": null
+        },
+        "gender": "U",
+        "profile": null,
+        "phone_number_verified": true,
+        "preferred_username": null,
+        "given_name": null,
+        "middle_name": null,
+        "locale": null,
+        "picture": "https://xxxxxxxxxxxxxx.png",
+        "updated_at": 1672911269000,
+        "offline_access": null,
+        "name": null,
+        "nickname": "nickname1",
+        "phone_number": "152xxxxxxx",
+        "family_name": null,
+        "email": "xxxxxxxx@163.com",
+        "username": "LXL"
+    }
+}
+
+{
+    "message": "token invalid or expired",
+    "status": 400
+}
+```
+
+
