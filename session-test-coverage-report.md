@@ -1,6 +1,6 @@
 # Yulin Session 测试覆盖与验证报告
 
-更新时间：2026-07-20。全部 56 条 TC 已结案。
+更新时间：2026-07-20（今日复核无变化）。全部 56 条 TC 已结案。
 
 ## 1. 总览
 
@@ -103,3 +103,33 @@
 | 项目 vars 覆盖组织 vars | TC-007 / TC-194 | 项目级值优先 |
 | 项目 Secret 覆盖组织 Secret | TC-195 | 同上 |
 | Secret/vars 命名空间独立 | TC-535 | 同名可共存，互不影响 |
+
+## 4. 2026-07-20 全量复核
+
+31 条 FAIL 全部重新验证，无一变化。
+
+### 4.1 Schedule（25 条）
+
+| 验证 | 仓库 | 结果 |
+| --- | --- | --- |
+| 老 cron 配置 | LiYanghang00/demo | 2300+ 历史 Run，0 次 Schedule |
+| 新 repo 5 分钟 cron | ComputingActionTest/bingo | 10 分钟观察，0 次 Schedule |
+| 照抄 new-pipeline 语法 | ComputingActionTest/bingo | `*/5 * * * *` + `runs-on: ubuntu-latest`，0 次 Schedule |
+
+### 4.2 容器能力（TC-273）
+
+| 资源池 | 结果 |
+| --- | --- |
+| `[ubuntu-latest, x64, small]` | "任务申请资源错误" |
+| `[dedicate-hosted, x64, large]` | FAILED，容器配置已解析但无法执行 |
+| `[dedicate-hosted, arm64, large]` | 同上 |
+
+### 4.3 其余 FAIL
+
+| TC | 验证 | 结果 |
+| --- | --- | --- |
+| TC-220 | `bingo` 上重测 | `UNSET` 而非 `false` |
+| TC-533 | `bingo` 上重测 | `shell_PROBE=UNSET` |
+| TC-010 | 平台语法限制 | 不变 |
+| TC-534 | 平台变量创建限制 | 不变 |
+| TC-390 | Docker Registry 资源不足 | 不变 |
