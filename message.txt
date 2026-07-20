@@ -5,3 +5,7 @@ https://docs.qq.com/sheet/DSnZOT1FreVpxV0pi?tab=000001
 
 
 https://docs.gitcode.com/docs/help/home/org_project/pipeline/
+
+
+x86资源池：[dedicate-hosted, x64, large]
+arm资源池：[dedicate-hosted, arm64, large]
