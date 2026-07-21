@@ -9,3 +9,17 @@ https://docs.gitcode.com/docs/help/home/org_project/pipeline/
 
 x86资源池：[dedicate-hosted, x64, large]
 arm资源池：[dedicate-hosted, arm64, large]
+
+
+download log 接口验证结果
+接□: GET /api/v8/repos/:owner/:repo/actions/runs/:run_id/jobs/:jobId/download_loger
+可以下载日志! 返回 Content-Type: application/zip,文件名 job-{jobId}-logs.zip,解压后每个 step 一个独立
+.log 文件(UTF-8 无 BOM)。
+关键注意点
+问题	说明
+/jobs 接口的job id	/actions/runs/{run_id}/jobs 返回的 jobs[].job id 全是空字符串,无法从此处取到
+为空	job id
+正确取job id 方式	须从 run detail的 stages.jobs[].id 取:GET /actions/runs/{run_id}→
+$runObj.stages.jobs[0].id
+URL 格式	下划线 download log 和连字符 download-log 都可用
+已更新 AGENTS.md 和 skill 中的 API 参考。
