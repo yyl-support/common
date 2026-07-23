@@ -23,3 +23,7 @@ download log 接口验证结果
 $runObj.stages.jobs[0].id
 URL 格式	下划线 download log 和连字符 download-log 都可用
 已更新 AGENTS.md 和 skill 中的 API 参考。
+
+
+
+https://gitcode.com/ComputingActionTest/gitcode-test-3/actions/runs/9360d34a2140443fa5c4de2af5ebd9d9/workflow
