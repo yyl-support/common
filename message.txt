@@ -27,3 +27,7 @@ URL 格式	下划线 download log 和连字符 download-log 都可用
 
 
 https://gitcode.com/ComputingActionTest/gitcode-test-3/actions/runs/9360d34a2140443fa5c4de2af5ebd9d9/workflow
+
+
+
+runs-on: [ubuntu-latest, x64, small]
