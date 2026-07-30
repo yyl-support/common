@@ -31,3 +31,13 @@ https://gitcode.com/ComputingActionTest/gitcode-test-3/actions/runs/9360d34a2140
 
 
 runs-on: [ubuntu-latest, x64, small]
+
+
+1.如果将ipv6的集群接入正式环境，002就是新的ipv6集群的集群名称
+2.当前我们需要在正式环境上实行一套新的，基于标签的调度策略如下：
+1）当标签为pvc/001=true时，分配给001集群 当标签为pvc/wlcb=true时，分配给wlcb集群，如果同时存在两个，就随机分配（按资源）
+2）当标签为910B1=1，910B4=1，310P3=1时，分配给001集群，当标签为910B3=1时，分配给wlcb集群
+3）带有910B1=1  910B3=1  910B4=1  310P3=1的，必须同时含有huawei.com/npu=true标签
+4）带有910B1=1  910B3=1  910B4=1的，必须也同时含有huawei.com/ascend-1980=1标签
+5）带有kubernetes.io/arch=arm64的，可以分配给001或002（按资源），这个是cpu标签
+6）带有kubernetes.io/arch=amd64的，可以分配给001或002（按资源），这个是cpu标签
