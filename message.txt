@@ -46,3 +46,7 @@ runs-on: [ubuntu-latest, x64, small]
 NPU 使用率：任务分配的总卡时/集群总卡时
 NPU 占用率：有进程运行的总卡时/集群总卡时
 NPU 利用率：AI Core的平均利用率
+
+
+CI平均耗时（排队/准备/构建）(分钟)
+CI资源利用率
