@@ -41,3 +41,8 @@ runs-on: [ubuntu-latest, x64, small]
 4）带有910B1=1  910B3=1  910B4=1的，必须也同时含有huawei.com/ascend-1980=1标签
 5）带有kubernetes.io/arch=arm64的，可以分配给001或002（按资源），这个是cpu标签
 6）带有kubernetes.io/arch=amd64的，可以分配给001或002（按资源），这个是cpu标签
+
+
+NPU 使用率：任务分配的总卡时/集群总卡时
+NPU 占用率：有进程运行的总卡时/集群总卡时
+NPU 利用率：AI Core的平均利用率
