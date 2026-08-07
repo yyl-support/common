@@ -158,3 +158,6 @@ CI资源利用率
   个knowledge-summary.yml是每个project一个吗？还是大家通用一个？2.其实你也能看出来ai-workflow这一套逻辑的理想状态是全
   流程就在github的评论区里搞定了，local-debug是一个兜底的手段，但是local-debug又可以直接影响到线上的流程，你觉得我们在
   哪个阶段切入会最大化的：1.表现我们的价值2.帮助线上流程运转起来  我个人觉得在需求及规格设计这块儿，
+
+
+ascend-megatronadaptor-lrw62-main-script-0
