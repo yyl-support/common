@@ -1,3 +1,5 @@
+https://gitcode.com/opengauss/Plugin
+
 https://docs.gitcode.com/docs/help/home/org_project/pipeline/overview/
 
 
