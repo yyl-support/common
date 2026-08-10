@@ -769,3 +769,10 @@ openUBMC
 CANN
 MindIE
 MindSpeed
+
+
+你好，我们这边需要采集一些数据，麻烦问下这几个数据的查询接口可以提供下吗
+- CI E2E时间：对应openlibing平台中的【门禁E2E执行平均时长】
+- CI排队时间：对应openlibing平台中的【构建任务排队平均时长】+【测试任务排队平均时长】
+- CI准备/构建时间：对应openlibing平台中的【构建任务平均时长】
+- CI测试时间：对应openlibing平台中的【测试任务平均时长】
