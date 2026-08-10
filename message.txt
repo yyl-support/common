@@ -161,3 +161,597 @@ CI资源利用率
 
 
 ascend-megatronadaptor-lrw62-main-script-0
+
+
+1. 查询仓库流水线执行统计（时间段内汇总）
+项目	说明
+URL	POST https://apig.openlibing.com:443/openlibing-ops/ops/api/repo/pipeline/statistics
+1.1 请求体字段
+字段	类型	必填	校验	说明
+repoUrlList	List<String>	否	每项需匹配 ^https://.*\.git$（必须以 https:// 开头且以 .git 结尾）	仓库 URL 列表；为空则不按仓库过滤
+startTime	LocalDateTime（yyyy-MM-dd HH:mm:ss）	是	@NotNull	统计窗口起始时间（含）
+endTime	LocalDateTime（yyyy-MM-dd HH:mm:ss）	是	@NotNull	统计窗口结束时间（含）
+page	int	否	@Min(1)，默认 1	当前页码
+pageSize	int	否	@Min(1)、@Max(100)，默认 30	每页大小
+1.2 响应体字段
+一条记录对应一个仓库在统计窗口内的聚合指标（PR 维度 + 流水线维度）。
+
+1.2.1 基础维度
+字段	类型	说明
+repoUrl	String	仓库 URL
+platform	String	平台标识
+repoName	String	仓库名称
+dataTime	LocalDate	数据时间（聚合粒度的日期）
+1.2.2 PR 维度统计
+字段	类型	说明
+prCount	Integer	PR 总数
+openCount	Integer	open 状态 PR 数
+closedCount	Integer	closed 状态 PR 数
+mergedCount	Integer	merged 状态 PR 数
+forceMergeCount	Integer	强制合入 PR 数
+1.2.3 流水线维度统计
+字段	类型	说明
+executeTotalCount	Integer	流水线执行总次数
+executeCount	Integer	有效执行次数
+executeSuccessCount	Integer	执行成功次数
+ratioExecuteSuccess	String	流水线执行成功率（百分比，保留字符串便于前端直接展示）
+1.2.4 门禁 E2E 时长（min）
+字段	类型	说明
+accessAvgTime	Integer	平均时长（实际映射自源实体 accessAvgDuration）
+accessMaxDuration	Integer	最大时长
+accessAvgDurationP50 / P90 / P95	Integer	百分位时长
+1.2.5 门禁 E2E（不含重试）时长（min）
+字段	类型	说明
+efficiencyAvgDuration	Integer	平均时长
+efficiencyMaxDuration	Integer	最大时长
+efficiencyAvgDurationP50 / P90 / P95	Integer	百分位时长
+1.2.6 构建任务时长（min）
+字段	类型	说明
+buildAvgPendingTime	Integer	平均时长（实际映射自源实体 buildAvgDuration）
+buildMaxDuration	Integer	最大时长
+buildAvgPendingDuration	Integer	平均排队时长
+buildMaxPendingDuration	Integer	最大排队时长
+buildAvgDurationP50 / P90 / P95	Integer	执行时长百分位
+buildAvgPendingDurationP50 / P90 / P95	Integer	排队时长百分位
+1.2.7 测试任务时长（min）
+字段	类型	说明
+dtAvgDuration	Integer	平均时长
+dtMaxDuration	Integer	最大时长
+dtAvgPendingDuration	Integer	平均排队时长
+dtMaxPendingDuration	Integer	最大排队时长
+dtAvgDurationP50 / P90 / P95	Integer	执行时长百分位
+dtAvgPendingDurationP50 / P90 / P95	Integer	排队时长百分位
+1.2.8 代码检查任务时长（min）
+字段	类型	说明
+checkAvgDuration	Integer	平均时长
+checkMaxDuration	Integer	最大时长
+checkAvgDurationP50 / P90 / P95	Integer	百分位时长
+1.2.9 资源消耗
+字段	类型	说明
+cpuSecond	String	总 vCPU 消耗（核时，字符串便于前端展示）
+npuSecond	String	总 NPU 消耗（卡时）
+memorySecond	String	总内存消耗（GB·h）
+buildCpuSecond / buildNpuSecond / buildMemorySecond	String	构建任务资源消耗
+dtCpuSecond / dtNpuSecond / dtMemorySecond	String	测试任务资源消耗
+1.3 请求示例
+POST /ops/api/repo/pipeline/statistics
+Content-Type: application/json
+
+{
+  "repoUrlList": [
+    "https://gitcode.com/openlibing/openlibing-ops.git"
+  ],
+  "startTime": "2026-07-01 00:00:00",
+  "endTime": "2026-08-05 23:59:59",
+  "page": 1,
+  "pageSize": 30
+}
+​
+1.4 响应示例
+{
+  "code": 200,
+  "message": "success",
+  "data": {
+    "records": [
+      {
+        "repoUrl": "https://gitcode.com/openlibing/openlibing-ops.git",
+        "platform": "gitcode",
+        "repoName": "openlibing-ops",
+        "dataTime": "2026-08-05",
+        "prCount": 12,
+        "openCount": 3,
+        "closedCount": 1,
+        "mergedCount": 8,
+        "forceMergeCount": 0,
+        "executeTotalCount": 35,
+        "executeCount": 30,
+        "executeSuccessCount": 28,
+        "ratioExecuteSuccess": "93.33",
+        "accessAvgTime": 12,
+        "accessMaxDuration": 30,
+        "accessAvgDurationP50": 11,
+        "accessAvgDurationP90": 22,
+        "accessAvgDurationP95": 28,
+        "efficiencyAvgDuration": 11,
+        "efficiencyMaxDuration": 28,
+        "efficiencyAvgDurationP50": 10,
+        "efficiencyAvgDurationP90": 20,
+        "efficiencyAvgDurationP95": 26,
+        "buildAvgPendingTime": 6,
+        "buildMaxDuration": 12,
+        "buildAvgPendingDuration": 1,
+        "buildMaxPendingDuration": 3,
+        "buildAvgDurationP50": 5,
+        "buildAvgDurationP90": 10,
+        "buildAvgDurationP95": 11,
+        "buildAvgPendingDurationP50": 1,
+        "buildAvgPendingDurationP90": 2,
+        "buildAvgPendingDurationP95": 3,
+        "dtAvgDuration": 25,
+        "dtMaxDuration": 45,
+        "dtAvgPendingDuration": 2,
+        "dtMaxPendingDuration": 5,
+        "dtAvgDurationP50": 23,
+        "dtAvgDurationP90": 38,
+        "dtAvgDurationP95": 42,
+        "dtAvgPendingDurationP50": 2,
+        "dtAvgPendingDurationP90": 4,
+        "dtAvgPendingDurationP95": 5,
+        "checkAvgDuration": 3,
+        "checkMaxDuration": 8,
+        "checkAvgDurationP50": 3,
+        "checkAvgDurationP90": 6,
+        "checkAvgDurationP95": 7,
+        "cpuSecond": "5.20",
+        "npuSecond": "0.00",
+        "memorySecond": "2.10",
+        "buildCpuSecond": "2.10",
+        "buildNpuSecond": "0.00",
+        "buildMemorySecond": "1.05",
+        "dtCpuSecond": "3.00",
+        "dtNpuSecond": "0.00",
+        "dtMemorySecond": "1.00"
+      }
+    ],
+    "total": 1,
+    "pageSize": 30,
+    "page": 1
+  }
+}
+​
+2. 查询仓库流水线统计（时间段内详情）
+项目	说明
+URL	POST https://apig.openlibing.com:443/openlibing-ops/ops/api/repo/pipeline/statistics/repo
+2.1 请求体字段
+字段	类型	必填	校验	说明
+repoUrlList	List<String>	是	@NotEmpty，每项匹配 ^https://.*\.git$	仓库 URL 列表
+startDate	LocalDate（yyyy-MM-dd）	是	@NotNull	统计起始日期（含）
+endDate	LocalDate（yyyy-MM-dd）	是	@NotNull	统计结束日期（含）
+page	int	否	@Min(1)，默认 1	当前页码
+pageSize	int	否	@Min(1)、@Max(200)，默认 30	每页大小
+2.2 响应体字段
+字段比 §1.2 精简（不含 P50/P90/P95 百分位），适合导出报表场景。
+
+字段	类型	说明
+repoUrl	String	仓库 URL
+platform	String	平台标识
+repoName	String	仓库名称
+dataTime	LocalDate	数据时间
+prCount / openCount / closedCount / mergedCount / forceMergeCount	Integer	PR 维度统计
+executeTotalCount / executeCount / executeSuccessCount	Integer	流水线执行统计
+accessAvgDuration / accessMaxDuration	Integer	门禁 E2E 时长（min）
+buildAvgDuration / buildMaxDuration	Integer	构建任务时长（min）
+buildAvgPendingDuration / buildMaxPendingDuration	Integer	构建任务排队时长（min）
+dtAvgDuration / dtMaxDuration	Integer	测试任务时长（min）
+dtAvgPendingDuration / dtMaxPendingDuration	Integer	测试任务排队时长（min）
+checkAvgDuration / checkMaxDuration	Integer	代码检查任务时长（min）
+efficiencyAvgDuration / efficiencyMaxDuration	Integer	门禁 E2E（不含重试）时长（min）
+cpuSecond / npuSecond / memorySecond	String	总资源消耗
+buildCpuSecond / buildNpuSecond / buildMemorySecond	String	构建任务资源消耗
+dtCpuSecond / dtNpuSecond / dtMemorySecond	String	测试任务资源消耗
+2.3 请求示例
+POST /ops/api/repo/pipeline/statistics/repo
+Content-Type: application/json
+
+{
+  "repoUrlList": [
+    "https://gitcode.com/openlibing/openlibing-ops.git"
+  ],
+  "startDate": "2026-07-01",
+  "endDate": "2026-08-05",
+  "page": 1,
+  "pageSize": 30
+}
+​
+2.4 响应示例
+{
+  "code": 200,
+  "message": "success",
+  "data": {
+    "records": [
+      {
+        "repoUrl": "https://gitcode.com/openlibing/openlibing-ops.git",
+        "platform": "gitcode",
+        "repoName": "openlibing-ops",
+        "dataTime": "2026-08-05",
+        "prCount": 12,
+        "openCount": 3,
+        "closedCount": 1,
+        "mergedCount": 8,
+        "forceMergeCount": 0,
+        "executeTotalCount": 35,
+        "executeCount": 30,
+        "executeSuccessCount": 28,
+        "accessAvgDuration": 12,
+        "accessMaxDuration": 30,
+        "cpuSecond": "5.20",
+        "npuSecond": "0.00",
+        "memorySecond": "2.10",
+        "buildAvgDuration": 6,
+        "buildMaxDuration": 12,
+        "buildAvgPendingDuration": 1,
+        "buildMaxPendingDuration": 3,
+        "buildCpuSecond": "2.10",
+        "buildNpuSecond": "0.00",
+        "buildMemorySecond": "1.05",
+        "dtAvgDuration": 25,
+        "dtMaxDuration": 45,
+        "dtAvgPendingDuration": 2,
+        "dtMaxPendingDuration": 5,
+        "dtCpuSecond": "3.00",
+        "dtNpuSecond": "0.00",
+        "dtMemorySecond": "1.00",
+        "checkAvgDuration": 3,
+        "checkMaxDuration": 8,
+        "efficiencyAvgDuration": 11,
+        "efficiencyMaxDuration": 28
+      }
+    ],
+    "total": 1,
+    "pageSize": 30,
+    "page": 1
+  }
+}
+​
+3. 查询 PR 明细
+项目	说明
+URL	POST https://apig.openlibing.com:443/openlibing-ops/ops/api/repo/pr/detail
+3.1 请求体字段
+继承自 DetailReq（分页、时间窗口、排序等公共字段），下表仅列出 本接口专有字段。
+
+字段	类型	必填	说明
+repoUrl	String	否	仓库完整 URL（如 https://gitcode.com/openlibing/openlibing-ops），精确匹配
+mergedStartDate	LocalDate（yyyy-MM-dd）	否	PR 合入时间下界（含）
+mergedEndDate	LocalDate（yyyy-MM-dd）	否	PR 合入时间上界（含）
+forceMerged	Boolean	否	true 只看强制合入；false 只看正常合入；null 不过滤
+sourceBranch	String	否	源分支精确匹配
+targetBranch	String	否	目标分支精确匹配
+pipelineStatus	String	否	流水线状态过滤；常用取值见后端 PrPipelineStatusEnum，ALL_PIPELINE_STATUS 表示不过滤
+accessStatus	Boolean	否	JSON 字段名是 accessStatus（Java 字段 isAccessStatus 通过 @JSONField(name="accessStatus") / @JsonProperty("accessStatus") 序列化）。true 门禁成功，false 门禁失败，null 不过滤
+继承字段
+字段	类型	默认值	说明
+page	int	1	当前页（从 1 开始）
+pageSize	int	10	每页大小
+sortField	String	null	排序字段名（需与返回字段一致）
+sortRule	String	"DESC"	仅允许 asc / desc / ASC / DESC（@Pattern 校验）
+number	String	null	PR 编号（精确匹配）
+title	String	null	PR 标题模糊匹配
+createStartDate / createEndDate	LocalDate	null	PR 创建时间窗口
+finishStartDate / finishEndDate	LocalDate	null	流水线结束时间窗口
+creator	String	null	PR 创建者 login 精确匹配
+stateList	List<String>	null	PR 状态列表（in 匹配）
+state	Boolean	null	单状态过滤
+3.2 响应体字段
+一个 PR 对应一条记录，包含该 PR 在统计窗口内的流水线维度的耗时、成功率与资源消耗。
+
+字段	类型	示例	说明
+repoUrl	String	—	仓库链接
+prNumber	Integer	137	PR 编号
+prUrl	String	—	PR 链接
+title	String	—	PR 标题
+status	String	merged	PR 状态（PrStatusEnum 描述）
+createTime	LocalDateTime	2026-08-06 09:51:43	PR 创建时间
+mergedTime	LocalDateTime	—	PR 合入时间（未合入为 null）
+forceMerged	String	是 / 否 / 未合入	是否强制合入（依 status 与 accessStatus 推导）
+accessStatus	String	是 / 否	门禁是否成功（COMPLETED → 是）
+prE2eTime	String	180.50	PR 创建到合入的 E2E 时长（分钟，保留 2 位）
+mergeLeadTime	String	—	PR 合入时长（分钟）
+pipelineStartupTime	String	—	PR 流水线启动时长（分钟）
+accessAvgTime / accessMaxTime	String	—	门禁 E2E 平均/最大时长（min）
+efficiencyAvgTime / efficiencyMaxTime	String	—	门禁 E2E（不含重试）平均/最大时长（min）
+buildAvgTime / buildMaxTime	String	—	构建任务平均/最大时长（min）
+buildPendingAvgTime	String	—	构建任务排队平均时长（min）
+dtAvgTime / dtMaxTime	String	—	DT（测试）任务平均/最大时长（min）
+dtPendingAvgTime	String	—	DT 任务排队平均时长（min）
+checkAvgTime	String	—	代码检查任务平均时长（min）
+cpuSecond	String	12.34	总 vCPU 资源消耗（核时，÷3600 保留 2 位）
+npuSecond	String	—	总 NPU 资源消耗（卡时）
+memorySecond	String	—	总内存资源消耗（GB·h）
+buildCpuSecond / buildNpuSecond / buildMemorySecond	String	—	构建任务的 CPU/NPU/内存资源消耗
+dtCpuSecond / dtNpuSecond / dtMemorySecond	String	—	DT 任务的 CPU/NPU/内存资源消耗
+sourceBranch	String	—	源分支
+targetBranch	String	—	目标分支
+creator	String	—	创建人 login
+3.3 请求示例
+POST /ops/api/repo/pr/detail
+Content-Type: application/json
+
+{
+  "repoUrl": "https://gitcode.com/openlibing/openlibing-ops",
+  "mergedStartDate": "2026-07-01",
+  "mergedEndDate": "2026-08-05",
+  "accessStatus": true,
+  "pipelineStatus": "ALL_PIPELINE_STATUS",
+  "page": 1,
+  "pageSize": 20,
+  "sortField": "prE2eTime",
+  "sortRule": "DESC"
+}
+​
+3.4 响应示例
+{
+  "code": 200,
+  "message": "success",
+  "data": {
+    "records": [
+      {
+        "repoUrl": "https://gitcode.com/openlibing/openlibing-ops",
+        "prNumber": 137,
+        "prUrl": "https://gitcode.com/.../pulls/137",
+        "title": "feat(verify): add review-fix skill verify endpoint",
+        "status": "merged",
+        "createTime": "2026-08-06T09:51:43",
+        "mergedTime": "2026-08-06T10:00:00",
+        "forceMerged": "否",
+        "accessStatus": "是",
+        "prE2eTime": "8.28",
+        "mergeLeadTime": "0.00",
+        "pipelineStartupTime": "1.20",
+        "accessAvgTime": "5.50",
+        "accessMaxTime": "6.00",
+        "efficiencyAvgTime": "5.50",
+        "efficiencyMaxTime": "6.00",
+        "buildAvgTime": "1.20",
+        "buildMaxTime": "1.20",
+        "buildPendingAvgTime": "0.10",
+        "dtAvgTime": "0.00",
+        "dtMaxTime": "0.00",
+        "dtPendingAvgTime": "0.00",
+        "checkAvgTime": "0.50",
+        "cpuSecond": "0.12",
+        "npuSecond": "0.00",
+        "memorySecond": "0.05",
+        "buildCpuSecond": "0.05",
+        "buildNpuSecond": "0.00",
+        "buildMemorySecond": "0.03",
+        "dtCpuSecond": "0.00",
+        "dtNpuSecond": "0.00",
+        "dtMemorySecond": "0.00",
+        "sourceBranch": "feat-verify-review-fix-v7",
+        "targetBranch": "main",
+        "creator": "lfh0521"
+      }
+    ],
+    "total": 1,
+    "pageSize": 20,
+    "page": 1
+  }
+}
+​
+4. 查询 Nightly 流水线汇总
+项目	说明
+URL	POST https://apig.openlibing.com:443/openlibing-ops/ops/api/nightly/summary
+4.1 请求体字段
+字段	类型	必填	说明
+projectId	Integer	否	项目 ID 精确匹配
+pipelineId	String	否	流水线 ID 精确匹配
+pipelineName	String	否	流水线名称模糊匹配
+继承字段（分页、时间窗口、排序等）同 §3.1。外部直接调用本接口时 category 可不传；如通过 /common/detail 中转则需传 category="nightly-dashboard"。
+
+4.2 响应体字段
+一条记录对应一条流水线在统计窗口内的统计下钻（执行频次、可用度、各阶段耗时百分位、成功率、测试用例统计）。
+
+字段	类型	说明
+projectId	Integer	项目 ID
+pipelineId	String	流水线 ID
+pipelineName	String	流水线名称
+pipelineRunCount	Integer	窗口内执行次数
+versionAvailabilityRate	BigDecimal	版本可用度（百分比，0-100）
+runFrequencyPerDay	BigDecimal	平均每日执行频次
+actualDurationP50Minutes / P90Minutes / P95Minutes / AvgMinutes / MaxMinutes	BigDecimal	E2E 执行 时长的百分位/平均/最大（min）
+efficiencyDurationP50Minutes / P90Minutes / P95Minutes / AvgMinutes / MaxMinutes	BigDecimal	E2E 执行（不含重试） 时长的百分位/平均/最大（min）
+buildTimeP50Minutes / P90Minutes / P95Minutes / AvgMinutes / MaxMinutes	BigDecimal	编译任务 时长的百分位/平均/最大（min）
+testTimeP50Minutes / P90Minutes / P95Minutes / AvgMinutes / MaxMinutes	BigDecimal	测试任务 时长的百分位/平均/最大（min）
+pipelineSuccessRate	BigDecimal	流水线成功率（百分比）
+buildSuccessRate	BigDecimal	编译任务成功率（百分比）
+testSuccessRate	BigDecimal	测试任务成功率（百分比）
+caseReleaseCountP0	Integer	P0 用例发布数
+caseReleaseRateP0	BigDecimal	P0 用例执行率（百分比）
+casePassRateP0	BigDecimal	P0 用例通过率（百分比）
+casePassRate	BigDecimal	全量用例通过率（百分比）
+注：明细执行字段（actualDurationMinMinutes、caseTotalCount 等内部明细字段）也存在响应体中，但通常用于调试 / Excel 导出，外部消费方按需使用。
+
+4.3 请求示例
+POST /ops/api/nightly/summary
+Content-Type: application/json
+
+{
+  "projectId": 12345,
+  "pipelineName": "nightly-e2e",
+  "createStartDate": "2026-07-01",
+  "createEndDate": "2026-08-05",
+  "page": 1,
+  "pageSize": 10,
+  "sortField": "pipelineRunCount",
+  "sortRule": "DESC"
+}
+​
+4.4 响应示例
+{
+  "code": 200,
+  "message": "success",
+  "data": {
+    "records": [
+      {
+        "projectId": 12345,
+        "pipelineId": "pl-nightly-e2e-001",
+        "pipelineName": "nightly-e2e",
+        "pipelineRunCount": 35,
+        "versionAvailabilityRate": 97.14,
+        "runFrequencyPerDay": 1.00,
+        "actualDurationP50Minutes": 42.50,
+        "actualDurationP90Minutes": 55.20,
+        "actualDurationP95Minutes": 60.10,
+        "actualDurationAvgMinutes": 45.80,
+        "actualDurationMaxMinutes": 62.00,
+        "efficiencyDurationP50Minutes": 41.20,
+        "efficiencyDurationP90Minutes": 53.80,
+        "efficiencyDurationP95Minutes": 58.40,
+        "efficiencyDurationAvgMinutes": 44.30,
+        "efficiencyDurationMaxMinutes": 60.00,
+        "buildTimeP50Minutes": 5.10,
+        "buildTimeP90Minutes": 7.20,
+        "buildTimeP95Minutes": 8.50,
+        "buildTimeAvgMinutes": 5.80,
+        "buildTimeMaxMinutes": 9.00,
+        "testTimeP50Minutes": 35.40,
+        "testTimeP90Minutes": 46.80,
+        "testTimeP95Minutes": 50.20,
+        "testTimeAvgMinutes": 38.50,
+        "testTimeMaxMinutes": 52.00,
+        "pipelineSuccessRate": 94.29,
+        "buildSuccessRate": 100.00,
+        "testSuccessRate": 94.29,
+        "caseReleaseCountP0": 120,
+        "caseReleaseRateP0": 98.33,
+        "casePassRateP0": 99.15,
+        "casePassRate": 98.60
+      }
+    ],
+    "total": 1,
+    "pageSize": 10,
+    "page": 1
+  }
+}
+​
+5. 查询 Nightly 流水线明细
+项目	说明
+URL	POST https://apig.openlibing.com:443/openlibing-ops/ops/api/nightly/detail
+5.1 请求体字段
+字段	类型	必填	说明
+pipelineId	String	否	流水线 ID 精确匹配
+pipelineName	String	否	流水线名称模糊匹配
+pipelineStatus	String	否	单次运行状态过滤（精确匹配）
+failedTaskType	String	否	失败任务类型过滤（精确匹配，常用于 BUILD / TEST 等）
+继承字段同 §3.1。外部直接调用本接口时 category 可不传；如通过 /common/detail 中转则需传 category="nightly-dashboard-detail"。
+
+5.2 响应体字段
+一条记录对应流水线的一次运行（run）。
+
+字段	类型	说明
+pipelineId	String	流水线 ID
+pipelineRunId	String	单次运行唯一标识
+pipelineRunNumber	String	单次运行编号
+pipelineName	String	流水线名称
+pipelineStatus	String	运行状态
+failedTaskType	String	失败任务类型（未失败为 null）
+caseTotalCount	Integer	用例总数
+caseReleaseCount	Integer	发布用例数
+caseRunCount	Integer	执行用例数
+caseSkipCount	Integer	跳过用例数
+caseRunPassCount	Integer	通过用例数
+caseRunFailCount	Integer	失败用例数
+caseReleaseRate	BigDecimal	用例执行率（百分比）
+casePassRate	BigDecimal	用例通过率（百分比）
+caseTotalCountP0	Integer	P0 用例总数
+caseReleaseCountP0	Integer	P0 发布用例数
+caseRunCountP0	Integer	P0 执行用例数
+caseRunPassCountP0	Integer	P0 通过用例数
+caseRunFailCountP0	Integer	P0 失败用例数
+caseReleaseRateP0	BigDecimal	P0 用例执行率（百分比）
+casePassRateP0	BigDecimal	P0 用例通过率（百分比）
+buildCount	Integer	构建任务数
+buildPassCount	Integer	构建通过数
+buildPassRate	BigDecimal	构建通过率（百分比）
+buildAvgTimeMinutes / MaxTimeMinutes / MinTimeMinutes	BigDecimal	构建任务平均/最大/最小时长（min）
+testCount / testPassCount / testPassRate	Integer / Integer / BigDecimal	测试任务的执行/通过/通过率
+testAvgTimeMinutes / MaxTimeMinutes / MinTimeMinutes	BigDecimal	测试任务平均/最大/最小时长（min）
+actualDurationMinutes	BigDecimal	E2E 实际执行时长（min）
+efficiencyDurationMinutes	BigDecimal	E2E 不含重试时长（min）
+isVersionAvailable	Boolean	版本是否可用
+pipelineRunStarttime	LocalDateTime（yyyy-MM-dd HH:mm:ss）	运行开始时间
+pipelineRunEndtime	LocalDateTime（yyyy-MM-dd HH:mm:ss）	运行结束时间
+5.3 请求示例
+POST /ops/api/nightly/detail
+Content-Type: application/json
+
+{
+  "pipelineId": "pl-nightly-e2e-001",
+  "pipelineStatus": "FAILED",
+  "failedTaskType": "TEST",
+  "createStartDate": "2026-07-01",
+  "createEndDate": "2026-08-05",
+  "page": 1,
+  "pageSize": 20,
+  "sortField": "pipelineRunStarttime",
+  "sortRule": "DESC"
+}
+​
+5.4 响应示例
+{
+  "code": 200,
+  "message": "success",
+  "data": {
+    "records": [
+      {
+        "pipelineId": "pl-nightly-e2e-001",
+        "pipelineRunId": "run-20260805-001",
+        "pipelineRunNumber": "230",
+        "pipelineName": "nightly-e2e",
+        "pipelineStatus": "FAILED",
+        "failedTaskType": "TEST",
+        "caseTotalCount": 1200,
+        "caseReleaseCount": 1180,
+        "caseRunCount": 1175,
+        "caseSkipCount": 5,
+        "caseRunPassCount": 1150,
+        "caseRunFailCount": 20,
+        "caseReleaseRate": 98.33,
+        "casePassRate": 97.87,
+        "caseTotalCountP0": 120,
+        "caseReleaseCountP0": 120,
+        "caseRunCountP0": 120,
+        "caseRunPassCountP0": 115,
+        "caseRunFailCountP0": 5,
+        "caseReleaseRateP0": 100.00,
+        "casePassRateP0": 95.83,
+        "buildCount": 3,
+        "buildPassCount": 3,
+        "buildPassRate": 100.00,
+        "buildAvgTimeMinutes": 5.20,
+        "buildMaxTimeMinutes": 6.10,
+        "buildMinTimeMinutes": 4.50,
+        "testCount": 10,
+        "testPassCount": 9,
+        "testPassRate": 90.00,
+        "testAvgTimeMinutes": 38.40,
+        "testMaxTimeMinutes": 52.00,
+        "testMinTimeMinutes": 32.00,
+        "actualDurationMinutes": 48.50,
+        "efficiencyDurationMinutes": 46.80,
+        "isVersionAvailable": false,
+        "pipelineRunStarttime": "2026-08-05 02:00:00",
+        "pipelineRunEndtime": "2026-08-05 02:48:30"
+      }
+    ],
+    "total": 1,
+    "pageSize": 20,
+    "page": 1
+  }
+}
+​
+公共响应外壳 Result<T>
+字段	类型	说明
+code	Integer	业务状态码（200 通常表示成功，具体由 Result 实现定义）
+message	String	业务消息
+data	T	业务数据，失败时通常为 null
