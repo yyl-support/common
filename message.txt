@@ -755,3 +755,17 @@ Content-Type: application/json
 code	Integer	业务状态码（200 通常表示成功，具体由 Result 实现定义）
 message	String	业务消息
 data	T	业务数据，失败时通常为 null
+
+
+反馈下以下6个社区的稳健度数据，6月和7月的
+1、CI 平均耗时（排队/准备/构建）（分钟）
+2、CI 资源利用率
+
+鲲鹏：
+openEuler
+openGauss
+openUBMC
+昇腾：
+CANN
+MindIE
+MindSpeed
