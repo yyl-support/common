@@ -1,4 +1,12 @@
- 我现在给你一个需求https://docs.google.com/spreadsheets/d/1qYcIQI9L-HuhogMTZ9GKMeJh_9lpZl72OVs3PK-0VQo/edit?gid=1474875087#gid=1474875087                                                                     
+| 领域  | 社区            | 仓库                                             | 6月（排队/准备/构建）          | 7月（排队/准备/构建）          |
+| --- | ------------- | ---------------------------------------------- | --------------------- | --------------------- |
+| 昇腾  | PyTorch       | gitcode.com/Ascend/pytorch（gitcode 源）          | 1.75 / 3.24 / 61.14   | 1.68 / 2.77 / 40.92   |
+| 昇腾  | vllm-ascend   | github.com/vllm-project/vllm-ascend（github 源）  | 0.14† / 27.45 / 91.51 | 0.07† / 4.69 / 55.09  |
+| 昇腾  | SGLang        | github.com/sgl-project/sglang（github 源）        | 0.01† / 6.12 / 93.91  | 0.01† / 6.24 / 52.80  |
+| 昇腾  | Triton-Ascend | github.com/triton-lang/triton-ascend（github 源） | 0.09† / 9.99* / 9.99* | 0.20† / 14.25 / 23.37 |
+
+
+我现在给你一个需求https://docs.google.com/spreadsheets/d/1qYcIQI9L-HuhogMTZ9GKMeJh_9lpZl72OVs3PK-0VQo/edit?gid=1474875087#gid=1474875087                                                                     
   这个文档你可以访问吗？我需要你拿出其中Issue跟踪sheet页的信息，同时从第2行开始，B列为issue的链接，C列表示是否关闭，D列表示创建的时间，F列表示当前issue的状态标签，H列表示maintainer                           
   ，I列表示责任人，我现在需要你编写代码，实现：1.每天定时从这个在线文档获取信息 2.筛选标签（标签为triage review/triaged）的为符合条件的3将符合条件的B列和I列信息关联起来                                       
   拼接成字符串，eg：https://github.com/opensourceways/ascend-ci-deployment/issues/1204 请@I列对应负责人看看 
