@@ -1,3 +1,15 @@
+| Characteristic Name | Description |
+| :--- | :--- |
+| fbgemm-ascend | Descriptor for ascending function |
+| RecSDK | Descriptor for REC SDK |
+| ascend-deployer | Descriptor for ascent-deployer |
+| AgentSDK | Descriptor for agent SDK |
+| IndexSDK | Descriptor for index SDK |
+| MultimodalSDK | Descriptor for multimodal SDK |
+| VisionSDK | Descriptor for vision SDK |
+| mind-cluster | Descriptor for mind-cluster |
+| HierarchicalKV-ascend | Descriptor for hierarchicalKV-ascend |
+
 
 然总知识工程的本周进展：
 1.经过周一周二的输出测试，现有的几个三方件没法端到端完成代码的细致解读，基于他们的结果做了三层的加固 
