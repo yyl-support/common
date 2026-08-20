@@ -1,3 +1,7 @@
+
+https://github.com/liuzhengdongfortest/pi-shadow-mind
+
+
 我现在需要修改下我们的识别规则：
 1.我们只处理c列中值为否的，这是最高原则，我们所有的处理都在这之后进行的
 2.对于I列为空的，我们才认为其 尚未分配
