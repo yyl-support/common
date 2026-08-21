@@ -1,3 +1,6 @@
+swr.cn-north-4.myhuaweicloud.com/frameworkptadapter/pytorch_master_a2_aarch64_builder:20260518
+ascend
+
 wlcb：TyI4G!riuDjxC0kT
 001：TyI4G!riuDjxC0kT
 
