@@ -1,3 +1,21 @@
+节点信息
+Hostname	ecs-develop-for-yinyulin-win
+ecs-develop-for-yinyulin-linux
+IP:Port	101.44.96.1:3389（公网地址）_Windows
+192.168.0.55:22(内网地址)_Linux
+OS	-
+Username	Administrator(windows)
+root(linux)
+Password	!xjnIFr7x7e5s!o73dH!(windows)
+n3^1G7sVcX8QqEvCfYn!(linux)
+Account	free
+Region	HK
+Delivery Date	2026/4/25
+登录方式	jumper.huawei.com（Windows）
+云Windows内网跳转（Linux）
+
+
+
 https://github.com/opensourceways/ascend-ci-deployment/tree/main/monitoring
 
 swr.cn-north-4.myhuaweicloud.com/frameworkptadapter/pytorch_master_a2_aarch64_builder:20260518
