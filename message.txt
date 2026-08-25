@@ -1,4 +1,4 @@
-
+https://github.com/opensourceways/ascend-ci-deployment/tree/main/monitoring
 
 swr.cn-north-4.myhuaweicloud.com/frameworkptadapter/pytorch_master_a2_aarch64_builder:20260518
 
