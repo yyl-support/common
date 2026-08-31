@@ -1,3 +1,5 @@
+harbor-portal.osinfra.cn/north4- myhuaweicloud/openubmc/ubuntu:24.04.2_26.06
+
 节点信息
 Hostname	ecs-develop-for-yinyulin-win
 ecs-develop-for-yinyulin-linux
