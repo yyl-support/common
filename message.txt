@@ -1,3 +1,14 @@
+openeuler	
+openGauss	
+openUBMC	
+CANN	
+MindIE	
+MindSpeed	
+Ascend for PyTorch	
+vllm-ascend	
+SGLang	
+Triton-Ascend
+
 https://beta.datastat.osinfra.cn/prometheus?community=mindall
 
 harbor-portal.osinfra.cn/north4- myhuaweicloud/openubmc/ubuntu:24.04.2_26.06
