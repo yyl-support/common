@@ -1,3 +1,4 @@
+CI 平均耗时（排队/准备/构建）（分钟）
 openeuler	
 openGauss	
 openUBMC	
