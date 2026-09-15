@@ -1,3 +1,6 @@
+'errors': ["nodes_1/device_1: no matching nodes for labels={'kubernetes.io/arch': 'arm64', 'pool': 'ascend-general-a2', 'accelerator-type': 'module-910b-8', 'cluster': 'true'}", "nodes_1/device_2: no matching nodes for labels={'kubernetes.io/arch': 'arm64', 'pool': 'ascend-general-a2', 'accelerator-type': 'module-910b-8', 'cluster': 'true'}"]}
+
+
 1.#16186 PR-pipeline_mindcluster
 pr：https://gitcode.com/Ascend/mind-cluster/pull/4606
 显示UT_faultdiag_python 排队7mins
