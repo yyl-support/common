@@ -1,4 +1,20 @@
-'errors': ["nodes_1/device_1: no matching nodes for labels={'kubernetes.io/arch': 'arm64', 'pool': 'ascend-general-a2', 'accelerator-type': 'module-910b-8', 'cluster': 'true'}", "nodes_1/device_2: no matching nodes for labels={'kubernetes.io/arch': 'arm64', 'pool': 'ascend-general-a2', 'accelerator-type': 'module-910b-8', 'cluster': 'true'}"]}
+[INFO] All devices are in Running or Ready status, apply_env_res: {'env_id': 'lease-env1789443676-7818', 'groups': {'nodes_1': [{'name': 'device', 'res_type': 'container', 'group': 'nodes_1', 'status': 'Running', 'pod_name': 'lease-env1789443676-7818-nodes1-device1789443676-1549-main-0', 'namespace': 'env-lease-env1789443676-7818-nodes1', 'pod_ip': '***.***.***.83', 'node': '***.***.***.109', 'use_nfs': True, 'ro_nfs_path': '', 'rw_nfs_path': '/mnt/share', 'deploy_status': '', 'deploy_task_id': '', 'ssh_mesh_status': 'failed', 'shm_size': '128Gi', 'ssh_user': 'runner', 'ssh_port': 22, 'privileged': False, 'privileged_requester': '', 'privileged_requested_at': '', 'npu_ids': ['ascend-1980-0', 'ascend-1980-1'], 'resources': {'cpu': {'request': '24', 'limit': '64'}, 'memory': {'request': '256Gi', 'limit': '2Ti'}}, 'ssh_command': 'ssh -p 22 runner@***.***.***.83'}]}, 'status': 'active', 'name': 'env', 'created_at': '2026-09-15T03:41:16Z', 'expires_at': '2026-09-15T07:41:16Z', 'ttl': '14400', 'topology': '', 'extend_env_comments': {'job_info': 'codearts-94a2038d0d124c1b974047fcc90dfc2d-fc9cdd03418e409b801676df778fc08f-88764c22291348779712b39a46e080e4_20260915_1'}, 'progress': {'total': 1, 'ready': 1, 'failed': 0, 'pending': 0}, 'ssh_mesh': {'enabled': True, 'scope': 'group', 'enrolled': [], 'failed': [{'device': 'nodes_1/device', 'reason': 'keygen/collect failed (missing ssh-keygen or pod not ready)'}]}, 'errors': None}
+[2026/09/15 11:52:43.239 GMT+08:00] 2026-09-15 03:52:43 [sched] [281472923726112] [INFO] finish query times: [22], total devices: 1
+[2026/09/15 11:52:43.239 GMT+08:00] 2026-09-15 03:52:43 [sched] [281472923726112] [INFO] Environment allocated successfully for env_id: cann_A2_A3_single_device_4_cover_single_type-nodes_A3-A3
+[2026/09/15 11:52:43.239 GMT+08:00] 2026-09-15 03:52:43 [sched] [281472923726112] [INFO] Executing tests for env_id: cann_A2_A3_single_device_4_cover_single_type-nodes_A3-A3
+[2026/09/15 11:52:43.239 GMT+08:00] 2026-09-15 03:52:43 [sched] [281472923726112] [INFO] Executing 11 local cases
+[2026/09/15 11:52:44.145 GMT+08:00] 2026-09-15 03:52:43 [sched] [281472932180256] [INFO] node[0] is not Running or Ready, status: Pending
+[2026/09/15 11:52:44.145 GMT+08:00] 2026-09-15 03:52:43 [sched] [281472932180256] [INFO] wait 30s to query again
+[2026/09/15 11:52:53.688 GMT+08:00] 2026-09-15 03:52:53 [sched] [281472923726112] [ERROR] SSH connection failed: timed out
+[2026/09/15 11:52:53.688 GMT+08:00] Traceback (most recent call last):
+[2026/09/15 11:52:53.688 GMT+08:00]   File "***//openlibing-pytest-executor-workspace/openlibing-pytest-executor/pytest-executor/src/executor/pytest_executor.py", line 1394, in _get_jump_target_clients
+[2026/09/15 11:52:53.688 GMT+08:00]     jump_client, target_client = self._get_jump_target_client(server_info)
+[2026/09/15 11:52:53.688 GMT+08:00]   File "***//openlibing-pytest-executor-workspace/openlibing-pytest-executor/pytest-executor/src/executor/pytest_executor.py", line 1344, in _get_jump_target_client
+[2026/09/15 11:52:53.688 GMT+08:00]     target_client.connect(
+[2026/09/15 11:52:53.688 GMT+08:00]   File "***//openlibing-pytest-executor-workspace/openlibing-pytest-executor/openlibing-pytest-executor/pytest-testcase-collector/venv/lib/python3.10/site-packages/paramiko/client.py", line 364, in connect
+[2026/09/15 11:52:53.688 GMT+08:00]     sock.connect(addr)
+[2026/09/15 11:52:53.688 GMT+08:00] TimeoutError: timed out
+[2026/09/15 11:52:53.688 GMT+08:00] 2026-09-15 03:52:53 [sched] [281472923726112] [WARNING] [prepare_env] attempt 1/3 failed: TimeoutError: timed out; rebuilding connection
 
 
 1.#16186 PR-pipeline_mindcluster
