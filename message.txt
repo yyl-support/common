@@ -1,3 +1,29 @@
+1.#16186 PR-pipeline_mindcluster
+pr：https://gitcode.com/Ascend/mind-cluster/pull/4606
+显示UT_faultdiag_python 排队7mins
+
+2.#67300 PR-pipeline_pytorch
+pr:https://gitcode.com/Ascend/pytorch/pull/46241
+显示Build_X86 排队6.63
+
+3.#67486 PR-pipeline_pytorch
+pr:https://gitcode.com/Ascend/pytorch/pull/46295
+显示Build_ARM 排队6.12mins
+
+
+4.#16217 PR-pipeline_mindcluster
+pr:https://gitcode.com/Ascend/mind-cluster/pull/4621
+显示UT_faultdiag_python 排队9.85mins
+
+
+5.#67165 PR-pipeline_pytorch
+pr:https://gitcode.com/Ascend/pytorch/pull/46205
+显示Build_ARM_213 排队7.32mins
+显示Build_ARM 排队7.32mins
+
+
+
+
 docker pull swr.cn-north-4.myhuaweicloud.com/hw-test-images/vision:smoke
 
 
