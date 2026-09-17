@@ -5,6 +5,11 @@ https://github.com/vllm-project/vllm-omni/blob/main/.buildkite/npu/pipeline-npu-
 buildkitd + github runner
 buildkitd + buildkite.com
 
+MindCluster
+MindStudio
+MindSpeed
+MindSDK
+MindIE
 
 docker pull swr.cn-north-4.myhuaweicloud.com/hw-test-images/vision:smoke
 
