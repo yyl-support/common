@@ -1,3 +1,19 @@
+[2026/09/18 14:18:05.773 GMT+08:00] 2026-09-18 06:18:05 [sched] [281472963440928] [INFO] Environment allocation successful, env ID: lease-env1789712285-8095
+[2026/09/18 14:18:05.773 GMT+08:00] 2026-09-18 06:18:05 [sched] [281472963440928] [INFO] Starting to query task status for task_id[lease-env1789712285-8095]
+[2026/09/18 14:18:05.773 GMT+08:00] 2026-09-18 06:18:05 [sched] [281472963440928] [INFO] ***start 0 times query***
+[2026/09/18 14:18:05.773 GMT+08:00] 2026-09-18 06:18:05 [sched] [281472954986784] [INFO] Environment allocation successful, env ID: lease-env1789712285-8180
+[2026/09/18 14:18:05.773 GMT+08:00] 2026-09-18 06:18:05 [sched] [281472954986784] [INFO] Starting to query task status for task_id[lease-env1789712285-8180]
+[2026/09/18 14:18:05.773 GMT+08:00] 2026-09-18 06:18:05 [sched] [281472954986784] [INFO] ***start 0 times query***
+[2026/09/18 14:18:05.773 GMT+08:00] 2026-09-18 06:18:05 [sched] [281473052373280] [INFO] Environment allocation successful, env ID: lease-env1789712285-1209
+[2026/09/18 14:18:05.773 GMT+08:00] 2026-09-18 06:18:05 [sched] [281473052373280] [INFO] Starting to query task status for task_id[lease-env1789712285-1209]
+[2026/09/18 14:18:05.773 GMT+08:00] 2026-09-18 06:18:05 [sched] [281473052373280] [INFO] ***start 0 times query***
+[2026/09/18 14:18:06.100 GMT+08:00] 2026-09-18 06:18:06 [sched] [281473043919136] [INFO] Environment allocation successful, env ID: lease-env1789712285-3522
+[2026/09/18 14:18:06.100 GMT+08:00] 2026-09-18 06:18:06 [sched] [281473043919136] [INFO] Starting to query task status for task_id[lease-env1789712285-3522]
+[2026/09/18 14:18:06.100 GMT+08:00] 2026-09-18 06:18:06 [sched] [281473043919136] [INFO] ***start 0 times query***
+[2026/09/18 14:18:06.100 GMT+08:00] 2026-09-18 06:18:06 [sched] [281472946532640] [INFO] Environment allocation successful, env ID: lease-env1789712285-4966
+[2026/09/18 14:18:06.100 GMT+08:00] 2026-09-18 06:18:06 [sched] [281472946532640] [INFO] Starting to query task status for task_id[lease-env1789712285-4966]
+
+
 https://github.com/vllm-project/vllm-ascend/pull/15611
 https://github.com/vllm-project/vllm-ascend/pull/16299
 https://github.com/vllm-project/vllm-omni/blob/main/.buildkite/npu/pipeline-npu-a3.yml
