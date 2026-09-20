@@ -1,3 +1,6 @@
+[2026/09/20 14:20:36.405 GMT+08:00] [ERROR]  : 该步骤执行失败,错误信息:Remote call on JNLP4-connect connection from ***.***.***.***/***.***.***.***:46544 failed
+
+
 [2026/09/20 12:51:06.019 GMT+08:00] [INFO]  : [JobStatusPlugin] onStarted: j_dQ0SYuq9 #1
 [2026/09/20 12:51:06.021 GMT+08:00] Resume disabled by user, switching to high-performance, low-durability mode.
 [2026/09/20 12:51:06.138 GMT+08:00] [INFO] [PRE_ENV:slave_create] : 该步骤开始执行
