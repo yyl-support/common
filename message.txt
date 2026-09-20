@@ -1,3 +1,5 @@
+编写单文件 HTML，内含 SVG 动画：卡通鹈鹕（白/浅黄色、大喉囊）骑带辐条自行车，车轮旋转、腿部踩踏板、背景后移模拟移动，纯 CSS Keyframes 控制，无外部库。
+
 [2026/09/20 16:09:44.983 GMT+08:00] [INFO]  : [JobStatusPlugin] onStarted: j_ENUzxTbv #1
 [2026/09/20 16:09:44.985 GMT+08:00] Resume disabled by user, switching to high-performance, low-durability mode.
 [2026/09/20 16:09:45.108 GMT+08:00] [INFO] [PRE_ENV:slave_create] : 该步骤开始执行
