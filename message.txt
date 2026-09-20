@@ -1,20 +1,21 @@
-[2026/09/20 12:43:47.500 GMT+08:00] [INFO]  : [JobStatusPlugin] onStarted: j_xvATAJll #1
-[2026/09/20 12:43:47.502 GMT+08:00] Resume disabled by user, switching to high-performance, low-durability mode.
-[2026/09/20 12:43:47.608 GMT+08:00] [INFO] [PRE_ENV:slave_create] : 该步骤开始执行
-[2026/09/20 12:43:47.610 GMT+08:00] [INFO] [PRE_ENV:slave_create] : [slave] resources pool message: 20d12e32628945a3983b693e70f58212
-[2026/09/20 12:43:47.612 GMT+08:00] [WARNING] [PRE_ENV:slave_create] : [slave] find empty runtime, location: PRE_ENV.slave_create
-[2026/09/20 12:43:47.612 GMT+08:00] [INFO] [PRE_ENV:slave_create] : [slave] Fixed content: No
-[2026/09/20 12:43:48.615 GMT+08:00] [INFO] [PRE_ENV:slave_create] : [slave] Start to create an executor node...
-[2026/09/20 12:43:49.892 GMT+08:00] [INFO] [PRE_ENV:slave_create] : [slave] Find available executor node:agent_1789650162204-8JGcTVhonE
-[2026/09/20 12:43:49.954 GMT+08:00] [INFO] [PRE_ENV:slave_create] : 该步骤执行完成
-[2026/09/20 12:43:50.539 GMT+08:00] [INFO] [代码检出:external_pre_checkout] : 该步骤开始执行
-[2026/09/20 12:43:50.540 GMT+08:00] [INFO] [代码检出:external_pre_checkout] : git plugin version: 1.12.5
-[2026/09/20 12:43:53.856 GMT+08:00] [ERROR] [代码检出:external_pre_checkout] : Remote call on JNLP4-connect connection from ***.***.***.***/***.***.***.***:29136 failed
-[2026/09/20 12:43:53.858 GMT+08:00] [ERROR] [代码检出:external_pre_checkout] : 错误信息: DEV.CB.02101213,配置文件失败。
-[2026/09/20 12:43:53.951 GMT+08:00] [ERROR] [代码检出:external_pre_checkout] : 该步骤执行失败
-[2026/09/20 12:43:53.953 GMT+08:00] [ERROR]  : 该步骤执行失败,错误信息:DEV.CB.02101213,配置文件失败。
-[2026/09/20 12:43:54.011 GMT+08:00] [INFO]  : [JobStatusPlugin] onCompleted: j_xvATAJll #1
-[2026/09/20 12:43:58.545 GMT+08:00] Finished: FAILURE
+[2026/09/20 12:51:06.019 GMT+08:00] [INFO]  : [JobStatusPlugin] onStarted: j_dQ0SYuq9 #1
+[2026/09/20 12:51:06.021 GMT+08:00] Resume disabled by user, switching to high-performance, low-durability mode.
+[2026/09/20 12:51:06.138 GMT+08:00] [INFO] [PRE_ENV:slave_create] : 该步骤开始执行
+[2026/09/20 12:51:06.140 GMT+08:00] [INFO] [PRE_ENV:slave_create] : [slave] resources pool message: 5559c4d79a5e41ccb0cf0b2b9143106b
+[2026/09/20 12:51:06.141 GMT+08:00] [WARNING] [PRE_ENV:slave_create] : [slave] find empty runtime, location: PRE_ENV.slave_create
+[2026/09/20 12:51:06.141 GMT+08:00] [INFO] [PRE_ENV:slave_create] : [slave] Fixed content: No
+[2026/09/20 12:51:06.245 GMT+08:00] [INFO] [PRE_ENV:slave_create] : [slave] Find available executor node:agent_1789650310342-hipMiIdDLz
+[2026/09/20 12:51:06.282 GMT+08:00] [INFO] [PRE_ENV:slave_create] : 该步骤执行完成
+[2026/09/20 12:51:06.313 GMT+08:00] [INFO] [代码检出:external_pre_checkout] : 该步骤开始执行
+[2026/09/20 12:51:06.314 GMT+08:00] [INFO] [代码检出:external_pre_checkout] : git plugin version: 1.12.5
+[2026/09/20 12:51:06.612 GMT+08:00] [INFO] [代码检出:external_pre_checkout] : 成功配置文件。
+[2026/09/20 12:51:06.922 GMT+08:00] [INFO] [代码检出:external_pre_checkout] : private key length: 2,455
+[2026/09/20 12:51:06.922 GMT+08:00] [INFO] [代码检出:external_pre_checkout] : get CodeArts Repo private key finished.
+[2026/09/20 12:51:06.922 GMT+08:00] [INFO] [代码检出:external_pre_checkout] : 成功创建CodeArts Repo的访问凭据。
+[2026/09/20 12:51:06.923 GMT+08:00] [INFO] [代码检出:external_pre_checkout] : 该步骤执行完成
+[2026/09/20 12:51:07.387 GMT+08:00] [ERROR]  : 该步骤执行失败,错误信息:Remote call on JNLP4-connect connection from ***.***.***.***/***.***.***.***:55184 failed
+[2026/09/20 12:51:07.443 GMT+08:00] [INFO]  : [JobStatusPlugin] onCompleted: j_dQ0SYuq9 #1
+[2026/09/20 12:51:09.006 GMT+08:00] Finished: FAILURE
 
 
 
