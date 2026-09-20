@@ -1,23 +1,24 @@
 编写单文件 HTML，内含 SVG 动画：卡通鹈鹕（白/浅黄色、大喉囊）骑带辐条自行车，车轮旋转、腿部踩踏板、背景后移模拟移动，纯 CSS Keyframes 控制，无外部库。
 
-[2026/09/20 16:09:44.983 GMT+08:00] [INFO]  : [JobStatusPlugin] onStarted: j_ENUzxTbv #1
-[2026/09/20 16:09:44.985 GMT+08:00] Resume disabled by user, switching to high-performance, low-durability mode.
-[2026/09/20 16:09:45.108 GMT+08:00] [INFO] [PRE_ENV:slave_create] : 该步骤开始执行
-[2026/09/20 16:09:45.109 GMT+08:00] [INFO] [PRE_ENV:slave_create] : [slave] resources pool message: 5559c4d79a5e41ccb0cf0b2b9143106b
-[2026/09/20 16:09:45.110 GMT+08:00] [WARNING] [PRE_ENV:slave_create] : [slave] find empty runtime, location: PRE_ENV.slave_create
-[2026/09/20 16:09:45.110 GMT+08:00] [INFO] [PRE_ENV:slave_create] : [slave] Fixed content: No
-[2026/09/20 16:09:45.216 GMT+08:00] [INFO] [PRE_ENV:slave_create] : [slave] Find available executor node:agent_1789650310342-yumayR9fY0
-[2026/09/20 16:09:45.262 GMT+08:00] [INFO] [PRE_ENV:slave_create] : 该步骤执行完成
-[2026/09/20 16:09:45.295 GMT+08:00] [INFO] [代码检出:external_pre_checkout] : 该步骤开始执行
-[2026/09/20 16:09:45.297 GMT+08:00] [INFO] [代码检出:external_pre_checkout] : git plugin version: 1.12.5
-[2026/09/20 16:09:45.311 GMT+08:00] [INFO] [代码检出:external_pre_checkout] : 成功配置文件。
-[2026/09/20 16:09:45.687 GMT+08:00] [INFO] [代码检出:external_pre_checkout] : private key length: 2,455
-[2026/09/20 16:09:45.688 GMT+08:00] [INFO] [代码检出:external_pre_checkout] : get CodeArts Repo private key finished.
-[2026/09/20 16:09:45.688 GMT+08:00] [INFO] [代码检出:external_pre_checkout] : 成功创建CodeArts Repo的访问凭据。
-[2026/09/20 16:09:45.688 GMT+08:00] [INFO] [代码检出:external_pre_checkout] : 该步骤执行完成
-[2026/09/20 16:09:45.738 GMT+08:00] [ERROR]  : 该步骤执行失败,错误信息:Remote call on JNLP4-connect connection from ***.***.***.***/***.***.***.***:53584 failed
-[2026/09/20 16:09:45.803 GMT+08:00] [INFO]  : [JobStatusPlugin] onCompleted: j_ENUzxTbv #1
-[2026/09/20 16:09:47.960 GMT+08:00] Finished: FAILURE
+[2026/09/20 16:51:22.400 GMT+08:00] [INFO]  : [JobStatusPlugin] onStarted: j_DJhGl0p8 #1
+[2026/09/20 16:51:22.402 GMT+08:00] Resume disabled by user, switching to high-performance, low-durability mode.
+[2026/09/20 16:51:23.525 GMT+08:00] [INFO] [PRE_ENV:slave_create] : 该步骤开始执行
+[2026/09/20 16:51:23.527 GMT+08:00] [INFO] [PRE_ENV:slave_create] : [slave] resources pool message: d21a4559ef8d4fe88058a0a41d6e9ee0
+[2026/09/20 16:51:23.528 GMT+08:00] [WARNING] [PRE_ENV:slave_create] : [slave] find empty runtime, location: PRE_ENV.slave_create
+[2026/09/20 16:51:23.528 GMT+08:00] [INFO] [PRE_ENV:slave_create] : [slave] Fixed content: No
+[2026/09/20 16:51:23.636 GMT+08:00] [INFO] [PRE_ENV:slave_create] : [slave] Find available executor node:agent_1789888714668-GlqWkX5yEg
+[2026/09/20 16:51:23.686 GMT+08:00] [INFO] [PRE_ENV:slave_create] : 该步骤执行完成
+[2026/09/20 16:51:23.721 GMT+08:00] [INFO] [代码检出:external_pre_checkout] : 该步骤开始执行
+[2026/09/20 16:51:23.722 GMT+08:00] [INFO] [代码检出:external_pre_checkout] : git plugin version: 1.12.5
+[2026/09/20 16:51:23.739 GMT+08:00] [INFO] [代码检出:external_pre_checkout] : 成功配置文件。
+[2026/09/20 16:51:24.021 GMT+08:00] [INFO] [代码检出:external_pre_checkout] : private key length: 2,455
+[2026/09/20 16:51:24.021 GMT+08:00] [INFO] [代码检出:external_pre_checkout] : get CodeArts Repo private key finished.
+[2026/09/20 16:51:24.021 GMT+08:00] [INFO] [代码检出:external_pre_checkout] : 成功创建CodeArts Repo的访问凭据。
+[2026/09/20 16:51:24.024 GMT+08:00] [INFO] [代码检出:external_pre_checkout] : 该步骤执行完成
+[2026/09/20 16:51:24.074 GMT+08:00] [ERROR]  : 该步骤执行失败,错误信息:Remote call on JNLP4-connect connection from ***.***.***.***/***.***.***.***:55376 failed
+[2026/09/20 16:51:24.127 GMT+08:00] [INFO]  : [JobStatusPlugin] onCompleted: j_DJhGl0p8 #1
+[2026/09/20 16:51:30.150 GMT+08:00] Finished: FAILURE
+
 
 
 
