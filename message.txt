@@ -1,3 +1,23 @@
+[2026/09/20 12:43:47.500 GMT+08:00] [INFO]  : [JobStatusPlugin] onStarted: j_xvATAJll #1
+[2026/09/20 12:43:47.502 GMT+08:00] Resume disabled by user, switching to high-performance, low-durability mode.
+[2026/09/20 12:43:47.608 GMT+08:00] [INFO] [PRE_ENV:slave_create] : 该步骤开始执行
+[2026/09/20 12:43:47.610 GMT+08:00] [INFO] [PRE_ENV:slave_create] : [slave] resources pool message: 20d12e32628945a3983b693e70f58212
+[2026/09/20 12:43:47.612 GMT+08:00] [WARNING] [PRE_ENV:slave_create] : [slave] find empty runtime, location: PRE_ENV.slave_create
+[2026/09/20 12:43:47.612 GMT+08:00] [INFO] [PRE_ENV:slave_create] : [slave] Fixed content: No
+[2026/09/20 12:43:48.615 GMT+08:00] [INFO] [PRE_ENV:slave_create] : [slave] Start to create an executor node...
+[2026/09/20 12:43:49.892 GMT+08:00] [INFO] [PRE_ENV:slave_create] : [slave] Find available executor node:agent_1789650162204-8JGcTVhonE
+[2026/09/20 12:43:49.954 GMT+08:00] [INFO] [PRE_ENV:slave_create] : 该步骤执行完成
+[2026/09/20 12:43:50.539 GMT+08:00] [INFO] [代码检出:external_pre_checkout] : 该步骤开始执行
+[2026/09/20 12:43:50.540 GMT+08:00] [INFO] [代码检出:external_pre_checkout] : git plugin version: 1.12.5
+[2026/09/20 12:43:53.856 GMT+08:00] [ERROR] [代码检出:external_pre_checkout] : Remote call on JNLP4-connect connection from ***.***.***.***/***.***.***.***:29136 failed
+[2026/09/20 12:43:53.858 GMT+08:00] [ERROR] [代码检出:external_pre_checkout] : 错误信息: DEV.CB.02101213,配置文件失败。
+[2026/09/20 12:43:53.951 GMT+08:00] [ERROR] [代码检出:external_pre_checkout] : 该步骤执行失败
+[2026/09/20 12:43:53.953 GMT+08:00] [ERROR]  : 该步骤执行失败,错误信息:DEV.CB.02101213,配置文件失败。
+[2026/09/20 12:43:54.011 GMT+08:00] [INFO]  : [JobStatusPlugin] onCompleted: j_xvATAJll #1
+[2026/09/20 12:43:58.545 GMT+08:00] Finished: FAILURE
+
+
+
 https://www.openlibing.com/apps/pipelineDetail?pipelineId=e5c7792436a54841b97cae4910df76c6&projectId=300091&pipelineRunId=7cdccb300c5c4a8e94b9c9b5173a6f8b
 https://www.openlibing.com/apps/pipelineDetail?pipelineId=e5c7792436a54841b97cae4910df76c6&projectId=300091&pipelineRunId=73881bb3b8bf47c3888ae4605991abd7
 
