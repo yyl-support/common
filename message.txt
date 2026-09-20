@@ -1,4 +1,6 @@
 https://www.openlibing.com/apps/pipelineDetail?pipelineId=e5c7792436a54841b97cae4910df76c6&projectId=300091&pipelineRunId=7cdccb300c5c4a8e94b9c9b5173a6f8b
+https://www.openlibing.com/apps/pipelineDetail?pipelineId=e5c7792436a54841b97cae4910df76c6&projectId=300091&pipelineRunId=73881bb3b8bf47c3888ae4605991abd7
+
 
 https://github.com/vllm-project/vllm-ascend/pull/15611
 https://github.com/vllm-project/vllm-ascend/pull/16299
