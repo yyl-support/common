@@ -1,3 +1,9 @@
+https://gitcode.com/Ascend/MindSpeed-MM/pull/3159
+https://gitcode.com/Ascend/MindSpeed-MM/pull/3171
+https://gitcode.com/Ascend/MindSpeed-MM/pull/3128
+https://gitcode.com/Ascend/MindSpeed-MM/pull/3150
+https://gitcode.com/Ascend/MindSpeed-MM/pull/3149
+
 for i in {0..7}; do npu-smi set -t custom-op-secverify-enable -i $i -d 1; done
 for i in {0..7}; do npu-smi set -t custom-op-secverify-mode -i $i -d 0; done
 
