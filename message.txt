@@ -1,3 +1,6 @@
+for i in {0..7}; do npu-smi set -t custom-op-secverify-enable -i $i -d 1; done
+for i in {0..7}; do npu-smi set -t custom-op-secverify-mode -i $i -d 0; done
+
 https://github.com/nv-action/vllm-benchmarks/actions/runs/35583039565
 
 [2026/09/20 16:51:22.400 GMT+08:00] [INFO]  : [JobStatusPlugin] onStarted: j_DJhGl0p8 #1
