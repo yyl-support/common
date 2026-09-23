@@ -1,3 +1,5 @@
+https://github.com/opensourceways/ascend-ci-deployment/blob/main/other/nv-action/vllm-benchmarks/config-for-guiyang-006/linux-amd64-cpu-4-buildkit-configmap.yaml
+
 https://gitcode.com/openUBMC/manifest/blob/main/dockerfile
 
 - gitcode_id: yyl-support
