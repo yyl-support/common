@@ -1,3 +1,6 @@
+https://gitcode.com/openUBMC/openubmc-ci/blob/main/.gitcode/workflows/ci-build.yml
+
+
 https://github.com/opensourceways/ascend-ci-deployment/blob/main/other/nv-action/vllm-benchmarks/config-for-guiyang-006/linux-amd64-cpu-4-buildkit-configmap.yaml
 
 https://gitcode.com/openUBMC/manifest/blob/main/dockerfile
