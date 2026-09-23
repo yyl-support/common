@@ -1,3 +1,5 @@
+https://gitcode.com/openUBMC/manifest/blob/main/dockerfile
+
 - gitcode_id: yyl-support
   name: 尹昱林
   email: yinyulin6@huawei.com
