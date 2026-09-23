@@ -1,3 +1,7 @@
+- gitcode_id: yyl-support
+  name: 尹昱林
+  email: yinyulin6@huawei.com
+
 'errors': ["nodes_1/device: no matching nodes for labels={'kubernetes.io/arch': 'arm64', 'pool': 'ascend-general-a2', 'accelerator-type': 'module-910b-8', 'cluster': 'false', 'mind-cluster/npu-chip-memory': '64G', 'nfs': 'true'}"]
 'errors': ["nodes_1/device_1: no matching nodes for labels={'kubernetes.io/arch': 'arm64', 'pool': 'ascend-general-a2', 'accelerator-type': 'module-910b-8', 'cluster': 'true', 'mind-cluster/npu-chip-memory': '64G'}", "nodes_1/device_2: no matching nodes for labels={'kubernetes.io/arch': 'arm64', 'pool': 'ascend-general-a2', 'accelerator-type': 'module-910b-8', 'cluster': 'true', 'mind-cluster/npu-chip-memory': '64G'}"]
 
