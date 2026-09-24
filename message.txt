@@ -1,4 +1,4 @@
-docker login -u cn-north-4@HST3WSGIFCCVWGX6EDU3 -p 92f5a84ec9f102185f037f2b4fdd68070a92a2ea6283b577248dc37640c4db5a swr.cn-north-4.myhuaweicloud.com
+docker login -u cn-southwest-2@HST3UUD8N6HM1OE6LWPC -p a181b6bc5070cd198634e3a1af76010384c9f9f90ba039add9e0498c9984e92c swr.cn-southwest-2.myhuaweicloud.com
 
 https://www.openlibing.com/apps/prAccessDashboard?projectId=300059
 
