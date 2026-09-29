@@ -1,3 +1,5 @@
+https://gitcode.com/openlibing/huaweicloud-oidc-sdk-nodejs
+
 https://gitcode.com/ComputingActionTest/gitcode-test-5/actions/runs/0dc7484471004120b382485f48f5f643
 
 https://gitcode.com/pipelineascode/CI/blob/main/doc/%E8%B5%84%E6%BA%90%E6%B1%A0%E5%8C%96/%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3.md
