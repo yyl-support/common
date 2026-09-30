@@ -1,3 +1,5 @@
+db78ff8764174804b08cc9aabdd0ddc6
+
 [2026-09-30 11:43:49.277+08:00] [INFO] 2026-09-30T03:43:48.556Z -- OIDC ID Token 申请成功（Actions 兼容流水线 OIDC 接口）--
 [2026-09-30 11:43:49.379+08:00] [INFO] 2026-09-30T03:43:48.557Z -- OIDC 免密换证开始：区域 cn-southwest-2，提供商 pta_swr_nightly，委托 gitcode-actions --
 [2026-09-30 11:43:49.380+08:00] [ERROR] 2026-09-30T03:43:48.592Z STS 失败详情 : {"error_code":"STS5.2001","error_msg":"invalid oidc id token: 'incorrect 'aud': huawei-cloud-service'"}
