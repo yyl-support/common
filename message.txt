@@ -1,3 +1,6 @@
+https://gitcode.com/ComputingActionTest/MindSpeed-Bridge/actions/runs/e677767573b145ee9b44d69e7b3abd90/workflow\
+
+
 /opt/octopus-agent
 /opt/agent_1789888714668
 
