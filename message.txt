@@ -1,3 +1,6 @@
+/opt/octopus-agent
+/opt/agent_1789888714668
+
 https://gitcode.com/Ascend/pytorch/tree/master/docker
 https://gitcode.com/Ascend/MindSpeed-MM/tree/master/docker
 
