@@ -1,3 +1,20 @@
+[2026-09-30 11:43:49.277+08:00] [INFO] 2026-09-30T03:43:48.556Z -- OIDC ID Token 申请成功（Actions 兼容流水线 OIDC 接口）--
+[2026-09-30 11:43:49.379+08:00] [INFO] 2026-09-30T03:43:48.557Z -- OIDC 免密换证开始：区域 cn-southwest-2，提供商 pta_swr_nightly，委托 gitcode-actions --
+[2026-09-30 11:43:49.380+08:00] [ERROR] 2026-09-30T03:43:48.592Z STS 失败详情 : {"error_code":"STS5.2001","error_msg":"invalid oidc id token: 'incorrect 'aud': huawei-cloud-service'"}
+[2026-09-30 11:43:49.381+08:00] [ERROR] 2026-09-30T03:43:48.592Z -- OIDC Token 声明（用于与华为云信任策略比对）--
+[2026-09-30 11:43:49.382+08:00] [ERROR] 2026-09-30T03:43:48.592Z iss : "https://actions-results.atomgit.com"
+[2026-09-30 11:43:49.384+08:00] [ERROR] 2026-09-30T03:43:48.592Z aud : "huawei-cloud-service"
+[2026-09-30 11:43:49.385+08:00] [ERROR] 2026-09-30T03:43:48.592Z azp : undefined
+[2026-09-30 11:43:49.386+08:00] [ERROR] 2026-09-30T03:43:48.592Z sub : "repo:ComputingActionTest/MindSpeed-Bridge:ref:refs/heads/master"
+[2026-09-30 11:43:49.387+08:00] [ERROR] 2026-09-30T03:43:48.592Z provider_urn : iam::0d336831568090260fd5c01450729240:oidcProvider:pta_swr_nightly
+[2026-09-30 11:43:49.388+08:00] [ERROR] 2026-09-30T03:43:48.592Z === 排查提示 ===
+[2026-09-30 11:43:49.389+08:00] [ERROR] 2026-09-30T03:43:48.592Z STS5.1001/403：多为信任策略条件不匹配，请将上方 OIDC Token 的 iss/aud/azp/sub 与华为云信任策略逐项比对。
+[2026-09-30 11:43:49.390+08:00] [ERROR] 2026-09-30T03:43:48.592Z   - iss 必须与所选 OIDC 提供商注册的颁发者 URL 严格一致（GitHub 平台为 https://token.actions.githubusercontent.com，GitCode Actions 平台以其流水线签发地址为准）
+[2026-09-30 11:43:49.391+08:00] [ERROR] 2026-09-30T03:43:48.592Z   - aud/azp 必须与策略中 oidc:aud 一致（且身份提供商客户端 ID 已注册）
+[2026-09-30 11:43:49.393+08:00] [ERROR] 2026-09-30T03:43:48.592Z   - sub 必须能被策略中 oidc:sub 的通配符匹配
+[2026-09-30 11:43:49.394+08:00] [ERROR] 2026-09-30T03:43:48.592Z -- OIDC 免密换证失败：STS auth failed (400) [STS5.2001]: invalid oidc id token: 'incorrect 'aud': huawei-cloud-service' --
+[2026-09-30 11:43:49.395+08:00] ::error::STS auth failed (400) [STS5.2001]: invalid oidc id token: 'incorrect 'aud': huawei-cloud-service'
+
 https://gitcode.com/ComputingActionTest/MindSpeed-Bridge/actions/runs/e677767573b145ee9b44d69e7b3abd90/workflow\
 
 
