@@ -1,3 +1,5 @@
+https://usemagpie.ai/
+
 https://gitcode.com/ComputingActionTest/MindSpeed-Bridge/actions/runs/7066756672d94d81af8aa2dc8659daa0/job/508d35363d3a4d2c90fb8e63ec676d71 我用你的配置跑过了login 但是dockerfile 好像有点问题。 https://gitcode.com/wangwq129/pipeline-qa/actions/runs/8cf430b3da82448f911bb21e37298644
 
 sk-w***niiq
