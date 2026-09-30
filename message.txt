@@ -1,3 +1,5 @@
+sk-b***bcam
+
 db78ff8764174804b08cc9aabdd0ddc6
 
 [2026-09-30 11:43:49.277+08:00] [INFO] 2026-09-30T03:43:48.556Z -- OIDC ID Token 申请成功（Actions 兼容流水线 OIDC 接口）--
