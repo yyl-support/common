@@ -1,3 +1,11 @@
+
+https://gitcode.com/ComputingActionTest/MindSpeed-Bridge/actions/runs/05e75436e14846bea0094bba7627b53e/job/631d8e7cab834f99bf0f26a127293986?list_page=1
+
+报错：ERROR: failed to solve: failed to push swr.cn-north-4.myhuaweicloud.com/mindspeed/pr-mindspeed-bridge:master-test-buidkit-v0.0.0-no-use: denied: you do not have the permission
+
+华为云上我看了 在北京4 然后组织列表里有atlas_ci
+
+
 https://gitcode.com/ComputingActionTest/MindSpeed-Bridge/actions/runs/a7b9aa4ba73d4cd4a96ddf97251d2add/job/8a072d148a7147b2afa7e13175f1f249?list_page=1
 https://gitcode.com/ComputingActionTest/MindSpeed-Bridge/actions
 https://github.com/opensourceways/arc-fedsched
