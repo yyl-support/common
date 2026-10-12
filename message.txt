@@ -1,3 +1,7 @@
+https://github.com/opensourceways/buildkit-dispatcher/blob/main/docs/architecture.md buildkit二阶段方案
+
+https://gitcode.com/ComputingActionTest/MindSpeed-MM/actions/runs/7450482d7b1a4328b3cbf9667f258c4b/job/0fa262b9e47f4d4c97e2f4f8af321836 镜像构建错误
+
 arc-EX4bXLO4IFrnSi9R
 
 
