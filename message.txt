@@ -1,3 +1,62 @@
+MindStudio：
+	msprof
+	mskpp
+	msopgen
+	msopcom
+	msmodeling
+	msserviceprofiler
+	msdebug
+	mskl
+	msopprof
+	mssanitizer
+	mstx
+	msmemscope
+	msmodelslim
+	msagent
+	msprof-analyze
+	msmonitor
+	msprobe
+	msoptuner
+	mspti
+	msboost
+	msinsight
+AscendForPyTorch：	
+	pytorch
+	op-plugin
+	torchair
+MindSpeed：	
+	MindSpeed
+	MindSpeed-LLM
+	MindSpeed-MM
+	DrivingSDK
+	MindSpeed-Ops
+	MindSpeed-Bridge
+	MegatronAdaptor
+	TransformerEngineNPU
+	slime-ascend
+MindIE：	
+	MindIE-SD
+	MindIE-Motor
+MindCluster：	
+	mind-cluster
+	ascend-deployer
+MindSDK：	
+	IndexSDK
+	RAGSDK
+	MultimodalSDK
+	AgentSDK
+	RecSDK
+CANN（Product）：	
+	ascend-transformer-boost
+	ascend-boost-comm
+	sip
+	catlass
+	shmem
+	catccos
+	ops-collections
+	Ascend/DeepEP
+
+
 https://github.com/opensourceways/buildkit-dispatcher/blob/main/docs/architecture.md buildkit二阶段方案
 
 https://gitcode.com/ComputingActionTest/MindSpeed-MM/actions/runs/7450482d7b1a4328b3cbf9667f258c4b/job/0fa262b9e47f4d4c97e2f4f8af321836 镜像构建错误
