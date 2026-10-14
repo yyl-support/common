@@ -1,3 +1,24 @@
+mkdir -p docker-maker
+cd docker-maker
+rm -rf mindspeed-core || true
+pip3 config set global.index-url https://mirrors.aliyun.com/pypi/simple/
+pip3 config set global.trusted-host mirrors.aliyun.com
+git clone -b master https://gitcode.com/Ascend/MindSpeed-Ops.git mindspeed-ops
+cd mindspeed-ops
+IMAGE_NAME="mindspeed-ops"
+IMAGE_TAG="master-${CHIP_TYPE}-${OS_TYPE}-py3.12-aarch64"
+bash "docker/image_build.sh" \
+    -t "$CHIP_TYPE" \
+    --soc-version "$SOC_VERSION" \
+    --cleanup-on-fail
+echo "镜像制作完成，开始推送"
+
+SWR_REPO="swr.cn-north-4.myhuaweicloud.com/mindspeed/shangfa-ops"
+docker tag "${IMAGE_NAME}:${IMAGE_TAG}" "${SWR_REPO}:${IMAGE_TAG}"
+docker login -u cn-north-4@HPUAQXLD0JZLS49IN1XR -p 9569144c4627a6eaf74b76d7e075e896a7c27eaf963e93f2286c1948e88dfabd swr.cn-north-4.myhuaweicloud.com
+docker push "${SWR_REPO}:${IMAGE_TAG}"
+
+
 ascend-pytorch-l6pnk-main-script-0
 ascend-pytorch-86dbq-main-script-0
 ascend-pytorch-mnbzr-main-script-0
