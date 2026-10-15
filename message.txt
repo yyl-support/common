@@ -1,24 +1,22 @@
-只列环境问题（用例/框架那两类去掉了）：
+第一组：10/14 13:59-16:02
+lease-env1791986201-7791
+lease-env1791986201-5187
+lease-env1791986201-5214
+lease-env1791986201-1539
+lease-env1791986201-1857
+lease-env1791986201-9226
+lease-env1791986201-2336
+lease-env1791986201-4223
 
-1. msserviceprofiler A3｜池子容器缺模型数据（确定性，重试无用）
-· 问题：sglang 4 条全挂 —— 容器里没有 `/home/autotest/model_data/Qwen2.5-7B-Instruct`；vLLM 8 条（#217）缺 `/mnt/share/autotest/MindStudio/model_data/Qwen3_14B`。两条路径真机 186 上都有。
-· env id：`lease-env1792022009-9350`（#218 sglang）；`lease-env1791965804-3697`、`lease-env1791988880-6856`（#217）
-· 流水线：#218 https://www.openlibing.com/apps/pipelineDetail?projectId=300037&pipelineId=af61355154f54c85adac46449f506edc&pipelineRunId=d35d4abc ｜ #217 https://www.openlibing.com/apps/pipelineDetail?projectId=300037&pipelineId=af61355154f54c85adac46449f506edc&pipelineRunId=3e5f13b8
-
-2. msot #232｜CodeArts 云构建故障（4 个 job 全 0 用例，重试后一字不差复现）
-· 问题：`DEV-CODECI-35002 构建任务执行失败`，`official_devcloud_cloudBuild`
-· env id：`lease-env1792018409-2518`、`lease-env1792018570-4226`、`lease-env1792018491-7949`、`lease-env1792018408-4439`
-· 流水线：https://www.openlibing.com/apps/pipelineDetail?projectId=300037&pipelineId=b67d335347fa4646acd3b96d1c55573e&pipelineRunId=e563f0bb
-
-3. msmemscope #232｜同一个 CodeArts 故障（other 2 个 job 全 0 用例）
-· env id：`lease-env1792024067-7727`、`lease-env1792024067-2398`（已重试，这是重试这轮的）
-· 流水线：https://www.openlibing.com/apps/pipelineDetail?projectId=300037&pipelineId=b4bf5a6de15549c59ce223fe03922413&pipelineRunId=73d811fa
-
-4. msserviceprofiler #218 A2｜同一个 CodeArts 故障（2 个 job 全 0 用例）
-· env id：`lease-env1792022393-4701`、`lease-env1792022265-3033`
-· 流水线：https://www.openlibing.com/apps/pipelineDetail?projectId=300037&pipelineId=af61355154f54c85adac46449f506edc&pipelineRunId=d35d4abc
-
-CodeArts 那条判据：同一批同时下发的全被拒，而同一轮里错开下发的（msserviceprofiler A3）用同一个构建 jobId 能跑 ⇒ 平台侧按次/并发拒绝，不是某个构建任务坏了。
+第二组：10/14 15:41-17:28
+lease-env1791963744-5262
+lease-env1791963744-7586
+lease-env1791963744-6042
+lease-env1791963744-5901
+lease-env1791963744-9224
+lease-env1791963744-8119
+lease-env1791963744-9889
+lease-env1791963744-7330
 
 
 
