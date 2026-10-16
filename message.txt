@@ -1,3 +1,5 @@
+'errors': ["nodes_1/device: no matching nodes for labels={'kubernetes.io/arch': 'arm64', 'pool': 'ascend-general-a3', 'accelerator-type': 'module-a3-16', 'accelerator-model': 'Ascend-910C', 'cluster': 'false', 'modelslim': 'true', 'nfs': 'true'}"]}
+
 agent_1789958648003
 agent_1789958778148
 
