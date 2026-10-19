@@ -1,3 +1,5 @@
+https://gitcode.com/Ascend/MindSpeed-LLM/actions/runs/5aac5a04ebaf44babc268f0fb8df56a0/job/7deefbe0cb614d0eaf70eb156a5ce175
+
 'errors': ["nodes_1/device: no matching nodes for labels={'kubernetes.io/arch': 'arm64', 'pool': 'ascend-general-a3', 'accelerator-type': 'module-a3-16', 'accelerator-model': 'Ascend-910C', 'cluster': 'false', 'modelslim': 'true', 'nfs': 'true'}"]}
 
 agent_1789958648003
