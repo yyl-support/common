@@ -1,3 +1,5 @@
+https://gitcode.com/ComputingActionTest/MindSpeed-MM/actions/runs/539930103bcb4f929b5150ed38136ac6/workflow
+
 ascend-pytorch-kdx6-main-script=0
 
 https://www.openlibing.com/apps/pipelineDetail?pipelineId=917e9d4ef3624408999817444349c4dc&projectId=300057&pipelineRunId=e6847d4fbb62483485c9d12f480468cb
