@@ -1,3 +1,5 @@
+ascend-pytorch-kdx6-main-script=0
+
 https://www.openlibing.com/apps/pipelineDetail?pipelineId=917e9d4ef3624408999817444349c4dc&projectId=300057&pipelineRunId=e6847d4fbb62483485c9d12f480468cb
 https://gitcode.com/Ascend/MindSpeed-LLM/actions/runs/5aac5a04ebaf44babc268f0fb8df56a0/job/7deefbe0cb614d0eaf70eb156a5ce175
 
