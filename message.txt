@@ -1,3 +1,5 @@
+ https://github.com/vllm-project/vllm-ascend/actions/runs/39560893083/job/119111996225
+
 https://gitcode.com/ComputingActionTest/MindSpeed-MM/actions/runs/539930103bcb4f929b5150ed38136ac6/workflow
 
 ascend-pytorch-kdx6-main-script=0
