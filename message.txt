@@ -1,3 +1,5 @@
+https://devcloud.cn-north-4.huaweicloud.com/codehub/project/6a4fa7d010294da695be52110517c08b/codehub/2876289/home?ref=master&filePath=cloudbuild%252FMindIE-SD%252Ffullbuild.yml&isFile=true
+
 看下这个执行机10.0.5.119
 HTTPConnectionPool(host='resource-api.arc-system.svc.cluster.local', port=8080): Max retries exceeded with url: /api/v1/envs/lease-env1792690508-1460 (Caused by NewConnectionError("HTTPConnection(host='resource-api.arc-system.svc.cluster.local', port=8080): Failed to establish a new connection: [Errno 111] Connection refused"))
 
