@@ -1,4 +1,7 @@
- https://github.com/vllm-project/vllm-ascend/actions/runs/39560893083/job/119111996225
+看下这个执行机10.0.5.119
+HTTPConnectionPool(host='resource-api.arc-system.svc.cluster.local', port=8080): Max retries exceeded with url: /api/v1/envs/lease-env1792690508-1460 (Caused by NewConnectionError("HTTPConnection(host='resource-api.arc-system.svc.cluster.local', port=8080): Failed to establish a new connection: [Errno 111] Connection refused"))
+
+https://github.com/vllm-project/vllm-ascend/actions/runs/39560893083/job/119111996225
 
 https://gitcode.com/ComputingActionTest/MindSpeed-MM/actions/runs/539930103bcb4f929b5150ed38136ac6/workflow
 
