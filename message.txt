@@ -1,3 +1,13 @@
+pytorch 7.55
+FSDPTurbo 19.19
+msdebug  14.90
+mspti  12.18
+mssanitizer  6.00
+msopprof 5.48
+Agent-SDK 7.10
+RecSDK  6.37
+Mind-cluster 5.02
+
 https://devcloud.cn-north-4.huaweicloud.com/codehub/project/6a4fa7d010294da695be52110517c08b/codehub/2876289/home?ref=master&filePath=cloudbuild%252FMindIE-SD%252Ffullbuild.yml&isFile=true
 
 看下这个执行机10.0.5.119
