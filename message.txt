@@ -1,3 +1,5 @@
+https://devcloud.cn-north-4.huaweicloud.com/codeci/project/1e20b309fcb34b00a0043a87e461c95a/codeci/detail/workspace/44f7e2c731ea4e169523a081f7942dee/145
+
 pytorch 7.55
 FSDPTurbo 19.19
 msdebug  14.90
