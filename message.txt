@@ -1,126 +1,23 @@
-[2026/11/02 16:18:31.197 GMT+08:00] [281472686551456] [INFO] Heartbeat POST http://resource-api.arc-system.svc.cluster.local:8080/api/v1/envs/lease-env-50ff278346d4d26f58c07c64a41ce8b1/heartbeat -> status=200 body={'env_id': 'lease-env-50ff278346d4d26f58c07c64a41ce8b1', 'last_heartbeat_at': '2026-11-02T08:18:27Z'}
-[2026/11/02 16:18:37.115 GMT+08:00] [281472919204256] [ERROR] SSH connection failed: timed out
-[2026/11/02 16:18:37.116 GMT+08:00] Traceback (most recent call last):
-[2026/11/02 16:18:37.116 GMT+08:00]   File "***//openlibing-pytest-executor-workspace/openlibing-pytest-executor/pytest-executor/src/executor/pytest_executor.py", line 1492, in _get_jump_target_clients
-[2026/11/02 16:18:37.116 GMT+08:00]     jump_client, target_client = self._get_jump_target_client(server_info)
-[2026/11/02 16:18:37.116 GMT+08:00]                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[2026/11/02 16:18:37.116 GMT+08:00]   File "***//openlibing-pytest-executor-workspace/openlibing-pytest-executor/pytest-executor/src/executor/pytest_executor.py", line 1442, in _get_jump_target_client
-[2026/11/02 16:18:37.116 GMT+08:00]     target_client.connect(
-[2026/11/02 16:18:37.116 GMT+08:00]   File "***//openlibing-pytest-executor-workspace/openlibing-pytest-executor/openlibing-pytest-executor/pytest-testcase-collector/venv/lib64/python3.11/site-packages/paramiko/client.py", line 364, in connect
-[2026/11/02 16:18:37.116 GMT+08:00]     sock.connect(addr)
-[2026/11/02 16:18:37.116 GMT+08:00] TimeoutError: timed out
-[2026/11/02 16:18:37.116 GMT+08:00] [281472919204256] [WARNING] [prepare_env] attempt 1/3 failed: TimeoutError: timed out; rebuilding connection
-[2026/11/02 16:18:37.827 GMT+08:00] [281472936112544] [ERROR] SSH connection failed: timed out
-[2026/11/02 16:18:37.827 GMT+08:00] Traceback (most recent call last):
-[2026/11/02 16:18:37.827 GMT+08:00]   File "***//openlibing-pytest-executor-workspace/openlibing-pytest-executor/pytest-executor/src/executor/pytest_executor.py", line 1492, in _get_jump_target_clients
-[2026/11/02 16:18:37.827 GMT+08:00]     jump_client, target_client = self._get_jump_target_client(server_info)
-[2026/11/02 16:18:37.827 GMT+08:00]                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[2026/11/02 16:18:37.827 GMT+08:00]   File "***//openlibing-pytest-executor-workspace/openlibing-pytest-executor/pytest-executor/src/executor/pytest_executor.py", line 1442, in _get_jump_target_client
-[2026/11/02 16:18:37.827 GMT+08:00]     target_client.connect(
-[2026/11/02 16:18:37.827 GMT+08:00]   File "***//openlibing-pytest-executor-workspace/openlibing-pytest-executor/openlibing-pytest-executor/pytest-testcase-collector/venv/lib64/python3.11/site-packages/paramiko/client.py", line 364, in connect
-[2026/11/02 16:18:37.827 GMT+08:00]     sock.connect(addr)
-[2026/11/02 16:18:37.827 GMT+08:00] TimeoutError: timed out
-[2026/11/02 16:18:37.827 GMT+08:00] [281472936112544] [WARNING] [prepare_env] attempt 1/3 failed: TimeoutError: timed out; rebuilding connection
-[2026/11/02 16:18:48.666 GMT+08:00] [281472919204256] [ERROR] SSH connection failed: timed out
-[2026/11/02 16:18:48.666 GMT+08:00] Traceback (most recent call last):
-[2026/11/02 16:18:48.667 GMT+08:00]   File "***//openlibing-pytest-executor-workspace/openlibing-pytest-executor/pytest-executor/src/executor/pytest_executor.py", line 1492, in _get_jump_target_clients
-[2026/11/02 16:18:48.667 GMT+08:00]     jump_client, target_client = self._get_jump_target_client(server_info)
-[2026/11/02 16:18:48.667 GMT+08:00]                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[2026/11/02 16:18:48.667 GMT+08:00]   File "***//openlibing-pytest-executor-workspace/openlibing-pytest-executor/pytest-executor/src/executor/pytest_executor.py", line 1442, in _get_jump_target_client
-[2026/11/02 16:18:48.667 GMT+08:00]     target_client.connect(
-[2026/11/02 16:18:48.667 GMT+08:00]   File "***//openlibing-pytest-executor-workspace/openlibing-pytest-executor/openlibing-pytest-executor/pytest-testcase-collector/venv/lib64/python3.11/site-packages/paramiko/client.py", line 364, in connect
-[2026/11/02 16:18:48.667 GMT+08:00]     sock.connect(addr)
-[2026/11/02 16:18:48.667 GMT+08:00] TimeoutError: timed out
-[2026/11/02 16:18:48.667 GMT+08:00] [281472919204256] [WARNING] [prepare_env] attempt 2/3 failed: TimeoutError: timed out; rebuilding connection
-[2026/11/02 16:18:48.998 GMT+08:00] [281472936112544] [ERROR] SSH connection failed: timed out
-[2026/11/02 16:18:48.998 GMT+08:00] Traceback (most recent call last):
-[2026/11/02 16:18:48.998 GMT+08:00]   File "***//openlibing-pytest-executor-workspace/openlibing-pytest-executor/pytest-executor/src/executor/pytest_executor.py", line 1492, in _get_jump_target_clients
-[2026/11/02 16:18:48.998 GMT+08:00]     jump_client, target_client = self._get_jump_target_client(server_info)
-[2026/11/02 16:18:48.998 GMT+08:00]                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[2026/11/02 16:18:48.998 GMT+08:00]   File "***//openlibing-pytest-executor-workspace/openlibing-pytest-executor/pytest-executor/src/executor/pytest_executor.py", line 1442, in _get_jump_target_client
-[2026/11/02 16:18:48.998 GMT+08:00]     target_client.connect(
-[2026/11/02 16:18:48.998 GMT+08:00]   File "***//openlibing-pytest-executor-workspace/openlibing-pytest-executor/openlibing-pytest-executor/pytest-testcase-collector/venv/lib64/python3.11/site-packages/paramiko/client.py", line 364, in connect
-[2026/11/02 16:18:48.998 GMT+08:00]     sock.connect(addr)
-[2026/11/02 16:18:48.998 GMT+08:00] TimeoutError: timed out
-[2026/11/02 16:18:48.998 GMT+08:00] [281472936112544] [WARNING] [prepare_env] attempt 2/3 failed: TimeoutError: timed out; rebuilding connection
-[2026/11/02 16:18:57.907 GMT+08:00] [281472927658400] [INFO] ***start 6 times query***
-[2026/11/02 16:18:57.907 GMT+08:00] [281472927658400] [INFO] apply_env_res: {'env_id': 'lease-env-8cdbe320f03f27f1e4648ed9584de3f8', 'groups': {'nodes_1': [{'name': 'device', 'res_type': 'container', 'group': 'nodes_1', 'status': 'Pending', 'ready': False, 'pod_name': 'lease-env-8cdbe-6b7ee5811c324f9aaa35d3f66e19235f-main-0', 'namespace': 'env-lease-env-8cdbe320f03f27f1e4648ed9584de3f8-nodes1', 'pod_ip': None, 'node': None, 'use_nfs': True, 'ro_nfs_path': '', 'rw_nfs_path': '/mnt/share', 'deploy_status': '', 'deploy_task_id': '', 'ssh_mesh_status': 'skipped', 'shm_size': '256Gi', 'ssh_user': 'runner', 'ssh_port': 22, 'privileged': False, 'privileged_requester': '', 'privileged_requested_at': '', 'ipc_host': False, 'ipc_host_requester': '', 'ipc_host_requested_at': '', 'npu_ids': [], 'waiting_reason': '', 'waiting_message': '', 'scheduled': False, 'scheduling_reason': 'Unschedulable', 'scheduling_message': "0/43 nodes are unavailable: 1 Insufficient memory, 10 node(s) didn't match Pod's node affinity/selector, 32 Insufficient cpu.", 'resources': {'cpu': {'request': '48', 'limit': '64'}, 'memory': {'request': '256Gi', 'limit': '1Ti'}}}]}, 'status': 'queued', 'name': 'env', 'created_at': '2026-11-02T08:15:56Z', 'expires_at': '2026-11-02T14:15:56Z', 'ttl': '21600', 'topology': '', 'extend_env_comments': {'job_info': 'codearts-18d85ee17b084117938d308f3a239280-8bc8bad9514a4635a2df29d33d7db479-3bc392707662465483b1cd0100c3de1f_20261102_3'}, 'progress': {'total': 1, 'ready': 0, 'failed': 0, 'pending': 1}, 'ssh_mesh': {'enabled': False, 'scope': '', 'enrolled': [], 'failed': []}, 'errors': None, 'current_stage': 'queued', 'current_reason': {'category': 'capacity', 'code': 'NPU_START_BUSY', 'message': 'creation failed: StartLockTimeout', 'retryable': True, 'details': {'requested': {'res_type': 'container', 'pool': 'ascend-general-a3', 'npu_model': 'Ascend 910C', 'device_model': '', 'cpu': '64', 'memory': '8Gi', 'npu': 2}, 'queued_devices': [{'group': 'nodes_1', 'device': 'device'}]}}, 'device_statuses': [{'group': 'nodes_1', 'name': 'device', 'current_stage': 'scheduling', 'current_reason': {'category': 'scheduling', 'code': 'INSUFFICIENT_CPU', 'message': 'Kubernetes scheduler reported insufficient CPU', 'retryable': True, 'details': {'device': 'device', 'raw_reason': 'Unschedulable', 'raw_message': "0/43 nodes are unavailable: 1 Insufficient memory, 10 node(s) didn't match Pod's node affinity/selector, 32 Insufficient cpu."}}}], 'last_heartbeat_at': '', 'health_ttl_s': 600}
-[2026/11/02 16:18:57.907 GMT+08:00] [281472927658400] [INFO] node[0] name[device] is not Running or Ready, status: Pending
-[2026/11/02 16:18:57.907 GMT+08:00] [281472927658400] [INFO] wait 30s to query again
-[2026/11/02 16:19:00.170 GMT+08:00] [281472919204256] [ERROR] SSH connection failed: timed out
-[2026/11/02 16:19:00.171 GMT+08:00] Traceback (most recent call last):
-[2026/11/02 16:19:00.171 GMT+08:00]   File "***//openlibing-pytest-executor-workspace/openlibing-pytest-executor/pytest-executor/src/executor/pytest_executor.py", line 1492, in _get_jump_target_clients
-[2026/11/02 16:19:00.171 GMT+08:00]     jump_client, target_client = self._get_jump_target_client(server_info)
-[2026/11/02 16:19:00.171 GMT+08:00]                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[2026/11/02 16:19:00.171 GMT+08:00]   File "***//openlibing-pytest-executor-workspace/openlibing-pytest-executor/pytest-executor/src/executor/pytest_executor.py", line 1442, in _get_jump_target_client
-[2026/11/02 16:19:00.171 GMT+08:00]     target_client.connect(
-[2026/11/02 16:19:00.171 GMT+08:00]   File "***//openlibing-pytest-executor-workspace/openlibing-pytest-executor/openlibing-pytest-executor/pytest-testcase-collector/venv/lib64/python3.11/site-packages/paramiko/client.py", line 364, in connect
-[2026/11/02 16:19:00.171 GMT+08:00]     sock.connect(addr)
-[2026/11/02 16:19:00.171 GMT+08:00] TimeoutError: timed out
-[2026/11/02 16:19:00.171 GMT+08:00] [281472919204256] [WARNING] [prepare_env] attempt 3/3 failed: TimeoutError: timed out; rebuilding connection
-[2026/11/02 16:19:00.171 GMT+08:00] [281472919204256] [ERROR] [prepare_env] all 3 attempts exhausted
-[2026/11/02 16:19:00.171 GMT+08:00] [281472919204256] [ERROR] Failed to prepare test environment: timed out
-[2026/11/02 16:19:00.171 GMT+08:00] Traceback (most recent call last):
-[2026/11/02 16:19:00.171 GMT+08:00]   File "***//openlibing-pytest-executor-workspace/openlibing-pytest-executor/pytest-executor/src/executor/pytest_executor.py", line 939, in _prepare_test_environment
-[2026/11/02 16:19:00.171 GMT+08:00]     with self._get_ssh_clients_with_retry("prepare_env", server_info) as (
-[2026/11/02 16:19:00.171 GMT+08:00]   File "/usr/lib64/python3.11/contextlib.py", line 137, in __enter__
-[2026/11/02 16:19:00.171 GMT+08:00]     return next(self.gen)
-[2026/11/02 16:19:00.171 GMT+08:00]            ^^^^^^^^^^^^^^
-[2026/11/02 16:19:00.171 GMT+08:00]   File "***//openlibing-pytest-executor-workspace/openlibing-pytest-executor/pytest-executor/src/executor/pytest_executor.py", line 1559, in _get_ssh_clients_with_retry
-[2026/11/02 16:19:00.171 GMT+08:00]     raise last_exc
-[2026/11/02 16:19:00.171 GMT+08:00]   File "***//openlibing-pytest-executor-workspace/openlibing-pytest-executor/pytest-executor/src/executor/pytest_executor.py", line 1543, in _get_ssh_clients_with_retry
-[2026/11/02 16:19:00.171 GMT+08:00]     with self._get_jump_target_clients(server_info) as clients:
-[2026/11/02 16:19:00.171 GMT+08:00]   File "/usr/lib64/python3.11/contextlib.py", line 137, in __enter__
-[2026/11/02 16:19:00.171 GMT+08:00]     return next(self.gen)
-[2026/11/02 16:19:00.171 GMT+08:00]            ^^^^^^^^^^^^^^
-[2026/11/02 16:19:00.171 GMT+08:00]   File "***//openlibing-pytest-executor-workspace/openlibing-pytest-executor/pytest-executor/src/executor/pytest_executor.py", line 1492, in _get_jump_target_clients
-[2026/11/02 16:19:00.171 GMT+08:00]     jump_client, target_client = self._get_jump_target_client(server_info)
-[2026/11/02 16:19:00.171 GMT+08:00]                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[2026/11/02 16:19:00.171 GMT+08:00]   File "***//openlibing-pytest-executor-workspace/openlibing-pytest-executor/pytest-executor/src/executor/pytest_executor.py", line 1442, in _get_jump_target_client
-[2026/11/02 16:19:00.171 GMT+08:00]     target_client.connect(
-[2026/11/02 16:19:00.171 GMT+08:00]   File "***//openlibing-pytest-executor-workspace/openlibing-pytest-executor/openlibing-pytest-executor/pytest-testcase-collector/venv/lib64/python3.11/site-packages/paramiko/client.py", line 364, in connect
-[2026/11/02 16:19:00.171 GMT+08:00]     sock.connect(addr)
-[2026/11/02 16:19:00.171 GMT+08:00] TimeoutError: timed out
-[2026/11/02 16:19:00.171 GMT+08:00] [281472919204256] [INFO] Heartbeat stopped for env_id=lease-env-d44149480aa352f194c6c3361bd1fd91, reason=task_finished
-[2026/11/02 16:19:00.882 GMT+08:00] [281472919204256] [INFO] Successfully released environment: lease-env-d44149480aa352f194c6c3361bd1fd91
-[2026/11/02 16:19:00.882 GMT+08:00] [281472919204256] [INFO] Released environment: lease-
-[2026/11/02 16:19:00.882 GMT+08:00] [281472919204256] [INFO] Released environment for env_id: cann_single_A3_device_3_cover_single_type-nodes_1-A3
-[2026/11/02 16:19:00.882 GMT+08:00] [281473024675872] [INFO] Task completed for env_id: cann_single_A3_device_3_cover_single_type-nodes_1-A3, result: True
-[2026/11/02 16:19:00.882 GMT+08:00] [281472936112544] [ERROR] SSH connection failed: timed out
-[2026/11/02 16:19:00.882 GMT+08:00] Traceback (most recent call last):
-[2026/11/02 16:19:00.882 GMT+08:00]   File "***//openlibing-pytest-executor-workspace/openlibing-pytest-executor/pytest-executor/src/executor/pytest_executor.py", line 1492, in _get_jump_target_clients
-[2026/11/02 16:19:00.882 GMT+08:00]     jump_client, target_client = self._get_jump_target_client(server_info)
-[2026/11/02 16:19:00.882 GMT+08:00]                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[2026/11/02 16:19:00.882 GMT+08:00]   File "***//openlibing-pytest-executor-workspace/openlibing-pytest-executor/pytest-executor/src/executor/pytest_executor.py", line 1442, in _get_jump_target_client
-[2026/11/02 16:19:00.882 GMT+08:00]     target_client.connect(
-[2026/11/02 16:19:00.882 GMT+08:00]   File "***//openlibing-pytest-executor-workspace/openlibing-pytest-executor/openlibing-pytest-executor/pytest-testcase-collector/venv/lib64/python3.11/site-packages/paramiko/client.py", line 364, in connect
-[2026/11/02 16:19:00.882 GMT+08:00]     sock.connect(addr)
-[2026/11/02 16:19:00.882 GMT+08:00] TimeoutError: timed out
-[2026/11/02 16:19:00.882 GMT+08:00] [281472936112544] [WARNING] [prepare_env] attempt 3/3 failed: TimeoutError: timed out; rebuilding connection
-[2026/11/02 16:19:00.882 GMT+08:00] [281472936112544] [ERROR] [prepare_env] all 3 attempts exhausted
-[2026/11/02 16:19:00.882 GMT+08:00] [281472936112544] [ERROR] Failed to prepare test environment: timed out
-[2026/11/02 16:19:00.882 GMT+08:00] Traceback (most recent call last):
-[2026/11/02 16:19:00.882 GMT+08:00]   File "***//openlibing-pytest-executor-workspace/openlibing-pytest-executor/pytest-executor/src/executor/pytest_executor.py", line 939, in _prepare_test_environment
-[2026/11/02 16:19:00.883 GMT+08:00]     with self._get_ssh_clients_with_retry("prepare_env", server_info) as (
-[2026/11/02 16:19:00.883 GMT+08:00]   File "/usr/lib64/python3.11/contextlib.py", line 137, in __enter__
-[2026/11/02 16:19:00.883 GMT+08:00]     return next(self.gen)
-[2026/11/02 16:19:00.883 GMT+08:00]            ^^^^^^^^^^^^^^
-[2026/11/02 16:19:00.883 GMT+08:00]   File "***//openlibing-pytest-executor-workspace/openlibing-pytest-executor/pytest-executor/src/executor/pytest_executor.py", line 1559, in _get_ssh_clients_with_retry
-[2026/11/02 16:19:00.883 GMT+08:00]     raise last_exc
-[2026/11/02 16:19:00.883 GMT+08:00]   File "***//openlibing-pytest-executor-workspace/openlibing-pytest-executor/pytest-executor/src/executor/pytest_executor.py", line 1543, in _get_ssh_clients_with_retry
-[2026/11/02 16:19:00.883 GMT+08:00]     with self._get_jump_target_clients(server_info) as clients:
-[2026/11/02 16:19:00.883 GMT+08:00]   File "/usr/lib64/python3.11/contextlib.py", line 137, in __enter__
-[2026/11/02 16:19:00.883 GMT+08:00]     return next(self.gen)
-[2026/11/02 16:19:00.883 GMT+08:00]            ^^^^^^^^^^^^^^
-[2026/11/02 16:19:00.883 GMT+08:00]   File "***//openlibing-pytest-executor-workspace/openlibing-pytest-executor/pytest-executor/src/executor/pytest_executor.py", line 1492, in _get_jump_target_clients
-[2026/11/02 16:19:00.883 GMT+08:00]     jump_client, target_client = self._get_jump_target_client(server_info)
-[2026/11/02 16:19:00.883 GMT+08:00]                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[2026/11/02 16:19:00.883 GMT+08:00]   File "***//openlibing-pytest-executor-workspace/openlibing-pytest-executor/pytest-executor/src/executor/pytest_executor.py", line 1442, in _get_jump_target_client
-[2026/11/02 16:19:00.883 GMT+08:00]     target_client.connect(
-[2026/11/02 16:19:00.883 GMT+08:00]   File "***//openlibing-pytest-executor-workspace/openlibing-pytest-executor/openlibing-pytest-executor/pytest-testcase-collector/venv/lib64/python3.11/site-packages/paramiko/client.py", line 364, in connect
-[2026/11/02 16:19:00.883 GMT+08:00]     sock.connect(addr)
-[2026/11/02 16:19:00.883 GMT+08:00] TimeoutError: timed out
-[2026/11/02 16:19:00.883 GMT+08:00] [281472936112544] [INFO] Heartbeat stopped for env_id=lease-env-50ff278346d4d26f58c07c64a41ce8b1, reason=task_finished
+MindStudio：超过5mins，业务侧分析是镜像拉取
+msprof-analyze
+msdebug
+msopprof
+mssanitizer
+mspti
+MindSpeed：排队时长更明显（10-25）
+MindSpeed-LLM
+MindSpeed-MM
+MindSpeed
+MindSpeed-Bridge
+MegatronAdaptor
+TransformerEngineNPU
+slime-ascend
+MindCluster/MindSDK:稍微好点（5-13）
+mind-cluster
+RecSDK
+AgentSDK
+IndexSDK
+MultimodalSDK
 
 https://gitcode.com/LiYanghang00/ci_config/pull/24 
 
