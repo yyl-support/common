@@ -1,3 +1,5 @@
+https://gitcode.com/Cloverr/pr-ci-board
+
 https://gitcode.com/ComputingActionTest/MultimodalSDK/actions/runs/9b52ff0d7bb446fd8d570e1fd9b567c4/job/88900d2519d948f89c88f0e230ded54d
 
 https://gitcode.com/ComputingActionTest/MultimodalSDK/actions/runs/82119a7e18694ed28a391e95b98194bc/job/002f4ee804c941928cf1a57b1e87b104
