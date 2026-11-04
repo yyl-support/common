@@ -1,3 +1,5 @@
+https://gitcode.com/ComputingActionTest/MultimodalSDK/actions/runs/82119a7e18694ed28a391e95b98194bc/job/002f4ee804c941928cf1a57b1e87b104
+
 root/2FQBWvFw!LCHXpFBPDtD
 
 MindStudio：超过5mins，业务侧分析是镜像拉取
