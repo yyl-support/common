@@ -1,3 +1,5 @@
+https://gitcode.com/Cloverr/pr-ci-board/tree/add-kernel
+
 lease-env-5819fc3dd06f0ccd985f5d1e95f449a7
 lease-env-e3022f2055153fd82e066cbd450613f7
 lease-env-dea051561cd2f6ae431796efd61c51ab
