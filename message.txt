@@ -1,3 +1,5 @@
+ https://gitcode.com/ComputingActionTest/torchtitan-ascend/actions/runs/0e2e326bafed4bfba0f2898ce8298a4d
+
 https://gitcode.com/Cloverr/pr-ci-board/tree/add-kernel
 
 lease-env-5819fc3dd06f0ccd985f5d1e95f449a7
