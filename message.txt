@@ -1,3 +1,5 @@
+https://gitcode.com/ComputingActionTest/MindSpeed-Ops/actions/workflows/.gitcode%2Fworkflows%2Fdocker-pipeline-mindspeed-ops.yml?page=1
+
 https://gitcode.com/ComputingActionTest/torchtitan-ascend/actions/runs/bfb3e376222f401d8c1fa1cb91d67e18/job/6b1f66e6b13249bb8716ee12912a1156
 https://gitcode.com/Ascend/pytorch/actions/runs/249ebdc364ad431e8a9f6c2d64014557/job/14b914046ffb4eabbd035b07ca527560?list_page=2
 
