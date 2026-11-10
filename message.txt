@@ -1,3 +1,4 @@
+https://gitcode.com/ComputingActionTest/torchtitan-ascend/actions/runs/bfb3e376222f401d8c1fa1cb91d67e18/job/6b1f66e6b13249bb8716ee12912a1156
 https://gitcode.com/Ascend/pytorch/actions/runs/249ebdc364ad431e8a9f6c2d64014557/job/14b914046ffb4eabbd035b07ca527560?list_page=2
 
 https://gitcode.com/ComputingActionTest/torchtitan-ascend/actions/runs/202be0e7ec8149a3891110bcff19a4de
