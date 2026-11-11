@@ -1,3 +1,5 @@
+https://gitcode.com/Ascend/msprobe/actions/runs/ed8e9f9f77b84a5e867d1399f6b51a63
+
 lease-env-ca6eac9f01fa36192230c94208964b3a
 
 https://gitcode.com/ComputingActionTest/MindSpeed-Ops/actions/workflows/.gitcode%2Fworkflows%2Fdocker-pipeline-mindspeed-ops.yml?page=1
