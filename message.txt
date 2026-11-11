@@ -1,3 +1,13 @@
+节点名称	节点ip	BMC IP
+ascend-infra-wlcb-npu-node-8	192.168.1.126	29.57.225.197
+ascend-infra-wlcb-npu-node-1	192.168.1.121	29.57.219.199
+ascend-infra-wlcb-npu-node-2	192.168.1.41	29.57.220.73
+ascend-infra-wlcb-npu-node-3	192.168.1.28	29.57.185.9
+ascend-infra-wlcb-npu-node-4	192.168.1.155	29.57.184.8
+ascend-infra-wlcb-npu-node-5	192.168.1.204	29.57.184.5
+ascend-infra-wlcb-npu-node-6	192.168.1.218	29.83.17.202
+ascend-infra-wlcb-npu-node-7	192.168.1.44	29.57.172.138
+
 https://gitcode.com/ComputingActionTest/MindSpeed-Ops/actions/workflows/.gitcode%2Fworkflows%2Fdocker-pipeline-mindspeed-ops.yml?page=1
 
 https://gitcode.com/ComputingActionTest/torchtitan-ascend/actions/runs/bfb3e376222f401d8c1fa1cb91d67e18/job/6b1f66e6b13249bb8716ee12912a1156
