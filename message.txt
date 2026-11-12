@@ -1,7 +1,9 @@
 @徐亮 老板现在参与开源和主导开源的调度打通了，但是现在遇到一个问题：
-双方都布置了dispatcher，但是双方有gap：
-主导开源：识别RB/octopus注解/fedsched-* lable ,arc-enable=false 
-参与开源：Ephe
+双方的dispatcher都不认识对方的任务，造成的直接后果就是，主导开源在001上排队的8卡无法给节点打上临时污点，一直排队
+原因是：
+主导开源的生产主体链路是 octopus/Argo（GitCode → CodeArts/octopus → codearts-workflow-image → Argo Workflows），提交的是普通 Pod——带 octopus.io/runner-set-name / octopus.io/runner-set-label-npu 注解，没有 EphemeralRunner。Snapshot 的 runnerMeta 查找对它永远不会命中，scale set（以及围栏依赖的预留组）始终为空。
+因此我们做了对应的适配：https://github.com/opensourceways/arc-fedsched/pull/32
+今天就是打算在001上做灰度验证的时候出现了这个问题
 
 https://gitcode.com/Ascend/msprof/actions/runs/474c74b0e9154ef6a5b3e0ef7f0a17c1/job/c11ef2645ed643febad1cbb654cbef6e
 https://gitcode.com/Ascend/msprobe/actions/runs/ed8e9f9f77b84a5e867d1399f6b51a63
