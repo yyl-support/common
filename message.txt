@@ -1,3 +1,5 @@
+https://gitcode.com/Ascend/msprof/actions/runs/9b173047b7174654b9cb791b45c84216/job/3be69ba364a844b79e1ebed954e14d69
+
 https://gitcode.com/Ascend/MindStudio-Probe/actions/runs/abae9eb42dcc474ab0dc0e5709f2fc81
 
 @徐亮 老板现在参与开源和主导开源的调度打通了，但是现在遇到一个问题：
