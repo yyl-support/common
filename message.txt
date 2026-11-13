@@ -1,3 +1,5 @@
+https://gitcode.com/Ascend/MindStudio-Probe/actions/runs/abae9eb42dcc474ab0dc0e5709f2fc81
+
 @徐亮 老板现在参与开源和主导开源的调度打通了，但是现在遇到一个问题：
 双方的dispatcher都不认识对方的任务，造成的直接后果就是，主导开源在001上排队的8卡无法给节点打上临时污点，一直排队
 原因是：
