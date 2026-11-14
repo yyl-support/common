@@ -1,3 +1,31 @@
+1.个人情况及过去工作简述
+	1.个人学历，工作经历，任职  1
+2.内转后工作简述
+	1.参与openubmc 开发lightRag接口及后续lightRag的升级维护  - 需要一份完整的数据流图 -> 使用情况   1
+	2.参与主导开源CI耗时优化专项：
+数据：		1
+1.接入002及香港集群 -提升资源数量
+2.对齐9个社区的统计口径
+3.增加邮件预警告警
+工作  2
+1.参与部署pytest云上资源打通	提高使用率
+2.参与buildkit部署	提高镜像构建速度
+3.参与arc-fedsched 部署：优化排队策略
+	其他：        1
+	3.参与gitcode-action测试
+	3.参与基础设施团队开源时刻文章贡献  
+	4.参与vllm-ascend及triton-ascend消息通知
+3.下一步发展计划
+	团队：  1
+	1.持续优化主导开源CI耗时
+	2.参与团队知识治理
+	个人： 1
+	1.任职
+	2.英语
+	3.增加贡献
+4.致谢 1
+
+
 https://gitcode.com/ComputingActionTest/MindIE-SD/actions/runs/2a222c213bcb4dac93a6a36c44325ec0/job/982047ac3de84254afc5f3eaa6e12522  
 https://gitcode.com/Ascend/msprof/actions/runs/9b173047b7174654b9cb791b45c84216/job/3be69ba364a844b79e1ebed954e14d69
 
