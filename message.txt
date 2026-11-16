@@ -1,3 +1,11 @@
+1.问题背景：
+由于当前主导开源和参与开源的karmada还没有正式打通，因此出现
+原生arc-fedsched无法识别主导开源的karmada任务：
+	1.我们的CP没有actions.github.com CRD
+	2.我们的作业没有ER
+2
+
+
 https://github.com/nv-action/vllm-benchmarks/actions/runs/42781434220
 
 https://github.com/vllm-project/vllm-ascend/pull/21214
