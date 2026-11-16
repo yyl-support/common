@@ -1,10 +1,18 @@
-1.问题背景：
-由于当前主导开源和参与开源的karmada还没有正式打通，因此出现
-原生arc-fedsched无法识别主导开源的karmada任务：
-	1.我们的CP没有actions.github.com CRD
-	2.我们的作业没有ER
-2
+1.问题描述：
+arc runner（参与开源）在主导开源的 CP 上没有 RB（也没有 Pod 对象）→ 全部记为 BackgroundLoad（不可腾空）→ 围栏候选要求 Capacity - BackgroundLoad ≥ units，候选恒 0。实测：8 卡业务作业 capacity_full hold 285s 期间围栏零动作，最终被平台取消；B1 曾 32 卡全被 ARC 占时同样零动作。 
+对参与开源同理：我们的 octopus 作业不在参与开源的 CP 上，参与开源的账本也看不见。
+2.问题原因：
+原生 dispatcher 的识别层有两个前提，在主导开源的生产控制面上都不成立：
+主导开源的 CP 没有 actions.github.com CRD（实测）， 而主导开源的作业（octopus/Argo 链路）是无 ER 的普通 Pod。
+3.当前部署情况：
+参与开源：karmada控制面：https://1.95.146.120:32443 
+部署情况：五个：a3-560t / a2-1980 / a3-800i / a3-800t / a3-n（一机型一联邦） 
+ER读取： arc.enabled 默认 true——CP 带 actions.github.com CRD，ARC 控制器链路可用
+主导开源：karmada控制面：https://1.95.223.182:5443 
+部署情况：三个灰度联邦：arc-prod-gray-001（B1）/ arc-prod-gray-wlcb（B3）/ arc-prod-gray-b4-001（B4，2026-11-13 新增）
+ER读取：arc.enabled: false——我们的 CP 无 actions.github.com CRD
 
+4.诉求：后续目标是在同一个karmada控制面控制全部集群，因此dispatcher需要可以识别两方的任务
 
 https://github.com/nv-action/vllm-benchmarks/actions/runs/42781434220
 
