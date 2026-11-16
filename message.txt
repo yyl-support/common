@@ -1,3 +1,6 @@
+https://gitcode.com/ComputingActionTest/MindSpeed-MM/actions/runs/cc5aff5cab21471cbedfc866da79a08b/workflow
+https://gitcode.com/ComputingActionTest/MindSpeed-MM/actions/runs/740f82657aa046689ad6d0ec6d1d5d88/workflow
+
 https://gitcode.com/ComputingActionTest/MindSpeed-LLM_0916/actions/runs/7f50ddba5e2a4eebb661148cc3180b15
 
 1.个人情况及过去工作简述
