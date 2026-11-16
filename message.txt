@@ -1,3 +1,5 @@
+https://github.com/nv-action/vllm-benchmarks/actions/runs/42781434220
+
 https://github.com/vllm-project/vllm-ascend/pull/21214
 
 https://gitcode.com/ComputingActionTest/MindSpeed-MM/actions/runs/cc5aff5cab21471cbedfc866da79a08b/workflow
