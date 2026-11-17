@@ -1,3 +1,5 @@
+
+pre-commit排队 https://gitcode.com/Ascend/AgentSDK/actions/runs/9abce481f6cc476f83a99f27d706e5f6/job/54cada63c6fc48b99576f2ddb6cb1ada
 https://gitcode.com/Ascend/MindSpeed-LLM/actions/runs/39471be697e842459de47490bfcb6e61
 
 https://gitcode.com/Ascend/MindSpeed-LLM/actions/runs/89786743ad184a269de22e0ae45cfba0/job/7fbdb303d3cd4226a7cf51e1db5024a7
