@@ -1,3 +1,5 @@
+https://buildkite.com/vllm/vime-npu-ci/builds/628/list?jid=01a1e3c0-6ca3-43f0-892e-f192e71b4508&tab=output
+
 lease-env-102e1c04024219eadcd3331a3764d893
 lease-env-8a074f002165cc84a3cb56f25386c63f
 
