@@ -1,3 +1,5 @@
+lease-env-102e1c04024219eadcd3331a3764d893
+lease-env-8a074f002165cc84a3cb56f25386c63f
 
 pre-commit排队 https://gitcode.com/Ascend/AgentSDK/actions/runs/9abce481f6cc476f83a99f27d706e5f6/job/54cada63c6fc48b99576f2ddb6cb1ada
 https://gitcode.com/Ascend/MindSpeed-LLM/actions/runs/39471be697e842459de47490bfcb6e61
