@@ -1,3 +1,8 @@
+192.168.1.157  ecs-codearts-pytest-0010 root:85rBtffR70gh4o4HDl/O+%PP
+192.168.1.158  ecs-codearts-pytest-0009 root:85rBtffR70gh4o4HDl/O+%PP
+192.168.1.93   ecs-codearts-pytest-0008 root:85rBtffR70gh4o4HDl/O+%PP
+192.168.1.50   ecs-codearts-pytest-0007 root:85rBtffR70gh4o4HDl/O+%PP
+
 https://github.com/opensourceways/ascend-ci-deployment/pull/2599/changes#diff-d00743dc4e878f258330deadcd4008e361276d760b58b672150c54bb1ac9758a
 
 https://buildkite.com/vllm/vime-npu-ci/builds/628/list?jid=01a1e3c0-6ca3-43f0-892e-f192e71b4508&tab=output
