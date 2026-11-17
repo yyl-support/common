@@ -1,3 +1,5 @@
+https://gitcode.com/Ascend/MindSpeed-LLM/actions/runs/89786743ad184a269de22e0ae45cfba0/job/7fbdb303d3cd4226a7cf51e1db5024a7
+
 1.问题描述：
 arc runner（参与开源）在主导开源的 CP 上没有 RB（也没有 Pod 对象）→ 全部记为 BackgroundLoad（不可腾空）→ 围栏候选要求 Capacity - BackgroundLoad ≥ units，候选恒 0。实测：8 卡业务作业 capacity_full hold 285s 期间围栏零动作，最终被平台取消；B1 曾 32 卡全被 ARC 占时同样零动作。 
 对参与开源同理：我们的 octopus 作业不在参与开源的 CP 上，参与开源的账本也看不见。
