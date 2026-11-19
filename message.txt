@@ -1,3 +1,5 @@
+https://gitcode.com/ComputingActionTest/develop/actions/runs/50966c16302a488dbb3e5e21f16595b8/job/a670316ad4624782aac2145741da7f24
+
 sysctl -w kernel.enhance_container_enable=1
 
 https://github.com/opensourceways/ascend-ci-deployment/pull/2599/changes#diff-d00743dc4e878f258330deadcd4008e361276d760b58b672150c54bb1ac9758a
