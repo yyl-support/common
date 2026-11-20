@@ -1,3 +1,5 @@
+https://gitcode.com/Ascend/MindSpeed/actions/runs/e154b983ae3b458c969e739d8e1725fa/job/660b767870de417ead5f9714cb3eaa71
+
 Before changing the code, state the accounting rule in one sentence. For each affected record, say what should happen to it independently. Then write the reported regression and change one relevant condition to see whether the rule still holds. Assert the complete result, including which owners retain which grants. After the fix, read each early return or continue and ask what other work it skips.
 
 https://xuexi.12371.cn/2015/09/06/VIDE1441510502371856.shtml
