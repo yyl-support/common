@@ -1,3 +1,4 @@
+https://gitcode.com/ComputingActionTest/develop/actions/runs/50966c16302a488dbb3e5e21f16595b8/job/a670316ad4624782aac2145741da7f24
 https://gitcode.com/ComputingActionTest/MindIE-Motor/actions/runs/e485d50af09f40a68c32c42c65710011/job/9b987fb6eb7f4bb999a2af1a525e794e
 
 https://gitcode.com/ComputingActionTest/develop/actions/runs/50966c16302a488dbb3e5e21f16595b8/job/a670316ad4624782aac2145741da7f24
