@@ -1,4 +1,9 @@
+https://gitcode.com/Ascend/ci-infra/actions/runs/3f23ff590a44417b8cc1b4edcdf4b2c6?list_page=1
+https://gitcode.com/Ascend/ci-infra/actions/runs/e2bbd9e6195641b197f3ce70914895ac/job/6d6248ec910d4904b878c6ed0c1b3fc9?list_page=1
+https://gitcode.com/Ascend/ci-infra/actions/runs/313af1744a1e4dd1b95cd9e72799fa9d?list_page=1
+
 https://win-2022-202605.obs.cn-north-4.myhuaweicloud.com/artifacts/bpp.txt
+
 
 https://gitcode.com/Ascend/MindSpeed/actions/runs/e154b983ae3b458c969e739d8e1725fa/job/660b767870de417ead5f9714cb3eaa71
 
