@@ -1,4 +1,4 @@
-ubuntu:20.04和openeuler:22.03-lts-sp4这两个，而且要支持"linux/amd64"和"linux/arm64"
+ubuntu:20.04和openeuler:22.03-lts-sp4这两个，而且要支持"linux/amd64"和"linux/arm64",ubuntu:22.04也看下
 
 https://gitcode.com/Ascend/ci-infra/actions/runs/3f23ff590a44417b8cc1b4edcdf4b2c6?list_page=1
 https://gitcode.com/Ascend/ci-infra/actions/runs/e2bbd9e6195641b197f3ce70914895ac/job/6d6248ec910d4904b878c6ed0c1b3fc9?list_page=1
