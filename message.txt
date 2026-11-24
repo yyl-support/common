@@ -1,22 +1,4 @@
-这个镜像openeuler:22.03-lts-sp4完整的地址是啥
-[2026/11/24 01:16:18.860 GMT+08:00] [INFO] Job(417e0f3bb2c249c28fc24dc94dcd38dc_1574594480742875137) duration check: true
-
-docker --version
-            echo "**************begin make full image********************"
-           
-            
-            git clone -b ${service_branch} https://AtlasAccount:${Atlas_password}@gitcode.com/Ascend/${servicename}.git ${servicename}
-            # git clone -b "${target_branch}" https://gitcode.com/Ascend/IndexSDK.git ${WORKSPACE}/image_repo
-            cd ${WORKSPACE}/${servicename}/scripts
-            echo "构建镜像"
-            bash build.sh --build-images
-            
-            obsutil config -i="${AK_CI}" -k="${SK_CI}" -e=obs.cn-north-4.myhuaweicloud.com
-
-            # obsutil cp ${WORKSPACE}/${servicename}/artifacts/agent-base/agent-base*.tar.gz obs://agentbox-daily/${PRODUCT}/package/${build_type}/${VERSION}/${build_time}/ -f -r
-            # obsutil cp ${WORKSPACE}/${servicename}/artifacts/tool-sandbox/tool-sandbox*.tar.gz obs://agentbox-daily/${PRODUCT}/package/${build_type}/${VERSION}/${build_time}/ -f -r
-            obsutil cp ${WORKSPACE}/${servicename}/artifacts/rag/${arch_dir}/kb-service*.tar.gz obs://agentbox-daily/${PRODUCT}/package/${build_type}/${VERSION}/${build_time}/ -f -r
-            obsutil cp ${WORKSPACE}/${servicename}/artifacts/rag/${arch_dir}/mani*.json obs://agentbox-daily/${PRODUCT}/package/${build_type}/${VERSION}/${build_time}/ -f -r
+FROM swr.cn-southwest-2.myhuaweicloud.com/ascend_infra/base/openeuler:22.03-lts-sp4
 
 1574594480742875137-pod
 env_resource_id: 51d78e0c1db94c829475f0a9efb6e9ea
