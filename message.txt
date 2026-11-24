@@ -1,3 +1,4 @@
+这个镜像openeuler:22.03-lts-sp4完整的地址是啥
 [2026/11/24 01:16:18.860 GMT+08:00] [INFO] Job(417e0f3bb2c249c28fc24dc94dcd38dc_1574594480742875137) duration check: true
 
 docker --version
