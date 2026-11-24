@@ -1,3 +1,6 @@
+1574594480742875137-pod
+env_resource_id: 51d78e0c1db94c829475f0a9efb6e9ea
+
 https://gitcode.com/Ascend/ci-infra/actions/runs/63d96436f938435fb543a32a3a5558b3
 
 ubuntu:20.04和openeuler:22.03-lts-sp4这两个，而且要支持"linux/amd64"和"linux/arm64",ubuntu:22.04也看下
