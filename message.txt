@@ -1,3 +1,20 @@
+docker --version
+            echo "**************begin make full image********************"
+           
+            
+            git clone -b ${service_branch} https://AtlasAccount:${Atlas_password}@gitcode.com/Ascend/${servicename}.git ${servicename}
+            # git clone -b "${target_branch}" https://gitcode.com/Ascend/IndexSDK.git ${WORKSPACE}/image_repo
+            cd ${WORKSPACE}/${servicename}/scripts
+            echo "构建镜像"
+            bash build.sh --build-images
+            
+            obsutil config -i="${AK_CI}" -k="${SK_CI}" -e=obs.cn-north-4.myhuaweicloud.com
+
+            # obsutil cp ${WORKSPACE}/${servicename}/artifacts/agent-base/agent-base*.tar.gz obs://agentbox-daily/${PRODUCT}/package/${build_type}/${VERSION}/${build_time}/ -f -r
+            # obsutil cp ${WORKSPACE}/${servicename}/artifacts/tool-sandbox/tool-sandbox*.tar.gz obs://agentbox-daily/${PRODUCT}/package/${build_type}/${VERSION}/${build_time}/ -f -r
+            obsutil cp ${WORKSPACE}/${servicename}/artifacts/rag/${arch_dir}/kb-service*.tar.gz obs://agentbox-daily/${PRODUCT}/package/${build_type}/${VERSION}/${build_time}/ -f -r
+            obsutil cp ${WORKSPACE}/${servicename}/artifacts/rag/${arch_dir}/mani*.json obs://agentbox-daily/${PRODUCT}/package/${build_type}/${VERSION}/${build_time}/ -f -r
+
 1574594480742875137-pod
 env_resource_id: 51d78e0c1db94c829475f0a9efb6e9ea
 
