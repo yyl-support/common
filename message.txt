@@ -1,3 +1,5 @@
+https://gitcode.com/ComputingActionTest/develop/actions/runs/dc365c2fcf9044f1a83987f4e44e4579/job/ff88b440c9e94d678316ac62341fc8e3
+
 https://gitcode.com/Ascend/ci-infra/actions/runs/6c9906f91b6f4693a84519f923ce91ee?list_page=1
 
 content: time="2026-11-24T05:30:39Z" level=error msg="/moby.buildkit.v1.Control/Solve returned error: rpc error: code = Canceled desc = failed to push swr.cn-north-4.myhuaweicloud.com/atlas-ci/ops-nn-nightly:20261124121309: failed to do request: Head \"https://swr.cn-north-4.myhuaweicloud.com/v2/atlas-ci/ops-nn-nightly/blobs/sha256:a8f7f31dab6fda70693f3ea194de6991097df6b1d2345d1f3d629114d403a2f6\": context canceled" spanID=2eecf642bd6f1a28 traceID=cd31fc9f6719957205fb975b1f6e181e
