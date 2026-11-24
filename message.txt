@@ -1,3 +1,4 @@
+https://gitcode.com/Ascend/ci-infra/actions/runs/6c9906f91b6f4693a84519f923ce91ee/job/a038aeff39744cd78dabcf3f7d993009
 FROM swr.cn-southwest-2.myhuaweicloud.com/ascend_infra/base/openeuler:22.03-lts-sp4
 
 1574594480742875137-pod
