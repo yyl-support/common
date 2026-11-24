@@ -1,3 +1,21 @@
+贵阳region：
+guiyang001：a2b1 和 a2b4
+guiyang003:  310P
+guiyang004:  a3 752t
+guiyang005:  a3 752t
+
+华北region:
+cn12-001: a3 560t
+aiframework:  a3 560t
+mind-third-ci:  a3 560t
+
+香港region:
+hk-001：a2b3
+
+乌兰察布region:
+wlcb-001:  a2b3
+
+
 https://gitcode.com/ComputingActionTest/develop/actions/runs/dc365c2fcf9044f1a83987f4e44e4579/job/ff88b440c9e94d678316ac62341fc8e3
 
 https://gitcode.com/Ascend/ci-infra/actions/runs/6c9906f91b6f4693a84519f923ce91ee?list_page=1
