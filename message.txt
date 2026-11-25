@@ -1,3 +1,5 @@
+https://gitcode.com/Ascend/ci-infra/actions/runs/85f23c61041e4e3a893bb2428923d18b
+
 https://gitcode.com/ComputingActionTest/develop/actions/runs/28ac5007d7f24ad78763e03220dad34c/job/c86f4e2375fc41f58fec2363d42aefd1?list_page=1
 我测试了一下，这个update的传入的哈希和下载生成的哈希对不上，然后下载失败了
 
