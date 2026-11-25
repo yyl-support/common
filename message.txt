@@ -1,3 +1,6 @@
+https://gitcode.com/ComputingActionTest/develop/actions/runs/28ac5007d7f24ad78763e03220dad34c/job/c86f4e2375fc41f58fec2363d42aefd1?list_page=1
+我测试了一下，这个update的传入的哈希和下载生成的哈希对不上，然后下载失败了
+
 https://gitcode.com/ComputingActionTest/develop/actions/runs/0962cfbaa5714785a80a55c1cd6a47b9?list_page=1
 
 https://gitcode.com/Ascend/ci-infra/actions/runs/46589d160aad470a8140a16dd9cabfda/job/956f9d6bc587468193c0642dfc10e788
