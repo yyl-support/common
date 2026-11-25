@@ -1,3 +1,5 @@
+https://gitcode.com/Ascend/ci-infra/actions/runs/46589d160aad470a8140a16dd9cabfda/job/956f9d6bc587468193c0642dfc10e788
+
 贵阳region：
 guiyang001：a2b1 和 a2b4
 guiyang003:  310P
