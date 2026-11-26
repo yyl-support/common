@@ -1,3 +1,5 @@
+https://gitcode.com/ComputingActionTest/develop/actions/runs/0962cfbaa5714785a80a55c1cd6a47b9/job/6313cd51e6f84c1391a417eeb7094eac?list_page=1
+
 这个声明会锁定么？就比如我声明了8卡，你看到a集群正好有八卡，然后在a集群上起cpu执行机，然后去跑pytest脚本调接口申请npu,如果这个过程中间8卡被别人申请走了咋搞
 就是这个声明的过程会锁定这几张卡不让别人拿走么
 
