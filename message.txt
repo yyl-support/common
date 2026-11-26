@@ -1,3 +1,5 @@
+https://gitcode.com/ComputingActionTest/MindSpeed-precise-test/actions/runs/9c45f7604a7844e2a9b7154559928394/job/c7a5a60f39394dcc8ae0cabdf3ee1f3b
+
 https://gitcode.com/ComputingActionTest/MindIE-SD/actions/runs/5bc5a1b974ae4503998d85334c7b995a/job/a27a077faa0d4da5aeeea4b60bc03479?list_page=1
 
 https://gitcode.com/Ascend/ci-infra/actions/runs/85f23c61041e4e3a893bb2428923d18b
