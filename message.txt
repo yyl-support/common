@@ -1,3 +1,6 @@
+这个声明会锁定么？就比如我声明了8卡，你看到a集群正好有八卡，然后在a集群上起cpu执行机，然后去跑pytest脚本调接口申请npu,如果这个过程中间8卡被别人申请走了咋搞
+就是这个声明的过程会锁定这几张卡不让别人拿走么
+
 https://gitcode.com/ComputingActionTest/MindSpeed-precise-test/actions/runs/9c45f7604a7844e2a9b7154559928394/job/c7a5a60f39394dcc8ae0cabdf3ee1f3b
 
 https://gitcode.com/ComputingActionTest/MindIE-SD/actions/runs/5bc5a1b974ae4503998d85334c7b995a/job/a27a077faa0d4da5aeeea4b60bc03479?list_page=1
