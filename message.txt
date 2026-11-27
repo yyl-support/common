@@ -1,3 +1,5 @@
+https://github.com/Onenightcarnival/deepseek-harness-desktop/releases/tag/v0.2.13
+
 https://gitcode.com/Ascend/memfabric_hybrid/pull/1771
 
 https://gitcode.com/ComputingActionTest/MindIE-Motor/actions/runs/819828e7647b489981c1abb69813562b/job/a21b28fbb0774adbb63e5bb339c814b6
