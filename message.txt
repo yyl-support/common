@@ -1,3 +1,5 @@
+https://gitcode.com/ComputingActionTest/MindIE-SD/actions/runs/26c59aea4c3b42d4afe1fe70ccb558e7/job/e169bc75b87d4484925b94e317b6ecf6?list_page=1
+
 https://gitcode.com/Ascend/MindSpeed-MM/actions/runs/5f3d4814387647109b120142033912a0
 
 https://gitcode.com/Ascend/ci-infra/actions/runs/ef4a37295df0406cb85850282ad36571
