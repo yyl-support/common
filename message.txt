@@ -1,3 +1,4 @@
+https://gitcode.com/Ascend/ci-infra/actions/runs/ef4a37295df0406cb85850282ad36571
 https://github.com/Onenightcarnival/deepseek-harness-desktop/releases/tag/v0.2.13
 
 https://gitcode.com/Ascend/memfabric_hybrid/pull/1771
