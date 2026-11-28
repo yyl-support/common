@@ -1,3 +1,5 @@
+https://gitcode.com/ComputingActionTest/memfabric_hybrid_5245/actions/runs/3123e0057c11446ead03b4a361c1d18c/job/f27ae2e5bd6c4b5d9cc31ddcc0022352
+
 https://gitcode.com/ComputingActionTest/MindIE-SD/actions/runs/26c59aea4c3b42d4afe1fe70ccb558e7/job/e169bc75b87d4484925b94e317b6ecf6?list_page=1
 
 https://gitcode.com/Ascend/MindSpeed-MM/actions/runs/5f3d4814387647109b120142033912a0
